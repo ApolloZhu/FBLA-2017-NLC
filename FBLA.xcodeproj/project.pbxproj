@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		527BA8BC1E207E7200DD0A38 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BA8BB1E207E7200DD0A38 /* CommentsTableViewController.swift */; };
 		52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE2BA11E1E1E3800A7D2E6 /* Config.swift */; };
 		52AE2BA41E1E1EBA00A7D2E6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE2BA31E1E1EBA00A7D2E6 /* SettingsTableViewController.swift */; };
 		52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		30D698F0997D1249069F9392 /* Pods-FBLA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.debug.xcconfig"; sourceTree = "<group>"; };
+		527BA8BB1E207E7200DD0A38 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		52AE2BA11E1E1E3800A7D2E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		52AE2BA31E1E1EBA00A7D2E6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		52AFEDCD1E1E16A500FA9ABA /* FBLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 				52F69EAF1E1E1B6F00602EC3 /* SearchResultTableViewController.swift */,
 				52F69EB11E1E1B7D00602EC3 /* CartTableViewController.swift */,
 				52AE2BA31E1E1EBA00A7D2E6 /* SettingsTableViewController.swift */,
+				527BA8BB1E207E7200DD0A38 /* CommentsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				52F69EAE1E1E1B0B00602EC3 /* ItemsTableViewController.swift in Sources */,
 				52F69EAC1E1E1AEC00602EC3 /* ItemViewController.swift in Sources */,
 				52F69EB01E1E1B6F00602EC3 /* SearchResultTableViewController.swift in Sources */,
+				527BA8BC1E207E7200DD0A38 /* CommentsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

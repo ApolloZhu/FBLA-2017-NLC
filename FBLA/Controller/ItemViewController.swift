@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import Cosmos
+import SwiftyStarRatingView
 
 class ItemViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var rateControl: CosmosView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -1,12 +1,12 @@
 PODS:
-  - Cosmos (7.0.0)
+  - SwiftyStarRatingView (1.0.1)
 
 DEPENDENCIES:
-  - Cosmos
+  - SwiftyStarRatingView
 
 SPEC CHECKSUMS:
-  Cosmos: 2c8299147138758f6ebbb247cf1aeed77998bdf9
+  SwiftyStarRatingView: 973a3ea9a7cc0a88e34985f1087d3a4a7c837b51
 
-PODFILE CHECKSUM: 73e5481f8f1fbf4b17ca2b477f8875cd74e05fe6
+PODFILE CHECKSUM: eb3224f45aeb4dc0ee04b4e5244b39177119235f
 
 COCOAPODS: 1.1.1

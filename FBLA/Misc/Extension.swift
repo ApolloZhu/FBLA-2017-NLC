@@ -13,3 +13,9 @@ extension UIStoryboardSegue {
         return (destination as? UINavigationController)?.visibleViewController ?? destination
     }
 }
+
+extension CGPoint {
+    static func make(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
+        return CGPoint(x: x, y: y)
+    }
+}

@@ -1,12 +1,15 @@
 PODS:
+  - SnapKit (3.1.2)
   - SwiftyStarRatingView (1.0.1)
 
 DEPENDENCIES:
+  - SnapKit
   - SwiftyStarRatingView
 
 SPEC CHECKSUMS:
+  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SwiftyStarRatingView: 973a3ea9a7cc0a88e34985f1087d3a4a7c837b51
 
-PODFILE CHECKSUM: eb3224f45aeb4dc0ee04b4e5244b39177119235f
+PODFILE CHECKSUM: 041b6a8212acf11af58012e9d17f10e26b8ffe9e
 
 COCOAPODS: 1.1.1

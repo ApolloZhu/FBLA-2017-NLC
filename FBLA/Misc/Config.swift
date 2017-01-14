@@ -8,4 +8,10 @@
 
 struct Identifier {
     static let ShowItemSegue = "Show Item Segue"
+    static let AccountViewController = "AccountViewControllerID"
+    static let PorfilePhotoKey = "profile.png"
+}
+
+extension Notification.Name {
+    static let ShouldPresentAccountViewController = Notification.Name("ShouldPresentAccountViewController")
 }

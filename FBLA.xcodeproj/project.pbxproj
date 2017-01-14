@@ -7,41 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5213B7681E26BDD400B8C8C3 /* HamburgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5213B7671E26BDD400B8C8C3 /* HamburgerButton.swift */; };
-		527BA8BC1E207E7200DD0A38 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BA8BB1E207E7200DD0A38 /* CommentsTableViewController.swift */; };
-		528315F11E254033001D0030 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528315F01E254033001D0030 /* AccountViewController.swift */; };
+		52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AC2C801E29B26D00D29F10 /* Assets.xcassets */; };
 		52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE2BA11E1E1E3800A7D2E6 /* Config.swift */; };
-		52AE2BA41E1E1EBA00A7D2E6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE2BA31E1E1EBA00A7D2E6 /* SettingsTableViewController.swift */; };
 		52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */; };
 		52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDD61E1E16A600FA9ABA /* Main.storyboard */; };
-		52AFEDDA1E1E16A600FA9ABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDD91E1E16A600FA9ABA /* Assets.xcassets */; };
 		52AFEDDD1E1E16A600FA9ABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDDB1E1E16A600FA9ABA /* LaunchScreen.storyboard */; };
+		52F45C9B1E29BB5400A7D81A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C921E29BB5400A7D81A /* AccountView.swift */; };
+		52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C931E29BB5400A7D81A /* AccountViewController.swift */; };
+		52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C941E29BB5400A7D81A /* CartTableViewController.swift */; };
+		52F45C9E1E29BB5400A7D81A /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C951E29BB5400A7D81A /* CommentsTableViewController.swift */; };
+		52F45C9F1E29BB5400A7D81A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C961E29BB5400A7D81A /* HomeViewController.swift */; };
+		52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */; };
+		52F45CA11E29BB5400A7D81A /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C981E29BB5400A7D81A /* ItemViewController.swift */; };
+		52F45CA21E29BB5400A7D81A /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C991E29BB5400A7D81A /* SearchResultTableViewController.swift */; };
+		52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */; };
 		52F69EAA1E1E1A2A00602EC3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F69EA71E1E1A2A00602EC3 /* Extension.swift */; };
-		52F69EAC1E1E1AEC00602EC3 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F69EAB1E1E1AEC00602EC3 /* ItemViewController.swift */; };
-		52F69EAE1E1E1B0B00602EC3 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F69EAD1E1E1B0B00602EC3 /* ItemsTableViewController.swift */; };
-		52F69EB01E1E1B6F00602EC3 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F69EAF1E1E1B6F00602EC3 /* SearchResultTableViewController.swift */; };
-		52F69EB21E1E1B7D00602EC3 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F69EB11E1E1B7D00602EC3 /* CartTableViewController.swift */; };
+		52F7727C1E29627D0033C8AA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F7727B1E29627D0033C8AA /* SWRevealViewController.m */; };
 		8B934EC6A1FB6DA9C760D040 /* Pods_FBLA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB16F7C1395D8B7D9F8ED51 /* Pods_FBLA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30D698F0997D1249069F9392 /* Pods-FBLA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.debug.xcconfig"; sourceTree = "<group>"; };
-		5213B7671E26BDD400B8C8C3 /* HamburgerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerButton.swift; sourceTree = "<group>"; };
-		527BA8BB1E207E7200DD0A38 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
-		528315F01E254033001D0030 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		52AC2C801E29B26D00D29F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52AE2BA11E1E1E3800A7D2E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		52AE2BA31E1E1EBA00A7D2E6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		52AFEDCD1E1E16A500FA9ABA /* FBLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AFEDD71E1E16A600FA9ABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		52AFEDD91E1E16A600FA9ABA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52AFEDDC1E1E16A600FA9ABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52AFEDDE1E1E16A600FA9ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52F45C921E29BB5400A7D81A /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountView.swift; path = "FBLA/View Controller/AccountView.swift"; sourceTree = SOURCE_ROOT; };
+		52F45C931E29BB5400A7D81A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = "FBLA/View Controller/AccountViewController.swift"; sourceTree = SOURCE_ROOT; };
+		52F45C941E29BB5400A7D81A /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartTableViewController.swift; path = "FBLA/View Controller/CartTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		52F45C951E29BB5400A7D81A /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentsTableViewController.swift; path = "FBLA/View Controller/CommentsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		52F45C961E29BB5400A7D81A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "FBLA/View Controller/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
+		52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsTableViewController.swift; path = "FBLA/View Controller/ItemsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		52F45C981E29BB5400A7D81A /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemViewController.swift; path = "FBLA/View Controller/ItemViewController.swift"; sourceTree = SOURCE_ROOT; };
+		52F45C991E29BB5400A7D81A /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultTableViewController.swift; path = "FBLA/View Controller/SearchResultTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "FBLA/View Controller/SettingsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F69EA71E1E1A2A00602EC3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		52F69EAB1E1E1AEC00602EC3 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
-		52F69EAD1E1E1B0B00602EC3 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
-		52F69EAF1E1E1B6F00602EC3 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
-		52F69EB11E1E1B7D00602EC3 /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
+		52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FBLA-Bridging-Header.h"; path = "Misc/FBLA-Bridging-Header.h"; sourceTree = "<group>"; };
+		52F7727A1E29627D0033C8AA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		52F7727B1E29627D0033C8AA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		6EB16F7C1395D8B7D9F8ED51 /* Pods_FBLA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBLA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC503D51DFA225AEB198E59 /* Pods-FBLA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,10 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				52AFEDD61E1E16A600FA9ABA /* Main.storyboard */,
-				52F69EA51E1E1A2A00602EC3 /* Controller */,
-				52F69EA91E1E1A2A00602EC3 /* View */,
+				52F69EA51E1E1A2A00602EC3 /* View Controller */,
 				52F69EA81E1E1A2A00602EC3 /* Model */,
 				52F69EA61E1E1A2A00602EC3 /* Misc */,
+				52F772771E2962290033C8AA /* Frameworks */,
 				52AFEDE41E1E16BE00FA9ABA /* Supporting Files */,
 			);
 			path = FBLA;
@@ -92,25 +98,37 @@
 		52AFEDE41E1E16BE00FA9ABA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52AC2C801E29B26D00D29F10 /* Assets.xcassets */,
+				52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */,
 				52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */,
-				52AFEDD91E1E16A600FA9ABA /* Assets.xcassets */,
 				52AFEDDB1E1E16A600FA9ABA /* LaunchScreen.storyboard */,
 				52AFEDDE1E1E16A600FA9ABA /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		52F69EA51E1E1A2A00602EC3 /* Controller */ = {
+		52F45CA41E29BBA400A7D81A /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				52F69EAB1E1E1AEC00602EC3 /* ItemViewController.swift */,
-				52F69EAD1E1E1B0B00602EC3 /* ItemsTableViewController.swift */,
-				52F69EAF1E1E1B6F00602EC3 /* SearchResultTableViewController.swift */,
-				52F69EB11E1E1B7D00602EC3 /* CartTableViewController.swift */,
-				52AE2BA31E1E1EBA00A7D2E6 /* SettingsTableViewController.swift */,
-				527BA8BB1E207E7200DD0A38 /* CommentsTableViewController.swift */,
-				528315F01E254033001D0030 /* AccountViewController.swift */,
+				52F45C931E29BB5400A7D81A /* AccountViewController.swift */,
+				52F45C921E29BB5400A7D81A /* AccountView.swift */,
 			);
+			name = Account;
+			sourceTree = "<group>";
+		};
+		52F69EA51E1E1A2A00602EC3 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52F45C961E29BB5400A7D81A /* HomeViewController.swift */,
+				52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */,
+				52F45CA41E29BBA400A7D81A /* Account */,
+				52F45C941E29BB5400A7D81A /* CartTableViewController.swift */,
+				52F45C951E29BB5400A7D81A /* CommentsTableViewController.swift */,
+				52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */,
+				52F45C981E29BB5400A7D81A /* ItemViewController.swift */,
+				52F45C991E29BB5400A7D81A /* SearchResultTableViewController.swift */,
+			);
+			name = "View Controller";
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -130,12 +148,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		52F69EA91E1E1A2A00602EC3 /* View */ = {
+		52F772771E2962290033C8AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5213B7671E26BDD400B8C8C3 /* HamburgerButton.swift */,
+				52F772781E29623B0033C8AA /* SWRevealViewController */,
 			);
-			path = View;
+			name = Frameworks;
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		52F772781E29623B0033C8AA /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				52F7727A1E29627D0033C8AA /* SWRevealViewController.h */,
+				52F7727B1E29627D0033C8AA /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		CEA3D6F0064AEFAE38A350E4 /* Pods */ = {
@@ -191,7 +219,8 @@
 				TargetAttributes = {
 					52AFEDCC1E1E16A500FA9ABA = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 2H866F22W7;
+						DevelopmentTeam = KZ7D8X3PRK;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -220,7 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AFEDDD1E1E16A600FA9ABA /* LaunchScreen.storyboard in Resources */,
-				52AFEDDA1E1E16A600FA9ABA /* Assets.xcassets in Resources */,
+				52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */,
 				52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,17 +322,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F45CA11E29BB5400A7D81A /* ItemViewController.swift in Sources */,
+				52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */,
+				52F7727C1E29627D0033C8AA /* SWRevealViewController.m in Sources */,
 				52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */,
-				52F69EB21E1E1B7D00602EC3 /* CartTableViewController.swift in Sources */,
+				52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */,
+				52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */,
+				52F45C9E1E29BB5400A7D81A /* CommentsTableViewController.swift in Sources */,
+				52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */,
+				52F45C9F1E29BB5400A7D81A /* HomeViewController.swift in Sources */,
+				52F45CA21E29BB5400A7D81A /* SearchResultTableViewController.swift in Sources */,
 				52F69EAA1E1E1A2A00602EC3 /* Extension.swift in Sources */,
 				52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */,
-				52AE2BA41E1E1EBA00A7D2E6 /* SettingsTableViewController.swift in Sources */,
-				52F69EAE1E1E1B0B00602EC3 /* ItemsTableViewController.swift in Sources */,
-				5213B7681E26BDD400B8C8C3 /* HamburgerButton.swift in Sources */,
-				528315F11E254033001D0030 /* AccountViewController.swift in Sources */,
-				52F69EAC1E1E1AEC00602EC3 /* ItemViewController.swift in Sources */,
-				52F69EB01E1E1B6F00602EC3 /* SearchResultTableViewController.swift in Sources */,
-				527BA8BC1E207E7200DD0A38 /* CommentsTableViewController.swift in Sources */,
+				52F45C9B1E29BB5400A7D81A /* AccountView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,12 +458,16 @@
 			baseConfigurationReference = 30D698F0997D1249069F9392 /* Pods-FBLA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2H866F22W7;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = KZ7D8X3PRK;
 				INFOPLIST_FILE = FBLA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.swiftyx.apollo.FBLA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FBLA/Misc/FBLA-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -441,12 +476,15 @@
 			baseConfigurationReference = 8BC503D51DFA225AEB198E59 /* Pods-FBLA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2H866F22W7;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = KZ7D8X3PRK;
 				INFOPLIST_FILE = FBLA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.swiftyx.apollo.FBLA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FBLA/Misc/FBLA-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

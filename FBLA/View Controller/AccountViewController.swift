@@ -21,6 +21,9 @@ class AccountViewController: UIViewController, AccountViewDataSource {
         }
     }
 
+    var name = "Lorem Ipsum"
+    var email = "email@address.com"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         accountView.dataSource = self

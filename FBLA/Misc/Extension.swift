@@ -35,6 +35,20 @@ extension UIImage {
     }
 }
 
+extension UILabel {
+    static func makeAutoAdjusting(fontSize: CGFloat? = nil) -> UILabel {
+        let label = UILabel()
+        if let fontSize = fontSize {
+            label.font = UIFont.systemFont(ofSize: fontSize)
+        }
+        label.adjustsFontSizeToFitWidth = true
+        if #available(iOS 10.0, *) {
+            label.adjustsFontForContentSizeCategory = true
+        }
+        return label
+    }
+}
+
 protocol SWRevealViewControllerPresentor {
     weak var menuButton: UIBarButtonItem! { get set }
 }

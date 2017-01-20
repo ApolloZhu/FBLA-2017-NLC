@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5246F7B01E2E92E700CC3E82 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5246F7AE1E2E92E700CC3E82 /* Settings.bundle */; };
 		52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AC2C801E29B26D00D29F10 /* Assets.xcassets */; };
 		52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE2BA11E1E1E3800A7D2E6 /* Config.swift */; };
 		52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */; };
@@ -28,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		30D698F0997D1249069F9392 /* Pods-FBLA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.debug.xcconfig"; sourceTree = "<group>"; };
+		5246F7AF1E2E92E700CC3E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Base; path = FBLA/Base.lproj/Settings.bundle; sourceTree = "<group>"; };
+		5246F7B31E2E951E00CC3E82 /* en */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = en; path = FBLA/en.lproj/Settings.bundle; sourceTree = "<group>"; };
 		52AC2C801E29B26D00D29F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52AE2BA11E1E1E3800A7D2E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		52AFEDCD1E1E16A500FA9ABA /* FBLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +101,7 @@
 		52AFEDE41E1E16BE00FA9ABA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5246F7AE1E2E92E700CC3E82 /* Settings.bundle */,
 				52AC2C801E29B26D00D29F10 /* Assets.xcassets */,
 				52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */,
 				52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */,
@@ -248,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5246F7B01E2E92E700CC3E82 /* Settings.bundle in Resources */,
 				52AFEDDD1E1E16A600FA9ABA /* LaunchScreen.storyboard in Resources */,
 				52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */,
 				52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */,
@@ -341,6 +346,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5246F7AE1E2E92E700CC3E82 /* Settings.bundle */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5246F7AF1E2E92E700CC3E82 /* Base */,
+				5246F7B31E2E951E00CC3E82 /* en */,
+			);
+			name = Settings.bundle;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		52AFEDD61E1E16A600FA9ABA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

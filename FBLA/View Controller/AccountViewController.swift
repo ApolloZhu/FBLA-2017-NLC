@@ -27,7 +27,6 @@ class AccountViewController: UIViewController, AccountViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         accountView.dataSource = self
-        navigationItem.backBarButtonItem = UIBarButtonItem()
     }
 
 }

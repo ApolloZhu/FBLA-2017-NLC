@@ -5,4 +5,5 @@ target 'FBLA' do
   pod 'SwiftyStarRatingView'
   pod 'SnapKit'
   pod 'PromiseKit'
+  pod 'GooglePlaces'
 end

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5246F7B01E2E92E700CC3E82 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5246F7AE1E2E92E700CC3E82 /* Settings.bundle */; };
+		5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5274CDF71E31A83C0045E5EB /* Settings.bundle */; };
+		5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB281E31C549005E3CC5 /* SWRevealViewController.m */; };
 		52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AC2C801E29B26D00D29F10 /* Assets.xcassets */; };
 		52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE2BA11E1E1E3800A7D2E6 /* Config.swift */; };
 		52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */; };
@@ -23,14 +24,14 @@
 		52F45CA21E29BB5400A7D81A /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C991E29BB5400A7D81A /* SearchResultTableViewController.swift */; };
 		52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */; };
 		52F69EAA1E1E1A2A00602EC3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F69EA71E1E1A2A00602EC3 /* Extension.swift */; };
-		52F7727C1E29627D0033C8AA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F7727B1E29627D0033C8AA /* SWRevealViewController.m */; };
 		8B934EC6A1FB6DA9C760D040 /* Pods_FBLA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB16F7C1395D8B7D9F8ED51 /* Pods_FBLA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30D698F0997D1249069F9392 /* Pods-FBLA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.debug.xcconfig"; sourceTree = "<group>"; };
-		5246F7AF1E2E92E700CC3E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Base; path = FBLA/Base.lproj/Settings.bundle; sourceTree = "<group>"; };
-		5246F7B31E2E951E00CC3E82 /* en */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = en; path = FBLA/en.lproj/Settings.bundle; sourceTree = "<group>"; };
+		5274CDF71E31A83C0045E5EB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		5278FB271E31C549005E3CC5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		5278FB281E31C549005E3CC5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		52AC2C801E29B26D00D29F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52AE2BA11E1E1E3800A7D2E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		52AFEDCD1E1E16A500FA9ABA /* FBLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,8 +50,6 @@
 		52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "FBLA/View Controller/SettingsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F69EA71E1E1A2A00602EC3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FBLA-Bridging-Header.h"; path = "Misc/FBLA-Bridging-Header.h"; sourceTree = "<group>"; };
-		52F7727A1E29627D0033C8AA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		52F7727B1E29627D0033C8AA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		6EB16F7C1395D8B7D9F8ED51 /* Pods_FBLA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBLA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC503D51DFA225AEB198E59 /* Pods-FBLA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,8 +90,6 @@
 				52AFEDD61E1E16A600FA9ABA /* Main.storyboard */,
 				52F69EA51E1E1A2A00602EC3 /* View Controller */,
 				52F69EA81E1E1A2A00602EC3 /* Model */,
-				52F69EA61E1E1A2A00602EC3 /* Misc */,
-				52F772771E2962290033C8AA /* Frameworks */,
 				52AFEDE41E1E16BE00FA9ABA /* Supporting Files */,
 			);
 			path = FBLA;
@@ -101,12 +98,14 @@
 		52AFEDE41E1E16BE00FA9ABA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5246F7AE1E2E92E700CC3E82 /* Settings.bundle */,
+				52F69EA61E1E1A2A00602EC3 /* Misc */,
+				52F772771E2962290033C8AA /* Frameworks */,
 				52AC2C801E29B26D00D29F10 /* Assets.xcassets */,
 				52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */,
 				52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */,
 				52AFEDDB1E1E16A600FA9ABA /* LaunchScreen.storyboard */,
 				52AFEDDE1E1E16A600FA9ABA /* Info.plist */,
+				5274CDF71E31A83C0045E5EB /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -164,8 +163,8 @@
 		52F772781E29623B0033C8AA /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
-				52F7727A1E29627D0033C8AA /* SWRevealViewController.h */,
-				52F7727B1E29627D0033C8AA /* SWRevealViewController.m */,
+				5278FB271E31C549005E3CC5 /* SWRevealViewController.h */,
+				5278FB281E31C549005E3CC5 /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
 			sourceTree = "<group>";
@@ -200,7 +199,8 @@
 				52AFEDCB1E1E16A500FA9ABA /* Resources */,
 				72CFF3CBB353602AA84CF964 /* [CP] Embed Pods Frameworks */,
 				2A1F59F5B0B7AC2BA849ACF3 /* [CP] Copy Pods Resources */,
-				520A07D51E25397500E9F6F1 /* ShellScript */,
+				520A07D51E25397500E9F6F1 /* Auto Increase Build Number */,
+				5278FB201E31C148005E3CC5 /* Update Acknowledgements */,
 			);
 			buildRules = (
 			);
@@ -252,7 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5246F7B01E2E92E700CC3E82 /* Settings.bundle in Resources */,
+				5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */,
 				52AFEDDD1E1E16A600FA9ABA /* LaunchScreen.storyboard in Resources */,
 				52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */,
 				52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */,
@@ -277,18 +277,33 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FBLA/Pods-FBLA-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		520A07D51E25397500E9F6F1 /* ShellScript */ = {
+		520A07D51E25397500E9F6F1 /* Auto Increase Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Auto Increase Build Number";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+		5278FB201E31C148005E3CC5 /* Update Acknowledgements */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update Acknowledgements";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"${SRCROOT}/Pods/Target Support Files/Pods-FBLA/Pods-FBLA-acknowledgements.plist\" \"${SRCROOT}/FBLA/Settings.bundle/Pods-FBLA-acknowledgements.plist\"";
 		};
 		72CFF3CBB353602AA84CF964 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -327,9 +342,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */,
 				52F45CA11E29BB5400A7D81A /* ItemViewController.swift in Sources */,
 				52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */,
-				52F7727C1E29627D0033C8AA /* SWRevealViewController.m in Sources */,
 				52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */,
 				52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */,
 				52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */,
@@ -346,16 +361,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5246F7AE1E2E92E700CC3E82 /* Settings.bundle */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5246F7AF1E2E92E700CC3E82 /* Base */,
-				5246F7B31E2E951E00CC3E82 /* en */,
-			);
-			name = Settings.bundle;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		52AFEDD61E1E16A600FA9ABA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

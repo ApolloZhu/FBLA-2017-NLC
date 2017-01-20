@@ -11,7 +11,7 @@
 "6oK-Sz-s7X.title" = "商品";
 
 /* Class = "UILabel"; text = "Subtitle"; ObjectID = "7SS-zG-JtC"; */
-"7SS-zG-JtC.text" = "Subtitle";
+"7SS-zG-JtC.text" = "副标题";
 
 /* Class = "UILabel"; text = "About Us"; ObjectID = "7nQ-Q1-03M"; */
 "7nQ-Q1-03M.text" = "关于我们";
@@ -23,16 +23,16 @@
 "59f-zb-fU4.title" = "主页";
 
 /* Class = "UITableViewSection"; headerTitle = "Section-1"; ObjectID = "368-3k-yTt"; */
-"368-3k-yTt.headerTitle" = "Section-1";
+"368-3k-yTt.headerTitle" = "小节1";
 
 /* Class = "UITableViewSection"; headerTitle = "Section-2"; ObjectID = "CRh-LQ-f24"; */
-"CRh-LQ-f24.headerTitle" = "Section-2";
+"CRh-LQ-f24.headerTitle" = "小节2";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "DK2-Z1-9qR"; */
-"DK2-Z1-9qR.text" = "Title";
+"DK2-Z1-9qR.text" = "标题";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "MmT-b8-pwh"; */
-"MmT-b8-pwh.text" = "Label";
+"MmT-b8-pwh.text" = "文本";
 
 /* Class = "UILabel"; text = "Rate"; ObjectID = "Ps9-Dp-vZm"; */
 "Ps9-Dp-vZm.text" = "评分";
@@ -59,10 +59,10 @@
 "hrK-Yn-1LB.text" = "描述";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "oZV-wc-oVB"; */
-"oZV-wc-oVB.text" = "Label";
+"oZV-wc-oVB.text" = "文本";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "pMB-Bf-EyG"; */
-"pMB-Bf-EyG.text" = "Label";
+"pMB-Bf-EyG.text" = "文本";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "pN1-LF-IYx"; */
 "pN1-LF-IYx.text" = "名字";

@@ -30,8 +30,11 @@ extension UIImage {
     func save(withKey key: String) {
         try? UIImagePNGRepresentation(self)?.write(to: URL.documentDirectory.appendingPathComponent(key))
     }
-    static func image(fromKey key: String) -> UIImage? {
-        return UIImage(contentsOfFile: "\(URL.documentDirectory.appendingPathComponent(key))")
+    static func image(fromKey key: String?) -> UIImage? {
+        if let key = key {
+            return UIImage(contentsOfFile: "\(URL.documentDirectory.appendingPathComponent(key))")
+        }
+        return nil
     }
 }
 
@@ -46,6 +49,12 @@ extension UILabel {
             label.adjustsFontForContentSizeCategory = true
         }
         return label
+    }
+}
+
+extension String {
+    var isBlank: Bool {
+        return trimmingCharacters(in: .whitespaces).isEmpty
     }
 }
 

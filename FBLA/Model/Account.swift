@@ -9,19 +9,24 @@
 import UIKit
 import GooglePlaces
 
-public struct Account {
-    public let email: String
-    public let password: String
-    public let name: String
-    public let profileImageKey: String
-    public let placeID: String
-    public var profileImage: UIImage? {
-        return .image(fromKey: profileImageKey)
+public class Account {
+    public dynamic var email: String
+    public dynamic var password: String
+    public dynamic var name: String
+    public dynamic var profileImageKey: String?
+    public dynamic var placeID: String?
+    public dynamic var formattedAddress: String?
+    
+    init(email: String = "", password: String = "", name: String = "", profileImageKey: String? = nil, placeID: String? = nil, formattedAddress: String? = nil) {
+        self.email = email
+        self.password = password
+        self.name = name
+        self.profileImageKey = profileImageKey
+        self.placeID = placeID
+        self.formattedAddress = formattedAddress
     }
-    public var formattedPlace : String? {
-        GMSPlacesClient.shared().lookUpPlaceID(placeID) { (place, _) in
-            return place?.formattedAddress
-        }
-        return nil
+    
+    public var profileImage: UIImage? {
+        return .image(fromKey: profileImageKey ?? "")
     }
 }

@@ -27,11 +27,12 @@
       </trans-unit>
       <trans-unit id="6oK-Sz-s7X.title">
         <source>Item</source>
-        <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "6oK-Sz-s7X";</note><target>商品</target>
+        <target>商品</target>
+        <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "6oK-Sz-s7X";</note>
       </trans-unit>
       <trans-unit id="7SS-zG-JtC.text">
         <source>Subtitle</source>
-        <target>Subtitle</target>
+        <target>副标题</target>
         <note>Class = "UILabel"; text = "Subtitle"; ObjectID = "7SS-zG-JtC";</note>
       </trans-unit>
       <trans-unit id="7nQ-Q1-03M.text">
@@ -51,22 +52,22 @@
       </trans-unit>
       <trans-unit id="368-3k-yTt.headerTitle">
         <source>Section-1</source>
-        <target>Section-1</target>
+        <target>小节1</target>
         <note>Class = "UITableViewSection"; headerTitle = "Section-1"; ObjectID = "368-3k-yTt";</note>
       </trans-unit>
       <trans-unit id="CRh-LQ-f24.headerTitle">
         <source>Section-2</source>
-        <target>Section-2</target>
+        <target>小节2</target>
         <note>Class = "UITableViewSection"; headerTitle = "Section-2"; ObjectID = "CRh-LQ-f24";</note>
       </trans-unit>
       <trans-unit id="DK2-Z1-9qR.text">
         <source>Title</source>
-        <target>Title</target>
+        <target>标题</target>
         <note>Class = "UILabel"; text = "Title"; ObjectID = "DK2-Z1-9qR";</note>
       </trans-unit>
       <trans-unit id="MmT-b8-pwh.text">
         <source>Label</source>
-        <target>Label</target>
+        <target>文本</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "MmT-b8-pwh";</note>
       </trans-unit>
       <trans-unit id="Ps9-Dp-vZm.text">
@@ -111,12 +112,12 @@
       </trans-unit>
       <trans-unit id="oZV-wc-oVB.text">
         <source>Label</source>
-        <target>Label</target>
+        <target>文本</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "oZV-wc-oVB";</note>
       </trans-unit>
       <trans-unit id="pMB-Bf-EyG.text">
         <source>Label</source>
-        <target>Label</target>
+        <target>文本</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "pMB-Bf-EyG";</note>
       </trans-unit>
       <trans-unit id="pN1-LF-IYx.text">
@@ -145,15 +146,14 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
     </header>
     <body>
-      <trans-unit id="ADDRESS">
-        <source>ADDRESS</source>
-        <target>寄件地址</target>
-        <note>Place holder for user shipping address in account page</note>
-      </trans-unit>
       <trans-unit id="E-MAIL">
         <source>E-MAIL</source>
         <target>电子邮箱</target>
         <note>Place holder for user email in account page</note>
+      </trans-unit>
+      <trans-unit id="SELECT SHIPPING ADDRESS">
+        <source>SELECT SHIPPING ADDRESS</source>
+        <note>Place holder for user shipping address in account page</note><target>选择寄件地址</target>
       </trans-unit>
       <trans-unit id="USERNAME">
         <source>USERNAME</source>

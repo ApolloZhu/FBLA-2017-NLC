@@ -1,8 +1,8 @@
-/* Place holder for user shipping address in account page */
-"ADDRESS" = "寄件地址";
-
 /* Place holder for user email in account page */
 "E-MAIL" = "电子邮箱";
+
+/* Place holder for user shipping address in account page */
+"SELECT SHIPPING ADDRESS" = "选择寄件地址";
 
 /* Place holder for user name in account page */
 "USERNAME" = "尊敬的用户";

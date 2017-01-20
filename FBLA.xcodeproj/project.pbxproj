@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5216812F1E31D3DA00544BA3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681311E31D3DA00544BA3 /* Localizable.strings */; };
+		521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681361E31D3DA00544BA3 /* InfoPlist.strings */; };
 		5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5274CDF71E31A83C0045E5EB /* Settings.bundle */; };
 		5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB281E31C549005E3CC5 /* SWRevealViewController.m */; };
+		5278FB2B1E31C98C005E3CC5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB2A1E31C98C005E3CC5 /* Account.swift */; };
 		52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AC2C801E29B26D00D29F10 /* Assets.xcassets */; };
 		52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE2BA11E1E1E3800A7D2E6 /* Config.swift */; };
 		52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */; };
@@ -29,9 +32,14 @@
 
 /* Begin PBXFileReference section */
 		30D698F0997D1249069F9392 /* Pods-FBLA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.debug.xcconfig"; sourceTree = "<group>"; };
+		5216812B1E31D32000544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		5216812C1E31D32000544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		521681301E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		521681351E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5274CDF71E31A83C0045E5EB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5278FB271E31C549005E3CC5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		5278FB281E31C549005E3CC5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		5278FB2A1E31C98C005E3CC5 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		52AC2C801E29B26D00D29F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52AE2BA11E1E1E3800A7D2E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		52AFEDCD1E1E16A500FA9ABA /* FBLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521681371E31D40700544BA3 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				521681361E31D3DA00544BA3 /* InfoPlist.strings */,
+				521681311E31D3DA00544BA3 /* Localizable.strings */,
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
 		52AFEDC41E1E16A500FA9ABA = {
 			isa = PBXGroup;
 			children = (
@@ -98,14 +115,15 @@
 		52AFEDE41E1E16BE00FA9ABA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				521681371E31D40700544BA3 /* Localization */,
 				52F69EA61E1E1A2A00602EC3 /* Misc */,
 				52F772771E2962290033C8AA /* Frameworks */,
 				52AC2C801E29B26D00D29F10 /* Assets.xcassets */,
 				52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */,
 				52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */,
-				52AFEDDB1E1E16A600FA9ABA /* LaunchScreen.storyboard */,
 				52AFEDDE1E1E16A600FA9ABA /* Info.plist */,
 				5274CDF71E31A83C0045E5EB /* Settings.bundle */,
+				52AFEDDB1E1E16A600FA9ABA /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -147,6 +165,7 @@
 		52F69EA81E1E1A2A00602EC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5278FB2A1E31C98C005E3CC5 /* Account.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +271,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5216812F1E31D3DA00544BA3 /* Localizable.strings in Resources */,
+				521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */,
 				5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */,
 				52AFEDDD1E1E16A600FA9ABA /* LaunchScreen.storyboard in Resources */,
 				52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */,
@@ -355,16 +376,34 @@
 				52F69EAA1E1E1A2A00602EC3 /* Extension.swift in Sources */,
 				52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */,
 				52F45C9B1E29BB5400A7D81A /* AccountView.swift in Sources */,
+				5278FB2B1E31C98C005E3CC5 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		521681311E31D3DA00544BA3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				521681301E31D3DA00544BA3 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		521681361E31D3DA00544BA3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				521681351E31D3DA00544BA3 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		52AFEDD61E1E16A600FA9ABA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				52AFEDD71E1E16A600FA9ABA /* Base */,
+				5216812B1E31D32000544BA3 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -373,6 +412,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				52AFEDDC1E1E16A600FA9ABA /* Base */,
+				5216812C1E31D32000544BA3 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -384,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -434,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

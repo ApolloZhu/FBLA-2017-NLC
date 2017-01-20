@@ -9,24 +9,12 @@
 import UIKit
 import SnapKit
 
-class AccountViewController: UIViewController, AccountViewDataSource {
+class AccountViewController: UIViewController {
 
     @IBOutlet weak var accountView: AccountView!
-    var profilePhoto: UIImage {
-        get {
-            return UIImage.image(fromKey: Identifier.PorfilePhotoKey) ?? #imageLiteral(resourceName: "ic_person_48pt")
-        }
-        set {
-            newValue.save(withKey: Identifier.PorfilePhotoKey)
-        }
-    }
-
-    var name = "Lorem Ipsum"
-    var email = "email@address.com"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        accountView.dataSource = self
     }
 
 }

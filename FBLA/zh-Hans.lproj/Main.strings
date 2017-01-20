@@ -1,0 +1,69 @@
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "0gx-EW-EaD"; */
+"0gx-EW-EaD.title" = "设置";
+
+/* Class = "UILabel"; text = "Condition"; ObjectID = "1Yk-fb-TxJ"; */
+"1Yk-fb-TxJ.text" = "成色";
+
+/* Class = "UIButton"; normalTitle = "$9.99"; ObjectID = "3nP-wC-Juc"; */
+"3nP-wC-Juc.normalTitle" = "$9.99";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "6oK-Sz-s7X"; */
+"6oK-Sz-s7X.title" = "商品";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "7SS-zG-JtC"; */
+"7SS-zG-JtC.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "About Us"; ObjectID = "7nQ-Q1-03M"; */
+"7nQ-Q1-03M.text" = "关于我们";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "51f-oK-h0N"; */
+"51f-oK-h0N.title" = "主页";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "59f-zb-fU4"; */
+"59f-zb-fU4.title" = "主页";
+
+/* Class = "UITableViewSection"; headerTitle = "Section-1"; ObjectID = "368-3k-yTt"; */
+"368-3k-yTt.headerTitle" = "Section-1";
+
+/* Class = "UITableViewSection"; headerTitle = "Section-2"; ObjectID = "CRh-LQ-f24"; */
+"CRh-LQ-f24.headerTitle" = "Section-2";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "DK2-Z1-9qR"; */
+"DK2-Z1-9qR.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MmT-b8-pwh"; */
+"MmT-b8-pwh.text" = "Label";
+
+/* Class = "UILabel"; text = "Rate"; ObjectID = "Ps9-Dp-vZm"; */
+"Ps9-Dp-vZm.text" = "评分";
+
+/* Class = "UILabel"; text = "Acknowledgement"; ObjectID = "R9o-LH-HY1"; */
+"R9o-LH-HY1.text" = "致谢";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "RB9-f4-okN"; */
+"RB9-f4-okN.text" = "用户名";
+
+/* Class = "UIButton"; normalTitle = "Donate"; ObjectID = "THe-tg-lyp"; */
+"THe-tg-lyp.normalTitle" = "捐赠";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "XZX-uQ-xZJ"; */
+"XZX-uQ-xZJ.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "email@address"; ObjectID = "bsK-I1-GBU"; */
+"bsK-I1-GBU.text" = "电子邮箱";
+
+/* Class = "UINavigationItem"; title = "Name"; ObjectID = "gm1-Yp-cxw"; */
+"gm1-Yp-cxw.title" = "用户名";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "hrK-Yn-1LB"; */
+"hrK-Yn-1LB.text" = "描述";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oZV-wc-oVB"; */
+"oZV-wc-oVB.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pMB-Bf-EyG"; */
+"pMB-Bf-EyG.text" = "Label";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "pN1-LF-IYx"; */
+"pN1-LF-IYx.text" = "名字";
+

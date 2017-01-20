@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="FBLA/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body/>
+  </file>
+  <file original="FBLA/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="0gx-EW-EaD.title">
+        <source>Settings</source>
+        <note>Class = "UINavigationItem"; title = "Settings"; ObjectID = "0gx-EW-EaD";</note><target>设置</target>
+      </trans-unit>
+      <trans-unit id="1Yk-fb-TxJ.text">
+        <source>Condition</source>
+        <note>Class = "UILabel"; text = "Condition"; ObjectID = "1Yk-fb-TxJ";</note>
+      </trans-unit>
+      <trans-unit id="3nP-wC-Juc.normalTitle">
+        <source>$9.99</source>
+        <note>Class = "UIButton"; normalTitle = "$9.99"; ObjectID = "3nP-wC-Juc";</note><target>¥ 9.99</target>
+      </trans-unit>
+      <trans-unit id="6oK-Sz-s7X.title">
+        <source>Item</source>
+        <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "6oK-Sz-s7X";</note>
+      </trans-unit>
+      <trans-unit id="7SS-zG-JtC.text">
+        <source>Subtitle</source>
+        <note>Class = "UILabel"; text = "Subtitle"; ObjectID = "7SS-zG-JtC";</note>
+      </trans-unit>
+      <trans-unit id="7nQ-Q1-03M.text">
+        <source>About Us</source>
+        <note>Class = "UILabel"; text = "About Us"; ObjectID = "7nQ-Q1-03M";</note><target>关于我们</target>
+      </trans-unit>
+      <trans-unit id="51f-oK-h0N.title">
+        <source>Home</source>
+        <note>Class = "UINavigationItem"; title = "Home"; ObjectID = "51f-oK-h0N";</note><target>主页</target>
+      </trans-unit>
+      <trans-unit id="59f-zb-fU4.title">
+        <source>Home</source>
+        <note>Class = "UITabBarItem"; title = "Home"; ObjectID = "59f-zb-fU4";</note><target>主页</target>
+      </trans-unit>
+      <trans-unit id="368-3k-yTt.headerTitle">
+        <source>Section-1</source>
+        <note>Class = "UITableViewSection"; headerTitle = "Section-1"; ObjectID = "368-3k-yTt";</note>
+      </trans-unit>
+      <trans-unit id="CRh-LQ-f24.headerTitle">
+        <source>Section-2</source>
+        <note>Class = "UITableViewSection"; headerTitle = "Section-2"; ObjectID = "CRh-LQ-f24";</note>
+      </trans-unit>
+      <trans-unit id="DK2-Z1-9qR.text">
+        <source>Title</source>
+        <note>Class = "UILabel"; text = "Title"; ObjectID = "DK2-Z1-9qR";</note>
+      </trans-unit>
+      <trans-unit id="MmT-b8-pwh.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "MmT-b8-pwh";</note>
+      </trans-unit>
+      <trans-unit id="Ps9-Dp-vZm.text">
+        <source>Rate</source>
+        <note>Class = "UILabel"; text = "Rate"; ObjectID = "Ps9-Dp-vZm";</note>
+      </trans-unit>
+      <trans-unit id="R9o-LH-HY1.text">
+        <source>Acknowledgement</source>
+        <note>Class = "UILabel"; text = "Acknowledgement"; ObjectID = "R9o-LH-HY1";</note><target>致谢</target>
+      </trans-unit>
+      <trans-unit id="RB9-f4-okN.text">
+        <source>Username</source>
+        <note>Class = "UILabel"; text = "Username"; ObjectID = "RB9-f4-okN";</note><target>用户名</target>
+      </trans-unit>
+      <trans-unit id="THe-tg-lyp.normalTitle">
+        <source>Donate</source>
+        <note>Class = "UIButton"; normalTitle = "Donate"; ObjectID = "THe-tg-lyp";</note><target>捐赠</target>
+      </trans-unit>
+      <trans-unit id="XZX-uQ-xZJ.headerTitle">
+        <source> </source>
+        <note>Class = "UITableViewSection"; headerTitle = " "; ObjectID = "XZX-uQ-xZJ";</note>
+      </trans-unit>
+      <trans-unit id="bsK-I1-GBU.text">
+        <source>email@address</source>
+        <note>Class = "UILabel"; text = "email@address"; ObjectID = "bsK-I1-GBU";</note><target></target>
+      </trans-unit>
+      <trans-unit id="gm1-Yp-cxw.title">
+        <source>Name</source>
+        <note>Class = "UINavigationItem"; title = "Name"; ObjectID = "gm1-Yp-cxw";</note><target>姓名</target>
+      </trans-unit>
+      <trans-unit id="hrK-Yn-1LB.text">
+        <source>Description</source>
+        <note>Class = "UILabel"; text = "Description"; ObjectID = "hrK-Yn-1LB";</note><target>描述</target>
+      </trans-unit>
+      <trans-unit id="oZV-wc-oVB.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "oZV-wc-oVB";</note>
+      </trans-unit>
+      <trans-unit id="pMB-Bf-EyG.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "pMB-Bf-EyG";</note>
+      </trans-unit>
+      <trans-unit id="pN1-LF-IYx.text">
+        <source>Name</source>
+        <note>Class = "UILabel"; text = "Name"; ObjectID = "pN1-LF-IYx";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="FBLA/Info.plist" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>0.2</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="FBLA/Localizable.strings" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="ADDRESS">
+        <source>ADDRESS</source>
+        <note>Place holder for user shipping address in account page</note><target>寄件地址</target>
+      </trans-unit>
+      <trans-unit id="E-MAIL">
+        <source>E-MAIL</source>
+        <note>Place holder for user email in account page</note><target>电子邮箱</target>
+      </trans-unit>
+      <trans-unit id="USERNAME">
+        <source>USERNAME</source>
+        <note>Place holder for user name in account page</note><target>用户名</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

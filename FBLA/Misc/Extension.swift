@@ -52,6 +52,14 @@ extension UILabel {
     }
 }
 
+extension UIButton {
+    convenience init(image: UIImage) {
+        self.init(frame: CGRect(origin: .zero, size: image.size))
+        contentMode = .scaleAspectFit
+        setImage(image, for: .normal)
+    }
+}
+
 extension String {
     var isBlank: Bool {
         return trimmingCharacters(in: .whitespaces).isEmpty

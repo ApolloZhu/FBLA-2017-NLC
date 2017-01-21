@@ -16,7 +16,7 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         accountView.dataSource = Account(email: "test@example.com", password: "123", name: "Lorem Ipsum", profileImageKey: "", placeID: "")
-        accountView.addressButton.addTarget(self, action: #selector(presentAddressPicker), for: .touchUpInside)
+        accountView.editAddressButton.addTarget(self, action: #selector(presentAddressPicker), for: .touchUpInside)
     }
     
     @objc private func presentAddressPicker() {
@@ -26,7 +26,8 @@ class AccountViewController: UIViewController {
     }
     
     deinit {
-        accountView.addressButton.removeTarget(self, action: #selector(presentAddressPicker), for: .touchUpInside)
+        
+        accountView.editAddressButton.removeTarget(self, action: #selector(presentAddressPicker), for: .touchUpInside)
     }
 }
 

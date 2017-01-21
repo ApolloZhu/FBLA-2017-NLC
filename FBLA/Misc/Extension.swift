@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 extension UIStoryboardSegue {
     var terminus: UIViewController {
@@ -63,6 +64,12 @@ extension UIButton {
 extension String {
     var isBlank: Bool {
         return trimmingCharacters(in: .whitespaces).isEmpty
+    }
+}
+
+extension CLLocationCoordinate2D {
+    static var random: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: Double(arc4random()) / Double(UInt32.max) * 180 - 90, longitude: Double(arc4random()) / Double(UInt32.max) * 360 - 180)
     }
 }
 

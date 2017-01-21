@@ -10,23 +10,23 @@ import UIKit
 import GooglePlaces
 
 public class Account {
-    public dynamic var email: String
-    public dynamic var password: String
-    public dynamic var name: String
-    public dynamic var profileImageKey: String?
-    public dynamic var placeID: String?
-    public dynamic var formattedAddress: String?
-    
-    init(email: String = "", password: String = "", name: String = "", profileImageKey: String? = nil, placeID: String? = nil, formattedAddress: String? = nil) {
-        self.email = email
-        self.password = password
-        self.name = name
-        self.profileImageKey = profileImageKey
-        self.placeID = placeID
-        self.formattedAddress = formattedAddress
+    private init() {}
+    public static let shared = Account()
+
+    public var email = NSLocalizedString("E-MAIL", comment: "Place holder for user email in account page")
+    public var password = ""
+    public var name = NSLocalizedString("USERNAME", comment: "Place holder for user name")
+    public var profileImageKey = ""
+    public var placeID = ""
+    public var formattedAddress = NSLocalizedString("SELECT SHIPPING ADDRESS", comment: "Place holder for user shipping address in account page") {
+        didSet {
+            if formattedAddress.isBlank {
+                formattedAddress = oldValue
+            }
+        }
     }
     
     public var profileImage: UIImage? {
-        return .image(fromKey: profileImageKey ?? "")
+        return .image(fromKey: profileImageKey)
     }
 }

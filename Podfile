@@ -6,4 +6,6 @@ target 'FBLA' do
   pod 'SnapKit'
   pod 'PromiseKit'
   pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
 end

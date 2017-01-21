@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="FBLA/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
@@ -153,12 +154,13 @@
       </trans-unit>
       <trans-unit id="SELECT SHIPPING ADDRESS">
         <source>SELECT SHIPPING ADDRESS</source>
-        <note>Place holder for user shipping address in account page</note><target>选择寄件地址</target>
+        <target>选择寄件地址</target>
+        <note>Place holder for user shipping address in account page</note>
       </trans-unit>
       <trans-unit id="USERNAME">
         <source>USERNAME</source>
         <target>尊敬的用户</target>
-        <note>Place holder for user name in account page</note>
+        <note>Place holder for user name</note>
       </trans-unit>
     </body>
   </file>

@@ -138,7 +138,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_person_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="i0E-YY-JjG">
-                                                    <rect key="frame" x="16" y="12" width="75.5" height="75"/>
+                                                    <rect key="frame" x="16" y="12" width="75.5" height="75.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="i0E-YY-JjG" secondAttribute="height" id="wl3-ce-43L"/>
                                                     </constraints>
@@ -290,9 +290,7 @@
                             <constraint firstItem="AD7-9n-oTk" firstAttribute="leading" secondItem="7sy-Ef-zEs" secondAttribute="leading" id="zdY-Rn-d2q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Name" id="gm1-Yp-cxw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="pHr-p6-Vbk"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Name" id="gm1-Yp-cxw"/>
                     <connections>
                         <outlet property="accountView" destination="AD7-9n-oTk" id="4au-dI-3M0"/>
                     </connections>
@@ -424,7 +422,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1IX-kr-JaQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="6oK-Sz-s7X"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qr2-Vs-LbQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qr2-Vs-LbQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

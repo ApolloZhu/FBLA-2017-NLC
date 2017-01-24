@@ -9,6 +9,8 @@
 import UIKit
 import GooglePlaces
 import GoogleMaps
+import Firebase
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GMSPlacesClient.provideAPIKey("AIzaSyBuxw-urAoUSQDrL8uVPf2RnVAUkzu4M-A")
-        GMSServices.provideAPIKey("AIzaSyBuxw-urAoUSQDrL8uVPf2RnVAUkzu4M-A")
-        return true
+        GMSPlacesClient.provideAPIKey("AIzaSyBoal-X5-Y5CLL9SI4lbs25Jr7n-5dLfh0")
+        GMSServices.provideAPIKey("AIzaSyBoal-X5-Y5CLL9SI4lbs25Jr7n-5dLfh0")
+        FIRApp.configure()
+        FBSDKSettings.setAppID("340965209630078")
+        FBSDKSettings.setDisplayName("Fund-Raising-2017-NLC")
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+    }
+
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

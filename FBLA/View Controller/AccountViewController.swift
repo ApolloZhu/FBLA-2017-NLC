@@ -16,12 +16,15 @@ class AccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !Account.shared.isLogggedIn {
+            present(LoginViewController(), animated: true, completion: nil)
+        }
         navigationItem.rightBarButtonItem = editButtonItem
         accountView.editAddressButton.addTarget(self, action: #selector(presentAddressEditor), for: .touchUpInside)
         accountView.pickAddressButton.addTarget(self, action: #selector(scheduleToPresentPlacePicker), for: .touchUpInside)
         accountView.addressButton.addTarget(self, action: #selector(setEditing(_:animated:)), for: .touchUpInside)
     }
-    
+
     @objc private func presentAddressEditor() {
         let controller = GMSAutocompleteViewController()
         controller.delegate = self

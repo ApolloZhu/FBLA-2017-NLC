@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5216812F1E31D3DA00544BA3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681311E31D3DA00544BA3 /* Localizable.strings */; };
 		521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681361E31D3DA00544BA3 /* InfoPlist.strings */; };
+		522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */; };
+		522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C71E3665CE001D3DF9 /* LoginView.swift */; };
+		524EE6B41E365DA900AC7022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */; };
 		5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5274CDF71E31A83C0045E5EB /* Settings.bundle */; };
 		5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB281E31C549005E3CC5 /* SWRevealViewController.m */; };
 		5278FB2B1E31C98C005E3CC5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB2A1E31C98C005E3CC5 /* Account.swift */; };
@@ -36,17 +39,21 @@
 		5216812C1E31D32000544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		521681301E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		521681351E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		5274CDF71E31A83C0045E5EB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "FBLA/View Controller/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		522FB0C71E3665CE001D3DF9 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = "FBLA/View Controller/LoginView.swift"; sourceTree = SOURCE_ROOT; };
+		524EE2D11E36A6770002EB22 /* FBLA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FBLA.entitlements; path = ../FBLA.entitlements; sourceTree = "<group>"; };
+		524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5274CDF71E31A83C0045E5EB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		5278FB271E31C549005E3CC5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		5278FB281E31C549005E3CC5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		5278FB2A1E31C98C005E3CC5 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		52AC2C801E29B26D00D29F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		52AE2BA11E1E1E3800A7D2E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		52AE2BA11E1E1E3800A7D2E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Misc/Config.swift; sourceTree = "<group>"; };
 		52AFEDCD1E1E16A500FA9ABA /* FBLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AFEDD71E1E16A600FA9ABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52AFEDDC1E1E16A600FA9ABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		52AFEDDE1E1E16A600FA9ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52AFEDDE1E1E16A600FA9ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		52F45C921E29BB5400A7D81A /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountView.swift; path = "FBLA/View Controller/AccountView.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C931E29BB5400A7D81A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = "FBLA/View Controller/AccountViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C941E29BB5400A7D81A /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartTableViewController.swift; path = "FBLA/View Controller/CartTableViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -56,8 +63,8 @@
 		52F45C981E29BB5400A7D81A /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemViewController.swift; path = "FBLA/View Controller/ItemViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C991E29BB5400A7D81A /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultTableViewController.swift; path = "FBLA/View Controller/SearchResultTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "FBLA/View Controller/SettingsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
-		52F69EA71E1E1A2A00602EC3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FBLA-Bridging-Header.h"; path = "Misc/FBLA-Bridging-Header.h"; sourceTree = "<group>"; };
+		52F69EA71E1E1A2A00602EC3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = Misc/Extension.swift; sourceTree = "<group>"; };
+		52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLA-Bridging-Header.h"; sourceTree = "<group>"; };
 		6EB16F7C1395D8B7D9F8ED51 /* Pods_FBLA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBLA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC503D51DFA225AEB198E59 /* Pods-FBLA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,15 +122,13 @@
 		52AFEDE41E1E16BE00FA9ABA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52F69EA71E1E1A2A00602EC3 /* Extension.swift */,
+				52AE2BA11E1E1E3800A7D2E6 /* Config.swift */,
 				521681371E31D40700544BA3 /* Localization */,
 				52F69EA61E1E1A2A00602EC3 /* Misc */,
 				52F772771E2962290033C8AA /* Frameworks */,
 				52AC2C801E29B26D00D29F10 /* Assets.xcassets */,
-				52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */,
 				52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */,
-				52AFEDDE1E1E16A600FA9ABA /* Info.plist */,
-				5274CDF71E31A83C0045E5EB /* Settings.bundle */,
-				52AFEDDB1E1E16A600FA9ABA /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -133,6 +138,8 @@
 			children = (
 				52F45C931E29BB5400A7D81A /* AccountViewController.swift */,
 				52F45C921E29BB5400A7D81A /* AccountView.swift */,
+				522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */,
+				522FB0C71E3665CE001D3DF9 /* LoginView.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -156,8 +163,12 @@
 		52F69EA61E1E1A2A00602EC3 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				52F69EA71E1E1A2A00602EC3 /* Extension.swift */,
-				52AE2BA11E1E1E3800A7D2E6 /* Config.swift */,
+				5274CDF71E31A83C0045E5EB /* Settings.bundle */,
+				52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */,
+				52AFEDDE1E1E16A600FA9ABA /* Info.plist */,
+				524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */,
+				524EE2D11E36A6770002EB22 /* FBLA.entitlements */,
+				52AFEDDB1E1E16A600FA9ABA /* LaunchScreen.storyboard */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -245,6 +256,11 @@
 						DevelopmentTeam = KZ7D8X3PRK;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -277,6 +293,7 @@
 				52AFEDDD1E1E16A600FA9ABA /* LaunchScreen.storyboard in Resources */,
 				52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */,
 				52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */,
+				524EE6B41E365DA900AC7022 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +383,7 @@
 				5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */,
 				52F45CA11E29BB5400A7D81A /* ItemViewController.swift in Sources */,
 				52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */,
+				522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */,
 				52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */,
 				52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */,
 				52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */,
@@ -376,6 +394,7 @@
 				52F69EAA1E1E1A2A00602EC3 /* Extension.swift in Sources */,
 				52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */,
 				52F45C9B1E29BB5400A7D81A /* AccountView.swift in Sources */,
+				522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */,
 				5278FB2B1E31C98C005E3CC5 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +434,7 @@
 				5216812C1E31D32000544BA3 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -521,10 +541,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FBLA/FBLA.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KZ7D8X3PRK;
 				INFOPLIST_FILE = FBLA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.swiftyx.apollo.FBLA;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.swiftyx.apollo.FBLA-2017-NLC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FBLA/Misc/FBLA-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -539,10 +561,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FBLA/FBLA.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KZ7D8X3PRK;
 				INFOPLIST_FILE = FBLA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.swiftyx.apollo.FBLA;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.swiftyx.apollo.FBLA-2017-NLC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FBLA/Misc/FBLA-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

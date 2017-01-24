@@ -21,7 +21,11 @@ class AccountView: UIView {
 
     lazy var nameLabel = UILabel.makeAutoAdjusting(fontSize: 40)
     lazy var emailLabel = UILabel.makeAutoAdjusting()
-    lazy var addressButton = UIButton(type: .system)
+    lazy var addressButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.titleLabel?.numberOfLines = 3
+        return btn
+    }()
     lazy var editAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_edit"))
     lazy var pickAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_place"))
 

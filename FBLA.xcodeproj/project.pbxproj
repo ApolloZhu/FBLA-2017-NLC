@@ -20,6 +20,8 @@
 		52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */; };
 		52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDD61E1E16A600FA9ABA /* Main.storyboard */; };
 		52AFEDDD1E1E16A600FA9ABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDDB1E1E16A600FA9ABA /* LaunchScreen.storyboard */; };
+		52D8675D1E39359100A5266B /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8675C1E39359100A5266B /* Localized.swift */; };
+		52D8675F1E393A2200A5266B /* CTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8675E1E393A2200A5266B /* CTTextField.swift */; };
 		52F45C9B1E29BB5400A7D81A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C921E29BB5400A7D81A /* AccountView.swift */; };
 		52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C931E29BB5400A7D81A /* AccountViewController.swift */; };
 		52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C941E29BB5400A7D81A /* CartTableViewController.swift */; };
@@ -54,6 +56,8 @@
 		52AFEDD71E1E16A600FA9ABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52AFEDDC1E1E16A600FA9ABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52AFEDDE1E1E16A600FA9ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		52D8675C1E39359100A5266B /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localized.swift; path = Model/Localized.swift; sourceTree = "<group>"; };
+		52D8675E1E393A2200A5266B /* CTTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CTTextField.swift; path = "FBLA/View Controller/CTTextField.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C921E29BB5400A7D81A /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountView.swift; path = "FBLA/View Controller/AccountView.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C931E29BB5400A7D81A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = "FBLA/View Controller/AccountViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C941E29BB5400A7D81A /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartTableViewController.swift; path = "FBLA/View Controller/CartTableViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -86,8 +90,10 @@
 			children = (
 				521681361E31D3DA00544BA3 /* InfoPlist.strings */,
 				521681311E31D3DA00544BA3 /* Localizable.strings */,
+				52D8675C1E39359100A5266B /* Localized.swift */,
 			);
 			name = Localization;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		52AFEDC41E1E16A500FA9ABA = {
@@ -122,13 +128,12 @@
 		52AFEDE41E1E16BE00FA9ABA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */,
 				52F69EA71E1E1A2A00602EC3 /* Extension.swift */,
 				52AE2BA11E1E1E3800A7D2E6 /* Config.swift */,
-				521681371E31D40700544BA3 /* Localization */,
 				52F69EA61E1E1A2A00602EC3 /* Misc */,
 				52F772771E2962290033C8AA /* Frameworks */,
 				52AC2C801E29B26D00D29F10 /* Assets.xcassets */,
-				52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				52F45C921E29BB5400A7D81A /* AccountView.swift */,
 				522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */,
 				522FB0C71E3665CE001D3DF9 /* LoginView.swift */,
+				52D8675E1E393A2200A5266B /* CTTextField.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -176,6 +182,7 @@
 		52F69EA81E1E1A2A00602EC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				521681371E31D40700544BA3 /* Localization */,
 				5278FB2A1E31C98C005E3CC5 /* Account.swift */,
 			);
 			path = Model;
@@ -384,9 +391,11 @@
 				52F45CA11E29BB5400A7D81A /* ItemViewController.swift in Sources */,
 				52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */,
 				522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */,
+				52D8675D1E39359100A5266B /* Localized.swift in Sources */,
 				52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */,
 				52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */,
 				52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */,
+				52D8675F1E393A2200A5266B /* CTTextField.swift in Sources */,
 				52F45C9E1E29BB5400A7D81A /* CommentsTableViewController.swift in Sources */,
 				52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */,
 				52F45C9F1E29BB5400A7D81A /* HomeViewController.swift in Sources */,

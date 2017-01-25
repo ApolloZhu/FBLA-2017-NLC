@@ -10,6 +10,7 @@ import UIKit
 import GooglePlaces
 import GoogleMaps
 import Firebase
+import GoogleSignIn
 import FBSDKCoreKit
 
 @UIApplicationMain
@@ -22,17 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey("AIzaSyBoal-X5-Y5CLL9SI4lbs25Jr7n-5dLfh0")
         GMSServices.provideAPIKey("AIzaSyBoal-X5-Y5CLL9SI4lbs25Jr7n-5dLfh0")
         FIRApp.configure()
-        FBSDKSettings.setAppID("340965209630078")
-        FBSDKSettings.setDisplayName("Fund-Raising-2017-NLC")
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = Account.shared
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        var out = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        if #available(iOS 9.0, *) {
+            out = out || GIDSignIn.sharedInstance().handle(url, sourceApplication: options[.sourceApplication] as? String, annotation: [:])
+        }
+        return out
     }
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
+            || FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

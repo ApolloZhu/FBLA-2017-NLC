@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Charity Toaster</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -24,13 +26,21 @@
 				<string>fb340965209630078</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.996892379720-9d4nqhe2fa4c2j1v7osj6aeu15uek489</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>247</string>
+	<string>264</string>
 	<key>FacebookAppID</key>
 	<string>340965209630078</string>
 	<key>FacebookDisplayName</key>
-	<string>Fund-Raising-2017-NLC</string>
+	<string>Charity Toaster</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

@@ -10,6 +10,7 @@ target 'FBLA' do
   pod 'GoogleMaps'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
 end

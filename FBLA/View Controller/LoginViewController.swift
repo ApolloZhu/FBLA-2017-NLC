@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import GoogleSignIn
+import FBSDKLoginKit
 
 open class LoginViewController: UIViewController {
 
@@ -17,18 +19,31 @@ open class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         self.view.addSubview(loginView)
         loginView.snp.makeConstraints { $0.top.bottom.leading.trailing.equalToSuperview() }
+        GIDSignIn.sharedInstance().uiDelegate = self
+        loginView.fbLoginButton.delegate = self
+        loginView.fbLoginButton.readPermissions = ["email"]
     }
 
-    open override func viewWillDisappear(_ animated: Bool) {
+    fileprivate func allowUIUpdate() {
+        loginView.shouldNotUpdateUI = false
     }
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension LoginViewController: GIDSignInUIDelegate {
+    public func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        allowUIUpdate()
     }
-    */
+}
 
+extension LoginViewController: FBSDKLoginButtonDelegate {
+    public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        allowUIUpdate()
+        guard error != nil else { return Account.shared.showError(error) }
+        Account.shared.login(withFBResult: result)
+    }
+
+    public func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        allowUIUpdate()
+        Account.shared.logOut()
+    }
 }

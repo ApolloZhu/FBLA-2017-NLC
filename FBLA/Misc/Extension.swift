@@ -40,8 +40,11 @@ extension UIImage {
 }
 
 extension UILabel {
-    static func makeAutoAdjusting(fontSize: CGFloat? = nil) -> UILabel {
+    static func makeAutoAdjusting(_ content: String? = nil, fontSize: CGFloat? = nil) -> UILabel {
         let label = UILabel()
+        if let content = content {
+            label.text = content
+        }
         if let fontSize = fontSize {
             label.font = UIFont.systemFont(ofSize: fontSize)
         }
@@ -53,6 +56,15 @@ extension UILabel {
     }
 }
 
+extension UITextField {
+    static func with(prompt: String? = nil) -> UITextField {
+        let tf = UITextField()
+        tf.placeholder = prompt
+        tf.textAlignment = .center
+        return tf
+    }
+}
+
 extension UIButton {
     convenience init(image: UIImage) {
         self.init(frame: CGRect(origin: .zero, size: image.size))
@@ -61,11 +73,17 @@ extension UIButton {
     }
 }
 
+extension UIColor {
+    static let tianyi = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 1)
+}
+
 extension String {
     var isBlank: Bool {
         return trimmingCharacters(in: .whitespaces).isEmpty
     }
 }
+
+extension String: Error { }
 
 extension CLLocationCoordinate2D {
     static var random: CLLocationCoordinate2D {
@@ -90,6 +108,5 @@ extension UIViewController {
         if let vc = storyboard?.instantiateViewController(withIdentifier: Identifier.AccountViewController) {
             navigationController?.pushViewController(vc, animated: animated)
         }
-
     }
 }

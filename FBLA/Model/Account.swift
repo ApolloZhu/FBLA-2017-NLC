@@ -9,6 +9,7 @@
 import UIKit
 import GooglePlaces
 import Firebase
+import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
 
@@ -42,34 +43,40 @@ public class Account: NSObject {
         return .image(fromKey: profileImageKey)
     }
 
-    public func show(error: Error?) {
-        if error != nil {
-            print(error!.localizedDescription)
+    public func showError(_ error: Error? = nil) {
+        if let error = error {
+            print(error.localizedDescription)
         } else {
-            print("optional error")
+            print(NSLocalizedString("Something Went Wrong!", comment: "Display in alert when something went wrong"))
+        }
+    }
+
+    public func login(withFBResult result: FBSDKLoginManagerLoginResult?) {
+        guard let token = result?.token?.tokenString else { return showError() }
+        login(withCredential: FIRFacebookAuthProvider.credential(withAccessToken: token))
+    }
+
+    public func login(withCredential credential: FIRAuthCredential) {
+        logOut()
+        FIRAuth.auth()?.signIn(with: credential)
+    }
+
+    public func logOut() {
+        do {
+            try FIRAuth.auth()?.signOut()
+            GIDSignIn.sharedInstance().signOut()
+            FBSDKLoginManager().logOut()
+        } catch {
+            showError(error)
         }
     }
 }
 
-
-extension Account: FBSDKLoginButtonDelegate {
-    public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-//        guard error != nil else { return show(error: error) }
-        print(result.isCancelled)
-        print(FBSDKAccessToken.current().tokenString)
-        if let token = result?.token?.tokenString {
-            let credential = FIRFacebookAuthProvider.credential(withAccessToken: token)
-            FIRAuth.auth()?.signIn(with: credential)
-        } else {
-            show(error: error)
-        }
+extension Account: GIDSignInDelegate {
+    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        guard error != nil, let authentication = user?.authentication else { return showError(error) }
+        login(withCredential: FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken))
     }
 
-    public func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        do {
-            try FIRAuth.auth()?.signOut()
-        } catch {
-            show(error: error)
-        }
-    }
+    public func sign(_ signIn: GIDSignIn!, didDisconnectWith user:GIDGoogleUser!, withError error: Error!) { logOut() }
 }

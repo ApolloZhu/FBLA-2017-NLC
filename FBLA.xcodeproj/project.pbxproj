@@ -11,11 +11,11 @@
 		521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681361E31D3DA00544BA3 /* InfoPlist.strings */; };
 		522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */; };
 		522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C71E3665CE001D3DF9 /* LoginView.swift */; };
+		52461FFB1E398E30000AF183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52461FFA1E398E30000AF183 /* Assets.xcassets */; };
 		524EE6B41E365DA900AC7022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */; };
 		5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5274CDF71E31A83C0045E5EB /* Settings.bundle */; };
 		5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB281E31C549005E3CC5 /* SWRevealViewController.m */; };
 		5278FB2B1E31C98C005E3CC5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB2A1E31C98C005E3CC5 /* Account.swift */; };
-		52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AC2C801E29B26D00D29F10 /* Assets.xcassets */; };
 		52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE2BA11E1E1E3800A7D2E6 /* Config.swift */; };
 		52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */; };
 		52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDD61E1E16A600FA9ABA /* Main.storyboard */; };
@@ -43,13 +43,13 @@
 		521681351E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "FBLA/View Controller/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		522FB0C71E3665CE001D3DF9 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = "FBLA/View Controller/LoginView.swift"; sourceTree = SOURCE_ROOT; };
+		52461FFA1E398E30000AF183 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524EE2D11E36A6770002EB22 /* FBLA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FBLA.entitlements; path = ../FBLA.entitlements; sourceTree = "<group>"; };
 		524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5274CDF71E31A83C0045E5EB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		5278FB271E31C549005E3CC5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		5278FB281E31C549005E3CC5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		5278FB2A1E31C98C005E3CC5 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		52AC2C801E29B26D00D29F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52AE2BA11E1E1E3800A7D2E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Misc/Config.swift; sourceTree = "<group>"; };
 		52AFEDCD1E1E16A500FA9ABA /* FBLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,12 +128,12 @@
 		52AFEDE41E1E16BE00FA9ABA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52461FFA1E398E30000AF183 /* Assets.xcassets */,
 				52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */,
 				52F69EA71E1E1A2A00602EC3 /* Extension.swift */,
 				52AE2BA11E1E1E3800A7D2E6 /* Config.swift */,
 				52F69EA61E1E1A2A00602EC3 /* Misc */,
 				52F772771E2962290033C8AA /* Frameworks */,
-				52AC2C801E29B26D00D29F10 /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 				521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */,
 				5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */,
 				52AFEDDD1E1E16A600FA9ABA /* LaunchScreen.storyboard in Resources */,
-				52AC2C811E29B26D00D29F10 /* Assets.xcassets in Resources */,
+				52461FFB1E398E30000AF183 /* Assets.xcassets in Resources */,
 				52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */,
 				524EE6B41E365DA900AC7022 /* GoogleService-Info.plist in Resources */,
 			);

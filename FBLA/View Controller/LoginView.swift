@@ -14,28 +14,10 @@ import FBSDKLoginKit
 
 open class LoginView: UIView {
 
-    open lazy var shouldNotUpdateUI = false
-
     open lazy var emailField = UITextField.with(prompt: Localized.EMail)
     open lazy var passwordField = UITextField.with(prompt: Localized.PASSWORD)
     open lazy var fbLoginButton = FBSDKLoginButton()
-
-    open lazy var gSignInButton: GIDSignInButton = {
-        let btn = GIDSignInButton()
-        btn.addTarget(self, action: #selector(self.toggleGButton), for: .touchUpInside)
-        return btn
-    }()
-
-    @objc private func toggleGButton() {
-        if !shouldNotUpdateUI {
-            shouldNotUpdateUI = true
-            if Account.shared.isLogggedIn {
-                GIDSignIn.sharedInstance().signOut()
-            } else {
-                GIDSignIn.sharedInstance().signIn()
-            }
-        }
-    }
+    open lazy var gSignInButton = GIDSignInButton()
 
     override open func willMove(toSuperview newSuperview: UIView?) {
         backgroundColor = .tianyi
@@ -43,18 +25,16 @@ open class LoginView: UIView {
         addSubview(passwordField)
         addSubview(fbLoginButton)
         addSubview(gSignInButton)
-
         emailField.snp.makeConstraints { make in
             make.centerX.equalTo(snp.centerX)
             make.bottom.equalTo(snp.centerY).offset(4)
-            make.width.equalTo(snp.width).offset(-8)
+            make.width.equalTo(snp.width).offset(-16)
         }
         passwordField.snp.makeConstraints { make in
             make.centerX.equalTo(snp.centerX)
             make.top.equalTo(snp.centerY).offset(4)
-            make.width.equalTo(snp.width).offset(-8)
+            make.width.equalTo(snp.width).offset(-16)
         }
-
         fbLoginButton.snp.makeConstraints { make in
             make.top.equalTo(passwordField.snp.bottom).offset(8)
             make.centerX.equalToSuperview()
@@ -62,6 +42,7 @@ open class LoginView: UIView {
         gSignInButton.snp.makeConstraints { make in
             make.top.equalTo(fbLoginButton.snp.bottom).offset(8)
             make.centerX.equalToSuperview()
+            make.width.equalTo(fbLoginButton.snp.width)
         }
     }
 }

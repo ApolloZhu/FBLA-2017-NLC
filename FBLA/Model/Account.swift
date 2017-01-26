@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 import GooglePlaces
 import Firebase
 import GoogleSignIn
@@ -43,16 +44,16 @@ public class Account: NSObject {
         return .image(fromKey: profileImageKey)
     }
 
-    public func showError(_ error: Error? = nil) {
-        if let error = error {
-            print(error.localizedDescription)
-        } else {
-            print(NSLocalizedString("Something Went Wrong!", comment: "Display in alert when something went wrong"))
-        }
-    }
+//    public func showError(_ error: Error? = nil) {
+//        if let error = error {
+//            print(error.localizedDescription)
+//        } else {
+//            print(NSLocalizedString("Something Went Wrong!", comment: "Display in alert when something went wrong"))
+//        }
+//    }
 
     public func login(withFBResult result: FBSDKLoginManagerLoginResult?) {
-        guard let token = result?.token?.tokenString else { return showError() }
+        guard let token = result?.token?.tokenString else { return HUD.flash(.labeledError(title: "Error", subtitle: "NO FB TOKEN")) }
         login(withCredential: FIRFacebookAuthProvider.credential(withAccessToken: token))
     }
 
@@ -67,16 +68,19 @@ public class Account: NSObject {
             GIDSignIn.sharedInstance().signOut()
             FBSDKLoginManager().logOut()
         } catch {
-            showError(error)
+            HUD.flash(.labeledError(title: "Error", subtitle: error.localizedDescription))
         }
     }
 }
 
 extension Account: GIDSignInDelegate {
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        guard error != nil, let authentication = user?.authentication else { return showError(error) }
+        guard error != nil, let authentication = user?.authentication else { return HUD.flash(.labeledError(title: "Error", subtitle: error?.localizedDescription)) }
         login(withCredential: FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken))
     }
 
-    public func sign(_ signIn: GIDSignIn!, didDisconnectWith user:GIDGoogleUser!, withError error: Error!) { logOut() }
+    public func sign(_ signIn: GIDSignIn!, didDisconnectWith user:GIDGoogleUser!, withError error: Error!) {
+        HUD.flash(.labeledError(title: "Error", subtitle: error?.localizedDescription))
+        logOut()
+    }
 }

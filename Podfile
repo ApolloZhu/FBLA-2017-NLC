@@ -2,9 +2,15 @@ use_frameworks!
 
 target 'FBLA' do
   platform :ios, '8.0'
-  pod 'SwiftyStarRatingView'
+  
+  # Layout
   pod 'SnapKit'
-  pod 'PromiseKit'
+
+  # Control
+  pod 'SwiftyStarRatingView'
+  pod 'PKHUD'
+
+  # Data
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'

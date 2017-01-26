@@ -17,7 +17,8 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if !Account.shared.isLogggedIn {
-            present(LoginViewController(), animated: true, completion: nil)
+//            present(LoginViewController(), animated: true, completion: nil)
+            showLoginViewController()
         }
         navigationItem.rightBarButtonItem = editButtonItem
         accountView.editAddressButton.addTarget(self, action: #selector(presentAddressEditor), for: .touchUpInside)

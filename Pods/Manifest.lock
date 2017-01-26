@@ -67,17 +67,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.8)
   - GTMSessionFetcher/Full (1.1.8):
     - GTMSessionFetcher/Core (= 1.1.8)
-  - PromiseKit (4.1.4):
-    - PromiseKit/Foundation (= 4.1.4)
-    - PromiseKit/QuartzCore (= 4.1.4)
-    - PromiseKit/UIKit (= 4.1.4)
-  - PromiseKit/CorePromise (4.1.4)
-  - PromiseKit/Foundation (4.1.4):
-    - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.1.4):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.1.4):
-    - PromiseKit/CorePromise
+  - PKHUD (4.2.0)
   - SnapKit (3.1.2)
   - SwiftyStarRatingView (1.0.1)
 
@@ -90,7 +80,7 @@ DEPENDENCIES:
   - GooglePlacePicker
   - GooglePlaces
   - GoogleSignIn
-  - PromiseKit
+  - PKHUD
   - SnapKit
   - SwiftyStarRatingView
 
@@ -113,10 +103,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
-  PromiseKit: e69aead34c817988ea688b1085aee21300d6dcb8
+  PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SwiftyStarRatingView: 973a3ea9a7cc0a88e34985f1087d3a4a7c837b51
 
-PODFILE CHECKSUM: 850b2744f63fda7ed92857a45e72040a004aa781
+PODFILE CHECKSUM: 241ebe33e2800e19f92d0f091708f0be90b8a949
 
 COCOAPODS: 1.1.1

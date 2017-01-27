@@ -52,9 +52,10 @@ open class CTTextField: MKTextField {
         }
 
         textAlignment = .center
-        backgroundColor = .clear
-        tintColor = .white // Cursor
-        textColor = .white
+        backgroundColor = .white
+        tintColor = .tianyi // Cursor
+        roundingCorners = .allCorners
+        cornerRadius = 10
         placeholder = prompt
     }
 }

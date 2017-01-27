@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        GMSPlacesClient.provideAPIKey("AIzaSyBoal-X5-Y5CLL9SI4lbs25Jr7n-5dLfh0")
-        GMSServices.provideAPIKey("AIzaSyBoal-X5-Y5CLL9SI4lbs25Jr7n-5dLfh0")
+        GMSPlacesClient.provideAPIKey("AIzaSyBuxw-urAoUSQDrL8uVPf2RnVAUkzu4M-A")
+        GMSServices.provideAPIKey("AIzaSyBuxw-urAoUSQDrL8uVPf2RnVAUkzu4M-A")
         FIRApp.configure()
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         var out = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         if #available(iOS 9.0, *) {
-            out = out || GIDSignIn.sharedInstance().handle(url, sourceApplication: options[.sourceApplication] as? String, annotation: [:])
+            out = out || GIDSignIn.sharedInstance().handle(url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
         }
         return out
     }
@@ -60,7 +60,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    
 }
-

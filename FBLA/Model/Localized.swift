@@ -11,4 +11,6 @@ import UIKit
 struct Localized {
     static let EMail = NSLocalizedString("E-Mail", comment: "Indicate the content will be e-mail")
     static let PASSWORD = NSLocalizedString("PASSWORD", comment: "Indicate the content will be password")
+    static let LOGIN_REGISTER = NSLocalizedString("Login/Register", comment: "Click this button to login/register")
+    static let CANCEL = NSLocalizedString("Cancel", comment: "General Cancel")
 }

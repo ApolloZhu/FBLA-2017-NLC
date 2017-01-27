@@ -15,23 +15,27 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 public class Account: NSObject {
-    override private init() {
-        FBSDKLoginManager().logOut()
-        try? FIRAuth.auth()?.signOut()
-    }
+    override private init() { }
     public static let shared = Account()
 
     public var isLogggedIn: Bool {
-        return FIRAuth.auth()?.currentUser != nil
+        return user != nil
     }
-
-    public var email: String {
-        return FIRAuth.auth()?.currentUser?.email ?? NSLocalizedString("E-MAIL", comment: "Place holder for user email in account page")
+    public var user: FIRUser? {
+        return FIRAuth.auth()?.currentUser
     }
+    public var email: String { return user?.email ?? Localized.EMail }
     public var password = ""
     public var name = NSLocalizedString("USERNAME", comment: "Place holder for user name")
     public var profileImageKey = ""
-    public var placeID = ""
+    public var placeID: String {
+        get {
+            return UserDefaults.standard.string(forKey: Identifier.PlaceIDKey) ?? ""
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Identifier.PlaceIDKey)
+        }
+    }
     public var formattedAddress = NSLocalizedString("SELECT SHIPPING ADDRESS", comment: "Place holder for user shipping address in account page") {
         didSet {
             if formattedAddress.isBlank {
@@ -44,22 +48,26 @@ public class Account: NSObject {
         return .image(fromKey: profileImageKey)
     }
 
-//    public func showError(_ error: Error? = nil) {
-//        if let error = error {
-//            print(error.localizedDescription)
-//        } else {
-//            print(NSLocalizedString("Something Went Wrong!", comment: "Display in alert when something went wrong"))
-//        }
-//    }
-
-    public func login(withFBResult result: FBSDKLoginManagerLoginResult?) {
-        guard let token = result?.token?.tokenString else { return HUD.flash(.labeledError(title: "Error", subtitle: "NO FB TOKEN")) }
-        login(withCredential: FIRFacebookAuthProvider.credential(withAccessToken: token))
+    @nonobjc
+    public func login(with auth: GIDAuthentication?) {
+        guard let auth = auth else { showError("NO GOOGLE AUTH"); return }
+        Account.shared.login(with: FIRGoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken))
     }
 
-    public func login(withCredential credential: FIRAuthCredential) {
+    @nonobjc
+    public func login(with result: FBSDKLoginManagerLoginResult?) {
+        guard let token = result?.token?.tokenString else { showError("NO FB TOKEN"); return }
+        login(with: FIRFacebookAuthProvider.credential(withAccessToken: token))
+    }
+
+    @nonobjc
+    public func login(with credential: FIRAuthCredential) {
         logOut()
-        FIRAuth.auth()?.signIn(with: credential)
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            if !showError(error) {
+                print(user ?? "Transient user")
+            }
+        }
     }
 
     public func logOut() {
@@ -68,19 +76,7 @@ public class Account: NSObject {
             GIDSignIn.sharedInstance().signOut()
             FBSDKLoginManager().logOut()
         } catch {
-            HUD.flash(.labeledError(title: "Error", subtitle: error.localizedDescription))
+            showError(error)
         }
-    }
-}
-
-extension Account: GIDSignInDelegate {
-    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        guard error != nil, let authentication = user?.authentication else { return HUD.flash(.labeledError(title: "Error", subtitle: error?.localizedDescription)) }
-        login(withCredential: FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken))
-    }
-
-    public func sign(_ signIn: GIDSignIn!, didDisconnectWith user:GIDGoogleUser!, withError error: Error!) {
-        HUD.flash(.labeledError(title: "Error", subtitle: error?.localizedDescription))
-        logOut()
     }
 }

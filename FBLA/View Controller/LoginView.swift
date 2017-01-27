@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MaterialKit
 import SnapKit
 import Firebase
 import GoogleSignIn
@@ -14,8 +15,8 @@ import FBSDKLoginKit
 
 open class LoginView: UIView {
 
-    open lazy var emailField = UITextField.with(prompt: Localized.EMail)
-    open lazy var passwordField = UITextField.with(prompt: Localized.PASSWORD)
+    open lazy var emailField = CTTextField(prompt: Localized.EMail, type: .email)
+    open lazy var passwordField = CTTextField(prompt: Localized.PASSWORD, type: .password)
     open lazy var fbLoginButton = FBSDKLoginButton()
     open lazy var gSignInButton = GIDSignInButton()
 
@@ -27,12 +28,12 @@ open class LoginView: UIView {
         addSubview(gSignInButton)
         emailField.snp.makeConstraints { make in
             make.centerX.equalTo(snp.centerX)
-            make.bottom.equalTo(snp.centerY).offset(4)
+            make.bottom.equalTo(passwordField.snp.top).offset(-8)
             make.width.equalTo(snp.width).offset(-16)
         }
         passwordField.snp.makeConstraints { make in
             make.centerX.equalTo(snp.centerX)
-            make.top.equalTo(snp.centerY).offset(4)
+            make.bottom.equalTo(snp.centerY).offset(-4)
             make.width.equalTo(snp.width).offset(-16)
         }
         fbLoginButton.snp.makeConstraints { make in

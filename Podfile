@@ -9,6 +9,7 @@ target 'FBLA' do
   # Control
   pod 'SwiftyStarRatingView'
   pod 'PKHUD'
+  pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
 
   # Data
   pod 'GooglePlaces'

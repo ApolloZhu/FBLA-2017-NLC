@@ -17,7 +17,6 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if !Account.shared.isLogggedIn {
-//            present(LoginViewController(), animated: true, completion: nil)
             showLoginViewController()
         }
         navigationItem.rightBarButtonItem = editButtonItem
@@ -52,7 +51,6 @@ class AccountViewController: UIViewController {
         let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
         let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
         let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
-        print(viewport)
         let config = GMSPlacePickerConfig(viewport: viewport)
         let placePicker = GMSPlacePicker(config: config)
         placePicker.pickPlace(callback: didSelectPlace)
@@ -82,7 +80,7 @@ extension AccountViewController: GMSAutocompleteViewControllerDelegate {
         didSelectPlace(place)
         dismiss()
     }
-    
+
     public func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         dismiss()
     }
@@ -90,7 +88,7 @@ extension AccountViewController: GMSAutocompleteViewControllerDelegate {
     public func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss()
     }
-    
+
     private func dismiss() {
         dismiss(animated: true, completion: nil)
     }

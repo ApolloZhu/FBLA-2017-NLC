@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 import CoreLocation
 
 extension UIStoryboardSegue {
@@ -56,15 +57,6 @@ extension UILabel {
     }
 }
 
-extension UITextField {
-    static func with(prompt: String? = nil) -> UITextField {
-        let tf = UITextField()
-        tf.placeholder = prompt
-        tf.textAlignment = .center
-        return tf
-    }
-}
-
 extension UIButton {
     convenience init(image: UIImage) {
         self.init(frame: CGRect(origin: .zero, size: image.size))
@@ -109,4 +101,12 @@ extension UIViewController {
             navigationController?.pushViewController(vc, animated: animated)
         }
     }
+}
+
+@discardableResult func showError(_ error: Error?) -> Bool {
+    if let error = error {
+        HUD.flash(.labeledError(title: "Error", subtitle: error.localizedDescription), delay: 1)
+        return true
+    }
+    return false
 }

@@ -17,7 +17,7 @@ extension UIViewController {
         let vc = LoginViewController()
         let nav = UINavigationController(rootViewController: vc)
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissLoginViewController))
-        self.present(nav, animated: true, completion: nil)
+        present(nav, animated: true, completion: nil)
     }
     func dismissLoginViewController() {
         dismiss(animated: true, completion: nil)
@@ -31,6 +31,7 @@ open class LoginViewController: UIViewController {
             if (newValue != isUIFreezed) {
                 if (newValue) {
                     HUD.show(.progress)
+                    loginView.endEditing(true)
                 } else {
                     HUD.hide()
                 }
@@ -42,7 +43,11 @@ open class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         self.view.addSubview(loginView)
         loginView.snp.makeConstraints { $0.top.bottom.leading.trailing.equalToSuperview() }
-        GIDSignIn.sharedInstance().uiDelegate = self
+
+        loginView.emailField.delegate = self
+        loginView.passwordField.delegate = self
+
+        GIDSignIn.sharedInstance().delegate = self
         loginView.gSignInButton.addTarget(self, action: #selector(toggleGButton), for: .touchUpInside)
         loginView.fbLoginButton.delegate = self
         loginView.fbLoginButton.readPermissions = ["email"]
@@ -56,17 +61,37 @@ open class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: GIDSignInUIDelegate {
-    public func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+extension LoginViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension LoginViewController: GIDSignInDelegate {
+    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         isUIFreezed = false
+        if !showError(error) {
+            Account.shared.login(with: user?.authentication)
+        }
+    }
+
+    public func sign(_ signIn: GIDSignIn!, didDisconnectWith user:GIDGoogleUser!, withError error: Error!) {
+        isUIFreezed = false
+        if !showError(error) {
+            Account.shared.logOut()
+            dismissLoginViewController()
+        }
     }
 }
 
 extension LoginViewController: FBSDKLoginButtonDelegate {
     public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         isUIFreezed = false
-        guard error != nil else { HUD.flash(.labeledError(title: "Error", subtitle: error?.localizedDescription)); return  }
-        Account.shared.login(withFBResult: result)
+        if !showError(error) {
+            Account.shared.login(with: result)
+            dismissLoginViewController()
+        }
     }
 
     public func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {

@@ -49,6 +49,7 @@ open class LoginViewController: UIViewController {
 
         loginView.emailField.delegate = self
         loginView.passwordField.delegate = self
+        loginView.loginButton.addTarget(self, action: #selector(clickManualLoginButton), for: .touchUpInside)
 
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -59,6 +60,26 @@ open class LoginViewController: UIViewController {
     }
 
     @objc private func handleTouch(recognizer: UIGestureRecognizer) { if isUIFreezed { isUIFreezed = false } }
+
+    fileprivate func hasInfo() -> Bool {
+        return !(loginView.emailField.text?.isBlank ?? true || loginView.passwordField.text?.isBlank ?? true)
+    }
+
+    @objc private func clickManualLoginButton() {
+        if hasInfo() {
+            // Login
+        } else {
+            loginView.toggleManualInput()
+        }
+    }
+
+    fileprivate func toggleButton() {
+        if hasInfo() {
+            loginView.loginButton.setTitle(Localized.LOGIN_REGISTER, for: .normal)
+        } else {
+            loginView.loginButton.setTitle(Localized.CANCEL, for: .normal)
+        }
+    }
 
     @objc private func toggleGButton() {
         if !isUIFreezed && !Account.shared.isLogggedIn {
@@ -75,24 +96,16 @@ extension LoginViewController: UITextFieldDelegate {
     }
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         toggleButton()
-        loginView.addSubview(loginView.loginButton)
     }
     public func textFieldDidEndEditing(_ textField: UITextField) {
         toggleButton()
-        loginView.loginButton.removeFromSuperview()
+        if !(loginView.emailField.isEditing && loginView.passwordField.isEditing) {
+
+        }
     }
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         toggleButton()
         return true
-    }
-    private func toggleButton() {
-        if let flag1 = loginView.emailField.text?.isBlank,
-            let flag2 = loginView.passwordField.text?.isBlank,
-            !flag1 && !flag2 {
-            loginView.loginButton.setTitle(Localized.LOGIN_REGISTER, for: .normal)
-        } else {
-            loginView.loginButton.setTitle(Localized.CANCEL, for: .normal)
-        }
     }
 }
 

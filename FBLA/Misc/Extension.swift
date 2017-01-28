@@ -77,6 +77,15 @@ extension String {
 
 extension String: Error { }
 
+extension UIViewController {
+    func animatedDismiss(completion: (() -> ())? = nil) {
+        dismiss(animated: true, completion: completion)
+    }
+    func animatedPop() {
+        _ = navigationController?.popViewController(animated: true)
+    }
+}
+
 extension CLLocationCoordinate2D {
     static var random: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: Double(arc4random()) / Double(UInt32.max) * 180 - 90, longitude: Double(arc4random()) / Double(UInt32.max) * 360 - 180)

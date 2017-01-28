@@ -19,10 +19,24 @@ class AccountViewController: UIViewController {
         if !Account.shared.isLogggedIn {
             showLoginViewController()
         }
+        Account.shared.addLoginStateMonitor { [weak self] in
+            self?.accountView.updateUserInfo()
+        }
         navigationItem.rightBarButtonItem = editButtonItem
         accountView.editAddressButton.addTarget(self, action: #selector(presentAddressEditor), for: .touchUpInside)
         accountView.pickAddressButton.addTarget(self, action: #selector(scheduleToPresentPlacePicker), for: .touchUpInside)
         accountView.addressButton.addTarget(self, action: #selector(setEditing(_:animated:)), for: .touchUpInside)
+        accountView.logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        accountView.updateUserInfo()
+    }
+
+    @objc private func logout() {
+        Account.shared.logOut()
+        animatedPop()
     }
 
     @objc private func presentAddressEditor() {
@@ -65,7 +79,6 @@ class AccountViewController: UIViewController {
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(!isEditing, animated: animated)
         accountView.toggleEdit()
-
     }
 
     deinit {
@@ -78,18 +91,14 @@ class AccountViewController: UIViewController {
 extension AccountViewController: GMSAutocompleteViewControllerDelegate {
     public func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         didSelectPlace(place)
-        dismiss()
+        animatedDismiss()
     }
 
     public func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        dismiss()
+        animatedDismiss()
     }
 
     public func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        dismiss()
-    }
-
-    private func dismiss() {
-        dismiss(animated: true, completion: nil)
+        animatedDismiss()
     }
 }

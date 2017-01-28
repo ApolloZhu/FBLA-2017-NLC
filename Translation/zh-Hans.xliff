@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="FBLA/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
@@ -133,12 +132,15 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
     </header>
     <body>
+      <trans-unit id="CFBundleDisplayName">
+        <source>Charity Toaster</source><target>FBLA  募捐</target>
+      </trans-unit>
       <trans-unit id="CFBundleName">
         <source>$(PRODUCT_NAME)</source>
         <target>FBLA  募捐</target>
       </trans-unit>
       <trans-unit id="CFBundleShortVersionString">
-        <source>0.2</source>
+        <source>0.2.1</source>
       </trans-unit>
     </body>
   </file>
@@ -147,10 +149,25 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
     </header>
     <body>
-      <trans-unit id="E-MAIL">
-        <source>E-MAIL</source>
-        <target>电子邮箱</target>
-        <note>Place holder for user email in account page</note>
+      <trans-unit id="Cancel">
+        <source>Cancel</source>
+        <note>General Cancel</note><target>取消</target>
+      </trans-unit>
+      <trans-unit id="E-Mail">
+        <source>E-Mail</source>
+        <note>Indicate the content will be e-mail</note><target>电子邮箱</target>
+      </trans-unit>
+      <trans-unit id="Log Out">
+        <source>Log Out</source>
+        <note>Tell the user to log out</note><target>退出登录</target>
+      </trans-unit>
+      <trans-unit id="Login/Register">
+        <source>Login/Register</source>
+        <note>Click this button to login/register</note><target>登录／注册</target>
+      </trans-unit>
+      <trans-unit id="PASSWORD">
+        <source>PASSWORD</source>
+        <note>Indicate the content will be password</note><target>密码</target>
       </trans-unit>
       <trans-unit id="SELECT SHIPPING ADDRESS">
         <source>SELECT SHIPPING ADDRESS</source>

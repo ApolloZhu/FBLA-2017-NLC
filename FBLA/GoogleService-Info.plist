@@ -7,32 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>996892379720-9d4nqhe2fa4c2j1v7osj6aeu15uek489.apps.googleusercontent.com</string>
+	<string>215542253116-7npmbudn59i57q7k049054ti8b9n4vrn.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.996892379720-9d4nqhe2fa4c2j1v7osj6aeu15uek489</string>
+	<string>com.googleusercontent.apps.215542253116-7npmbudn59i57q7k049054ti8b9n4vrn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCFuF3tiY2kGcgR4IwcJtvCAgsdUmywmaY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>996892379720</string>
+	<string>215542253116</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>io.github.swiftyx.apollo.FBLA-2017-NLC</string>
 	<key>PROJECT_ID</key>
-	<string>fbla-2017-nlc-1484875172486</string>
+	<string>charity-toaster</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fbla-2017-nlc-1484875172486.appspot.com</string>
+	<string>charity-toaster.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
 	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:996892379720:ios:defc9967a011ea60</string>
+	<string>1:215542253116:ios:defc9967a011ea60</string>
 	<key>DATABASE_URL</key>
-	<string>https://fbla-2017-nlc-1484875172486.firebaseio.com</string>
+	<string>https://charity-toaster.firebaseio.com</string>
 </dict>
 </plist>

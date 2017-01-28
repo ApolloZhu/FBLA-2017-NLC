@@ -36,6 +36,11 @@ public class Account: NSObject {
             UserDefaults.standard.set(newValue, forKey: Identifier.PlaceIDKey)
         }
     }
+    public func addLoginStateMonitor(_ monitor: @escaping () -> ()) {
+        FIRAuth.auth()?.addStateDidChangeListener({ (_, _) in
+            monitor()
+        })
+    }
     public var formattedAddress = NSLocalizedString("SELECT SHIPPING ADDRESS", comment: "Place holder for user shipping address in account page") {
         didSet {
             if formattedAddress.isBlank {
@@ -50,13 +55,13 @@ public class Account: NSObject {
 
     @nonobjc
     public func login(with auth: GIDAuthentication?) {
-        guard let auth = auth else { showError("NO GOOGLE AUTH"); return }
+        guard let auth = auth else { showError("No Google Auth"); return }
         Account.shared.login(with: FIRGoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken))
     }
 
     @nonobjc
-    public func login(with result: FBSDKLoginManagerLoginResult?) {
-        guard let token = result?.token?.tokenString else { showError("NO FB TOKEN"); return }
+    public func login(with token: String?) {
+        guard let token = token else { showError("No Token"); return }
         login(with: FIRFacebookAuthProvider.credential(withAccessToken: token))
     }
 

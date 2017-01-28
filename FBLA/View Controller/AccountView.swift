@@ -29,11 +29,13 @@ class AccountView: UIView {
     }()
     lazy var editAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_edit"))
     lazy var pickAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_place"))
-    lazy var dismissButton: MKButton = {
+    lazy var logoutButton: MKButton = {
         let btn = MKButton()
         btn.setTitle(NSLocalizedString("Log Out", comment: "Tell the user to log out"), for: .normal)
-        btn.setTitleColor(.red, for: .normal)
-        btn.addTarget(Account.shared, action: #selector(Account.shared.logOut), for: .touchUpInside)
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = UIColor.MKColor.Red.P500
+        btn.cornerRadius = 3
+        btn.shadowOffset = CGSize(width: 1, height: 1)
         return btn
     }()
 
@@ -58,7 +60,7 @@ class AccountView: UIView {
         addSubview(addressButton)
         addSubview(editAddressButton)
         addSubview(pickAddressButton)
-        addSubview(dismissButton)
+        addSubview(logoutButton)
 
         imageView.snp.makeConstraints { make in
             make.width.height.equalTo(frame.width/5)
@@ -90,9 +92,10 @@ class AccountView: UIView {
             make.trailing.equalTo(snp.trailingMargin)
             make.width.height.equalTo(addressButton.snp.height)
         }
-        dismissButton.snp.makeConstraints { make in
+        logoutButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-8)
             make.centerX.equalToSuperview()
+            make.width.equalToSuperview().offset(-16)
         }
 
         updateUserInfo()

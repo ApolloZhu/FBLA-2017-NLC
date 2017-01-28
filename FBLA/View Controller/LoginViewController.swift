@@ -19,22 +19,27 @@ extension UIViewController {
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissLoginViewController))
         present(nav, animated: true, completion: nil)
     }
-    func dismissLoginViewController() {
-        dismiss(animated: true, completion: nil)
+    @objc private func dismissLoginViewController() {
+        animatedDismiss(completion: Account.shared.isLogggedIn ? nil : animatedPop)
     }
 }
 
 open class LoginViewController: UIViewController {
     public var loginView = LoginView()
+    private lazy var recognizer: UITapGestureRecognizer = {
+        return UITapGestureRecognizer(target: self, action: #selector(handleTouch(recognizer:)))
+    }()
     open var isUIFreezed: Bool = false {
         willSet {
             if (newValue != isUIFreezed) {
                 if (newValue) {
                     HUD.show(.labeledProgress(title: "Processing", subtitle: "Click Any Where to Cancel"))
                     loginView.endEditing(true)
+                    view.addGestureRecognizer(recognizer)
                     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
                 } else {
                     HUD.hide()
+                    view.removeGestureRecognizer(recognizer)
                     PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
                 }
             }
@@ -43,8 +48,7 @@ open class LoginViewController: UIViewController {
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTouch(recognizer:))))
-        self.view.addSubview(loginView)
+        view.addSubview(loginView)
         loginView.snp.makeConstraints { $0.top.bottom.leading.trailing.equalToSuperview() }
 
         loginView.emailField.delegate = self
@@ -62,7 +66,8 @@ open class LoginViewController: UIViewController {
     @objc private func handleTouch(recognizer: UIGestureRecognizer) { if isUIFreezed { isUIFreezed = false } }
 
     fileprivate func hasInfo() -> Bool {
-        return !(loginView.emailField.text?.isBlank ?? true || loginView.passwordField.text?.isBlank ?? true)
+        return (loginView.emailField.text?.contains("@") ?? false)
+            && !(loginView.passwordField.text?.isBlank ?? true)
     }
 
     @objc private func clickManualLoginButton() {
@@ -73,7 +78,7 @@ open class LoginViewController: UIViewController {
         }
     }
 
-    fileprivate func toggleButton() {
+    fileprivate func updateManualButtonState() {
         if hasInfo() {
             loginView.loginButton.setTitle(Localized.LOGIN_REGISTER, for: .normal)
         } else {
@@ -84,7 +89,7 @@ open class LoginViewController: UIViewController {
     @objc private func toggleGButton() {
         if !isUIFreezed && !Account.shared.isLogggedIn {
             isUIFreezed = true
-            GIDSignIn.sharedInstance().signIn()
+//            GIDSignIn.sharedInstance().signIn()
         }
     }
 }
@@ -95,16 +100,13 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        toggleButton()
+        updateManualButtonState()
     }
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        toggleButton()
-        if !(loginView.emailField.isEditing && loginView.passwordField.isEditing) {
-
-        }
+        updateManualButtonState()
     }
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        toggleButton()
+        updateManualButtonState()
         return true
     }
 }
@@ -114,6 +116,7 @@ extension LoginViewController: GIDSignInDelegate {
         isUIFreezed = false
         if !showError(error) {
             Account.shared.login(with: user?.authentication)
+            animatedDismiss()
         }
     }
 
@@ -121,7 +124,7 @@ extension LoginViewController: GIDSignInDelegate {
         isUIFreezed = false
         if !showError(error) {
             Account.shared.logOut()
-            dismissLoginViewController()
+            animatedDismiss(completion: animatedPop)
         }
     }
 }
@@ -131,13 +134,17 @@ extension LoginViewController: GIDSignInUIDelegate { }
 extension LoginViewController: FBSDKLoginButtonDelegate {
     public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         isUIFreezed = false
-        if !showError(error) {
-            Account.shared.login(with: result)
+        if !showError(error), let token = result?.token?.tokenString  {
+            Account.shared.login(with: token)
+            animatedDismiss()
+        } else {
+            showError("Please Try Again")
         }
     }
 
     public func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         isUIFreezed = false
         Account.shared.logOut()
+        animatedDismiss(completion: animatedPop)
     }
 }

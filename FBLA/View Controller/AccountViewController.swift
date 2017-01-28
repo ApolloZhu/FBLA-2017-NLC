@@ -11,9 +11,9 @@ import GooglePlaces
 import GooglePlacePicker
 
 class AccountViewController: UIViewController {
-
+    
     @IBOutlet weak var accountView: AccountView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if !Account.shared.isLogggedIn {
@@ -28,23 +28,23 @@ class AccountViewController: UIViewController {
         accountView.addressButton.addTarget(self, action: #selector(setEditing(_:animated:)), for: .touchUpInside)
         accountView.logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         accountView.updateUserInfo()
     }
-
+    
     @objc private func logout() {
         Account.shared.logOut()
         animatedPop()
     }
-
+    
     @objc private func presentAddressEditor() {
         let controller = GMSAutocompleteViewController()
         controller.delegate = self
         present(controller, animated: true, completion: nil)
     }
-
+    
     @objc private func scheduleToPresentPlacePicker() {
         GMSPlacesClient.shared().lookUpPlaceID(Account.shared.placeID) { [weak self] (place, _) in
             if let place = place {
@@ -60,7 +60,7 @@ class AccountViewController: UIViewController {
             }
         }
     }
-
+    
     private func presentAddressPicker(at center: CLLocationCoordinate2D) {
         let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
         let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
@@ -69,18 +69,18 @@ class AccountViewController: UIViewController {
         let placePicker = GMSPlacePicker(config: config)
         placePicker.pickPlace(callback: didSelectPlace)
     }
-
+    
     fileprivate func didSelectPlace(_ place: GMSPlace?, error: Error? = nil) {
         Account.shared.placeID = place?.placeID ?? ""
         Account.shared.formattedAddress = place?.formattedAddress ?? ""
         accountView.updateUserInfo()
     }
-
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(!isEditing, animated: animated)
         accountView.toggleEdit()
     }
-
+    
     deinit {
         accountView.editAddressButton.removeTarget(self, action: #selector(presentAddressEditor), for: .touchUpInside)
         accountView.pickAddressButton.removeTarget(self, action: #selector(scheduleToPresentPlacePicker), for: .touchUpInside)
@@ -93,11 +93,11 @@ extension AccountViewController: GMSAutocompleteViewControllerDelegate {
         didSelectPlace(place)
         animatedDismiss()
     }
-
+    
     public func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         animatedDismiss()
     }
-
+    
     public func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         animatedDismiss()
     }

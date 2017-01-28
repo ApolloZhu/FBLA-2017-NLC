@@ -71,7 +71,13 @@ extension UIColor {
 
 extension String {
     var isBlank: Bool {
-        return trimmingCharacters(in: .whitespaces).isEmpty
+        return content.isEmpty
+    }
+    var content: String {
+        return trimmingCharacters(in: .whitespaces)
+    }
+    var length: Int {
+        return characters.count
     }
 }
 

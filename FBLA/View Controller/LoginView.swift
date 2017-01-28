@@ -14,7 +14,7 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 open class LoginView: UIView {
-
+    
     open lazy var emailField = CTTextField(prompt: Localized.EMail, type: .email)
     open lazy var passwordField = CTTextField(prompt: Localized.PASSWORD, type: .password)
     open lazy var loginButton: MKButton = {
@@ -28,15 +28,22 @@ open class LoginView: UIView {
     }()
     open lazy var fbLoginButton = FBSDKLoginButton()
     open lazy var gSignInButton = GIDSignInButton()
-
+    
+    @discardableResult
+    open override func resignFirstResponder() -> Bool {
+        let result = super.resignFirstResponder()
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        return result
+    }
+    
     open func toggleManualInput() {
         if !(emailField.isHidden && passwordField.isHidden) { // Should Hide
             emailField.isHidden = true
             passwordField.isHidden = true
             emailField.text = nil
             passwordField.text = nil
-            emailField.resignFirstResponder()
-            passwordField.resignFirstResponder()
+            resignFirstResponder()
             loginButton.setTitle(Localized.EMail, for: .normal)
             let _y1 = fbLoginButton.frame.minY, _y2 = gSignInButton.frame.minY
             fbLoginButton.frame.origin.y = loginButton.frame.minY
@@ -66,7 +73,7 @@ open class LoginView: UIView {
             }
         }
     }
-
+    
     override open func willMove(toSuperview newSuperview: UIView?) {
         backgroundColor = UIColor.MKColor.Lime.P500
         addSubview(emailField)

@@ -11,7 +11,7 @@ import MaterialKit
 import SnapKit
 
 class AccountView: UIView {
-
+    
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 10
@@ -19,7 +19,7 @@ class AccountView: UIView {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
+    
     lazy var nameLabel = UILabel.makeAutoAdjusting(fontSize: 40)
     lazy var emailLabel = UILabel.makeAutoAdjusting()
     lazy var addressButton: UIButton = {
@@ -31,29 +31,29 @@ class AccountView: UIView {
     lazy var pickAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_place"))
     lazy var logoutButton: MKButton = {
         let btn = MKButton()
-        btn.setTitle(NSLocalizedString("Log Out", comment: "Tell the user to log out"), for: .normal)
+        btn.setTitle(Localized.LOGOUT, for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = UIColor.MKColor.Red.P500
         btn.cornerRadius = 3
         btn.shadowOffset = CGSize(width: 1, height: 1)
         return btn
     }()
-
+    
     func updateUserInfo() {
         imageView.image = Account.shared.profileImage ?? #imageLiteral(resourceName: "ic_person_48pt")
         nameLabel.text = Account.shared.name
         emailLabel.text = Account.shared.email
         addressButton.setTitle(Account.shared.formattedAddress, for: .normal)
     }
-
+    
     public func toggleEdit() {
         editAddressButton.isHidden = !editAddressButton.isHidden
         pickAddressButton.isHidden = !pickAddressButton.isHidden
     }
-
+    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-
+        
         addSubview(imageView)
         addSubview(nameLabel)
         addSubview(emailLabel)
@@ -61,7 +61,7 @@ class AccountView: UIView {
         addSubview(editAddressButton)
         addSubview(pickAddressButton)
         addSubview(logoutButton)
-
+        
         imageView.snp.makeConstraints { make in
             make.width.height.equalTo(frame.width/5)
             make.top.leading.equalToSuperview().offset(8)
@@ -97,7 +97,7 @@ class AccountView: UIView {
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-16)
         }
-
+        
         updateUserInfo()
         toggleEdit()
     }

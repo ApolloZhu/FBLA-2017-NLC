@@ -81,6 +81,7 @@ extension LoginViewController {
             Account.shared.login(withEmail: loginView.emailField.content, password: loginView.passwordField.content)
             { [weak self] (user, error) in
                 if !showError(error) {
+                    self?.isUIFreezed = false
                     self?.animatedDismiss()
                 }
             }
@@ -117,10 +118,10 @@ extension LoginViewController: UITextFieldDelegate {
 
 extension LoginViewController: GIDSignInDelegate {
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        isUIFreezed = false
         if !showError(error) {
             Account.shared.login(with: user?.authentication) { [weak self] (user, error) in
                 if !showError(error) {
+                    self?.isUIFreezed = false
                     self?.animatedDismiss()
                 }
             }
@@ -128,9 +129,9 @@ extension LoginViewController: GIDSignInDelegate {
     }
     
     public func sign(_ signIn: GIDSignIn!, didDisconnectWith user:GIDGoogleUser!, withError error: Error!) {
-        isUIFreezed = false
         if !showError(error) {
             Account.shared.logOut()
+            isUIFreezed = false
             animatedDismiss(completion: animatedPop)
         }
     }
@@ -146,10 +147,10 @@ extension LoginViewController: GIDSignInUIDelegate {
 
 extension LoginViewController: FBSDKLoginButtonDelegate {
     public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        isUIFreezed = false
         if !showError(error) {
             Account.shared.login(with: result?.token?.tokenString) { [weak self] (user, error) in
                 if !showError(error) {
+                    self?.isUIFreezed = false
                     self?.animatedDismiss()
                 }
             }

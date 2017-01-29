@@ -83,6 +83,12 @@ extension String {
 
 extension String: Error { }
 
+extension Bool {
+    mutating func toggle() {
+        self = !self
+    }
+}
+
 extension UIViewController {
     func animatedDismiss(completion: (() -> ())? = nil) {
         dismiss(animated: true, completion: completion)

@@ -55,6 +55,10 @@ extension UILabel {
         }
         return label
     }
+    func centered() -> UILabel {
+        textAlignment = .center
+        return self
+    }
 }
 
 extension UIButton {

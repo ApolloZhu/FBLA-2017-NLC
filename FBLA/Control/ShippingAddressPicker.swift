@@ -10,82 +10,93 @@ import UIKit
 import GooglePlaces
 import GooglePlacePicker
 
-class ShippingAddressPicker: UIControl {
-
-    convenience init() {
-        self.init(frame: .zero)
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
+class ShippingAddressPicker: UIButton {
+    weak var controller: UIViewController?
+    
+//    lazy var addressLabel = UILabel.makeAutoAdjusting().centered()
+//    lazy var editAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_edit"))
+//    lazy var pickAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_place"))
+    
+    func updateInfo() {
+        setTitle(Account.shared.formattedAddress, for: .normal)
+//        isEditing = false
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-
-    private func setup() {
-        editAddressButton.addTarget(self, action: #selector(presentAddressEditor), for: .touchUpInside)
-        pickAddressButton.addTarget(self, action: #selector(scheduleToPresentPlacePicker), for: .touchUpInside)
-    }
-
-    weak var controller: UIViewController?
-
-    lazy var addressButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.titleLabel?.numberOfLines = 3
-        return btn
-    }()
-    lazy var editAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_edit"))
-    lazy var pickAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_place"))
-
-    func updateInfo() {
-        addressButton.setTitle(Account.shared.formattedAddress, for: .normal)
-        isEditing = false
-    }
-
-    var isEditing: Bool = false {
-        willSet {
-            if isEditing != newValue {
-                editAddressButton.isHidden.toggle()
-                pickAddressButton.isHidden.toggle()
-            }
-        }
-    }
-
+//    var isEditing: Bool = true {
+//        willSet {
+//            if isEditing != newValue {
+////                editAddressButton.isHidden.toggle()
+////                pickAddressButton.isHidden.toggle()
+//            }
+//        }
+//    }
+    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        addSubview(addressButton)
-        addSubview(editAddressButton)
-        addSubview(pickAddressButton)
-
-        addressButton.snp.makeConstraints { make in
-            make.leading.equalTo(snp.leadingMargin)
+        addSubview(addressLabel)
+        self.addTarget(self, action: #selector(handle), for: .touchUpInside)
+//        addSubview(editAddressButton)
+//        addSubview(pickAddressButton)
+//                editAddressButton.addTarget(self, action: #selector(presentAddressEditor), for: .touchUpInside)
+//                pickAddressButton.addTarget(self, action: #selector(scheduleToPresentPlacePicker), for: .touchUpInside)
+        addressLabel.snp.makeConstraints { make in
+            make.top.centerX.equalToSuperview()
+            make.width.equalToSuperview().offset(-16)
         }
-        editAddressButton.snp.makeConstraints { make in
-            make.bottom.equalTo(addressButton.snp.bottom)
-            make.leading.equalTo(addressButton.snp.trailing).offset(8)
-            make.width.height.equalTo(addressButton.snp.height)
-        }
-        pickAddressButton.snp.makeConstraints { make in
-            make.bottom.equalTo(addressButton.snp.bottom)
-            make.leading.equalTo(editAddressButton.snp.trailing).offset(8)
-            make.trailing.equalTo(snp.trailingMargin)
-            make.width.height.equalTo(addressButton.snp.height)
-        }
-
+//        editAddressButton.snp.makeConstraints { make in
+//            make.top.equalTo(addressLabel.snp.bottom).offset(8)
+//            make.centerX.equalToSuperview().dividedBy(2)
+//        }
+//        pickAddressButton.snp.makeConstraints { make in
+//            make.top.equalTo(addressLabel.snp.bottom).offset(8)
+//            make.centerX.equalToSuperview().multipliedBy(1.5)
+//        }
         updateInfo()
     }
-
-    @objc private func presentAddressEditor() {
-        let controller = GMSAutocompleteViewController()
-        controller.delegate = self
-        controller.present(controller, animated: true, completion: nil)
+    
+    private func handle() {
     }
-
+    
+//    fileprivate var isUIFreezed = false
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+//        if !isUIFreezed, let x = touch?.location(in: self).x {
+//            if x < center.x {
+//                presentAddressEditor()
+//            } else {
+//                scheduleToPresentPlacePicker()
+//            }
+//        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if !isUIFreezed, let x = touches.first?.location(in: self).x {
+//            if x < center.x {
+//                presentAddressEditor()
+//            } else {
+//                scheduleToPresentPlacePicker()
+//            }
+//        }
+    }
+    
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+//        if let tapGestureRecognizer = gestureRecognizer as? UITapGestureRecognizer,
+//            tapGestureRecognizer.numberOfTapsRequired == 1 && tapGestureRecognizer.numberOfTouchesRequired == 1 {
+//            return false
+//        }
+//        return true
+        return super.gestureRecognizerShouldBegin(gestureRecognizer)
+    }
+    
+    @objc private func presentAddressEditor() {
+        isUIFreezed = true
+        let gVC = GMSAutocompleteViewController()
+        gVC.delegate = self
+        controller?.present(gVC, animated: true, completion: nil)
+    }
+    
     @objc private func scheduleToPresentPlacePicker() {
+        isUIFreezed = true
         GMSPlacesClient.shared().lookUpPlaceID(Account.shared.placeID) { [weak self] (place, _) in
             if let place = place {
                 self?.presentAddressPicker(at: place.coordinate)
@@ -100,7 +111,7 @@ class ShippingAddressPicker: UIControl {
             }
         }
     }
-
+    
     private func presentAddressPicker(at center: CLLocationCoordinate2D) {
         let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
         let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
@@ -109,17 +120,17 @@ class ShippingAddressPicker: UIControl {
         let placePicker = GMSPlacePicker(config: config)
         placePicker.pickPlace(callback: setPlace)
     }
-
+    
     open func setPlace(_ place: GMSPlace?, error: Error? = nil) {
         Account.shared.placeID = place?.placeID ?? ""
         Account.shared.formattedAddress = place?.formattedAddress ?? ""
         updateInfo()
     }
-
-    deinit {
-        editAddressButton.removeTarget(self, action: #selector(presentAddressEditor), for: .touchUpInside)
-        pickAddressButton.removeTarget(self, action: #selector(scheduleToPresentPlacePicker), for: .touchUpInside)
-    }
+    
+//        deinit {
+//            editAddressButton.removeTarget(self, action: #selector(presentAddressEditor), for: .touchUpInside)
+//            pickAddressButton.removeTarget(self, action: #selector(scheduleToPresentPlacePicker), for: .touchUpInside)
+//        }
 }
 
 extension ShippingAddressPicker: GMSAutocompleteViewControllerDelegate {
@@ -127,11 +138,11 @@ extension ShippingAddressPicker: GMSAutocompleteViewControllerDelegate {
         setPlace(place)
         controller?.animatedDismiss()
     }
-
+    
     public func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         controller?.animatedDismiss()
     }
-
+    
     public func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         controller?.animatedDismiss()
     }

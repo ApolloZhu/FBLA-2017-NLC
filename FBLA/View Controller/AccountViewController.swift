@@ -21,6 +21,7 @@ class AccountViewController: UIViewController {
             self?.accountView.updateInfo()
         }
         navigationItem.rightBarButtonItem = editButtonItem
+        accountView.placesPicker.controller = self
         accountView.logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
     

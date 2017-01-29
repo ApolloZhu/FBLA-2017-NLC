@@ -39,9 +39,13 @@ open class BasicAccountInfo: UIControl {
         addSubview(imageView)
         addSubview(nameLabel)
         addSubview(emailLabel)
+        snp.makeConstraints { make in
+            make.height.equalTo(100)
+        }
         imageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(8)
-            make.width.height.equalTo(frame.width/5)
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(8)
+            make.width.height.equalTo(48)
         }
         nameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)
@@ -49,9 +53,9 @@ open class BasicAccountInfo: UIControl {
             make.trailing.equalTo(snp.trailingMargin)
         }
         emailLabel.snp.makeConstraints { make in
-            make.top.greaterThanOrEqualTo(nameLabel.snp.bottom).offset(8)
-            make.bottom.equalTo(imageView.snp.bottom)
-            make.leading.equalTo(imageView.snp.trailing).offset(8)
+            make.top.equalTo(nameLabel.snp.bottom).offset(8)
+            make.bottom.equalToSuperview().offset(-8)
+            make.width.equalTo(nameLabel)
             make.trailing.equalTo(snp.trailingMargin)
         }
         updateInfo()

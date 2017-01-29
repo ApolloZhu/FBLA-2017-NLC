@@ -30,11 +30,6 @@
         <target>商品</target>
         <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "6oK-Sz-s7X";</note>
       </trans-unit>
-      <trans-unit id="7SS-zG-JtC.text">
-        <source>Subtitle</source>
-        <target>副标题</target>
-        <note>Class = "UILabel"; text = "Subtitle"; ObjectID = "7SS-zG-JtC";</note>
-      </trans-unit>
       <trans-unit id="7nQ-Q1-03M.text">
         <source>About Us</source>
         <target>关于我们</target>
@@ -49,21 +44,6 @@
         <source>Home</source>
         <target>主页</target>
         <note>Class = "UITabBarItem"; title = "Home"; ObjectID = "59f-zb-fU4";</note>
-      </trans-unit>
-      <trans-unit id="368-3k-yTt.headerTitle">
-        <source>Section-1</source>
-        <target>小节1</target>
-        <note>Class = "UITableViewSection"; headerTitle = "Section-1"; ObjectID = "368-3k-yTt";</note>
-      </trans-unit>
-      <trans-unit id="CRh-LQ-f24.headerTitle">
-        <source>Section-2</source>
-        <target>小节2</target>
-        <note>Class = "UITableViewSection"; headerTitle = "Section-2"; ObjectID = "CRh-LQ-f24";</note>
-      </trans-unit>
-      <trans-unit id="DK2-Z1-9qR.text">
-        <source>Title</source>
-        <target>标题</target>
-        <note>Class = "UILabel"; text = "Title"; ObjectID = "DK2-Z1-9qR";</note>
       </trans-unit>
       <trans-unit id="MmT-b8-pwh.text">
         <source>Label</source>
@@ -80,30 +60,19 @@
         <target>致谢</target>
         <note>Class = "UILabel"; text = "Acknowledgement"; ObjectID = "R9o-LH-HY1";</note>
       </trans-unit>
-      <trans-unit id="RB9-f4-okN.text">
-        <source>Username</source>
-        <target>用户名</target>
-        <note>Class = "UILabel"; text = "Username"; ObjectID = "RB9-f4-okN";</note>
-      </trans-unit>
       <trans-unit id="THe-tg-lyp.normalTitle">
         <source>Donate</source>
         <target>捐赠</target>
         <note>Class = "UIButton"; normalTitle = "Donate"; ObjectID = "THe-tg-lyp";</note>
       </trans-unit>
-      <trans-unit id="XZX-uQ-xZJ.headerTitle">
-        <source> </source>
-        <target> </target>
-        <note>Class = "UITableViewSection"; headerTitle = " "; ObjectID = "XZX-uQ-xZJ";</note>
-      </trans-unit>
-      <trans-unit id="bsK-I1-GBU.text">
-        <source>email@address</source>
-        <target>电子邮箱</target>
-        <note>Class = "UILabel"; text = "email@address"; ObjectID = "bsK-I1-GBU";</note>
-      </trans-unit>
       <trans-unit id="gm1-Yp-cxw.title">
         <source>Name</source>
         <target>用户名</target>
         <note>Class = "UINavigationItem"; title = "Name"; ObjectID = "gm1-Yp-cxw";</note>
+      </trans-unit>
+      <trans-unit id="heF-bw-XDh.text">
+        <source>Title</source>
+        <note>Class = "UILabel"; text = "Title"; ObjectID = "heF-bw-XDh";</note><target>标题</target>
       </trans-unit>
       <trans-unit id="hrK-Yn-1LB.text">
         <source>Description</source>
@@ -133,7 +102,8 @@
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
-        <source>Charity Toaster</source><target>FBLA  募捐</target>
+        <source>Charity Toaster</source>
+        <target>FBLA  募捐</target>
       </trans-unit>
       <trans-unit id="CFBundleName">
         <source>$(PRODUCT_NAME)</source>
@@ -151,28 +121,45 @@
     <body>
       <trans-unit id="Cancel">
         <source>Cancel</source>
-        <note>General Cancel</note><target>取消</target>
+        <target>取消</target>
+        <note>General Cancel</note>
       </trans-unit>
       <trans-unit id="E-Mail">
         <source>E-Mail</source>
-        <note>Indicate the content will be e-mail</note><target>电子邮箱</target>
+        <target>电子邮箱</target>
+        <note>Indicate the content will be e-mail</note>
       </trans-unit>
       <trans-unit id="Log Out">
         <source>Log Out</source>
-        <note>Tell the user to log out</note><target>退出登录</target>
+        <target>退出登录</target>
+        <note>Tap this button to log out</note>
+      </trans-unit>
+      <trans-unit id="Login Failed. Please Try Again.">
+        <source>Login Failed. Please Try Again.</source>
+        <note>Notify user login failed</note><target>登录失败，请重试</target>
       </trans-unit>
       <trans-unit id="Login/Register">
         <source>Login/Register</source>
-        <note>Click this button to login/register</note><target>登录／注册</target>
+        <target>登录／注册</target>
+        <note>Click this button to login/register</note>
       </trans-unit>
       <trans-unit id="PASSWORD">
         <source>PASSWORD</source>
-        <note>Indicate the content will be password</note><target>密码</target>
+        <target>密码</target>
+        <note>Indicate the content will be password</note>
+      </trans-unit>
+      <trans-unit id="Processing">
+        <source>Processing</source>
+        <note>Generally doing something</note><target>处理中</target>
       </trans-unit>
       <trans-unit id="SELECT SHIPPING ADDRESS">
         <source>SELECT SHIPPING ADDRESS</source>
         <target>选择寄件地址</target>
         <note>Place holder for user shipping address in account page</note>
+      </trans-unit>
+      <trans-unit id="Tap to Cancel">
+        <source>Tap to Cancel</source>
+        <note>Tap on screen to cancel process</note><target>点按以取消</target>
       </trans-unit>
       <trans-unit id="USERNAME">
         <source>USERNAME</source>

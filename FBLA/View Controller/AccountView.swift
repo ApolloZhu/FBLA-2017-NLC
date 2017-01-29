@@ -26,7 +26,7 @@ class AccountView: UIView {
 
     func updateInfo() {
         basicAccountInfoView.updateInfo()
-//        placesPicker.updateInfo()
+        placesPicker.updateInfo()
     }
 
     var isEditing: Bool {
@@ -62,7 +62,7 @@ class AccountView: UIView {
             make.width.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-8)
         }
-
+        
         updateInfo()
     }
 }

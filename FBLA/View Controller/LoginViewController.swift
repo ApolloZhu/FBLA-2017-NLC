@@ -26,9 +26,9 @@ extension UIViewController {
 }
 
 open class LoginViewController: UIViewController {
-    
+
     public var loginView = LoginView()
-    
+
     private lazy var recognizer: UITapGestureRecognizer = {
         return UITapGestureRecognizer(target: self, action: #selector(handleTouch(recognizer:)))
     }()
@@ -49,20 +49,20 @@ open class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.addSubview(loginView)
         loginView.snp.makeConstraints { $0.top.bottom.leading.trailing.equalToSuperview() }
-        
+
         loginView.emailField.delegate = self
         loginView.passwordField.delegate = self
         loginView.loginButton.addTarget(self, action: #selector(clickManualLoginButton), for: .touchUpInside)
-        
+
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         loginView.gSignInButton.addTarget(self, action: #selector(toggleGButton), for: .touchUpInside)
-        
+
         loginView.fbLoginButton.delegate = self
         loginView.fbLoginButton.readPermissions = ["email"]
     }
@@ -73,7 +73,7 @@ extension LoginViewController {
         return (loginView.emailField.text?.contains("@") ?? false)
             && (loginView.passwordField.content ?? "").length >= 6
     }
-    
+
     @objc fileprivate func clickManualLoginButton() {
         if hasInfo() {
             loginView.resignFirstResponder()
@@ -89,7 +89,7 @@ extension LoginViewController {
             loginView.toggleManualInput()
         }
     }
-    
+
     fileprivate func updateManualButtonState() {
         if hasInfo() {
             loginView.loginButton.setTitle(Localized.LOGIN_REGISTER, for: .normal)
@@ -127,7 +127,7 @@ extension LoginViewController: GIDSignInDelegate {
             }
         }
     }
-    
+
     public func sign(_ signIn: GIDSignIn!, didDisconnectWith user:GIDGoogleUser!, withError error: Error!) {
         if !showError(error) {
             Account.shared.logOut()
@@ -156,7 +156,7 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             }
         }
     }
-    
+
     public func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         isUIFreezed = false
         Account.shared.logOut()

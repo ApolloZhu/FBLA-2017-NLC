@@ -157,7 +157,6 @@
 			children = (
 				52F45C931E29BB5400A7D81A /* AccountViewController.swift */,
 				528A51431E3D7B5500ECB468 /* BasicAccountInfo.swift */,
-				528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */,
 				52F45C921E29BB5400A7D81A /* AccountView.swift */,
 				528A51421E3D7B1600ECB468 /* Login */,
 			);
@@ -169,6 +168,7 @@
 			children = (
 				52F45C961E29BB5400A7D81A /* HomeViewController.swift */,
 				52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */,
+				528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */,
 				52F45CA41E29BBA400A7D81A /* Account */,
 				52F45C941E29BB5400A7D81A /* CartTableViewController.swift */,
 				52F45C951E29BB5400A7D81A /* CommentsTableViewController.swift */,

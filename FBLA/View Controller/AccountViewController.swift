@@ -9,9 +9,9 @@
 import UIKit
 
 class AccountViewController: UIViewController {
-    
+
     @IBOutlet weak var accountView: AccountView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if !Account.shared.isLogggedIn {
@@ -24,17 +24,17 @@ class AccountViewController: UIViewController {
         accountView.placesPicker.controller = self
         accountView.logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         accountView.updateInfo()
     }
-    
+
     @objc private func logout() {
         Account.shared.logOut()
         animatedPop()
     }
-    
+
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(!isEditing, animated: animated)
         accountView.isEditing = editing

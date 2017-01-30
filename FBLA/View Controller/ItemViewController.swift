@@ -11,10 +11,12 @@ import SwiftyStarRatingView
 
 class ItemViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
+    var iid: String?
+    @IBOutlet weak var itemView: ItemView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        itemView.iid = iid
     }
 
     /*

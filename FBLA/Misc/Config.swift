@@ -9,8 +9,8 @@
 struct Identifier {
     static let ShowItemSegue = "Show Item Segue"
     static let AccountViewController = "AccountViewControllerID"
-    static let PorfilePhotoKey = "profile.png"
     static let PlaceIDKey = "placeID"
+    static let FormattedAddressKey = "FormattedAddressKey"
 }
 
 extension Notification.Name {

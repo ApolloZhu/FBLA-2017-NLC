@@ -26,5 +26,13 @@ class HomeViewController: UIViewController, SWRevealViewControllerPresentor {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        //!!!: Remove before final stage
+        if segue.identifier == "Test", let vc = segue.terminus as? ItemViewController {
+                vc.iid = "test"
+        }
+    }
 
 }

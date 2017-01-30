@@ -7,9 +7,11 @@ target 'FBLA' do
   pod 'SnapKit'
 
   # Control
-  pod 'SwiftyStarRatingView'
+  pod 'SwiftyStarRatingView', :git => 'https://github.com/ApolloZhu/SwiftyStarRatingView.git'
   pod 'PKHUD'
   pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
+
+  pod 'Kingfisher'
 
   # Data
   pod 'GooglePlaces'
@@ -17,6 +19,7 @@ target 'FBLA' do
   pod 'GoogleMaps'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   pod 'GoogleSignIn'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'

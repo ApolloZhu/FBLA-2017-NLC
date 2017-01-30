@@ -24,34 +24,24 @@ public class Account: NSObject {
     public var user: FIRUser? {
         return FIRAuth.auth()?.currentUser
     }
-    public var email: String { return user?.email ?? Localized.EMail }
-    public var password = ""
-    public var name = NSLocalizedString("USERNAME", comment: "Place holder for user name")
-    public var profileImageKey = ""
-    public var placeID: String {
-        get {
-            return UserDefaults.standard.string(forKey: Identifier.PlaceIDKey) ?? ""
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Identifier.PlaceIDKey)
-        }
-    }
     public func addLoginStateMonitor(_ monitor: @escaping () -> ()) {
         FIRAuth.auth()?.addStateDidChangeListener({ (_, _) in
             monitor()
         })
     }
     
-    public var formattedAddress = NSLocalizedString("SELECT SHIPPING ADDRESS", comment: "Place holder for user shipping address in account page") {
-        didSet {
-            if formattedAddress.isBlank {
-                formattedAddress = oldValue
-            }
+    public var email: String { return user?.email ?? Localized.EMail }
+    //TODO: User name from uid
+    public var name: String? { return user?.displayName }
+    public var photoURL: URL? { return user?.photoURL }
+
+    public var placeID: String {
+        get {
+            return defaults.string(forKey: Identifier.PlaceIDKey) ?? ""
         }
-    }
-    
-    public var profileImage: UIImage? {
-        return .image(fromKey: profileImageKey)
+        set {
+            defaults.set(newValue, forKey: Identifier.PlaceIDKey)
+        }
     }
     
     public func login(withEmail email: String?, password: String?, completion: FIRAuthResultCallback?) {
@@ -89,8 +79,9 @@ public class Account: NSObject {
     
     public func notify(user: FIRUser? = nil, error: Error? = nil, handler: FIRAuthResultCallback? = nil) {
         if let handler = handler { return handler(user, error) }
-        showError(error)
-        print(error)
+        if showError(error) {
+            print(error!)
+        }
     }
     
     public func logOut() {
@@ -98,6 +89,8 @@ public class Account: NSObject {
             try FIRAuth.auth()?.signOut()
             GIDSignIn.sharedInstance().signOut()
             FBSDKLoginManager().logOut()
+            defaults.removeObject(forKey: Identifier.PlaceIDKey)
+            defaults.removeObject(forKey: Identifier.FormattedAddressKey)
         } catch {
             showError(error)
         }

@@ -15,6 +15,9 @@ PODS:
   - Firebase/Core (3.11.1):
     - FirebaseAnalytics (= 3.6.0)
     - FirebaseCore (= 3.4.7)
+  - Firebase/Database (3.11.1):
+    - Firebase/Core
+    - FirebaseDatabase (= 3.1.1)
   - FirebaseAnalytics (3.6.0):
     - FirebaseCore (~> 3.4)
     - FirebaseInstanceID (~> 1.0)
@@ -29,6 +32,8 @@ PODS:
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (3.1.1):
+    - FirebaseAnalytics (~> 3.5)
   - FirebaseInstanceID (1.0.8)
   - GoogleAppUtilities (1.1.2):
     - GoogleSymbolUtilities (~> 1.1)
@@ -67,6 +72,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.8)
   - GTMSessionFetcher/Full (1.1.8):
     - GTMSessionFetcher/Core (= 1.1.8)
+  - Kingfisher (3.3.2)
   - MaterialKit (0.4)
   - PKHUD (4.2.0)
   - SnapKit (3.1.2)
@@ -77,23 +83,30 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Database
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
   - GoogleSignIn
+  - Kingfisher
   - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
   - PKHUD
   - SnapKit
-  - SwiftyStarRatingView
+  - SwiftyStarRatingView (from `https://github.com/ApolloZhu/SwiftyStarRatingView.git`)
 
 EXTERNAL SOURCES:
   MaterialKit:
     :git: https://github.com/ApolloZhu/MaterialKit.git
+  SwiftyStarRatingView:
+    :git: https://github.com/ApolloZhu/SwiftyStarRatingView.git
 
 CHECKOUT OPTIONS:
   MaterialKit:
     :commit: 8dee874cb4de7f6e09cdc68e8cbd2c589a5b71c9
     :git: https://github.com/ApolloZhu/MaterialKit.git
+  SwiftyStarRatingView:
+    :commit: 3f0d6ab9f33f0a3abf33fbe651a26ea22cc1d068
+    :git: https://github.com/ApolloZhu/SwiftyStarRatingView.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -103,6 +116,7 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
   FirebaseAuth: b436e4ecebe068bf8e8c6e4e29de5756ffe7ee24
   FirebaseCore: 46afaf2c2e0419ea7d3acfb08cf26a461a75fe85
+  FirebaseDatabase: 6de92187481ff0e8e124064f21742e95ee883b02
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
   GoogleAppUtilities: a8a552aa74f6597f805e45b5a3962766c3134973
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
@@ -114,11 +128,12 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  Kingfisher: 8e60094454aeb4746eb588eb57f794d891c6ea88
   MaterialKit: 2e5267bcf410b82793f2b92d2111f8ae4ed2c3f2
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
-  SwiftyStarRatingView: 973a3ea9a7cc0a88e34985f1087d3a4a7c837b51
+  SwiftyStarRatingView: c1aa282ce9252f22107f0e15e031ae5d8a3d2e62
 
-PODFILE CHECKSUM: 255dec5ed34f22430adfd561dd9f96fa5a1be8b1
+PODFILE CHECKSUM: e84475469a7609545f3b508e57f61aefd68d422c
 
 COCOAPODS: 1.1.1

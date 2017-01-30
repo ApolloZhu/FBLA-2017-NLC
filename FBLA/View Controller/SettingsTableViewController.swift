@@ -21,8 +21,8 @@ class SettingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         Account.shared.addLoginStateMonitor { [weak self] in
-            self?.usernameLabel.text = Account.shared.name
-            self?.userProfileImageView.image = Account.shared.profileImage ?? #imageLiteral(resourceName: "ic_person_48pt")
+            self?.usernameLabel.text = Account.shared.name ?? Localized.LOGIN_REGISTER
+            self?.userProfileImageView.kf.setImage(with: Account.shared.photoURL, placeholder: #imageLiteral(resourceName: "ic_person_48pt"))
         }
     }
 

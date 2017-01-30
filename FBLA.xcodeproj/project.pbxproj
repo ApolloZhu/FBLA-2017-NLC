@@ -13,9 +13,12 @@
 		522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C71E3665CE001D3DF9 /* LoginView.swift */; };
 		52461FFB1E398E30000AF183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52461FFA1E398E30000AF183 /* Assets.xcassets */; };
 		524EE6B41E365DA900AC7022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */; };
+		525708131E3E7719005E4C22 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525708121E3E7719005E4C22 /* ItemView.swift */; };
+		525708161E3E7909005E4C22 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525708151E3E7909005E4C22 /* Item.swift */; };
 		5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5274CDF71E31A83C0045E5EB /* Settings.bundle */; };
 		5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB281E31C549005E3CC5 /* SWRevealViewController.m */; };
 		5278FB2B1E31C98C005E3CC5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB2A1E31C98C005E3CC5 /* Account.swift */; };
+		527D419C1E3EC77500C2034D /* SearchItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D419B1E3EC77500C2034D /* SearchItemsViewController.swift */; };
 		528A51441E3D7B5500ECB468 /* BasicAccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A51431E3D7B5500ECB468 /* BasicAccountInfo.swift */; };
 		528A51461E3D80E700ECB468 /* ShippingAddressPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */; };
 		528A51481E3D812700ECB468 /* CTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A51471E3D812700ECB468 /* CTTextField.swift */; };
@@ -31,8 +34,9 @@
 		52F45C9F1E29BB5400A7D81A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C961E29BB5400A7D81A /* HomeViewController.swift */; };
 		52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */; };
 		52F45CA11E29BB5400A7D81A /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C981E29BB5400A7D81A /* ItemViewController.swift */; };
-		52F45CA21E29BB5400A7D81A /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C991E29BB5400A7D81A /* SearchResultTableViewController.swift */; };
 		52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */; };
+		52F625F71E3E8FE100A0CD88 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F625F61E3E8FE100A0CD88 /* Message.swift */; };
+		52F625F91E3E9FC500A0CD88 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F625F81E3E9FC500A0CD88 /* Condition.swift */; };
 		52F69EAA1E1E1A2A00602EC3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F69EA71E1E1A2A00602EC3 /* Extension.swift */; };
 		8B934EC6A1FB6DA9C760D040 /* Pods_FBLA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB16F7C1395D8B7D9F8ED51 /* Pods_FBLA.framework */; };
 /* End PBXBuildFile section */
@@ -48,10 +52,13 @@
 		52461FFA1E398E30000AF183 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524EE2D11E36A6770002EB22 /* FBLA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FBLA.entitlements; path = ../FBLA.entitlements; sourceTree = "<group>"; };
 		524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		525708121E3E7719005E4C22 /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemView.swift; path = FBLA/Control/ItemView.swift; sourceTree = SOURCE_ROOT; };
+		525708151E3E7909005E4C22 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5274CDF71E31A83C0045E5EB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		5278FB271E31C549005E3CC5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		5278FB281E31C549005E3CC5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		5278FB2A1E31C98C005E3CC5 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		527D419B1E3EC77500C2034D /* SearchItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchItemsViewController.swift; path = "FBLA/View Controller/SearchItemsViewController.swift"; sourceTree = SOURCE_ROOT; };
 		528A51431E3D7B5500ECB468 /* BasicAccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicAccountInfo.swift; path = "FBLA/View Controller/BasicAccountInfo.swift"; sourceTree = SOURCE_ROOT; };
 		528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShippingAddressPicker.swift; path = FBLA/Control/ShippingAddressPicker.swift; sourceTree = SOURCE_ROOT; };
 		528A51471E3D812700ECB468 /* CTTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CTTextField.swift; path = FBLA/Control/CTTextField.swift; sourceTree = SOURCE_ROOT; };
@@ -69,8 +76,9 @@
 		52F45C961E29BB5400A7D81A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "FBLA/View Controller/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsTableViewController.swift; path = "FBLA/View Controller/ItemsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C981E29BB5400A7D81A /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemViewController.swift; path = "FBLA/View Controller/ItemViewController.swift"; sourceTree = SOURCE_ROOT; };
-		52F45C991E29BB5400A7D81A /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultTableViewController.swift; path = "FBLA/View Controller/SearchResultTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "FBLA/View Controller/SettingsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		52F625F61E3E8FE100A0CD88 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		52F625F81E3E9FC500A0CD88 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
 		52F69EA71E1E1A2A00602EC3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = Misc/Extension.swift; sourceTree = "<group>"; };
 		52F772791E29627D0033C8AA /* FBLA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLA-Bridging-Header.h"; sourceTree = "<group>"; };
 		6EB16F7C1395D8B7D9F8ED51 /* Pods_FBLA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBLA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +106,16 @@
 			);
 			name = Localization;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		525708141E3E7722005E4C22 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */,
+				52F45C981E29BB5400A7D81A /* ItemViewController.swift */,
+				525708121E3E7719005E4C22 /* ItemView.swift */,
+			);
+			name = Item;
 			sourceTree = "<group>";
 		};
 		528A51421E3D7B1600ECB468 /* Login */ = {
@@ -172,9 +190,8 @@
 				52F45CA41E29BBA400A7D81A /* Account */,
 				52F45C941E29BB5400A7D81A /* CartTableViewController.swift */,
 				52F45C951E29BB5400A7D81A /* CommentsTableViewController.swift */,
-				52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */,
-				52F45C981E29BB5400A7D81A /* ItemViewController.swift */,
-				52F45C991E29BB5400A7D81A /* SearchResultTableViewController.swift */,
+				525708141E3E7722005E4C22 /* Item */,
+				527D419B1E3EC77500C2034D /* SearchItemsViewController.swift */,
 			);
 			name = "View Controller";
 			path = Controller;
@@ -198,6 +215,9 @@
 			children = (
 				521681371E31D40700544BA3 /* Localization */,
 				5278FB2A1E31C98C005E3CC5 /* Account.swift */,
+				525708151E3E7909005E4C22 /* Item.swift */,
+				52F625F81E3E9FC500A0CD88 /* Condition.swift */,
+				52F625F61E3E8FE100A0CD88 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -405,10 +425,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				528A51481E3D812700ECB468 /* CTTextField.swift in Sources */,
+				52F625F91E3E9FC500A0CD88 /* Condition.swift in Sources */,
 				5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */,
 				52F45CA11E29BB5400A7D81A /* ItemViewController.swift in Sources */,
 				52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */,
+				527D419C1E3EC77500C2034D /* SearchItemsViewController.swift in Sources */,
+				525708131E3E7719005E4C22 /* ItemView.swift in Sources */,
 				522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */,
+				525708161E3E7909005E4C22 /* Item.swift in Sources */,
 				52D8675D1E39359100A5266B /* Localized.swift in Sources */,
 				52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */,
 				52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */,
@@ -416,9 +440,9 @@
 				52F45C9E1E29BB5400A7D81A /* CommentsTableViewController.swift in Sources */,
 				52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */,
 				52F45C9F1E29BB5400A7D81A /* HomeViewController.swift in Sources */,
-				52F45CA21E29BB5400A7D81A /* SearchResultTableViewController.swift in Sources */,
 				52F69EAA1E1E1A2A00602EC3 /* Extension.swift in Sources */,
 				52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */,
+				52F625F71E3E8FE100A0CD88 /* Message.swift in Sources */,
 				52F45C9B1E29BB5400A7D81A /* AccountView.swift in Sources */,
 				522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */,
 				528A51461E3D80E700ECB468 /* ShippingAddressPicker.swift in Sources */,
@@ -579,7 +603,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "FBLA/Misc/FBLA-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -598,7 +622,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FBLA/Misc/FBLA-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

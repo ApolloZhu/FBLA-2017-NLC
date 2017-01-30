@@ -9,6 +9,10 @@
 import UIKit
 import PKHUD
 import CoreLocation
+import Firebase
+
+let database = FIRDatabase.database().reference()
+let defaults = UserDefaults.standard
 
 extension UIStoryboardSegue {
     var terminus: UIViewController {
@@ -41,13 +45,16 @@ extension UIImage {
 }
 
 extension UILabel {
-    static func makeAutoAdjusting(_ content: String? = nil, fontSize: CGFloat? = nil) -> UILabel {
+    static func makeAutoAdjusting(_ content: String? = nil, fontSize: CGFloat? = nil, lines: Int? = nil) -> UILabel {
         let label = UILabel()
         if let content = content {
             label.text = content
         }
         if let fontSize = fontSize {
             label.font = UIFont.systemFont(ofSize: fontSize)
+        }
+        if let lines = lines {
+            label.numberOfLines = lines
         }
         label.adjustsFontSizeToFitWidth = true
         if #available(iOS 10.0, *) {
@@ -82,6 +89,9 @@ extension String {
     }
     var length: Int {
         return characters.count
+    }
+    var url: URL? {
+        return URL(string: self)
     }
 }
 

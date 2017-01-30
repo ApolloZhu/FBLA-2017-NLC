@@ -21,8 +21,8 @@ open class BasicAccountInfo: UIControl {
     open lazy var emailLabel = UILabel.makeAutoAdjusting()
 
     open func updateInfo() {
-        imageView.image = Account.shared.profileImage ?? #imageLiteral(resourceName: "ic_person_48pt")
-        nameLabel.text = Account.shared.name
+        imageView.kf.setImage(with: Account.shared.photoURL, placeholder: #imageLiteral(resourceName: "ic_person_48pt"))
+        nameLabel.text = Account.shared.name ?? Localized.USERNAME
         emailLabel.text = Account.shared.email
     }
 

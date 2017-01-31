@@ -19,7 +19,7 @@ struct Item {
     var imagePath: String?
     //!!!: Bring back for rating
     //    var rating: Double
-    
+
 }
 
 extension Item {
@@ -37,7 +37,7 @@ extension Item {
                     let item = Item(uid: uid, iid: iid, name: name, description: description, price: price,
                                     condition: Condition(rawValue: rawCondition) ?? .acceptable,
                                     category: Category.from(snapshot: snapshot.childSnapshot(forPath: "category")) ?? .default,
-                                    imagePath: json["url"].string)
+                                    imagePath: json["url"].string?.content)
                     process(item)
                 } else {
                     process(nil)
@@ -47,7 +47,19 @@ extension Item {
         process(nil)
     }
     func save() {
-        database.child("items/\(iid)").updateChildValues(<#T##values: [AnyHashable : Any]##[AnyHashable : Any]#>)
+        var json: [String : Any] = [
+            "uid": uid,
+            "name": name,
+            "description": description,
+            "price": price,
+            "condition": condition.rawValue,
+            "category": category.json
+        ]
+
+        if let path = imagePath {
+            json["url"] = path
+        }
+        database.child("items/\(iid)").updateChildValues(json)
         // TODO: Save to database
     }
 }

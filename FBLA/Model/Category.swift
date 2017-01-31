@@ -9,9 +9,9 @@
 import Firebase
 import SwiftyJSON
 
-struct Category {
+class Category {
     let name: String
-    var sub = [Category]()
+    var sub: Category?
     init(name: String) {
         self.name = name
     }
@@ -23,10 +23,17 @@ extension Category {
         if let json = snapshot.json {
             var category = Category(name: json[0].stringValue)
             if let sub = Category.from(snapshot: snapshot.childSnapshot(forPath: "1")) {
-                category.sub.append(sub)
+                category.sub = sub
             }
             return category
         }
         return nil
+    }
+    var json: JSON {
+        var data = JSON([name])
+        if let sub = sub {
+            data[1] = sub.json
+        }
+        return data
     }
 }

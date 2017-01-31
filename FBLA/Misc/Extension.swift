@@ -7,10 +7,22 @@
 //
 
 import UIKit
+import SnapKit
 import PKHUD
 import CoreLocation
 import Firebase
 import SwiftyJSON
+
+extension ConstraintMaker {
+    func horizontallyCenterInSuperview() {
+        centerX.equalToSuperview()
+        width.equalToSuperview().offset(-16)
+    }
+    func horizontallyCenterIn(other: ConstraintRelatableTarget) {
+        centerX.equalTo(other)
+        width.equalTo(other).offset(-16)
+    }
+}
 
 let database = FIRDatabase.database().reference()
 let defaults = UserDefaults.standard
@@ -74,6 +86,7 @@ extension UILabel {
     }
     func centered() -> UILabel {
         textAlignment = .center
+        baselineAdjustment = .alignCenters
         return self
     }
 }

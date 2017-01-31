@@ -63,9 +63,8 @@ class ShippingAddressPicker: UIControl {
         editAddressButton.addTarget(self, action: #selector(presentAddressEditor), for: .touchUpInside)
         pickAddressButton.addTarget(self, action: #selector(scheduleToPresentPlacePicker), for: .touchUpInside)
         addressLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(8)
-            make.width.equalToSuperview().offset(-16)
+            make.horizontallyCenterInSuperview()
             addressButtonBottomConstraint.whileEditing = make.bottom.equalTo(editAddressButton.snp.top).offset(-8).constraint
             addressButtonBottomConstraint.normal = make.bottom.equalToSuperview().offset(-8).constraint
             addressButtonBottomConstraint.normal?.deactivate()

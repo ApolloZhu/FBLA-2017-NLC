@@ -31,7 +31,7 @@ class HomeViewController: UIViewController, SWRevealViewControllerPresentor {
         super.prepare(for: segue, sender: sender)
         //!!!: Remove before final stage
         if segue.identifier == "Test", let vc = segue.terminus as? ItemViewController {
-                vc.iid = "test"
+                vc.iid = "2017-2233"
         }
     }
 

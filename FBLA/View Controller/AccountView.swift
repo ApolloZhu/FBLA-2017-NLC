@@ -47,19 +47,16 @@ class AccountView: UIView {
         addSubview(logoutButton)
 
         basicAccountInfoView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalToSuperview().offset(-16)
+            make.horizontallyCenterInSuperview()
             make.top.equalToSuperview().offset(8)
         }
         placesPicker.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalToSuperview().offset(-16)
+            make.horizontallyCenterInSuperview()
             make.top.equalTo(basicAccountInfoView.snp.bottom).offset(8)
         }
 
         logoutButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalToSuperview().offset(-16)
+            make.horizontallyCenterInSuperview()
             make.bottom.equalToSuperview().offset(-8)
         }
         

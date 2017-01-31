@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5216812F1E31D3DA00544BA3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681311E31D3DA00544BA3 /* Localizable.strings */; };
 		521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681361E31D3DA00544BA3 /* InfoPlist.strings */; };
-		521EAB841E403103004D7AAA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521EAB831E403103004D7AAA /* Category.swift */; };
 		522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */; };
 		522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C71E3665CE001D3DF9 /* LoginView.swift */; };
 		52461FFB1E398E30000AF183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52461FFA1E398E30000AF183 /* Assets.xcassets */; };
@@ -48,7 +47,6 @@
 		5216812C1E31D32000544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		521681301E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		521681351E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		521EAB831E403103004D7AAA /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "FBLA/View Controller/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		522FB0C71E3665CE001D3DF9 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = "FBLA/View Controller/LoginView.swift"; sourceTree = SOURCE_ROOT; };
 		52461FFA1E398E30000AF183 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,10 +108,18 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		523300CE1E406C7B00D85A6C /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				525708151E3E7909005E4C22 /* Item.swift */,
+				52F625F81E3E9FC500A0CD88 /* Condition.swift */,
+			);
+			name = Item;
+			sourceTree = "<group>";
+		};
 		525708141E3E7722005E4C22 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */,
 				52F45C981E29BB5400A7D81A /* ItemViewController.swift */,
 				525708121E3E7719005E4C22 /* ItemView.swift */,
 			);
@@ -186,13 +192,14 @@
 		52F69EA51E1E1A2A00602EC3 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				52F45C961E29BB5400A7D81A /* HomeViewController.swift */,
 				52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */,
-				528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */,
 				52F45CA41E29BBA400A7D81A /* Account */,
+				525708141E3E7722005E4C22 /* Item */,
+				52F45C961E29BB5400A7D81A /* HomeViewController.swift */,
+				528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */,
 				52F45C941E29BB5400A7D81A /* CartTableViewController.swift */,
 				52F45C951E29BB5400A7D81A /* CommentsTableViewController.swift */,
-				525708141E3E7722005E4C22 /* Item */,
+				52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */,
 				527D419B1E3EC77500C2034D /* SearchItemsViewController.swift */,
 			);
 			name = "View Controller";
@@ -215,12 +222,10 @@
 		52F69EA81E1E1A2A00602EC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				521681371E31D40700544BA3 /* Localization */,
 				5278FB2A1E31C98C005E3CC5 /* Account.swift */,
-				525708151E3E7909005E4C22 /* Item.swift */,
-				521EAB831E403103004D7AAA /* Category.swift */,
-				52F625F81E3E9FC500A0CD88 /* Condition.swift */,
+				523300CE1E406C7B00D85A6C /* Item */,
 				52F625F61E3E8FE100A0CD88 /* Message.swift */,
+				521681371E31D40700544BA3 /* Localization */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -443,7 +448,6 @@
 				52F45C9E1E29BB5400A7D81A /* CommentsTableViewController.swift in Sources */,
 				52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */,
 				52F45C9F1E29BB5400A7D81A /* HomeViewController.swift in Sources */,
-				521EAB841E403103004D7AAA /* Category.swift in Sources */,
 				52F69EAA1E1E1A2A00602EC3 /* Extension.swift in Sources */,
 				52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */,
 				52F625F71E3E8FE100A0CD88 /* Message.swift in Sources */,

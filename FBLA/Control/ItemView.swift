@@ -25,7 +25,11 @@ class ItemView: UIView {
     open lazy var buyButton: MKButton = {
         let btn = MKButton()
         btn.tintColor = .tianyi
+        btn.layer.borderColor = UIColor.tianyi.cgColor
+        btn.setTitleColor(.tianyi, for: .normal)
+        btn.layer.borderWidth = 3
         btn.cornerRadius = 5
+        btn.rippleLayerColor = UIColor.MKColor.Lime.P400
         return btn
     }()
     
@@ -38,7 +42,6 @@ class ItemView: UIView {
                 this.conditionLabel.text = "\(item.condition)"
                 this.buyButton.setTitle("$\(item.price)", for: .normal)
             }
-            
         }
     }
     
@@ -54,32 +57,26 @@ class ItemView: UIView {
         imageView.contentMode = .scaleAspectFit
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)
-            make.centerX.equalToSuperview()
-            make.width.equalToSuperview().offset(-16)
-            make.height.equalTo(100)
+            make.horizontallyCenterInSuperview()
+            make.height.equalTo(200)
         }
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(8)
-            make.centerX.equalToSuperview()
-            make.width.equalToSuperview().offset(-16)
+            make.horizontallyCenterInSuperview()
+            make.height.equalTo(40)
         }
         buyButton.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().offset(-8)
-            make.width.equalToSuperview().dividedBy(5)
             make.top.equalTo(nameLabel.snp.bottom).offset(8)
+            make.horizontallyCenterInSuperview()
         }
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).offset(8)
-            make.leading.equalTo(nameLabel)
-            make.trailing.equalTo(buyButton.snp.leading).offset(-8)
+            make.top.equalTo(buyButton.snp.bottom).offset(8)
+            make.horizontallyCenterInSuperview()
         }
         conditionLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(descriptionLabel)
             make.top.equalTo(descriptionLabel.snp.bottom).offset(8)
-            make.bottom.equalToSuperview().offset(-8)
+            make.horizontallyCenterInSuperview()
         }
         updateInfo()
     }
-    
-    
 }

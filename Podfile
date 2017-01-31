@@ -11,7 +11,9 @@ target 'FBLA' do
   pod 'PKHUD'
   pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
 
+  # Util
   pod 'Kingfisher'
+  pod 'SwiftyJSON'
 
   # Data
   pod 'GooglePlaces'

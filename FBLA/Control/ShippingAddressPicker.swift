@@ -19,9 +19,13 @@ class ShippingAddressPicker: UIControl {
     lazy var pickAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_place"))
     
     func updateInfo() {
-        GMSPlacesClient.shared().lookUpPlaceID(Account.shared.placeID) { [weak self] (place, error) in
-            if !showError(error), let place = place {
-                self?.addressLabel.text = place.formattedAddress
+        Account.shared.requestPlaceID { (id) in
+            if let id = id {
+                GMSPlacesClient.shared().lookUpPlaceID(id) { [weak self] (place, error) in
+                    if !showError(error), let place = place {
+                        self?.addressLabel.text = place.formattedAddress
+                    }
+                }
             }
         }
     }
@@ -94,12 +98,14 @@ class ShippingAddressPicker: UIControl {
     @objc func scheduleToPresentPlacePicker() {
         if !isUIFreezed {
             isUIFreezed = true
-            GMSPlacesClient.shared().lookUpPlaceID(Account.shared.placeID) { [weak self] (place, _) in
-                if let place = place {
-                    self?.presentAddressPicker(at: place.coordinate)
-                } else {
-                    GMSPlacesClient.shared().currentPlace() { (near, _) in
-                        self?.presentAddressPicker(at: near?.likelihoods[0].place.coordinate ?? .random)
+            Account.shared.requestPlaceID { id in
+                GMSPlacesClient.shared().lookUpPlaceID(id ?? "") { [weak self] (place, _) in
+                    if let place = place {
+                        self?.presentAddressPicker(at: place.coordinate)
+                    } else {
+                        GMSPlacesClient.shared().currentPlace() { (near, _) in
+                            self?.presentAddressPicker(at: near?.likelihoods[0].place.coordinate ?? .random)
+                        }
                     }
                 }
             }
@@ -118,7 +124,7 @@ class ShippingAddressPicker: UIControl {
     open func setPlace(_ place: GMSPlace?, error: Error? = nil) {
         isUIFreezed = false
         if !showError(error), let place = place {
-            Account.shared.placeID = place.placeID
+            Account.shared.setPlaceID(place.placeID)
             addressLabel.text = place.formattedAddress ?? "\(place.coordinate)"
         }
     }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PKHUD
 import GooglePlaces
 import Firebase
 import GoogleSignIn
@@ -31,16 +30,25 @@ public class Account: NSObject {
     }
     
     public var email: String { return user?.email ?? Localized.EMail }
-    //TODO: User name from uid
     public var name: String? { return user?.displayName }
     public var photoURL: URL? { return user?.photoURL }
-
-    public var placeID: String {
-        get {
-            return defaults.string(forKey: Identifier.PlaceIDKey) ?? ""
+    
+    
+    public func requestPlaceID(_ process: @escaping (String?) -> ()) {
+        if let user = user {
+            database.child("placeIDs/\(user.uid)").observe(.value, with: { snapshot in
+                process(snapshot.value as? String)
+            })
+        } else {
+            process(defaults.string(forKey: Identifier.PlaceIDKey))
         }
-        set {
-            defaults.set(newValue, forKey: Identifier.PlaceIDKey)
+    }
+    
+    public func setPlaceID(_ id: String) {
+        if let user = user {
+            database.child("placeIDs/\(user.uid)").setValue(id)
+        } else {
+            defaults.set(id, forKey: Identifier.PlaceIDKey)
         }
     }
     

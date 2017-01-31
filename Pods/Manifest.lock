@@ -72,10 +72,11 @@ PODS:
   - GTMSessionFetcher/Core (1.1.8)
   - GTMSessionFetcher/Full (1.1.8):
     - GTMSessionFetcher/Core (= 1.1.8)
-  - Kingfisher (3.3.2)
+  - Kingfisher (3.3.3)
   - MaterialKit (0.4)
   - PKHUD (4.2.0)
   - SnapKit (3.1.2)
+  - SwiftyJSON (3.1.4)
   - SwiftyStarRatingView (1.0.1)
 
 DEPENDENCIES:
@@ -92,6 +93,7 @@ DEPENDENCIES:
   - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
   - PKHUD
   - SnapKit
+  - SwiftyJSON
   - SwiftyStarRatingView (from `https://github.com/ApolloZhu/SwiftyStarRatingView.git`)
 
 EXTERNAL SOURCES:
@@ -128,12 +130,13 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
-  Kingfisher: 8e60094454aeb4746eb588eb57f794d891c6ea88
+  Kingfisher: 893215a42e5c2164e916f69463c68003092b104c
   MaterialKit: 2e5267bcf410b82793f2b92d2111f8ae4ed2c3f2
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   SwiftyStarRatingView: c1aa282ce9252f22107f0e15e031ae5d8a3d2e62
 
-PODFILE CHECKSUM: e84475469a7609545f3b508e57f61aefd68d422c
+PODFILE CHECKSUM: ce779e9df293ff8e435b2c5de6134925db23ba11
 
 COCOAPODS: 1.1.1

@@ -10,9 +10,19 @@ import UIKit
 import PKHUD
 import CoreLocation
 import Firebase
+import SwiftyJSON
 
 let database = FIRDatabase.database().reference()
 let defaults = UserDefaults.standard
+
+extension FIRDataSnapshot {
+    var json: JSON? {
+        if let value = value {
+            return JSON(value)
+        }
+        return nil
+    }
+}
 
 extension UIStoryboardSegue {
     var terminus: UIViewController {

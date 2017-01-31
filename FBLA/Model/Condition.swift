@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum Condition: Int {
-    case bad
+enum Condition: Int, RawRepresentable {
+    case collectible
     case acceptable
     case veryGood
     case likeNew
@@ -19,8 +19,8 @@ enum Condition: Int {
 extension Condition: CustomStringConvertible {
     var description: String {
         switch self {
-        case .bad :
-            return NSLocalizedString("Bad", comment: "Condition of item is bad")
+        case .collectible:
+            return NSLocalizedString("Collectible", comment: "Condition of item is rather for collec†ion only")
         case .acceptable:
             return NSLocalizedString("Acceptable", comment: "Condition of item is acceptable")
         case .veryGood:
@@ -28,7 +28,7 @@ extension Condition: CustomStringConvertible {
         case .likeNew:
             return NSLocalizedString("Like New", comment: "Condition of item is like new")
         case .refurbished:
-            return NSLocalizedString("Refurbished", comment: "Condition of item is refurbished")
+            return NSLocalizedString("Refurbished", comment: "Condition of item is has been refurbished")
         }
     }
 }

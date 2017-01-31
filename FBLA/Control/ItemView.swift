@@ -30,12 +30,15 @@ class ItemView: UIView {
     }()
     
     public func updateInfo() {
-        if let item = Item.from(iid: iid) {
-            imageView.kf.setImage(with: item.imageURL, placeholder: #imageLiteral(resourceName: "ic_card_giftcard_48pt"))
-            nameLabel.text = item.name
-            descriptionLabel.text = item.description
-            conditionLabel.text = "\(item.condition)"
-            buyButton.setTitle("$\(item.price)", for: .normal)
+        Item.from(iid: iid) { [weak self] item in
+            if let this = self, let item = item {
+                this.imageView.kf.setImage(with: item.imageURL, placeholder: #imageLiteral(resourceName: "ic_card_giftcard_48pt"))
+                this.nameLabel.text = item.name
+                this.descriptionLabel.text = item.description
+                this.conditionLabel.text = "\(item.condition)"
+                this.buyButton.setTitle("$\(item.price)", for: .normal)
+            }
+            
         }
     }
     
@@ -43,6 +46,11 @@ class ItemView: UIView {
         super.willMove(toSuperview: newSuperview)
         //!!!: Move this to rating control
         //ratingControl.accurateHalfStars = false
+        addSubview(imageView)
+        addSubview(nameLabel)
+        addSubview(descriptionLabel)
+        addSubview(conditionLabel)
+        addSubview(buyButton)
         imageView.contentMode = .scaleAspectFit
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)

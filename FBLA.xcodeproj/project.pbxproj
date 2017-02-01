@@ -27,9 +27,8 @@
 		52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDD61E1E16A600FA9ABA /* Main.storyboard */; };
 		52AFEDDD1E1E16A600FA9ABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDDB1E1E16A600FA9ABA /* LaunchScreen.storyboard */; };
 		52D8675D1E39359100A5266B /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8675C1E39359100A5266B /* Localized.swift */; };
-		52DE7CF71E41182F00204E0E /* CheckOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE7CF61E41182F00204E0E /* CheckOut.swift */; };
+		52DE7CF71E41182F00204E0E /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */; };
 		52DE7CFA1E4122C500204E0E /* ItemSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE7CF91E4122C500204E0E /* ItemSubmitViewController.swift */; };
-		52DE7CFC1E4122E500204E0E /* ItemSubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE7CFB1E4122E500204E0E /* ItemSubmitView.swift */; };
 		52F45C9B1E29BB5400A7D81A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C921E29BB5400A7D81A /* AccountView.swift */; };
 		52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C931E29BB5400A7D81A /* AccountViewController.swift */; };
 		52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C941E29BB5400A7D81A /* CartTableViewController.swift */; };
@@ -72,9 +71,8 @@
 		52AFEDDC1E1E16A600FA9ABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52AFEDDE1E1E16A600FA9ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		52D8675C1E39359100A5266B /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localized.swift; path = Model/Localized.swift; sourceTree = "<group>"; };
-		52DE7CF61E41182F00204E0E /* CheckOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckOut.swift; path = FBLA/Control/CheckOut.swift; sourceTree = SOURCE_ROOT; };
+		52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckOutViewController.swift; path = FBLA/Control/CheckOutViewController.swift; sourceTree = SOURCE_ROOT; };
 		52DE7CF91E4122C500204E0E /* ItemSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemSubmitViewController.swift; path = "FBLA/View Controller/ItemSubmitViewController.swift"; sourceTree = SOURCE_ROOT; };
-		52DE7CFB1E4122E500204E0E /* ItemSubmitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemSubmitView.swift; path = "FBLA/View Controller/ItemSubmitView.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C921E29BB5400A7D81A /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountView.swift; path = "FBLA/View Controller/AccountView.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C931E29BB5400A7D81A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = "FBLA/View Controller/AccountViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C941E29BB5400A7D81A /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartTableViewController.swift; path = "FBLA/View Controller/CartTableViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -188,7 +186,7 @@
 		52DE7CF51E41180C00204E0E /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				52DE7CF61E41182F00204E0E /* CheckOut.swift */,
+				52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */,
 				528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */,
 			);
 			name = Control;
@@ -208,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				52DE7CF91E4122C500204E0E /* ItemSubmitViewController.swift */,
-				52DE7CFB1E4122E500204E0E /* ItemSubmitView.swift */,
 			);
 			name = Submit;
 			sourceTree = "<group>";
@@ -492,9 +489,8 @@
 				52F45C9B1E29BB5400A7D81A /* AccountView.swift in Sources */,
 				522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */,
 				528A51461E3D80E700ECB468 /* ShippingAddressPicker.swift in Sources */,
-				52DE7CF71E41182F00204E0E /* CheckOut.swift in Sources */,
+				52DE7CF71E41182F00204E0E /* CheckOutViewController.swift in Sources */,
 				528A51441E3D7B5500ECB468 /* BasicAccountInfo.swift in Sources */,
-				52DE7CFC1E4122E500204E0E /* ItemSubmitView.swift in Sources */,
 				5278FB2B1E31C98C005E3CC5 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

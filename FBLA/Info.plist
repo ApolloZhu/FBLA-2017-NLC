@@ -40,7 +40,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>32</string>
+	<string>38</string>
 	<key>FacebookAppID</key>
 	<string>340965209630078</string>
 	<key>FacebookDisplayName</key>
@@ -59,6 +59,8 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Use your location to quickly set shipping address</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To select photo of item from your photo library</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

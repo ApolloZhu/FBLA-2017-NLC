@@ -14,6 +14,7 @@ enum Condition: Int, RawRepresentable {
     case veryGood
     case likeNew
     case refurbished
+    static let all: [Condition] = [.collectible, .acceptable, .veryGood, .likeNew, .refurbished]
 }
 
 extension Condition: CustomStringConvertible {

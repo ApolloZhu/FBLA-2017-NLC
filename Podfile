@@ -10,6 +10,9 @@ target 'FBLA' do
   pod 'SwiftyStarRatingView', :git => 'https://github.com/ApolloZhu/SwiftyStarRatingView.git'
   pod 'PKHUD'
   pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
+  pod 'MJRefresh'
+  pod 'Eureka', '~> 2.0.0-beta.1'
+  pod 'ImageRow'
 
   # Util
   pod 'Kingfisher'

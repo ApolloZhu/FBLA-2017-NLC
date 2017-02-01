@@ -1,5 +1,5 @@
 //
-//  CheckOut.swift
+//  CheckOutViewController.swift
 //  FBLA
 //
 //  Created by Apollo Zhu on 1/31/17.

@@ -13,6 +13,7 @@ let EMOJI = "╮(￣▽￣)╭"
 struct Localized {}
 
 extension Localized {
+    static let DONE = NSLocalizedString("Done", comment: "General completed something")
     static let CANCEL = NSLocalizedString("Cancel", comment: "General Cancel")
     static let PROCESSING = NSLocalizedString("Processing", comment: "Generally doing something")
 }

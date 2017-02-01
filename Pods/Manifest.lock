@@ -5,6 +5,30 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - Braintree (4.7.4):
+    - Braintree/Card (= 4.7.4)
+    - Braintree/Core (= 4.7.4)
+    - Braintree/PayPal (= 4.7.4)
+    - Braintree/UI (= 4.7.4)
+  - Braintree/Apple-Pay (4.7.4):
+    - Braintree/Core
+  - Braintree/Card (4.7.4):
+    - Braintree/Core
+  - Braintree/Core (4.7.4)
+  - Braintree/PayPal (4.7.4):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.7.4):
+    - Braintree/Core
+    - Braintree/PayPalUtils
+  - Braintree/PayPalOneTouch (4.7.4):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+    - Braintree/PayPalUtils
+  - Braintree/PayPalUtils (4.7.4)
+  - Braintree/UI (4.7.4):
+    - Braintree/Card
+    - Braintree/Core
   - FBSDKCoreKit (4.19.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.19.0):
@@ -80,6 +104,8 @@ PODS:
   - SwiftyStarRatingView (1.0.1)
 
 DEPENDENCIES:
+  - Braintree
+  - Braintree/Apple-Pay
   - FBSDKCoreKit
   - FBSDKLoginKit
   - Firebase/Auth
@@ -112,6 +138,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Braintree: 85b7f6300aa5238df972b32ea58adc405c8ebfdc
   FBSDKCoreKit: 894b2b6eda6a4c8c4204e92e59cc355709ef045c
   FBSDKLoginKit: 83ca4d8f12a2022570af9fd6aacf27f6b425b99f
   Firebase: 53b2343db1ebfa3eb16bdb4318b8bb65360b2220
@@ -137,6 +164,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   SwiftyStarRatingView: c1aa282ce9252f22107f0e15e031ae5d8a3d2e62
 
-PODFILE CHECKSUM: ce779e9df293ff8e435b2c5de6134925db23ba11
+PODFILE CHECKSUM: e44e2a86728f6865c7212b202a9276b25c437658
 
 COCOAPODS: 1.1.1

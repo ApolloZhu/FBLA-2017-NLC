@@ -1,5 +1,5 @@
 //
-//  ItemView.swift
+//  ItemDisplayView.swift
 //  FBLA
 //
 //  Created by Apollo Zhu on 1/29/17.
@@ -11,13 +11,14 @@ import MaterialKit
 import SwiftyStarRatingView
 import Kingfisher
 
-class ItemView: UIView {
+open class ItemDisplayView: UIView {
     open var iid: String? {
         didSet {
             updateInfo()
         }
     }
-    
+
+    open weak var controller: UIViewController?
     open lazy var imageView = UIImageView()
     open lazy var nameLabel = UILabel.makeAutoAdjusting().centered()
     open lazy var descriptionLabel = UILabel.makeAutoAdjusting(lines: 3)
@@ -30,6 +31,7 @@ class ItemView: UIView {
         btn.layer.borderWidth = 3
         btn.cornerRadius = 5
         btn.rippleLayerColor = UIColor.MKColor.Lime.P400
+        btn.addTarget(self, action: #selector(pay), for: .touchUpInside)
         return btn
     }()
     
@@ -44,8 +46,18 @@ class ItemView: UIView {
             }
         }
     }
+
+    @objc private func pay() {
+        Item.from(iid: iid) { [weak self] item in
+            if let controller = self?.controller, let item = item {
+                controller.checkOut(item: item)
+            } else {
+                showError(NSLocalizedString("No Such Item", comment: "Show in pop up telling user no such item exists"))
+            }
+        }
+    }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         //!!!: Move this to rating control
         //ratingControl.accurateHalfStars = false

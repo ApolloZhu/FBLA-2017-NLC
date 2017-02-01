@@ -15,7 +15,7 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if !Account.shared.isLogggedIn {
-            showLoginViewController()
+            showLoginViewController(dismissAction: #selector(dismissLoginViewController))
         }
         Account.shared.addLoginStateMonitor { [weak self] in
             self?.accountView.updateInfo()
@@ -23,6 +23,10 @@ class AccountViewController: UIViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         accountView.placesPicker.controller = self
         accountView.logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+    }
+
+    @objc private func dismissLoginViewController() {
+        animatedDismiss(completion: Account.shared.isLogggedIn ? nil : animatedPop)
     }
 
     override func viewWillAppear(_ animated: Bool) {

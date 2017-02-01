@@ -25,4 +25,9 @@ target 'FBLA' do
   pod 'GoogleSignIn'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+
+  # Transaction
+  pod 'Braintree'
+  pod 'Braintree/Apple-Pay'
+  
 end

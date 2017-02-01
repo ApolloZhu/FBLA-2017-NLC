@@ -1,5 +1,5 @@
 //
-//  ItemViewController.swift
+//  ItemDisplayViewController.swift
 //  FBLA
 //
 //  Created by Apollo Zhu on 1/5/17.
@@ -9,14 +9,15 @@
 import UIKit
 import SwiftyStarRatingView
 
-class ItemViewController: UIViewController {
+class ItemDisplayViewController: UIViewController {
 
     var iid: String?
-    @IBOutlet weak var itemView: ItemView!
+    @IBOutlet weak var itemView: ItemDisplayView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         itemView.iid = iid
+        itemView.controller = self
     }
 
     /*

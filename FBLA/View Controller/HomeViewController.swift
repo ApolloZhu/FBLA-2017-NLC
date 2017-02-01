@@ -30,8 +30,8 @@ class HomeViewController: UIViewController, SWRevealViewControllerPresentor {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         //!!!: Remove before final stage
-        if segue.identifier == "Test", let vc = segue.terminus as? ItemViewController {
-                vc.iid = "2017-2233"
+        if segue.identifier == "Test", let vc = segue.terminus as? ItemDisplayViewController {
+                vc.iid = "商品标识符"
         }
     }
 

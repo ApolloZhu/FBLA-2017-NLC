@@ -14,14 +14,11 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 extension UIViewController {
-    func showLoginViewController() {
+    func showLoginViewController(dismissAction action: Selector? = nil) {
         let vc = LoginViewController()
         let nav = UINavigationController(rootViewController: vc)
-        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissLoginViewController))
+        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: action ?? #selector(animatedDismiss))
         present(nav, animated: true, completion: nil)
-    }
-    @objc private func dismissLoginViewController() {
-        animatedDismiss(completion: Account.shared.isLogggedIn ? nil : animatedPop)
     }
 }
 

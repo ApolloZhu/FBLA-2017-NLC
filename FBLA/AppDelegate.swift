@@ -12,6 +12,7 @@ import GoogleMaps
 import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
+import Braintree
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyCFuF3tiY2kGcgR4IwcJtvCAgsdUmywmaY")
         FIRApp.configure()
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        BTAppSwitch.setReturnURLScheme("io.github.swiftyx.apollo.FBLA-2017-NLC.payments")
+        // "merchant.io.github.swiftyx.apollo.FBLA-2017-NLC"
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
@@ -31,12 +34,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 9.0, *) {
             out = out || GIDSignIn.sharedInstance().handle(url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
         }
+        if url.scheme?.localizedCaseInsensitiveCompare("com.your-company.Your-App.payments") == .orderedSame {
+            out = out || BTAppSwitch.handleOpen(url, options: options)
+        }
         return out
     }
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
             || FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+            || (url.scheme?.localizedCaseInsensitiveCompare("com.your-company.Your-App.payments") == .orderedSame && BTAppSwitch.handleOpen(url, sourceApplication: sourceApplication))
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

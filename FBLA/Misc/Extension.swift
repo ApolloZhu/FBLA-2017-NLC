@@ -12,6 +12,11 @@ import PKHUD
 import CoreLocation
 import Firebase
 import SwiftyJSON
+import Braintree
+
+extension BTAPIClient {
+    static let shared = BTAPIClient(authorization: "sandbox_ws7w46d8_sjx3gtf3zg6bf66y")!
+}
 
 extension ConstraintMaker {
     func horizontallyCenterInSuperview() {
@@ -118,7 +123,11 @@ extension String {
     }
 }
 
-extension String: Error { }
+extension String: Error {
+    public var localizedDescription: String {
+        return self
+    }
+}
 
 extension Bool {
     mutating func toggle() {

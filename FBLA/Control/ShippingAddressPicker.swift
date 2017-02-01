@@ -13,11 +13,11 @@ import GooglePlacePicker
 
 class ShippingAddressPicker: UIControl {
     weak var controller: UIViewController?
-    
+
     lazy var addressLabel = UILabel.makeAutoAdjusting(fontSize: 20).centered()
     lazy var editAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_edit"))
     lazy var pickAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_place"))
-    
+
     func updateInfo() {
         Account.shared.requestPlaceID { (id) in
             if let id = id {
@@ -29,7 +29,7 @@ class ShippingAddressPicker: UIControl {
             }
         }
     }
-    
+
     var isEditing: Bool = true {
         didSet {
             if isEditing != oldValue {
@@ -40,7 +40,7 @@ class ShippingAddressPicker: UIControl {
             }
         }
     }
-    
+
     private var addressButtonBottomConstraint: (whileEditing: Constraint?, normal: Constraint?)
     override func updateConstraints() {
         addressLabel.snp.updateConstraints{ make in
@@ -54,7 +54,7 @@ class ShippingAddressPicker: UIControl {
         }
         super.updateConstraints()
     }
-    
+
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         addSubview(addressLabel)
@@ -82,9 +82,9 @@ class ShippingAddressPicker: UIControl {
         updateInfo()
         isEditing.toggle()
     }
-    
+
     fileprivate var isUIFreezed = false
-    
+
     @objc func presentAddressEditor() {
         if !isUIFreezed {
             isUIFreezed = true
@@ -93,7 +93,7 @@ class ShippingAddressPicker: UIControl {
             controller?.present(gVC, animated: true, completion: nil)
         }
     }
-    
+
     @objc func scheduleToPresentPlacePicker() {
         if !isUIFreezed {
             isUIFreezed = true
@@ -110,7 +110,7 @@ class ShippingAddressPicker: UIControl {
             }
         }
     }
-    
+
     private func presentAddressPicker(at center: CLLocationCoordinate2D) {
         let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
         let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
@@ -119,7 +119,7 @@ class ShippingAddressPicker: UIControl {
         let placePicker = GMSPlacePicker(config: config)
         placePicker.pickPlace(callback: setPlace)
     }
-    
+
     open func setPlace(_ place: GMSPlace?, error: Error? = nil) {
         isUIFreezed = false
         if !showError(error), let place = place {
@@ -127,7 +127,7 @@ class ShippingAddressPicker: UIControl {
             addressLabel.text = place.formattedAddress ?? "\(place.coordinate)"
         }
     }
-    
+
     deinit {
         editAddressButton.removeTarget(self, action: #selector(presentAddressEditor), for: .touchUpInside)
         pickAddressButton.removeTarget(self, action: #selector(scheduleToPresentPlacePicker), for: .touchUpInside)
@@ -139,13 +139,13 @@ extension ShippingAddressPicker: GMSAutocompleteViewControllerDelegate {
         setPlace(place)
         controller?.animatedDismiss()
     }
-    
+
     public func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         showError(error)
         controller?.animatedDismiss()
         isUIFreezed = false
     }
-    
+
     public func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         controller?.animatedDismiss()
         isUIFreezed = false

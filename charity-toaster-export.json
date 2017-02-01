@@ -1,0 +1,46 @@
+{
+  "comment" : {
+    "2017-2233" : [ "第一" ]
+  },
+  "items" : {
+    "2017-2233" : {
+      "condition" : 3,
+      "description" : "ACG作品名: 哔哩哔哩/bilibili\nACG角色名: 2233娘\n比例: 1/8\n热门系列: pvc\n系列品牌: 哔哩哔哩\n适用年龄: 14周岁以上",
+      "favorite" : 342,
+      "name" : "【2017号款限时拍卖】预售 2233拜年祭限定版1/8手办 GSC出品",
+      "price" : 1.43596208345E9,
+      "uid" : "bilibili",
+      "url" : "https://gd2.alicdn.com/imgextra/i3/2933244145/TB2P9YudS4mpuFjSZFOXXaUqpXa_!!2933244145.jpg"
+    },
+    "商品标识符" : {
+      "condition" : 0,
+      "description" : "商品描述",
+      "favorite" : 0,
+      "name" : "商品名称",
+      "price" : 9.9,
+      "uid" : "卖家标识符",
+      "url" : "图片链接"
+    }
+  },
+  "placeIDs" : {
+    "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : "ChIJaVYL9_dFtokR2aIyDoDtOOI",
+    "用户标识符" : "用户寄件地址"
+  },
+  "soldItems" : {
+    "test" : {
+      "condition" : 0,
+      "description" : "A item for test",
+      "name" : "Lorem Ipsum",
+      "price" : 10,
+      "uid" : "buyerUID",
+      "url" : "someImage.png"
+    }
+  },
+  "userData" : {
+    "someUID" : {
+      "bought" : [ "2017-2233" ],
+      "favorite" : [ "2017-2233" ],
+      "sold" : [ "2017-2233" ]
+    }
+  }
+}

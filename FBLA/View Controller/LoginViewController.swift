@@ -14,7 +14,7 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 extension UIViewController {
-    func showLoginViewController(dismissAction action: Selector? = nil) {
+    func presentLoginViewController(dismissAction action: Selector? = nil) {
         let vc = LoginViewController()
         let nav = UINavigationController(rootViewController: vc)
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: action ?? #selector(animatedDismiss))

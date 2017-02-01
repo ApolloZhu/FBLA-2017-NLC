@@ -22,8 +22,14 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath == IndexPath(row: 0, section: 0) {
-            NotificationCenter.default.post(name: .ShouldPresentAccountViewController, object: nil)
+        switch (indexPath.section, indexPath.row) {
+        case (0, 0):
+            NotificationCenter.default.post(name: .ShouldPushAccountViewController, object: nil)
+        case (1, 0):
+            NotificationCenter.default.post(name: .ShouldPushAboutUsViewController, object: nil)
+        case (1, 1):
+            NotificationCenter.default.post(name: .ShouldPushAcknowledgementsViewController, object: nil)
+        default: break
         }
         // May want to remove this for other items in settings
         revealViewController().revealToggle(animated: true)

@@ -16,19 +16,16 @@ struct Item {
     var description: String
     var price: Double
     var condition: Condition
-    var imagePath: String?
     var favorite: Int
     //!!!: Bring back for rating
     //    var category: Category /*May replace with tags*/
     //    var rating: Double
 
-    var imageURL: URL? {
-        if let path = imagePath {
-            return URL(string: path)
+    func fetchImageURL(then process: @escaping (URL?) -> ()) {
+        storage.child("itemIMG/\(iid)").downloadURL { url, _ in
+            process(url)
         }
-        return nil
     }
-
 }
 
 extension Item {
@@ -47,7 +44,6 @@ extension Item {
                     let item = Item(
                         iid: iid, uid: uid, name: name, description: description, price: price,
                         condition: Condition(rawValue: rawCondition) ?? .acceptable,
-                        imagePath: json["url"].string?.content,
                         favorite: favorite
                     )
                     process(item)
@@ -62,8 +58,8 @@ extension Item {
 }
 
 extension Item {
-    func save() {
-        database.child("items/\(iid)").setValue(json)
+    func save(completion: (() -> ())? = nil) {
+        database.child("items/\(iid)").setValue(json) { _,_ in completion?() }
     }
     func sell(toUID uid: String) {
         database.child("items/\(iid)").removeValue { (error, _) in
@@ -73,11 +69,12 @@ extension Item {
                 var json = self.json
                 json.removeValue(forKey: "favorite")
                 database.child("soldItems/\(self.iid)").setValue(json)
+                database.child("userData/\(uid)/bought").childByAutoId().setValue(self.iid)
             }
         }
     }
     var json: [String : Any] {
-        var data: [String : Any] = [
+        return [
             "uid": uid,
             "name": name,
             "description": description,
@@ -85,9 +82,5 @@ extension Item {
             "condition": condition.rawValue,
             "favorite": favorite
         ]
-        if let path = imagePath {
-            data["url"] = path
-        }
-        return data
     }
 }

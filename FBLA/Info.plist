@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>en_US</string>
 	<key>CFBundleDisplayName</key>
 	<string>Charity Toaster</string>
 	<key>CFBundleExecutable</key>
@@ -40,7 +40,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>38</string>
+	<string>60</string>
 	<key>FacebookAppID</key>
 	<string>340965209630078</string>
 	<key>FacebookDisplayName</key>

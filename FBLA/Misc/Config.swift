@@ -8,11 +8,14 @@
 
 struct Identifier {
     static let ShowItemSegue = "Show Item Segue"
+    static let ShowAboutUsSegue = "ShowAboutUsViewControllerSegue"
     static let AccountViewController = "AccountViewControllerID"
     static let PlaceIDKey = "placeID"
     static let FormattedAddressKey = "FormattedAddressKey"
 }
 
 extension Notification.Name {
-    static let ShouldPresentAccountViewController = Notification.Name("ShouldPresentAccountViewController")
+    static let ShouldPushAccountViewController = Notification.Name("ShouldPushAccountViewController")
+    static let ShouldPushAboutUsViewController = Notification.Name("ShouldPushAboutUsViewController")
+    static let ShouldPushAcknowledgementsViewController = Notification.Name("ShouldPushAcknowledgementsViewController")
 }

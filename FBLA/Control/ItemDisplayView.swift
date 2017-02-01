@@ -34,11 +34,13 @@ open class ItemDisplayView: UIView {
         btn.addTarget(self, action: #selector(pay), for: .touchUpInside)
         return btn
     }()
-    
+
     public func updateInfo() {
         Item.from(iid: iid) { [weak self] item in
             if let this = self, let item = item {
-                this.imageView.kf.setImage(with: item.imageURL, placeholder: #imageLiteral(resourceName: "ic_card_giftcard_48pt"))
+                item.fetchImageURL { [weak self] url in
+                    self?.imageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "ic_card_giftcard_48pt"))
+                }
                 this.nameLabel.text = item.name
                 this.descriptionLabel.text = item.description
                 this.conditionLabel.text = "\(item.condition)"
@@ -56,7 +58,7 @@ open class ItemDisplayView: UIView {
             }
         }
     }
-    
+
     override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         //!!!: Move this to rating control

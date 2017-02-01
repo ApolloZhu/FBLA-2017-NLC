@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -133,7 +134,7 @@
             </objects>
             <point key="canvasLocation" x="929" y="716"/>
         </scene>
-        <!--Name-->
+        <!--Account View Controller-->
         <scene sceneID="ka5-h2-C1t">
             <objects>
                 <viewController storyboardIdentifier="AccountViewControllerID" id="RSs-7o-qyb" customClass="AccountViewController" customModule="FBLA" customModuleProvider="target" sceneMemberID="viewController">
@@ -158,7 +159,7 @@
                             <constraint firstItem="AD7-9n-oTk" firstAttribute="leading" secondItem="7sy-Ef-zEs" secondAttribute="leading" id="zdY-Rn-d2q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Name" id="gm1-Yp-cxw"/>
+                    <navigationItem key="navigationItem" id="gm1-Yp-cxw"/>
                     <connections>
                         <outlet property="accountView" destination="AD7-9n-oTk" id="4au-dI-3M0"/>
                     </connections>
@@ -220,11 +221,51 @@
                     <connections>
                         <outlet property="menuButton" destination="8CW-6v-iRW" id="kV2-4v-QyU"/>
                         <segue destination="RSs-7o-qyb" kind="show" id="Lgx-jJ-1Mo"/>
+                        <segue destination="bMo-0m-M7d" kind="show" identifier="ShowAboutUsViewControllerSegue" id="uK5-tE-0Qc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smT-YG-RgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1647" y="0.0"/>
+        </scene>
+        <!--About Us-->
+        <scene sceneID="FK5-tk-RGZ">
+            <objects>
+                <viewController storyboardIdentifier="AboutUsViewController" title="About Us" id="bMo-0m-M7d" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gBA-sp-QkT"/>
+                        <viewControllerLayoutGuide type="bottom" id="XGr-8k-a2K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4pk-mf-bqU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYE-rY-uy7">
+                                <rect key="frame" x="16" y="72" width="343" height="575"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">We are a group of students who are going to attend FBLA 2018 NLC. We don't have enought money, so we need your help. Our goal is to earn as much as possible, so we can ensure even if we get lost, we have enough fund to find our way back. A short message from Apollo, CTO of Swifty X and WWITDC.</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PYE-rY-uy7" firstAttribute="top" secondItem="gBA-sp-QkT" secondAttribute="bottom" constant="8" symbolic="YES" id="Sds-pb-JFk"/>
+                            <constraint firstItem="PYE-rY-uy7" firstAttribute="trailing" secondItem="4pk-mf-bqU" secondAttribute="trailingMargin" id="Wdn-Jc-NQ8"/>
+                            <constraint firstAttribute="bottom" secondItem="PYE-rY-uy7" secondAttribute="bottom" constant="20" symbolic="YES" id="n55-It-2cW"/>
+                            <constraint firstItem="PYE-rY-uy7" firstAttribute="leading" secondItem="4pk-mf-bqU" secondAttribute="leadingMargin" id="rzx-Ig-4pR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zPS-62-BNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2325.5999999999999" y="715.59220389805103"/>
         </scene>
         <!--Donate-->
         <scene sceneID="dKi-kL-8Qk">

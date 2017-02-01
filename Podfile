@@ -13,6 +13,7 @@ target 'FBLA' do
   pod 'MJRefresh'
   pod 'Eureka', '~> 2.0.0-beta.1'
   pod 'ImageRow'
+  pod 'VTAcknowledgementsViewController'
 
   # Util
   pod 'Kingfisher'
@@ -25,6 +26,7 @@ target 'FBLA' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
   pod 'GoogleSignIn'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'

@@ -8,6 +8,14 @@
 
 import UIKit
 
+extension UIViewController {
+    func pushAccountViewController(animated: Bool = true) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: Identifier.AccountViewController), let navigationController = navigationController {
+            navigationController.pushViewController(vc, animated: animated)
+        }
+    }
+}
+
 class AccountViewController: UIViewController {
 
     @IBOutlet weak var accountView: AccountView!
@@ -15,7 +23,7 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if !Account.shared.isLogggedIn {
-            showLoginViewController(dismissAction: #selector(dismissLoginViewController))
+            presentLoginViewController(dismissAction: #selector(dismissLoginViewController))
         }
         Account.shared.addLoginStateMonitor { [weak self] in
             self?.accountView.updateInfo()

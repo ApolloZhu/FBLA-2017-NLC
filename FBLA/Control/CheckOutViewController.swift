@@ -13,7 +13,7 @@ import Braintree
 extension UIViewController {
     func checkOut(item: Item) {
         if !Account.shared.isLogggedIn {
-            showLoginViewController()
+            presentLoginViewController()
         } else {
             let dropIn = BTDropInViewController(apiClient: .shared)
             let checkOutRootViewController = CheckOutViewController(rootViewController: dropIn)

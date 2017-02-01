@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521150AC1E420AF30059D86A /* Pods-FBLA-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521150AB1E420AF30059D86A /* Pods-FBLA-acknowledgements.plist */; };
 		5216812F1E31D3DA00544BA3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681311E31D3DA00544BA3 /* Localizable.strings */; };
 		521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681361E31D3DA00544BA3 /* InfoPlist.strings */; };
 		522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		30D698F0997D1249069F9392 /* Pods-FBLA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.debug.xcconfig"; sourceTree = "<group>"; };
+		521150AB1E420AF30059D86A /* Pods-FBLA-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Pods-FBLA-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA-acknowledgements.plist"; sourceTree = "<group>"; };
 		5216812B1E31D32000544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5216812C1E31D32000544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		521681301E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521150AD1E421B9D0059D86A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				52F69EA71E1E1A2A00602EC3 /* Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		521681371E31D40700544BA3 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		52AFEDC41E1E16A500FA9ABA = {
 			isa = PBXGroup;
 			children = (
+				521150AB1E420AF30059D86A /* Pods-FBLA-acknowledgements.plist */,
 				52AFEDCF1E1E16A500FA9ABA /* FBLA */,
 				52AFEDCE1E1E16A500FA9ABA /* Products */,
 				CEA3D6F0064AEFAE38A350E4 /* Pods */,
@@ -175,9 +186,9 @@
 			children = (
 				52461FFA1E398E30000AF183 /* Assets.xcassets */,
 				52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */,
-				52F69EA71E1E1A2A00602EC3 /* Extension.swift */,
 				52AE2BA11E1E1E3800A7D2E6 /* Config.swift */,
 				52F69EA61E1E1A2A00602EC3 /* Misc */,
+				521150AD1E421B9D0059D86A /* Extensions */,
 				52F772771E2962290033C8AA /* Frameworks */,
 			);
 			name = "Supporting Files";
@@ -373,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521150AC1E420AF30059D86A /* Pods-FBLA-acknowledgements.plist in Resources */,
 				5216812F1E31D3DA00544BA3 /* Localizable.strings in Resources */,
 				521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */,
 				5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */,

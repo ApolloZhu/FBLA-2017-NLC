@@ -13,6 +13,7 @@ import CoreLocation
 import Firebase
 import SwiftyJSON
 import Braintree
+import VTAcknowledgementsViewController
 
 extension BTAPIClient {
     static let shared = BTAPIClient(authorization: "sandbox_ws7w46d8_sjx3gtf3zg6bf66y")!
@@ -30,6 +31,7 @@ extension ConstraintMaker {
 }
 
 let database = FIRDatabase.database().reference()
+let storage = FIRStorage.storage().reference(forURL: "gs://charity-toaster.appspot.com")
 let defaults = UserDefaults.standard
 
 extension FIRDataSnapshot {
@@ -144,6 +146,12 @@ extension UIViewController {
     }
 }
 
+extension UIViewController {
+    func pushAcknowledgementsViewController(animated: Bool = true) {
+        navigationController?.pushViewController(VTAcknowledgementsViewController(fileNamed: "Pods-FBLA-acknowledgements")!, animated: animated)
+    }
+}
+
 extension CLLocationCoordinate2D {
     static var random: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: Double(arc4random()) / Double(UInt32.max) * 180 - 90, longitude: Double(arc4random()) / Double(UInt32.max) * 360 - 180)
@@ -159,14 +167,6 @@ extension SWRevealViewControllerPresentor where Self : UIViewController {
         menuButton?.target = revealViewController()
         menuButton?.action = #selector(revealViewController().revealToggle(_:))
         view?.addGestureRecognizer(revealViewController().panGestureRecognizer())
-    }
-}
-
-extension UIViewController {
-    func presentAccountViewController(animated: Bool = true) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: Identifier.AccountViewController) {
-            navigationController?.pushViewController(vc, animated: animated)
-        }
     }
 }
 

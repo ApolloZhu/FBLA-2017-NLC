@@ -15,8 +15,8 @@ import FBSDKLoginKit
 
 open class LoginView: UIView {
 
-    open lazy var emailField = CTTextField(prompt: Localized.EMail, type: .email)
-    open lazy var passwordField = CTTextField(prompt: Localized.PASSWORD, type: .password)
+    open lazy var emailField = LoginTextField(prompt: Localized.EMail, type: .email)
+    open lazy var passwordField = LoginTextField(prompt: Localized.PASSWORD, type: .password)
     open lazy var loginButton: MKButton = {
         let btn = MKButton()
         btn.setImage(#imageLiteral(resourceName: "ic_mail_outline_36pt"), for: .normal)

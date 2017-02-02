@@ -1,0 +1,33 @@
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "0gx-EW-EaD"; */
+"0gx-EW-EaD.title" = "Settings";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "51f-oK-h0N"; */
+"51f-oK-h0N.title" = "Home";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "59f-zb-fU4"; */
+"59f-zb-fU4.title" = "Home";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "6oK-Sz-s7X"; */
+"6oK-Sz-s7X.title" = "Item";
+
+/* Class = "UILabel"; text = "About Us"; ObjectID = "7nQ-Q1-03M"; */
+"7nQ-Q1-03M.text" = "About Us";
+
+/* Class = "UILabel"; text = "Acknowledgement"; ObjectID = "R9o-LH-HY1"; */
+"R9o-LH-HY1.text" = "Acknowledgement";
+
+/* Class = "UIViewController"; title = "About Us"; ObjectID = "bMo-0m-M7d"; */
+"bMo-0m-M7d.title" = "About Us";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "heF-bw-XDh"; */
+"heF-bw-XDh.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "rEZ-27-CB2"; */
+"rEZ-27-CB2.title" = "Search";
+
+/* Class = "UIButton"; normalTitle = "Sample Buy"; ObjectID = "tj7-3f-5Qq"; */
+"tj7-3f-5Qq.normalTitle" = "Sample Buy";
+
+/* Class = "UITabBarItem"; title = "Donate"; ObjectID = "vAW-63-7CF"; */
+"vAW-63-7CF.title" = "Donate";

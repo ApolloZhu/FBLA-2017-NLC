@@ -30,20 +30,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print(url)
         var out = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         if #available(iOS 9.0, *) {
             out = out || GIDSignIn.sharedInstance().handle(url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
         }
-        if url.scheme?.localizedCaseInsensitiveCompare("com.your-company.Your-App.payments") == .orderedSame {
+        if url.scheme?.localizedCaseInsensitiveCompare("io.github.swiftyx.apollo.FBLA-2017-NLC.payments") == .orderedSame {
             out = out || BTAppSwitch.handleOpen(url, options: options)
         }
         return out
     }
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print(url)
         return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
             || FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-            || (url.scheme?.localizedCaseInsensitiveCompare("com.your-company.Your-App.payments") == .orderedSame && BTAppSwitch.handleOpen(url, sourceApplication: sourceApplication))
+            || (url.scheme?.localizedCaseInsensitiveCompare("io.github.swiftyx.apollo.FBLA-2017-NLC.payments") == .orderedSame && BTAppSwitch.handleOpen(url, sourceApplication: sourceApplication))
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

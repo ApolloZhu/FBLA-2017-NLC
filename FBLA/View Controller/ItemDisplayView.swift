@@ -18,7 +18,6 @@ open class ItemDisplayView: UIView {
         }
     }
 
-    open weak var controller: UIViewController?
     open lazy var imageView = UIImageView()
     open lazy var nameLabel = UILabel.makeAutoAdjusting().centered()
     open lazy var descriptionLabel = UILabel.makeAutoAdjusting(lines: 3)
@@ -50,13 +49,7 @@ open class ItemDisplayView: UIView {
     }
 
     @objc private func pay() {
-        Item.from(iid: iid) { [weak self] item in
-            if let controller = self?.controller, let item = item {
-                controller.checkOut(item: item)
-            } else {
-                showError(NSLocalizedString("No Such Item", comment: "Show in pop up telling user no such item exists"))
-            }
-        }
+        NotificationCenter.default.post(name: .ShouldCheckOutItem, object: nil)
     }
 
     override open func willMove(toSuperview newSuperview: UIView?) {
@@ -90,6 +83,7 @@ open class ItemDisplayView: UIView {
         conditionLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(8)
             make.horizontallyCenterInSuperview()
+            make.bottom.equalToSuperview().offset(-8)
         }
         updateInfo()
     }

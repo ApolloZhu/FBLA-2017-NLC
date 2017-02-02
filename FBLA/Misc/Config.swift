@@ -9,7 +9,10 @@
 struct Identifier {
     static let ShowItemSegue = "Show Item Segue"
     static let ShowAboutUsSegue = "ShowAboutUsViewControllerSegue"
+
     static let AccountViewController = "AccountViewControllerID"
+    static let ItemDisplayViewController = "ItemDisplayViewControllerID"
+
     static let PlaceIDKey = "placeID"
     static let FormattedAddressKey = "FormattedAddressKey"
 }

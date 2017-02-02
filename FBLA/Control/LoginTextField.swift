@@ -1,5 +1,5 @@
 //
-//  CTTextField.swift
+//  LoginTextField.swift
 //  FBLA
 //
 //  Created by Apollo Zhu on 1/25/17.
@@ -9,21 +9,21 @@
 import UIKit
 import MaterialKit
 
-public enum CTTextFieldType {
+public enum LoginTextFieldType {
     case `default`
     case email
     case password
     case autoCorrecting
 }
 
-open class CTTextField: MKTextField {
-    convenience public init(prompt: String? = nil, type: CTTextFieldType = .default)
+open class LoginTextField: MKTextField {
+    convenience public init(prompt: String? = nil, type: LoginTextFieldType = .default)
     { self.init(frame: .zero, prompt: prompt, type: type) }
 
     override convenience init(frame: CGRect)
     { self.init(frame: frame, prompt: nil) }
 
-    public init(frame: CGRect, prompt: String? = nil, type: CTTextFieldType = .default) {
+    public init(frame: CGRect, prompt: String? = nil, type: LoginTextFieldType = .default) {
         super.init(frame: frame)
         setup(prompt: prompt, type: type)
     }
@@ -37,7 +37,7 @@ open class CTTextField: MKTextField {
         return text?.content
     }
 
-    private func setup(prompt: String? = nil, type: CTTextFieldType = .default, enableAI: Bool = false) {
+    private func setup(prompt: String? = nil, type: LoginTextFieldType = .default, enableAI: Bool = false) {
         bottomBorderEnabled = true
         clearButtonMode = .whileEditing
         layer.borderColor = UIColor.clear.cgColor

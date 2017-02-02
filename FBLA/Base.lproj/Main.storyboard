@@ -11,40 +11,41 @@
     </dependencies>
     <scenes>
         <!--Item Display View Controller-->
-        <scene sceneID="asT-KE-gpD">
+        <scene sceneID="sCo-U5-TpG">
             <objects>
-                <viewController id="WI1-Mg-eU1" customClass="ItemDisplayViewController" customModule="FBLA" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jh9-vq-BuL"/>
-                        <viewControllerLayoutGuide type="bottom" id="x7V-FM-rc1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WPW-Fz-Mdg">
+                <tableViewController storyboardIdentifier="ItemDisplayViewControllerID" id="m3A-mg-UBt" customClass="ItemDisplayViewController" customModule="FBLA" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HmT-fd-e37">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RvU-LE-5At" customClass="ItemDisplayView" customModule="FBLA" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="RvU-LE-5At" secondAttribute="trailing" id="D4z-GJ-THP"/>
-                            <constraint firstItem="RvU-LE-5At" firstAttribute="bottom" secondItem="x7V-FM-rc1" secondAttribute="top" id="fmM-mn-74O"/>
-                            <constraint firstItem="RvU-LE-5At" firstAttribute="top" secondItem="Jh9-vq-BuL" secondAttribute="bottom" constant="44" id="kMG-UW-ALQ"/>
-                            <constraint firstItem="RvU-LE-5At" firstAttribute="leading" secondItem="WPW-Fz-Mdg" secondAttribute="leading" id="mLv-pt-94N"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="bJ1-cL-7wd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="tsp-wp-OR6"/>
-                    </navigationItem>
+                        <view key="tableHeaderView" contentMode="redraw" id="zER-ru-TXe" customClass="ItemDisplayView" customModule="FBLA" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TGv-kA-1uM">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TGv-kA-1uM" id="u6h-Tf-dkq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="m3A-mg-UBt" id="B8c-md-mh5"/>
+                            <outlet property="delegate" destination="m3A-mg-UBt" id="8B8-nP-Itd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="xdG-bt-e3V"/>
                     <connections>
-                        <outlet property="itemView" destination="RvU-LE-5At" id="ub2-Xh-ori"/>
+                        <outlet property="itemView" destination="zER-ru-TXe" id="gW2-zI-OvC"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Coc-tA-pNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YNZ-Bc-fjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2421.5999999999999" y="-693.10344827586209"/>
+            <point key="canvasLocation" x="2326" y="0.0"/>
         </scene>
         <!--Settings-->
         <scene sceneID="RiZ-ri-mJN">
@@ -171,7 +172,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -201,11 +202,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tj7-3f-5Qq">
-                                <rect key="frame" x="82.5" y="303.5" width="210" height="60"/>
+                                <rect key="frame" x="83" y="304" width="210" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Sample Buy"/>
                                 <connections>
-                                    <segue destination="WI1-Mg-eU1" kind="show" identifier="Test" id="bp7-Nu-AAg"/>
+                                    <action selector="test" destination="gZu-b5-qoO" eventType="touchUpInside" id="BLq-AF-t8X"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -341,7 +342,6 @@
                     <navigationItem key="navigationItem" title="Search" id="rEZ-27-CB2"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="nP5-Fs-dNb" id="p5R-NW-7fM"/>
-                        <segue destination="WI1-Mg-eU1" kind="show" action="showDetailViewController:sender:" id="xWQ-cq-7Zg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ski-H9-QPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -362,7 +362,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1IX-kr-JaQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="6oK-Sz-s7X"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qr2-Vs-LbQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qr2-Vs-LbQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -382,7 +382,4 @@
         <image name="ic_menu_36pt" width="36" height="36"/>
         <image name="ic_person_48pt" width="48" height="48"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="bp7-Nu-AAg"/>
-    </inferredMetricsTieBreakers>
 </document>

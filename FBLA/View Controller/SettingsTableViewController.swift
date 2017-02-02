@@ -16,7 +16,12 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Account.shared.addLoginStateMonitor { [weak self] in
-            self?.usernameLabel.text = Account.shared.name ?? Localized.LOGIN_REGISTER
+            self?.usernameLabel.text =
+                Account.shared.name ??
+                (Account.shared.isLogggedIn
+                    ? Localized.USERNAME
+                    : Localized.LOGIN_REGISTER)
+
             self?.userProfileImageView.kf.setImage(with: Account.shared.photoURL, placeholder: #imageLiteral(resourceName: "ic_person_48pt"))
         }
     }

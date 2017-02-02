@@ -17,8 +17,11 @@ extension UIViewController {
     func presentLoginViewController(dismissAction action: Selector? = nil) {
         let vc = LoginViewController()
         let nav = UINavigationController(rootViewController: vc)
-        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: action ?? #selector(animatedDismiss))
+        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: action ?? #selector(defaultDismissLoginViewController))
         present(nav, animated: true, completion: nil)
+    }
+    @objc private func defaultDismissLoginViewController() {
+        animatedDismiss()
     }
 }
 

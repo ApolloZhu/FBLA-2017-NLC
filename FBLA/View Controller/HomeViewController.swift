@@ -11,6 +11,11 @@ import UIKit
 class HomeViewController: UIViewController, SWRevealViewControllerPresentor {
     @IBOutlet weak var menuButton: UIBarButtonItem!
 
+    //!!!: Remove at final stage
+    @IBAction func test() {
+        displayItemWithIID("商品标识符")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupForSWRevealViewController()
@@ -20,10 +25,6 @@ class HomeViewController: UIViewController, SWRevealViewControllerPresentor {
 extension HomeViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        //!!!: Remove before final stage
-        if segue.identifier == "Test", let vc = segue.terminus as? ItemDisplayViewController {
-            vc.iid = "商品标识符"
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

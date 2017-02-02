@@ -31,10 +31,13 @@ extension UIViewController {
             dropIn.delegate = checkOutRootViewController
             dropIn.paymentRequest = paymentRequest
             dropIn.title = NSLocalizedString("Check Out", comment: "To complete payment at this page")
-            
-            dropIn.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(animatedDismiss))
+
+            dropIn.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(hideCheckOutViewController))
             present(checkOutRootViewController, animated: true, completion: nil)
         }
+    }
+    @objc private func hideCheckOutViewController() {
+        animatedDismiss()
     }
 }
 
@@ -51,6 +54,6 @@ class CheckOutViewController: UINavigationController, BTDropInViewControllerDele
         HUD.flash(.success, delay: 1) { [weak self] _ in self?.animatedDismiss() }
     }
     public func drop(inViewControllerDidCancel viewController: BTDropInViewController) {
-        animatedDismiss() { showError(Localized.CANCEL) }
+        animatedDismiss()
     }
 }

@@ -24,11 +24,13 @@ class ItemSubmitViewController: FormViewController {
         return flag
     }
 
-    lazy var nameRow = TextRow("0")
-    { $0.title = NSLocalizedString("Item Name", comment: "Input name of the item") }
+    lazy var nameRow = TextRow("0") {
+        $0.title = NSLocalizedString("Item Name", comment: "Input name of the item")
+    }
 
-    lazy var descriptionRow = TextAreaRow("1")
-    { $0.title = NSLocalizedString("Item Description", comment: "Input description of item") }
+    lazy var descriptionRow = TextAreaRow("1") {
+        $0.placeholder = NSLocalizedString("Item Description", comment: "Input description of item")
+    }
 
     lazy var imageRow = ImageRow("2") {
         $0.title = NSLocalizedString("Item Photo", comment: "Select photo of item")
@@ -48,6 +50,7 @@ class ItemSubmitViewController: FormViewController {
         super.viewDidLoad()
         form +++ Section(NSLocalizedString("Basic Information", comment: "Basic information of item"))
             <<< nameRow
+            +++ Section()
             <<< descriptionRow
             <<< imageRow
 

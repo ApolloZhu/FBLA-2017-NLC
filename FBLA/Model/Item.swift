@@ -28,9 +28,24 @@ struct Item {
     }
 }
 
+extension Item: Data {
+    var path: String {
+        return "items/\(iid)"
+    }
+    var json: [String : Any] {
+        return [
+            "uid": uid,
+            "name": name,
+            "description": description,
+            "price": price,
+            "condition": condition.rawValue,
+            "favorite": favorite
+        ]
+    }
+}
+
 extension Item {
     static func from(iid: String?, _ process: @escaping (Item?) -> ()) {
-        // TODO: Get from database
         if let iid = iid {
             database.child("items/\(iid)").observeSingleEvent(of: .value, with: { snapshot in
                 if let json = snapshot.json ,
@@ -58,11 +73,8 @@ extension Item {
 }
 
 extension Item {
-    func save(completion: (() -> ())? = nil) {
-        database.child("items/\(iid)").setValue(json) { _,_ in completion?() }
-    }
     func sell(toUID uid: String) {
-        database.child("items/\(iid)").removeValue { (error, _) in
+        database.child(path).removeValue { (error, _) in
             if error != nil {
                 self.save()
             } else {
@@ -72,15 +84,5 @@ extension Item {
                 database.child("userData/\(uid)/bought").childByAutoId().setValue(self.iid)
             }
         }
-    }
-    var json: [String : Any] {
-        return [
-            "uid": uid,
-            "name": name,
-            "description": description,
-            "price": price,
-            "condition": condition.rawValue,
-            "favorite": favorite
-        ]
     }
 }

@@ -10,6 +10,11 @@ import UIKit
 import MaterialKit
 import SnapKit
 
+extension Localized {
+    static let COMMENT_HERE = NSLocalizedString("Leave your comment here ~", comment: "Prompt in input textfield to tell the user to input comment here")
+    static let NO_COMMENT = NSLocalizedString("No comment yet", comment: "Displays when user trying to get list of comments of an item, but no comment exists.")
+}
+
 class CommentInput: NSObject, UITextFieldDelegate {
     public static let shared = CommentInput()
     override private init() {}
@@ -21,7 +26,7 @@ class CommentInput: NSObject, UITextFieldDelegate {
         tf.layer.borderWidth = 5
         tf.backgroundColor = .white
         tf.tintColor = .tianyi
-        tf.placeholder = NSLocalizedString("Your comment here ~", comment: "Prompt in input textfield to tell the user to input comment here")
+        tf.placeholder = Localized.COMMENT_HERE
         return tf
     }()
     

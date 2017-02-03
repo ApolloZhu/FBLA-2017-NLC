@@ -13,7 +13,7 @@ class HomeViewController: UIViewController, SWRevealViewControllerPresentor {
 
     //!!!: Remove at final stage
     @IBAction func test() {
-        displayItemWithIID("商品标识符")
+        displayItemWithIID("2017-2233")
     }
 
     override func viewDidLoad() {

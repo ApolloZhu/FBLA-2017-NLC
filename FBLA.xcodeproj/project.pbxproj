@@ -25,6 +25,11 @@
 		528A51441E3D7B5500ECB468 /* BasicAccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A51431E3D7B5500ECB468 /* BasicAccountInfo.swift */; };
 		528A51461E3D80E700ECB468 /* ShippingAddressPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */; };
 		528A51481E3D812700ECB468 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A51471E3D812700ECB468 /* LoginTextField.swift */; };
+		529553251E445E8300041B5C /* ItemCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529553241E445E8300041B5C /* ItemCommentsViewController.swift */; };
+		529553291E44694800041B5C /* CommentsAvaterImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529553281E44694800041B5C /* CommentsAvaterImageDataSource.swift */; };
+		5295532D1E447DAA00041B5C /* ItemConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295532C1E447DAA00041B5C /* ItemConditionTableViewCell.swift */; };
+		5295532F1E447DCC00041B5C /* ItemImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295532E1E447DCC00041B5C /* ItemImageTableViewCell.swift */; };
+		529553321E447FB700041B5C /* ItemPurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529553311E447FB700041B5C /* ItemPurchaseTableViewCell.swift */; };
 		52AE2BA21E1E1E3800A7D2E6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE2BA11E1E1E3800A7D2E6 /* Config.swift */; };
 		52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */; };
 		52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDD61E1E16A600FA9ABA /* Main.storyboard */; };
@@ -87,6 +92,11 @@
 		528A51431E3D7B5500ECB468 /* BasicAccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicAccountInfo.swift; path = "FBLA/View Controller/BasicAccountInfo.swift"; sourceTree = SOURCE_ROOT; };
 		528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShippingAddressPicker.swift; path = FBLA/Control/ShippingAddressPicker.swift; sourceTree = SOURCE_ROOT; };
 		528A51471E3D812700ECB468 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = FBLA/Control/LoginTextField.swift; sourceTree = SOURCE_ROOT; };
+		529553241E445E8300041B5C /* ItemCommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCommentsViewController.swift; path = "FBLA/View Controller/ItemCommentsViewController.swift"; sourceTree = SOURCE_ROOT; };
+		529553281E44694800041B5C /* CommentsAvaterImageDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsAvaterImageDataSource.swift; sourceTree = "<group>"; };
+		5295532C1E447DAA00041B5C /* ItemConditionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemConditionTableViewCell.swift; path = FBLA/Control/ItemConditionTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		5295532E1E447DCC00041B5C /* ItemImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemImageTableViewCell.swift; path = FBLA/Control/ItemImageTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		529553311E447FB700041B5C /* ItemPurchaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemPurchaseTableViewCell.swift; path = FBLA/Control/ItemPurchaseTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		52AE2BA11E1E1E3800A7D2E6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Misc/Config.swift; sourceTree = "<group>"; };
 		52AFEDCD1E1E16A500FA9ABA /* FBLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +182,33 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		529553261E4468CD00041B5C /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				529553241E445E8300041B5C /* ItemCommentsViewController.swift */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
+		529553271E44690300041B5C /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				52F625F61E3E8FE100A0CD88 /* Comment.swift */,
+				529553281E44694800041B5C /* CommentsAvaterImageDataSource.swift */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
+		529553301E447EC200041B5C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				529553311E447FB700041B5C /* ItemPurchaseTableViewCell.swift */,
+				5295532E1E447DCC00041B5C /* ItemImageTableViewCell.swift */,
+				5295532C1E447DAA00041B5C /* ItemConditionTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		52AFEDC41E1E16A500FA9ABA = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +279,8 @@
 				52F45C981E29BB5400A7D81A /* ItemDisplayViewController.swift */,
 				52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */,
 				52127C901E43A56100DC4D82 /* ItemDisplayView.swift */,
+				529553301E447EC200041B5C /* Cell */,
+				529553261E4468CD00041B5C /* Comment */,
 			);
 			name = Display;
 			sourceTree = "<group>";
@@ -299,7 +338,7 @@
 			children = (
 				52DC71551E442487006A02BF /* User */,
 				523300CE1E406C7B00D85A6C /* Item */,
-				52F625F61E3E8FE100A0CD88 /* Comment.swift */,
+				529553271E44690300041B5C /* Comment */,
 				521681371E31D40700544BA3 /* Localization */,
 			);
 			path = Model;
@@ -517,20 +556,24 @@
 			files = (
 				528A51481E3D812700ECB468 /* LoginTextField.swift in Sources */,
 				52F625F91E3E9FC500A0CD88 /* Condition.swift in Sources */,
+				5295532D1E447DAA00041B5C /* ItemConditionTableViewCell.swift in Sources */,
 				5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */,
 				52F45CA11E29BB5400A7D81A /* ItemDisplayViewController.swift in Sources */,
 				52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */,
+				529553291E44694800041B5C /* CommentsAvaterImageDataSource.swift in Sources */,
 				52537A091E43CA5C00D39403 /* CommentInput.swift in Sources */,
 				527D419C1E3EC77500C2034D /* SearchItemsViewController.swift in Sources */,
 				522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */,
 				52DC71541E4422BB006A02BF /* User.swift in Sources */,
 				525708161E3E7909005E4C22 /* Item.swift in Sources */,
 				52D8675D1E39359100A5266B /* Localized.swift in Sources */,
+				5295532F1E447DCC00041B5C /* ItemImageTableViewCell.swift in Sources */,
 				52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */,
 				52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */,
 				52127C911E43A56100DC4D82 /* ItemDisplayView.swift in Sources */,
 				52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */,
 				52F45C9E1E29BB5400A7D81A /* CommentsTableViewController.swift in Sources */,
+				529553321E447FB700041B5C /* ItemPurchaseTableViewCell.swift in Sources */,
 				52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */,
 				52F45C9F1E29BB5400A7D81A /* HomeViewController.swift in Sources */,
 				52F69EAA1E1E1A2A00602EC3 /* Extension.swift in Sources */,
@@ -541,6 +584,7 @@
 				522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */,
 				528A51461E3D80E700ECB468 /* ShippingAddressPicker.swift in Sources */,
 				52DE7CF71E41182F00204E0E /* CheckOutViewController.swift in Sources */,
+				529553251E445E8300041B5C /* ItemCommentsViewController.swift in Sources */,
 				52127C8F1E43A52A00DC4D82 /* ItemDisplayToolbar.swift in Sources */,
 				528A51441E3D7B5500ECB468 /* BasicAccountInfo.swift in Sources */,
 				5278FB2B1E31C98C005E3CC5 /* Account.swift in Sources */,

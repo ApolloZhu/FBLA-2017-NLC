@@ -15,10 +15,6 @@ struct Comment {
     var message: String
 }
 
-extension Notification.Name {
-    static let ShouldReloadComments = Notification.Name("ShouldRefreshComments")
-}
-
 extension Comment {
     var json: [String:Any] {
         return [
@@ -31,19 +27,19 @@ extension Comment {
         database.child("comments/byCID/\(cid)").setValue(json) { _,_ in handle?() }
         database.child("comments/byIID/\(iid)/\(cid)").setValue(0)
         database.child("comments/byUID/\(uid)/\(cid)").setValue(0)
-        NotificationCenter.default.post(name: .ShouldReloadComments, object: nil)
+        NotificationCenter.default.post(name: .ShouldUpdate, object: nil)
     }
     func remove() {
         database.child("comments/byCID/\(cid)").removeValue()
         database.child("comments/byIID/\(iid)/\(cid)").removeValue()
         database.child("comments/byUID/\(uid)/\(cid)").removeValue()
-        NotificationCenter.default.post(name: .ShouldReloadComments, object: nil)
+        NotificationCenter.default.post(name: .ShouldUpdate, object: nil)
     }
 }
 
 extension Comment {
-    static func new(withCID generate: (String) -> Comment) {
-        generate(database.child("comments/byCID/").childByAutoId().key).save()
+    static func new(withCID generate: (String) -> Comment?) {
+        generate(database.child("comments/byCID/").childByAutoId().key)?.save()
     }
     static func from(cid: String?, _ process: @escaping (Comment?) -> ()) {
         if let cid = cid {

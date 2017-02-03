@@ -12,6 +12,17 @@ import Firebase
 import Eureka
 import ImageRow
 
+extension Localized {
+    static let BASIC_INFO = NSLocalizedString("Basic Information", comment: "Basic information of item")
+    static let ITEM_NAME = NSLocalizedString("Item Name", comment: "Input name of the item")
+    static let ITEM_DESCRIPTION = NSLocalizedString("Item Description", comment: "Input description of item")
+    static let ITEM_PHOTO = NSLocalizedString("Item Photo", comment: "Select photo of item")
+    
+    static let ITEM_DETAIL = NSLocalizedString("Details", comment: "Details of the item")
+    static let ITEM_CONDITION = NSLocalizedString("Condition", comment: "Condition of item")
+    static let PRICE_IN_USD = NSLocalizedString("Price in USD", comment: "Price of item in us dollar")
+}
+
 class ItemSubmitViewController: FormViewController {
     
     var shouldAllowSubmit: Bool {
@@ -25,36 +36,36 @@ class ItemSubmitViewController: FormViewController {
     }
     
     lazy var nameRow = TextRow("0") {
-        $0.title = NSLocalizedString("Item Name", comment: "Input name of the item")
+        $0.title = Localized.ITEM_NAME
     }
     
     lazy var descriptionRow = TextAreaRow("1") {
-        $0.placeholder = NSLocalizedString("Item Description", comment: "Input description of item")
+        $0.placeholder = Localized.ITEM_DESCRIPTION
     }
     
     lazy var imageRow = ImageRow("2") {
-        $0.title = NSLocalizedString("Item Photo", comment: "Select photo of item")
+        $0.title = Localized.ITEM_PHOTO
         $0.clearAction = .no
     }
     
     lazy var conditionRow = PickerInlineRow<Condition>("3") {
-        $0.title = NSLocalizedString("Condition", comment: "Condition of item")
+        $0.title = Localized.ITEM_CONDITION
         $0.options = Condition.all
     }
     
     lazy var priceRow = DecimalRow("4") {
-        $0.title = NSLocalizedString("Price in USD", comment: "Price of item in us dollar")
+        $0.title = Localized.PRICE_IN_USD
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        form +++ Section(NSLocalizedString("Basic Information", comment: "Basic information of item"))
+        form +++ Section(Localized.BASIC_INFO)
             <<< nameRow
             +++ Section()
             <<< descriptionRow
             <<< imageRow
             
-            +++ Section(NSLocalizedString("Details", comment: "Details of the item"))
+            +++ Section(Localized.ITEM_DETAIL)
             <<< conditionRow
             <<< priceRow
             

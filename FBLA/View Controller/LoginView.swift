@@ -15,7 +15,7 @@ import FBSDKLoginKit
 
 open class LoginView: UIView {
 
-    open lazy var emailField = LoginTextField(prompt: Localized.EMail, type: .email)
+    open lazy var emailField = LoginTextField(prompt: Localized.EMAIL, type: .email)
     open lazy var passwordField = LoginTextField(prompt: Localized.PASSWORD, type: .password)
     open lazy var loginButton: MKButton = {
         let btn = MKButton()
@@ -44,7 +44,7 @@ open class LoginView: UIView {
             emailField.text = nil
             passwordField.text = nil
             resignFirstResponder()
-            loginButton.setTitle(Localized.EMail, for: .normal)
+            loginButton.setTitle(Localized.EMAIL, for: .normal)
             let _y1 = fbLoginButton.frame.minY, _y2 = gSignInButton.frame.minY
             fbLoginButton.frame.origin.y = loginButton.frame.minY
             gSignInButton.frame.origin.y = loginButton.frame.minY

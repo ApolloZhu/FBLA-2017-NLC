@@ -6,8 +6,6 @@
 //  Copyright © 2017 Swifty X. All rights reserved.
 //
 
-import Foundation
-
 enum Condition: Int, RawRepresentable {
     case collectible
     case acceptable

@@ -41,6 +41,18 @@ extension FIRDataSnapshot {
         }
         return nil
     }
+    var dictionary: [String:Any]? {
+        return value as? [String:Any]
+    }
+}
+
+extension FIRMutableData {
+    var json: JSON? {
+        if let value = value {
+            return JSON(value)
+        }
+        return nil
+    }
 }
 
 extension UIStoryboardSegue {

@@ -18,6 +18,7 @@ extension UIViewController {
         let vc = LoginViewController()
         let nav = UINavigationController(rootViewController: vc)
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: action ?? #selector(defaultDismissLoginViewController))
+        vc.title = Localized.LOGIN_REGISTER
         present(nav, animated: true, completion: nil)
     }
     @objc private func defaultDismissLoginViewController() {

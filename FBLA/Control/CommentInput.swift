@@ -10,14 +10,10 @@ import UIKit
 import MaterialKit
 import SnapKit
 
-extension Notification.Name {
-    static let ShouldReloadComments = Notification.Name("ShouldRefreshComments")
-}
-
 class CommentInput: NSObject, UITextFieldDelegate {
     public static let shared = CommentInput()
     override private init() {}
-
+    
     private lazy var textField: MKTextField = {
         let tf = MKTextField()
         tf.borderStyle = .line
@@ -28,9 +24,11 @@ class CommentInput: NSObject, UITextFieldDelegate {
         tf.placeholder = NSLocalizedString("Your comment here ~", comment: "Prompt in input textfield to tell the user to input comment here")
         return tf
     }()
-
-    func show() {
+    
+    private var iid: String?
+    func show(for iid: String?) {
         hide()
+        self.iid = iid
         UIApplication.shared.keyWindow!.addSubview(textField)
         textField.snp.makeConstraints { make in
             make.centerX.centerY.width.equalToSuperview()
@@ -40,16 +38,22 @@ class CommentInput: NSObject, UITextFieldDelegate {
         textField.becomeFirstResponder()
         textField.delegate = self
     }
-
+    
     func hide() {
         textField.resignFirstResponder()
         textField.removeFromSuperview()
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        textField.text = nil
-        NotificationCenter.default.post(name: .ShouldReloadComments, object: nil)
+        if let iid = iid, let message = textField.text?.content {
+            DispatchQueue.global(qos: .userInteractive).async {
+                Comment.new { cid in
+                    return Comment(cid: cid, iid: iid, uid: Account.shared.uid ?? "0", message: message)
+                }
+            }
+            textField.text = nil
+        }
         return true
     }
 }

@@ -57,6 +57,6 @@ class ItemDisplayToolbar: UIToolbar {
     lazy var commentButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_message"), style: .plain, target: self, action: #selector(startComment))
 
     @objc private func startComment() {
-        CommentInput.shared.show()
+        CommentInput.shared.show(for: iid)
     }
 }

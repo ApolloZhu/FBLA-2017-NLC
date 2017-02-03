@@ -14,6 +14,7 @@ target 'FBLA' do
   pod 'Eureka', '~> 2.0.0-beta.1'
   pod 'ImageRow'
   pod 'VTAcknowledgementsViewController'
+  pod 'JSQMessagesViewController'
 
   # Util
   pod 'Kingfisher'

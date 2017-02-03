@@ -105,6 +105,9 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.8)
   - ImageRow (1.0.0):
     - Eureka (~> 2.0.0-beta.1)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - Kingfisher (3.3.3)
   - MaterialKit (0.4)
   - MJRefresh (3.1.12)
@@ -129,6 +132,7 @@ DEPENDENCIES:
   - GooglePlaces
   - GoogleSignIn
   - ImageRow
+  - JSQMessagesViewController
   - Kingfisher
   - MaterialKit (from `https://github.com/ApolloZhu/MaterialKit.git`)
   - MJRefresh
@@ -176,6 +180,8 @@ SPEC CHECKSUMS:
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   ImageRow: 1e37db26f61a0c4ad3bc9a3a803c32d968782857
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Kingfisher: 893215a42e5c2164e916f69463c68003092b104c
   MaterialKit: 2e5267bcf410b82793f2b92d2111f8ae4ed2c3f2
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -185,6 +191,6 @@ SPEC CHECKSUMS:
   SwiftyStarRatingView: c1aa282ce9252f22107f0e15e031ae5d8a3d2e62
   VTAcknowledgementsViewController: e1de80f2c0ce31cc7e1c6f1c8aaeec2770371f09
 
-PODFILE CHECKSUM: 77d4adf6574f70e7a435c054952860d2ee5d0d51
+PODFILE CHECKSUM: 165a399e3a84d7c6857bd70786564179051e99e5
 
 COCOAPODS: 1.1.1

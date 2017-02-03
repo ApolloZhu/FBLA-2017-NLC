@@ -23,7 +23,7 @@ open class BasicAccountInfo: UIControl {
     open func updateInfo() {
         imageView.kf.setImage(with: Account.shared.photoURL, placeholder: #imageLiteral(resourceName: "ic_person_48pt"))
         nameLabel.text = Account.shared.name ?? Localized.USERNAME
-        emailLabel.text = Account.shared.email
+        emailLabel.text = Account.shared.email ?? Localized.EMAIL
     }
 
     var isEditing = false {

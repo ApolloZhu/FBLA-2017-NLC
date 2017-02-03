@@ -58,12 +58,12 @@ class ItemDisplayViewController: UITableViewController {
         itemView?.snp.makeConstraints { make in
             make.horizontallyCenterInSuperview()
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(pay), name: .ShouldCheckOutItem, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(update), name: .ShouldReloadComments, object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(pay), name: .ShouldCheckOutItem, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(update), name: .ShouldReloadComments, object: nil)
         toolbar.iid = iid
         toolbar.show()
     }

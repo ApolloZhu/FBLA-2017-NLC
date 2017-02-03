@@ -13,7 +13,7 @@ import Eureka
 import ImageRow
 
 class ItemSubmitViewController: FormViewController {
-
+    
     var shouldAllowSubmit: Bool {
         var flag = true
         flag = flag && nameRow.value != nil
@@ -23,29 +23,29 @@ class ItemSubmitViewController: FormViewController {
         flag = flag && priceRow.value != nil
         return flag
     }
-
+    
     lazy var nameRow = TextRow("0") {
         $0.title = NSLocalizedString("Item Name", comment: "Input name of the item")
     }
-
+    
     lazy var descriptionRow = TextAreaRow("1") {
         $0.placeholder = NSLocalizedString("Item Description", comment: "Input description of item")
     }
-
+    
     lazy var imageRow = ImageRow("2") {
         $0.title = NSLocalizedString("Item Photo", comment: "Select photo of item")
         $0.clearAction = .no
     }
-
+    
     lazy var conditionRow = PickerInlineRow<Condition>("3") {
         $0.title = NSLocalizedString("Condition", comment: "Condition of item")
         $0.options = Condition.all
     }
-
+    
     lazy var priceRow = DecimalRow("4") {
         $0.title = NSLocalizedString("Price in USD", comment: "Price of item in us dollar")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         form +++ Section(NSLocalizedString("Basic Information", comment: "Basic information of item"))
@@ -53,11 +53,11 @@ class ItemSubmitViewController: FormViewController {
             +++ Section()
             <<< descriptionRow
             <<< imageRow
-
+            
             +++ Section(NSLocalizedString("Details", comment: "Details of the item"))
             <<< conditionRow
             <<< priceRow
-
+            
             +++ Section()
             <<< ButtonRow {
                 $0.title = Localized.CANCEL
@@ -70,7 +70,7 @@ class ItemSubmitViewController: FormViewController {
                 }
                 }.onCellSelection{ [weak self] _, _ in self?.submit() }
     }
-
+    
     func clear() {
         HUD.show(.labeledProgress(title: Localized.PROCESSING, subtitle: nil))
         view.isUserInteractionEnabled = false
@@ -87,14 +87,13 @@ class ItemSubmitViewController: FormViewController {
         view.isUserInteractionEnabled = true
         HUD.hide()
     }
-
+    
     func submit() {
         if !Account.shared.isLogggedIn {
             presentLoginViewController()
         } else {
-            let iid = database.child("items").childByAutoId().key
             if let name = nameRow.value,
-                let uid = Account.shared.user?.uid,
+                let uid = Account.shared.uid,
                 let description = descriptionRow.value,
                 let image = imageRow.value,
                 let price = priceRow.value,
@@ -102,18 +101,17 @@ class ItemSubmitViewController: FormViewController {
             {
                 HUD.show(.labeledProgress(title: Localized.PROCESSING, subtitle: nil))
                 view.isUserInteractionEnabled = false
-                // Store image to drive
-                storage.child("itemIMG/\(iid)").put(UIImagePNGRepresentation(image)!, metadata: nil)
-                { [weak self] meta in self?.clear() }
-                // Relate to user
-                database.child("userData/\(uid)/sold").childByAutoId().setValue(iid)
-                // Store item to database
-                Item(iid: iid, uid: uid,
-                     name: name, description: description,
-                     price: price, condition: condition,
-                     favorite: 0
-                    ).save()
-                
+                Item.new { iid in
+                    // Store image to drive
+                    storage.child("itemIMG/\(iid)").put(UIImagePNGRepresentation(image)!, metadata: nil)
+                    { [weak self] meta in self?.clear() }
+                    // Store item to database
+                    return Item(iid: iid, uid: uid,
+                                name: name, description: description,
+                                price: price, condition: condition,
+                                favorite: 0
+                    )
+                }
             }
         }
     }

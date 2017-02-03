@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 import GooglePlaces
 import Firebase
 import GoogleSignIn
@@ -17,26 +18,23 @@ public class Account: NSObject {
     override private init() { }
     public static let shared = Account()
     
-    public var isLogggedIn: Bool {
-        return user != nil
-    }
-    public var user: FIRUser? {
-        return FIRAuth.auth()?.currentUser
-    }
+    public var uid: String? { return user?.uid }
+    public var user: FIRUser? { return FIRAuth.auth()?.currentUser }
+    public var email: String? { return user?.email }
+    public var name: String? { return user?.displayName }
+    public var photoURL: URL? { return user?.photoURL }
+    
+    public var isLogggedIn: Bool { return user != nil }
+    
     public func addLoginStateMonitor(_ monitor: @escaping () -> ()) {
         FIRAuth.auth()?.addStateDidChangeListener({ (_, _) in
             monitor()
         })
     }
     
-    public var email: String { return user?.email ?? Localized.EMail }
-    public var name: String? { return user?.displayName }
-    public var photoURL: URL? { return user?.photoURL }
-    
-    
     public func requestPlaceID(_ process: @escaping (String?) -> ()) {
-        if let user = user {
-            database.child("placeIDs/\(user.uid)").observe(.value, with: { snapshot in
+        if let uid = uid {
+            database.child("/userData/\(uid)/placeID").observe(.value, with: { snapshot in
                 process(snapshot.value as? String)
             })
         } else {
@@ -45,8 +43,8 @@ public class Account: NSObject {
     }
     
     public func setPlaceID(_ id: String) {
-        if let user = user {
-            database.child("placeIDs/\(user.uid)").setValue(id)
+        if let uid = uid {
+            database.child("/userData/\(uid)/placeID").setValue(id)
         } else {
             defaults.set(id, forKey: Identifier.PlaceIDKey)
         }
@@ -57,7 +55,7 @@ public class Account: NSObject {
         { return notifyInternal(handler: completion) }
         FIRAuth.auth()?.createUser(withEmail: email, password: password) { (_, _) in
             FIRAuth.auth()?.signIn(withEmail: email, password: password) { [weak self] (user, error) in
-                self?.notify(user: user, error: error, handler: completion)
+                self?.notifyLoginOf(user: user, error: error, handler: completion)
             }
         }
     }
@@ -77,18 +75,35 @@ public class Account: NSObject {
     public func login(with credential: FIRAuthCredential, completion: FIRAuthResultCallback?) {
         logOut()
         FIRAuth.auth()?.signIn(with: credential) { [weak self] in
-            self?.notify(user: $0, error: $1, handler: completion)
+            self?.notifyLoginOf(user: $0, error: $1, handler: completion)
         }
     }
     
     public func notifyInternal(handler: FIRAuthResultCallback? = nil) {
-        notify(error: Localized.LOGIN_FAILED, handler: handler)
+        notifyLoginOf(error: Localized.LOGIN_FAILED, handler: handler)
     }
     
-    public func notify(user: FIRUser? = nil, error: Error? = nil, handler: FIRAuthResultCallback? = nil) {
-        if let handler = handler { return handler(user, error) }
-        if showError(error) {
-            print(error!)
+    // When a new user logged in
+    public func notifyLoginOf(user: FIRUser? = nil, error: Error? = nil, handler: FIRAuthResultCallback? = nil) {
+        if let handler = handler { handler(user, error) }
+        if showError(error) { print(error!) }
+        if let user = user {
+            database.child("userData/\(user.uid)").runTransactionBlock { currentData in
+                if var json = currentData.json {
+                    if let email = user.email?.content, !email.isBlank {
+                        json["email"].string = email
+                    }
+                    if !json["name"].exists()  {
+                        json["name"].string = user.displayName
+                    }
+                    if !json["image"].exists() {
+                        json["image"].string = user.photoURL?.absoluteString
+                    }
+                    currentData.value = json.dictionaryObject
+                    return .success(withValue: currentData)
+                }
+                return .abort()
+            }
         }
     }
     

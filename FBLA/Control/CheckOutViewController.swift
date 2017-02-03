@@ -19,7 +19,7 @@ extension UIViewController {
             let checkOutRootViewController = CheckOutViewController(rootViewController: dropIn)
 
             checkOutRootViewController.item = item
-            checkOutRootViewController.uid = Account.shared.user?.uid
+            checkOutRootViewController.uid = Account.shared.uid
 
             let paymentRequest = BTPaymentRequest()
             paymentRequest.summaryTitle = item.name

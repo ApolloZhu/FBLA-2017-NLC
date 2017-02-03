@@ -24,7 +24,8 @@ extension Localized {
 }
 
 extension Localized {
-    static let EMail = NSLocalizedString("E-Mail", comment: "Indicate the content will be e-mail")
+    static let ANONYMOUS = NSLocalizedString("Anonymous", comment: "User name for user that did not login")
+    static let EMAIL = NSLocalizedString("E-Mail", comment: "Indicate the content will be e-mail")
     static let PASSWORD = NSLocalizedString("PASSWORD", comment: "Indicate the content will be password")
     static let USERNAME = NSLocalizedString("USERNAME", comment: "Place holder for user name")
 }

@@ -1,42 +1,106 @@
 {
-  "comment" : {
-    "2017-2233" : [ "第一" ]
-  },
-  "items" : {
-    "2017-2233" : {
-      "condition" : 3,
-      "description" : "ACG作品名: 哔哩哔哩/bilibili\nACG角色名: 2233娘\n比例: 1/8\n热门系列: pvc\n系列品牌: 哔哩哔哩\n适用年龄: 14周岁以上",
-      "favorite" : 342,
-      "name" : "【2017号款限时拍卖】预售 2233拜年祭限定版1/8手办 GSC出品",
-      "price" : 1.43596208345E9,
-      "uid" : "bilibili"
+  "comments" : {
+    "byCID" : {
+      "-Kc0zQsew5J0r330nes9" : {
+        "iid" : "商品标识符",
+        "message" : "This is my first comment",
+        "uid" : "3pAltPRLPXUdTPsUesdASpvJCG72"
+      },
+      "-Kc13dEuNvEmVw4GpB8Q" : {
+        "iid" : "商品标识符",
+        "message" : "Asdf",
+        "uid" : "3pAltPRLPXUdTPsUesdASpvJCG72"
+      },
+      "someCID" : {
+        "iid" : "2017-2233",
+        "message" : "This is super expensive",
+        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
+      }
     },
-    "商品标识符" : {
-      "condition" : 0,
-      "description" : "商品描述",
-      "favorite" : 0,
-      "name" : "商品名称",
-      "price" : 9.9,
-      "uid" : "卖家标识符"
+    "byIID" : {
+      "2017-2233" : {
+        "cid" : 0
+      },
+      "商品标识符" : {
+        "-Kc0zQsew5J0r330nes9" : 0,
+        "-Kc13dEuNvEmVw4GpB8Q" : 0
+      }
+    },
+    "byUID" : {
+      "3pAltPRLPXUdTPsUesdASpvJCG72" : {
+        "-Kc0zQsew5J0r330nes9" : 0,
+        "-Kc13dEuNvEmVw4GpB8Q" : 0
+      },
+      "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
+        "someCID" : 0
+      }
     }
   },
-  "placeIDs" : {
-    "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : "ChIJaVYL9_dFtokR2aIyDoDtOOI",
-    "用户标识符" : "用户寄件地址"
+  "items" : {
+    "byIID" : {
+      "-Kc13pyf0MgMLjAUms_H" : {
+        "condition" : 2,
+        "description" : "Asdf",
+        "favorite" : 0,
+        "name" : "Asd",
+        "price" : 552,
+        "uid" : "3pAltPRLPXUdTPsUesdASpvJCG72"
+      },
+      "2017-2233" : {
+        "condition" : 3,
+        "description" : "ACG作品名: 哔哩哔哩/bilibili\nACG角色名: 2233娘\n比例: 1/8\n热门系列: pvc\n系列品牌: 哔哩哔哩\n适用年龄: 14周岁以上",
+        "favorite" : 342,
+        "name" : "【2017号款限时拍卖】预售 2233拜年祭限定版1/8手办 GSC出品",
+        "price" : 1.43596208345E9,
+        "uid" : "bilibili"
+      },
+      "商品标识符" : {
+        "condition" : 0,
+        "description" : "商品描述",
+        "favorite" : 0,
+        "name" : "商品名称",
+        "price" : 9.9,
+        "uid" : "卖家标识符"
+      }
+    },
+    "fromUID" : {
+      "3pAltPRLPXUdTPsUesdASpvJCG72" : {
+        "-Kc13pyf0MgMLjAUms_H" : 0
+      },
+      "bilibili" : {
+        "2017-2233" : 0
+      },
+      "卖家标识符" : {
+        "商品标识符" : 0
+      }
+    }
   },
   "soldItems" : {
-    "test" : {
-      "condition" : 0,
-      "description" : "A item for test",
-      "name" : "Lorem Ipsum",
-      "price" : 10,
-      "uid" : "someUID"
+    "byIID" : {
+      "test" : {
+        "condition" : 0,
+        "description" : "A item for test",
+        "name" : "Lorem Ipsum",
+        "price" : 10,
+        "uid" : "someUID"
+      }
+    },
+    "toUID" : {
+      "uid" : {
+        "iid" : 0
+      }
     }
   },
   "userData" : {
+    "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
+      "placeID" : "ChIJ4X_hsYiAhYARfV8xKGc3oeU"
+    },
     "someUID" : {
-      "bought" : [ "test" ],
+      "email" : "someEmail@some.com",
       "favorite" : [ "2017-2233" ],
+      "image" : "profilePhotoURL",
+      "name" : "displayName",
+      "placeID" : "somePlaceID",
       "sold" : [ "2017-2233" ]
     }
   }

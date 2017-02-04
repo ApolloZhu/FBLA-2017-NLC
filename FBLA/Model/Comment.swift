@@ -10,9 +10,14 @@ import Firebase
 
 struct Comment {
     var cid: String
+    
     var iid: String
     var uid: String
     var message: String
+    var timestamp: TimeInterval
+    var date: Date {
+        return Date(timeIntervalSince1970: timestamp / 1000)
+    }
 }
 
 extension Comment {
@@ -20,7 +25,8 @@ extension Comment {
         return [
             "iid" : iid,
             "uid" : uid,
-            "message" : message
+            "message" : message,
+            "timestamp": timestamp
         ]
     }
     func save(completionHandler handle: (() -> ())? = nil) {
@@ -38,8 +44,14 @@ extension Comment {
 }
 
 extension Comment {
-    static func new(withCID generate: (String) -> Comment?) {
-        generate(database.child("comments/byCID/").childByAutoId().key)?.save()
+    static func saveNew(iid: String, uid: String, message: String, completionHandler handle: (() -> ())? = nil) {
+        database.child("temp").setValue(FIRServerValue.timestamp())
+        database.child("temp").observeSingleEvent(of: .value, with: {
+            let timestamp = $0.value as! TimeInterval
+            let cid = database.child("comments/byCID/").childByAutoId().key
+            let comment = Comment(cid: cid, iid: iid, uid: uid, message: message, timestamp: timestamp)
+            comment.save { handle?() }
+        })
     }
     static func from(cid: String?, _ process: @escaping (Comment?) -> ()) {
         if let cid = cid {
@@ -47,9 +59,10 @@ extension Comment {
                 if let json = snapshot.json ,
                     let iid = json["iid"].string,
                     let uid = json["uid"].string,
-                    let message = json["message"].string
+                    let message = json["message"].string,
+                    let timestamp = json["timestamp"].double as TimeInterval?
                 {
-                    let comment = Comment(cid: cid, iid: iid, uid: uid, message: message)
+                    let comment = Comment(cid: cid, iid: iid, uid: uid, message: message, timestamp: timestamp)
                     process(comment)
                 } else {
                     process(nil)
@@ -64,19 +77,25 @@ extension Comment {
     private static func generate(snapshot: FIRDataSnapshot, process: @escaping (Comment?) -> ()) {
         Comment.from(cid: snapshot.key, process)
     }
-    static func forEachRelatedToIID(_ iid: String?, limit: Int? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Comment?) -> ()) {
+    static func forEachRelatedToIID(_ iid: String?, limits: [Limit]? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Comment?) -> ()) {
         if let iid = iid {
-            forEachRelatedToPath("comments/byIID/\(iid)", limit: limit, once: once, type: type, process: process, generate: generate)
+            forEachRelatedToPath("comments/byIID/\(iid)", limits: limits, once: once, type: type, process: process, generate: generate)
         } else {
             process(nil)
         }
     }
-    static func forEachRelatedToUID(_ uid: String?, limit: Int? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Comment?) -> ()) {
+    static func forEachRelatedToUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Comment?) -> ()) {
         if let uid = uid {
-            forEachRelatedToPath("comments/byUID/\(uid)", limit: limit, once: once, type: type, process: process, generate: generate)
+            forEachRelatedToPath("comments/byUID/\(uid)", limits: limits, once: once, type: type, process: process, generate: generate)
         } else {
             process(nil)
         }
+    }
+}
+
+extension Comment: Equatable {
+    public static func ==(lhs: Comment, rhs: Comment) -> Bool {
+        return lhs.cid == rhs.cid
     }
 
 }

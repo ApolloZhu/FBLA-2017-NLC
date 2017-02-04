@@ -11,7 +11,7 @@ import Firebase
 import JSQMessagesViewController
 
 class ItemCommentsViewController: JSQMessagesViewController {
-
+    
     // MARK: Must call this method
     func setup(iid: String, sellerUID: String, commenterUID: String? = nil, commenterDisplayName: String? = nil) {
         self.iid = iid
@@ -19,10 +19,9 @@ class ItemCommentsViewController: JSQMessagesViewController {
         self.senderId = commenterUID
         self.senderDisplayName = commenterDisplayName
     }
-
+    
     private var iid: String!
     private var sellerUID: String!
-    var comments = [(index: String, value: JSQMessage)]()
     private var _uid: String?
     override var senderId: String! {
         get {
@@ -41,15 +40,17 @@ class ItemCommentsViewController: JSQMessagesViewController {
             _senderDisplayName = newValue
         }
     }
-
+    
+    var comments = [JSQMessage]()
+    
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
-        return comments[indexPath.item].value
+        return comments[indexPath.item]
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return comments.count
     }
-
+    
     lazy var inBackground: JSQMessageBubbleImageDataSource = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: .jsq_messageBubbleLightGray())
     lazy var outBackground: JSQMessageBubbleImageDataSource = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImage(with: .jsq_messageBubbleBlue())
     lazy var sellerBackground: JSQMessageBubbleImageDataSource = {
@@ -61,9 +62,9 @@ class ItemCommentsViewController: JSQMessagesViewController {
             return f.incomingMessagesBubbleImage(with: c)
         }
     }()
-
+    
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
-        switch comments[indexPath.item].value.senderId {
+        switch comments[indexPath.item].senderId {
         case sellerUID!:
             return sellerBackground
         case senderId:
@@ -72,66 +73,69 @@ class ItemCommentsViewController: JSQMessagesViewController {
             return inBackground
         }
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
-        let id = comments[indexPath.item].value.senderId
+        let id = comments[indexPath.item].senderId
         if id != senderId && id != sellerUID {
             cell.textView?.textColor = UIColor.black
         }
         return cell
     }
-
+    
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         return CommentsAvaterImageDataSource.shared
     }
-
-    private func addExistingComment(cid: String, senderId id: String, displayName name: String, text: String) {
-        if let comment = JSQMessage(senderId: id, displayName: name, text: text) {
-            comments.insert((cid, comment)) { $0.index < $1.index }
+    
+    private func addExistingComment(_ comment: Comment, displayName name: String) {
+        if let comment = JSQMessage(senderId: comment.uid, senderDisplayName: name, date: comment.date, text: comment.message) {
+            comments.insert(comment) {
+                calender.compare($0.date, to: $1.date, toGranularity: Calendar.Component.nanosecond) == .orderedAscending
+            }
             finishReceivingMessage()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             guard self != nil else { return }
-            Comment.forEachRelatedToIID(self!.iid, limit: -25, once: false, type: .childAdded) {
+            Comment.forEachRelatedToIID(self!.iid, once: false, type: .childAdded) { [weak self] in
                 if let comment = $0 {
                     User.from(uid: comment.uid) { [weak self] user in
-                        self?.addExistingComment(cid: comment.cid, senderId: comment.uid, displayName: user?.name ?? Localized.ANONYMOUS, text: comment.message)
+                        self?.addExistingComment(comment, displayName: user?.name ?? Localized.ANONYMOUS)
                     }
                 }
             }
         }
         inputToolbar.contentView.rightBarButtonItem.setImage(#imageLiteral(resourceName: "ic_send"), for: .normal)
         inputToolbar.contentView.leftBarButtonItem.setImage(#imageLiteral(resourceName: "ic_clear"), for: .normal)
+        title = Localized.COMMENTS
     }
-
+    
+    fileprivate var textView: UITextView {
+        return inputToolbar.contentView.textView
+    }
+    
     override func didPressAccessoryButton(_ sender: UIButton!) {
         hideCommentInput()
     }
-
+    
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-            Comment.new { [weak self] cid in
-                if let this = self, let text = text?.content, !text.isBlank {
-                    JSQSystemSoundPlayer.jsq_playMessageSentSound()
-                    this.finishSendingMessage()
-                    return Comment(cid: cid, iid: this.iid, uid: senderId, message: text)
-                }
-                return nil
-            }
+        if let text = text?.content, !text.isBlank {
+            Comment.saveNew(iid: iid, uid: senderId, message: text)
+            { JSQSystemSoundPlayer.jsq_playMessageSentSound() }
+            hideCommentInput()
+            textView.text = nil
         }
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         ItemDisplayToolbar.shared.showForIID(iid)
         ItemDisplayToolbar.shared.delegate = self
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         ItemDisplayToolbar.shared.hide()
@@ -140,9 +144,9 @@ class ItemCommentsViewController: JSQMessagesViewController {
 
 extension ItemCommentsViewController: ItemDisplayToolbarDelegate {
     func showCommentInput(iid: String?) {
-        inputToolbar.contentView.textView.becomeFirstResponder()
+        textView.becomeFirstResponder()
     }
     func hideCommentInput() {
-        inputToolbar.resignFirstResponder()
+        textView.resignFirstResponder()
     }
 }

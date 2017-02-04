@@ -16,9 +16,9 @@ import Braintree
 import VTAcknowledgementsViewController
 
 extension Array {
-    mutating func insert(_ x: Element, alreadyOrderedBy areInIncreasingOrder: (Element, Element) -> Bool) {
+    func insertionPoint(for x: Element, alreadyOrderedBy areInIncreasingOrder: (Element, Element) -> Bool) -> Int {
         if count < 1 {
-            append(x)
+            return -1
         } else {
             var (l, h) = (0, count - 1)
             while (l <= h) {
@@ -29,11 +29,22 @@ extension Array {
                     h = mid - 1
                 }
             }
-            insert(x, at: l)
+            return l
+        }
+    }
+    mutating func insert(_ x: Element, alreadyOrderedBy areInIncreasingOrder: (Element, Element) -> Bool) {
+        var i = insertionPoint(for: x, alreadyOrderedBy: areInIncreasingOrder)
+        if i >= count {
+            append(x)
+        } else {
+            if i < 0 { i = 0 }
+            insert(x, at: i)
         }
     }
 
 }
+
+let calender = Calendar(identifier: .iso8601)
 
 extension BTAPIClient {
     static let shared = BTAPIClient(authorization: "sandbox_ws7w46d8_sjx3gtf3zg6bf66y")!

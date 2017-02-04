@@ -15,13 +15,28 @@ enum Order {
     case child(String)
 }
 
-func forEachRelatedToPath<T>(_ path: String, limit: Int? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (T?) -> (), generate: @escaping (FIRDataSnapshot, @escaping (T?) -> Void) -> Void) {
+enum Limit {
+    case number(Int)
+    case start(String)
+    case end(String)
+}
+
+func forEachRelatedToPath<T>(_ path: String, limits: [Limit]? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (T?) -> (), generate: @escaping (FIRDataSnapshot, @escaping (T?) -> Void) -> Void) {
     var ref: FIRDatabaseQuery = database.child(path)
-    if let limit = limit {
-        if limit < 0 {
-            ref = ref.queryLimited(toLast: UInt(abs(limit)))
-        } else {
-            ref = ref.queryLimited(toFirst: UInt(limit))
+    if let limits = limits {
+        for limit in limits {
+            switch limit {
+            case .number(let count):
+                if count < 0 {
+                    ref = ref.queryLimited(toLast: UInt(abs(count)))
+                } else {
+                    ref = ref.queryLimited(toFirst: UInt(count))
+                }
+            case .start(let key):
+                ref = ref.queryStarting(atValue: key)
+            case .end(let key):
+                ref = ref.queryEnding(atValue: key)
+            }
         }
     }
     if let order = order {

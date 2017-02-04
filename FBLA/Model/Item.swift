@@ -75,9 +75,9 @@ extension Item {
             process(nil)
         }
     }
-    static func eachIIDForUID(_ uid: String?, limit: Int? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Item?) -> ()) {
+    static func eachIIDForUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Item?) -> ()) {
         if let uid = uid {
-            forEachRelatedToPath("items/fromUID/\(uid)", limit: limit, once: once, type: type, process: process) { Item.inSellItemFrom(iid: $0.key, $1) }
+            forEachRelatedToPath("items/fromUID/\(uid)", limits: limits, once: once, type: type, process: process) { Item.inSellItemFrom(iid: $0.key, $1) }
         } else {
             process(nil)
         }
@@ -121,9 +121,9 @@ extension Item {
             process(nil)
         }
     }
-    static func forEachBoughtIIDForUID(_ uid: String?, limit: Int? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Item?) -> ()) {
+    static func forEachBoughtIIDForUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Item?) -> ()) {
         if let uid = uid {
-            forEachRelatedToPath("soldItems/toUID/\(uid)", limit: limit, once: once, type: type, process: process) { boughtItemFrom(iid: $0.key, $1) }
+            forEachRelatedToPath("soldItems/toUID/\(uid)", limits: limits, once: once, type: type, process: process) { boughtItemFrom(iid: $0.key, $1) }
         } else {
             process(nil)
         }

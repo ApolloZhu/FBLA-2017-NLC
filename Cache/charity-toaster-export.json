@@ -1,40 +1,21 @@
 {
   "comments" : {
     "byCID" : {
-      "-Kc0zQsew5J0r330nes9" : {
-        "iid" : "商品标识符",
-        "message" : "This is my first comment",
-        "uid" : "3pAltPRLPXUdTPsUesdASpvJCG72"
-      },
-      "-Kc13dEuNvEmVw4GpB8Q" : {
-        "iid" : "商品标识符",
-        "message" : "Asdf",
-        "uid" : "3pAltPRLPXUdTPsUesdASpvJCG72"
-      },
-      "someCID" : {
+      "-Kc9Ls9KyOusXXQJF051" : {
         "iid" : "2017-2233",
-        "message" : "This is super expensive",
-        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
+        "message" : "Once per hour",
+        "timestamp" : 1486232453776,
+        "uid" : "0"
       }
     },
     "byIID" : {
       "2017-2233" : {
-        "cid" : 0
-      },
-      "商品标识符" : {
-        "-Kc0zQsew5J0r330nes9" : 0,
-        "-Kc13dEuNvEmVw4GpB8Q" : 0
+        "-Kc9Ls9KyOusXXQJF051" : 0
       }
     },
-    "byUID" : {
-      "3pAltPRLPXUdTPsUesdASpvJCG72" : {
-        "-Kc0zQsew5J0r330nes9" : 0,
-        "-Kc13dEuNvEmVw4GpB8Q" : 0
-      },
-      "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
-        "someCID" : 0
-      }
-    }
+    "byUID" : [ {
+      "-Kc9Ls9KyOusXXQJF051" : 0
+    } ]
   },
   "items" : {
     "byIID" : {
@@ -52,7 +33,7 @@
         "favorite" : 342,
         "name" : "【2017号款限时拍卖】预售 2233拜年祭限定版1/8手办 GSC出品",
         "price" : 1.43596208345E9,
-        "uid" : "bilibili"
+        "uid" : "ktwE5vofAObq8TYizM0krbA3SJ13"
       },
       "商品标识符" : {
         "condition" : 0,
@@ -91,6 +72,7 @@
       }
     }
   },
+  "temp" : 1486232453844,
   "userData" : {
     "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
       "placeID" : "ChIJ4X_hsYiAhYARfV8xKGc3oeU"

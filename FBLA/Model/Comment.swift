@@ -27,13 +27,13 @@ extension Comment {
         database.child("comments/byCID/\(cid)").setValue(json) { _,_ in handle?() }
         database.child("comments/byIID/\(iid)/\(cid)").setValue(0)
         database.child("comments/byUID/\(uid)/\(cid)").setValue(0)
-        NotificationCenter.default.post(name: .ShouldUpdate, object: nil)
+        requestUpdate()
     }
     func remove() {
         database.child("comments/byCID/\(cid)").removeValue()
         database.child("comments/byIID/\(iid)/\(cid)").removeValue()
         database.child("comments/byUID/\(uid)/\(cid)").removeValue()
-        NotificationCenter.default.post(name: .ShouldUpdate, object: nil)
+        requestUpdate()
     }
 }
 
@@ -59,32 +59,24 @@ extension Comment {
             process(nil)
         }
     }
-    private static func forEachIn(snapshot: FIRDataSnapshot, process: @escaping (Comment?) -> ()) {
-        print(snapshot)
-        if let cids = snapshot.dictionary?.keys {
-            for cid in cids {
-                Comment.from(cid: cid, process)
-            }
-        } else {
-            process(nil)
-        }
+}
+extension Comment {
+    private static func generate(snapshot: FIRDataSnapshot, process: @escaping (Comment?) -> ()) {
+        Comment.from(cid: snapshot.key, process)
     }
-    static func forEachRelatedTo(iid: String?, process: @escaping (Comment?) -> ()) {
+    static func forEachRelatedToIID(_ iid: String?, limit: Int? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Comment?) -> ()) {
         if let iid = iid {
-            database.child("comments/byIID/\(iid)").observeSingleEvent(of: .value, with: {
-                forEachIn(snapshot: $0, process: process)
-            })
+            forEachRelatedToPath("comments/byIID/\(iid)", limit: limit, once: once, type: type, process: process, generate: generate)
         } else {
             process(nil)
         }
     }
-    static func forEachRelatedTo(uid: String?, process: @escaping (Comment?) -> ()) {
+    static func forEachRelatedToUID(_ uid: String?, limit: Int? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Comment?) -> ()) {
         if let uid = uid {
-            database.child("comments/byUID/\(uid)").observeSingleEvent(of: .value, with: {
-                forEachIn(snapshot: $0, process: process)
-            })
+            forEachRelatedToPath("comments/byUID/\(uid)", limit: limit, once: once, type: type, process: process, generate: generate)
         } else {
             process(nil)
         }
     }
+
 }

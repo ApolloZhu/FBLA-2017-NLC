@@ -6,11 +6,12 @@
 //  Copyright © 2017 Swifty X. All rights reserved.
 //
 
+import Firebase
 import SwiftyJSON
 
 struct Item {
     var iid: String
-    
+
     var uid: String
     var name: String
     var description: String
@@ -20,7 +21,7 @@ struct Item {
     //!!!: Bring back for rating
     //    var category: Category /*May replace with tags*/
     //    var rating: Double
-    
+
     func fetchImageURL(then process: @escaping (URL?) -> ()) {
         storage.child("itemIMG/\(iid)").downloadURL { url, _ in
             process(url)
@@ -49,7 +50,7 @@ extension Item {
     static func new(withIID generate: (String) -> Item) {
         generate(database.child("items").childByAutoId().key).save()
     }
-    static func from(iid: String?, _ process: @escaping (Item?) -> ()) {
+    static func inSellItemFrom(iid: String?, _ process: @escaping (Item?) -> ()) {
         if let iid = iid {
             database.child("items/byIID/\(iid)").observeSingleEvent(of: .value, with: { snapshot in
                 if let json = snapshot.json ,
@@ -74,17 +75,9 @@ extension Item {
             process(nil)
         }
     }
-    static func eachIIDFor(uid: String?, _ process: @escaping (String?) -> ()) {
+    static func eachIIDForUID(_ uid: String?, limit: Int? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Item?) -> ()) {
         if let uid = uid {
-            database.child("items/fromUID/\(uid)").observeSingleEvent(of: .value, with: { snapshot in
-                if let iids = snapshot.dictionary?.keys {
-                    for iid in iids {
-                        process(iid)
-                    }
-                } else {
-                    process(nil)
-                }
-            })
+            forEachRelatedToPath("items/fromUID/\(uid)", limit: limit, once: once, type: type, process: process) { Item.inSellItemFrom(iid: $0.key, $1) }
         } else {
             process(nil)
         }
@@ -100,9 +93,7 @@ extension Item {
             database.child("soldItems/byIID/\(self.iid)").setValue(json)
             database.child("soldItems/toUID/\(target)/\(self.iid)").setValue(0)
             DispatchQueue.global(qos: .userInitiated).async {
-                Comment.forEachRelatedTo(iid: self.iid) {
-                    $0?.remove()
-                }
+                Comment.forEachRelatedToIID(self.iid) { $0?.remove() }
             }
         }
     }
@@ -130,17 +121,9 @@ extension Item {
             process(nil)
         }
     }
-    static func forEachBoughtIIDFor(uid: String?, _ process: @escaping (Item?) -> ()) {
+    static func forEachBoughtIIDForUID(_ uid: String?, limit: Int? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Item?) -> ()) {
         if let uid = uid {
-            database.child("soldItems/toUID/\(uid)").observeSingleEvent(of: .value, with: { snapshot in
-                if let iids = snapshot.dictionary?.keys {
-                    for iid in iids {
-                        boughtItemFrom(iid: iid, process)
-                    }
-                } else {
-                    process(nil)
-                }
-            })
+            forEachRelatedToPath("soldItems/toUID/\(uid)", limit: limit, once: once, type: type, process: process) { boughtItemFrom(iid: $0.key, $1) }
         } else {
             process(nil)
         }

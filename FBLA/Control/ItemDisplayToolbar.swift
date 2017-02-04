@@ -9,15 +9,38 @@
 import UIKit
 import SnapKit
 
-class ItemDisplayToolbar: UIToolbar {
+protocol ItemDisplayToolbarDelegate: class {
+    func showCommentInput(iid: String?)
+    func hideCommentInput()
+}
+
+class ItemDisplayToolbar {
+    public static let shared = ItemDisplayToolbar()
+    private init(){}
+    private lazy var toolbar: _ItemDisplayToolbar = .init()
+    weak var delegate: ItemDisplayToolbarDelegate? {
+        get {
+            return toolbar._delegate
+        }
+        set {
+            toolbar._delegate = newValue
+        }
+    }
+    func showForIID(_ iid: String) {
+        toolbar.showForIID(iid)
+    }
+    func hide() {
+        toolbar.hide()
+    }
+}
+
+fileprivate class _ItemDisplayToolbar: UIToolbar {
 
     var iid: String?
+    weak var _delegate: ItemDisplayToolbarDelegate?
 
-    lazy var small = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-    lazy var space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-
-    // MARK: interface
-    open func show() {
+    func showForIID(_ iid: String) {
+        self.iid = iid
         UIApplication.shared.keyWindow!.addSubview(self)
         setItems([space, likeButton, small, commentButton, space, buyButton, space], animated: true)
         snp.makeConstraints { make in
@@ -26,10 +49,14 @@ class ItemDisplayToolbar: UIToolbar {
         }
     }
 
-    open func hide() {
+    func hide() {
         removeFromSuperview()
-        CommentInput.shared.hide()
+        _delegate?.hideCommentInput()
     }
+
+
+    lazy var small = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+    lazy var space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 
     // MARK: Purchase
     lazy var buyButton = UIBarButtonItem(title: Localized.BUY, style: .plain, target: self, action: #selector(pay))
@@ -57,6 +84,6 @@ class ItemDisplayToolbar: UIToolbar {
     lazy var commentButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_message"), style: .plain, target: self, action: #selector(startComment))
 
     @objc private func startComment() {
-        CommentInput.shared.show(for: iid)
+        _delegate?.showCommentInput(iid: iid)
     }
 }

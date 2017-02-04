@@ -15,6 +15,26 @@ import SwiftyJSON
 import Braintree
 import VTAcknowledgementsViewController
 
+extension Array {
+    mutating func insert(_ x: Element, alreadyOrderedBy areInIncreasingOrder: (Element, Element) -> Bool) {
+        if count < 1 {
+            append(x)
+        } else {
+            var (l, h) = (0, count - 1)
+            while (l <= h) {
+                let mid = l + (h - l) / 2
+                if areInIncreasingOrder(self[mid], x) {
+                    l = mid + 1
+                } else {
+                    h = mid - 1
+                }
+            }
+            insert(x, at: l)
+        }
+    }
+
+}
+
 extension BTAPIClient {
     static let shared = BTAPIClient(authorization: "sandbox_ws7w46d8_sjx3gtf3zg6bf66y")!
 }
@@ -40,9 +60,6 @@ extension FIRDataSnapshot {
             return JSON(value)
         }
         return nil
-    }
-    var dictionary: [String:Any]? {
-        return value as? [String:Any]
     }
 }
 
@@ -115,6 +132,32 @@ extension UIButton {
         self.init(frame: CGRect(origin: .zero, size: image.size))
         contentMode = .scaleAspectFit
         setImage(image, for: .normal)
+    }
+}
+
+extension Notification.Name {
+    static let ShouldUpdate = Notification.Name("ShouldUpdate")
+}
+
+// Don't call this method at any stage during updating process
+func requestUpdate(object: AnyObject? = nil) {
+    NotificationCenter.default.post(name: .ShouldUpdate, object: object)
+}
+
+extension UITableViewController {
+    func update(code: @escaping () -> ()) {
+        DispatchQueue.main.async { [weak self] in
+            if let this = self {
+                this.tableView.beginUpdates()
+                code()
+                this.tableView.endUpdates()
+            }
+        }
+    }
+    @objc func reload() {
+        update { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 

@@ -9,17 +9,29 @@
 import UIKit
 import MaterialKit
 
+extension Identifier {
+    static let ItemPurchaseCell = "ItemPurchaseCell"
+}
+
 class ItemPurchaseTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var button: MKButton!
-    
+
     var price: Double? {
         willSet {
-            button.setTitle("$\(newValue ?? 0)", for: .normal)
+            button.setTitle(String.localizedStringWithFormat("Buy for %.2f USD", newValue ?? 0), for: .normal)
         }
     }
+
     @IBAction func pay() {
         NotificationCenter.default.post(name: .ShouldCheckOutItem, object: nil)
     }
-    
+}
+
+extension UITableViewController {
+    func itemPurchaseTableViewCell(for item: Item?) -> ItemPurchaseTableViewCell {
+        let custom = tableView.dequeueReusableCell(withIdentifier: Identifier.ItemPurchaseCell) as! ItemPurchaseTableViewCell
+        custom.price = item?.price
+        return custom
+    }
 }

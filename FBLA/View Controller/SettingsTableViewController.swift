@@ -30,9 +30,9 @@ class SettingsTableViewController: UITableViewController {
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
             NotificationCenter.default.post(name: .ShouldPushAccountViewController, object: nil)
-        case (1, 0):
+        case (2, 1):
             NotificationCenter.default.post(name: .ShouldPushAboutUsViewController, object: nil)
-        case (1, 1):
+        case (2, 2):
             NotificationCenter.default.post(name: .ShouldPushAcknowledgementsViewController, object: nil)
         default: break
         }

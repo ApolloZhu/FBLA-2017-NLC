@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		521150AC1E420AF30059D86A /* Pods-FBLA-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521150AB1E420AF30059D86A /* Pods-FBLA-acknowledgements.plist */; };
 		52127C8F1E43A52A00DC4D82 /* ItemDisplayToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */; };
-		52127C911E43A56100DC4D82 /* ItemDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52127C901E43A56100DC4D82 /* ItemDisplayView.swift */; };
 		5216812F1E31D3DA00544BA3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681311E31D3DA00544BA3 /* Localizable.strings */; };
 		521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681361E31D3DA00544BA3 /* InfoPlist.strings */; };
 		522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */; };
@@ -38,6 +37,7 @@
 		52DC71541E4422BB006A02BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC71531E4422BB006A02BF /* User.swift */; };
 		52DE7CF71E41182F00204E0E /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */; };
 		52DE7CFA1E4122C500204E0E /* ItemSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE7CF91E4122C500204E0E /* ItemSubmitViewController.swift */; };
+		52F35D5E1E4537C9004332CC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F35D5D1E4537C9004332CC /* Data.swift */; };
 		52F45C9B1E29BB5400A7D81A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C921E29BB5400A7D81A /* AccountView.swift */; };
 		52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C931E29BB5400A7D81A /* AccountViewController.swift */; };
 		52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C941E29BB5400A7D81A /* CartTableViewController.swift */; };
@@ -56,7 +56,6 @@
 		30D698F0997D1249069F9392 /* Pods-FBLA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA.debug.xcconfig"; sourceTree = "<group>"; };
 		521150AB1E420AF30059D86A /* Pods-FBLA-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Pods-FBLA-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-FBLA/Pods-FBLA-acknowledgements.plist"; sourceTree = "<group>"; };
 		52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDisplayToolbar.swift; path = FBLA/Control/ItemDisplayToolbar.swift; sourceTree = SOURCE_ROOT; };
-		52127C901E43A56100DC4D82 /* ItemDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDisplayView.swift; path = "FBLA/View Controller/ItemDisplayView.swift"; sourceTree = SOURCE_ROOT; };
 		5216812B1E31D32000544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5216812C1E31D32000544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		521681301E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -107,6 +106,15 @@
 		52DC71531E4422BB006A02BF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckOutViewController.swift; path = FBLA/Control/CheckOutViewController.swift; sourceTree = SOURCE_ROOT; };
 		52DE7CF91E4122C500204E0E /* ItemSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemSubmitViewController.swift; path = "FBLA/View Controller/ItemSubmitViewController.swift"; sourceTree = SOURCE_ROOT; };
+		52F35D551E44F625004332CC /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		52F35D561E44F625004332CC /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		52F35D571E44F626004332CC /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		52F35D581E44F626004332CC /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		52F35D591E44F9DE004332CC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		52F35D5A1E44F9DE004332CC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		52F35D5B1E44F9DF004332CC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		52F35D5C1E44F9DF004332CC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		52F35D5D1E4537C9004332CC /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		52F45C921E29BB5400A7D81A /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountView.swift; path = "FBLA/View Controller/AccountView.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C931E29BB5400A7D81A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = "FBLA/View Controller/AccountViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C941E29BB5400A7D81A /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartTableViewController.swift; path = "FBLA/View Controller/CartTableViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -268,6 +276,7 @@
 				528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */,
 				52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */,
 				52537A081E43CA5C00D39403 /* CommentInput.swift */,
+				52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */,
 			);
 			name = Control;
 			path = Controller;
@@ -277,8 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				52F45C981E29BB5400A7D81A /* ItemDisplayViewController.swift */,
-				52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */,
-				52127C901E43A56100DC4D82 /* ItemDisplayView.swift */,
 				529553301E447EC200041B5C /* Cell */,
 				529553261E4468CD00041B5C /* Comment */,
 			);
@@ -336,6 +343,7 @@
 		52F69EA81E1E1A2A00602EC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52F35D5D1E4537C9004332CC /* Data.swift */,
 				52DC71551E442487006A02BF /* User */,
 				523300CE1E406C7B00D85A6C /* Item */,
 				529553271E44690300041B5C /* Comment */,
@@ -444,6 +452,8 @@
 				"ur-PK",
 				"ar-SA",
 				pa,
+				"te-IN",
+				ko,
 			);
 			mainGroup = 52AFEDC41E1E16A500FA9ABA;
 			productRefGroup = 52AFEDCE1E1E16A500FA9ABA /* Products */;
@@ -567,10 +577,10 @@
 				52DC71541E4422BB006A02BF /* User.swift in Sources */,
 				525708161E3E7909005E4C22 /* Item.swift in Sources */,
 				52D8675D1E39359100A5266B /* Localized.swift in Sources */,
+				52F35D5E1E4537C9004332CC /* Data.swift in Sources */,
 				5295532F1E447DCC00041B5C /* ItemImageTableViewCell.swift in Sources */,
 				52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */,
 				52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */,
-				52127C911E43A56100DC4D82 /* ItemDisplayView.swift in Sources */,
 				52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */,
 				52F45C9E1E29BB5400A7D81A /* CommentsTableViewController.swift in Sources */,
 				529553321E447FB700041B5C /* ItemPurchaseTableViewCell.swift in Sources */,
@@ -602,6 +612,8 @@
 				525379FF1E43BCCB00D39403 /* ur-PK */,
 				52537A031E43BCE000D39403 /* ar-SA */,
 				52537A071E43BD0800D39403 /* pa */,
+				52F35D581E44F626004332CC /* te-IN */,
+				52F35D5C1E44F9DF004332CC /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -614,6 +626,8 @@
 				525379FE1E43BCCB00D39403 /* ur-PK */,
 				52537A021E43BCDF00D39403 /* ar-SA */,
 				52537A061E43BD0800D39403 /* pa */,
+				52F35D571E44F626004332CC /* te-IN */,
+				52F35D5B1E44F9DF004332CC /* ko */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -627,6 +641,8 @@
 				525379FC1E43BCCA00D39403 /* ur-PK */,
 				52537A001E43BCDF00D39403 /* ar-SA */,
 				52537A041E43BD0800D39403 /* pa */,
+				52F35D551E44F625004332CC /* te-IN */,
+				52F35D591E44F9DE004332CC /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -640,6 +656,8 @@
 				525379FD1E43BCCA00D39403 /* ur-PK */,
 				52537A011E43BCDF00D39403 /* ar-SA */,
 				52537A051E43BD0800D39403 /* pa */,
+				52F35D561E44F625004332CC /* te-IN */,
+				52F35D5A1E44F9DE004332CC /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			path = ..;

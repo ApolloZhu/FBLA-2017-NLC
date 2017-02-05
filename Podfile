@@ -18,6 +18,7 @@ target 'FBLA' do
   # Util
   pod 'Kingfisher'
   pod 'SwiftyJSON'
+  pod 'Firebase/DynamicLinks'
 
   # Data
   pod 'GooglePlaces'

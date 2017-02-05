@@ -10,8 +10,8 @@ struct Identifier {
     static let ShowItemSegue = "Show Item Segue"
     static let ShowAboutUsSegue = "ShowAboutUsViewControllerSegue"
     static let CommentsViewControllerSegue = "CommentsViewControllerSegue"
+    static let SearchItemsResultTableViewControllerSegue = "SearchItemsResultTableViewControllerSegue"
 
-    static let AccountViewController = "AccountViewControllerID"
     static let ItemDisplayViewController = "ItemDisplayViewControllerID"
 
     static let PlaceIDKey = "placeID"

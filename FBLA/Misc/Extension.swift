@@ -41,7 +41,7 @@ extension Array {
             insert(x, at: i)
         }
     }
-
+    
 }
 
 let calender = Calendar(identifier: .iso8601)
@@ -147,12 +147,18 @@ extension UIButton {
 }
 
 extension Notification.Name {
-    static let ShouldUpdate = Notification.Name("ShouldUpdate")
+//    static let ShouldUpdate = Notification.Name("ShouldUpdate")
+    static let NewComment = Notification.Name("NewComment")
+    static let ShouldReloadAll = Notification.Name("ShouldReloadAll")
 }
 
 // Don't call this method at any stage during updating process
-func requestUpdate(object: AnyObject? = nil) {
-    NotificationCenter.default.post(name: .ShouldUpdate, object: object)
+func requestReloadAll(with object: AnyObject? = nil) {
+    NotificationCenter.default.post(name: .ShouldReloadAll, object: object)
+}
+
+func newComment(with object: AnyObject? = nil) {
+    NotificationCenter.default.post(name: .NewComment, object: object)
 }
 
 extension UITableViewController {
@@ -165,10 +171,13 @@ extension UITableViewController {
             }
         }
     }
-    @objc func reload() {
+    @objc func updateAll() {
         update { [weak self] in
             self?.tableView.reloadData()
         }
+    }
+    @objc func reloadAll() {
+        tableView.reloadData()
     }
 }
 

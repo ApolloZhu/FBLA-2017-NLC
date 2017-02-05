@@ -18,6 +18,10 @@ extension Identifier {
     static let ItemImageCell = "ItemImageCell"
 }
 
+extension Notification.Name {
+    static let RequestUpdateImage = Notification.Name("RequestUpdateImage")
+}
+
 extension UITableViewController {
     func itemImageTableViewCell(for item: Item?) -> ItemImageTableViewCell {
         let custom = tableView.dequeueReusableCell(withIdentifier: Identifier.ItemImageCell) as! ItemImageTableViewCell
@@ -26,7 +30,7 @@ extension UITableViewController {
                 if let size = image?.size, custom._shouldSetImage {
                     custom._shouldSetImage = false
                     custom.itemImageView.frame.size = size
-                    requestUpdate()
+                    NotificationCenter.default.post(name: .RequestUpdateImage, object: nil)
                 }
             }
         }

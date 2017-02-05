@@ -33,13 +33,13 @@ extension Comment {
         database.child("comments/byCID/\(cid)").setValue(json) { _,_ in handle?() }
         database.child("comments/byIID/\(iid)/\(cid)").setValue(0)
         database.child("comments/byUID/\(uid)/\(cid)").setValue(0)
-        requestUpdate()
+        newComment()
     }
     func remove() {
         database.child("comments/byCID/\(cid)").removeValue()
         database.child("comments/byIID/\(iid)/\(cid)").removeValue()
         database.child("comments/byUID/\(uid)/\(cid)").removeValue()
-        requestUpdate()
+//        requestReloadAll()
     }
 }
 

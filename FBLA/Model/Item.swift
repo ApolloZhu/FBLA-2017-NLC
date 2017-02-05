@@ -11,17 +11,16 @@ import SwiftyJSON
 
 struct Item {
     var iid: String
-
+    
     var uid: String
     var name: String
     var description: String
     var price: Double
     var condition: Condition
     var favorite: Int
-    //!!!: Bring back for rating
-    //    var category: Category /*May replace with tags*/
-    //    var rating: Double
-
+    //???: Replace with tags?
+    // var category: Category
+    
     func fetchImageURL(then process: @escaping (URL?) -> ()) {
         storage.child("itemIMG/\(iid)").downloadURL { url, _ in
             process(url)

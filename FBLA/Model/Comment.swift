@@ -39,7 +39,7 @@ extension Comment {
         database.child("comments/byCID/\(cid)").removeValue()
         database.child("comments/byIID/\(iid)/\(cid)").removeValue()
         database.child("comments/byUID/\(uid)/\(cid)").removeValue()
-//        requestReloadAll()
+        requestReloadAll()
     }
 }
 
@@ -77,18 +77,28 @@ extension Comment {
     private static func generate(snapshot: FIRDataSnapshot, process: @escaping (Comment?) -> ()) {
         Comment.from(cid: snapshot.key, process)
     }
-    static func forEachRelatedToIID(_ iid: String?, limits: [Limit]? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Comment?) -> ()) {
-        if let iid = iid {
-            forEachRelatedToPath("comments/byIID/\(iid)", limits: limits, once: once, type: type, process: process, generate: generate)
-        } else {
-            process(nil)
+    static func forEachCommentRelatedToIID(_ iid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (Comment?) -> ()) {
+        forEachCIDRelatedToIID(iid, limits: limits, order: order) {
+            Comment.from(cid: $0, process)
         }
     }
-    static func forEachRelatedToUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Comment?) -> ()) {
+    static func forEachCIDRelatedToIID(_ iid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (String) -> ()) {
+        if let iid = iid {
+            forEachRelatedToPath("comments/byIID/\(iid)", limits: limits, order: order) {
+                process($0.key)
+            }
+        }
+    }
+    static func forEachCommentRelatedToUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (Comment?) -> ()) {
+        forEachCIDRelatedToUID(uid, limits: limits, order: order) {
+            Comment.from(cid: $0, process)
+        }
+    }
+    static func forEachCIDRelatedToUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (String) -> ()) {
         if let uid = uid {
-            forEachRelatedToPath("comments/byUID/\(uid)", limits: limits, once: once, type: type, process: process, generate: generate)
-        } else {
-            process(nil)
+            forEachRelatedToPath("comments/byUID/\(uid)", limits: limits, order: order) {
+                process($0.key)
+            }
         }
     }
 }
@@ -97,5 +107,5 @@ extension Comment: Equatable {
     public static func ==(lhs: Comment, rhs: Comment) -> Bool {
         return lhs.cid == rhs.cid
     }
-
+    
 }

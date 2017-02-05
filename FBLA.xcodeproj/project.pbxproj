@@ -35,6 +35,7 @@
 		52AFEDD81E1E16A600FA9ABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDD61E1E16A600FA9ABA /* Main.storyboard */; };
 		52AFEDDD1E1E16A600FA9ABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFEDDB1E1E16A600FA9ABA /* LaunchScreen.storyboard */; };
 		52C2E4F01E46DEC600669390 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C2E4EF1E46DEC600669390 /* SearchViewController.swift */; };
+		52C2E4F21E4713D100669390 /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C2E4F11E4713D100669390 /* ItemsTableViewCell.swift */; };
 		52D8675D1E39359100A5266B /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8675C1E39359100A5266B /* Localized.swift */; };
 		52DC71541E4422BB006A02BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC71531E4422BB006A02BF /* User.swift */; };
 		52DE7CF71E41182F00204E0E /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */; };
@@ -106,6 +107,7 @@
 		52AFEDDC1E1E16A600FA9ABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52AFEDDE1E1E16A600FA9ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		52C2E4EF1E46DEC600669390 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = "FBLA/View Controller/SearchViewController.swift"; sourceTree = SOURCE_ROOT; };
+		52C2E4F11E4713D100669390 /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsTableViewCell.swift; path = FBLA/Control/ItemsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		52D8675C1E39359100A5266B /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localized.swift; path = Model/Localized.swift; sourceTree = "<group>"; };
 		52DC71531E4422BB006A02BF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckOutViewController.swift; path = FBLA/Control/CheckOutViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -276,6 +278,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		52C2E4F31E4713D600669390 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */,
+				52C2E4F11E4713D100669390 /* ItemsTableViewCell.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
 		52DC71551E442487006A02BF /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,9 +340,9 @@
 		52F69EA51E1E1A2A00602EC3 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */,
-				5211D9351E46D36E0041EC74 /* Search */,
 				52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */,
+				52C2E4F31E4713D600669390 /* List */,
+				5211D9351E46D36E0041EC74 /* Search */,
 				52F45CA41E29BBA400A7D81A /* Account */,
 				525708141E3E7722005E4C22 /* Item */,
 				52F45C961E29BB5400A7D81A /* HomeViewController.swift */,
@@ -583,6 +594,7 @@
 				5295532D1E447DAA00041B5C /* ItemConditionTableViewCell.swift in Sources */,
 				5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */,
 				52F45CA11E29BB5400A7D81A /* ItemDisplayViewController.swift in Sources */,
+				52C2E4F21E4713D100669390 /* ItemsTableViewCell.swift in Sources */,
 				52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */,
 				529553291E44694800041B5C /* CommentsAvaterImageDataSource.swift in Sources */,
 				52537A091E43CA5C00D39403 /* CommentInput.swift in Sources */,

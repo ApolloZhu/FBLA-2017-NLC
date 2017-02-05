@@ -9,6 +9,18 @@
 import Firebase
 import SwiftyJSON
 
+enum ItemState: CustomStringConvertible {
+    case inSell, favorited, bought, sold
+    var description: String {
+        switch self {
+        case .inSell: return Localized.IN_SELL
+        case .favorited: return Localized.FAVORITED
+        case .bought: return Localized.BOUGHT
+        case .sold: return Localized.SOLD
+        }
+    }
+}
+
 struct Item {
     var iid: String
     
@@ -18,8 +30,6 @@ struct Item {
     var price: Double
     var condition: Condition
     var favorite: Int
-    //???: Replace with tags?
-    // var category: Category
     
     func fetchImageURL(then process: @escaping (URL?) -> ()) {
         storage.child("itemIMG/\(iid)").downloadURL { url, _ in
@@ -46,10 +56,10 @@ extension Item {
 }
 
 extension Item {
-    static func new(withIID generate: (String) -> Item) {
+    static func new(generateWithIID generate: (String) -> Item) {
         generate(database.child("items").childByAutoId().key).save()
     }
-    static func inSellItemFrom(iid: String?, _ process: @escaping (Item?) -> ()) {
+    static func inSellItemFromIID(_ iid: String?, _ process: @escaping (Item?) -> ()) {
         if let iid = iid {
             database.child("items/byIID/\(iid)").observeSingleEvent(of: .value, with: { snapshot in
                 if let json = snapshot.json ,
@@ -74,17 +84,22 @@ extension Item {
             process(nil)
         }
     }
-    static func eachIIDForUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Item?) -> ()) {
+    static func forEachInSellItemFromUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (Item?) -> ()) {
+        forEachInSellIIDFromUID(uid, limits: limits, order: order) {
+            Item.inSellItemFromIID($0, process)
+        }
+    }
+    static func forEachInSellIIDFromUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (String) -> ()) {
         if let uid = uid {
-            forEachRelatedToPath("items/fromUID/\(uid)", limits: limits, once: once, type: type, process: process) { Item.inSellItemFrom(iid: $0.key, $1) }
-        } else {
-            process(nil)
+            forEachRelatedToPath("items/fromUID/\(uid)", limits: limits, order: order) {
+                process($0.key)
+            }
         }
     }
 }
 
 extension Item {
-    func sell(toUID target: String) {
+    func sellToUID(_ target: String) {
         database.child("items/byIID/\(iid)").removeValue { _,_ in
             database.child("items/fromUID/\(self.uid)").removeValue()
             var json = self.json
@@ -92,13 +107,13 @@ extension Item {
             database.child("soldItems/byIID/\(self.iid)").setValue(json)
             database.child("soldItems/toUID/\(target)/\(self.iid)").setValue(0)
             DispatchQueue.global(qos: .userInitiated).async {
-                Comment.forEachRelatedToIID(self.iid) { $0?.remove() }
+                Comment.forEachCommentRelatedToIID(self.iid) { $0?.remove() }
             }
         }
     }
-    static func boughtItemFrom(iid: String?, _ process: @escaping (Item?) -> ()) {
+    static func boughtItemFromIID(_ iid: String?, _ process: @escaping (Item?) -> ()) {
         if let iid = iid {
-            database.child("soldItems/fromIID/\(iid)").observeSingleEvent(of: .value, with: { snapshot in
+            database.child("soldItems/byIID/\(iid)").observeSingleEvent(of: .value, with: { snapshot in
                 if let json = snapshot.json ,
                     let uid = json["uid"].string,
                     let name = json["name"].string,
@@ -120,11 +135,34 @@ extension Item {
             process(nil)
         }
     }
-    static func forEachBoughtIIDForUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (Item?) -> ()) {
+    
+    static func forEachBoughtItemFromUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (Item?) -> ()) {
+        forEachBoughtIIDFromUID(uid, limits: limits, order: order) {
+            boughtItemFromIID($0, process)
+        }
+    }
+    static func forEachBoughtIIDFromUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (String) -> ()) {
         if let uid = uid {
-            forEachRelatedToPath("soldItems/toUID/\(uid)", limits: limits, once: once, type: type, process: process) { boughtItemFrom(iid: $0.key, $1) }
-        } else {
-            process(nil)
+            forEachRelatedToPath("soldItems/byIID", limits: limits, order: order) {
+                if let json = $0.json {
+                    if json["uid"].string == uid {
+                        process($0.key)
+                    }
+                }
+            }
+        }
+    }
+    
+    static func forEachBoughtItemByUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (Item?) -> ()) {
+        forEachBoughtIIDByUID(uid, limits: limits, order: order) {
+            boughtItemFromIID($0, process)
+        }
+    }
+    static func forEachBoughtIIDByUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (String) -> ()) {
+        if let uid = uid {
+            forEachRelatedToPath("soldItems/toUID/\(uid)", limits: limits, order: order) {
+                process($0.key)
+            }
         }
     }
 }

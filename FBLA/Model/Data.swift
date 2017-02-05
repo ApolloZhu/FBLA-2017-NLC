@@ -21,7 +21,7 @@ enum Limit {
     case end(String)
 }
 
-func forEachRelatedToPath<T>(_ path: String, limits: [Limit]? = nil, order: Order? = nil, once: Bool = true, type: FIRDataEventType = .value, process: @escaping (T?) -> (), generate: @escaping (FIRDataSnapshot, @escaping (T?) -> Void) -> Void) {
+func forEachRelatedToPath(_ path: String, limits: [Limit]? = nil, order: Order? = nil, /*once: Bool = true, type: FIRDataEventType = .value, */process: @escaping (FIRDataSnapshot) -> ()/*, generate: @escaping (FIRDataSnapshot, @escaping (T?) -> Void) -> Void*/) {
     var ref: FIRDatabaseQuery = database.child(path)
     if let limits = limits {
         for limit in limits {
@@ -51,9 +51,9 @@ func forEachRelatedToPath<T>(_ path: String, limits: [Limit]? = nil, order: Orde
             ref = ref.queryOrdered(byChild: path)
         }
     }
-    if once {
-        ref.observeSingleEvent(of: type, with: { generate($0, process) })
-    } else {
-        ref.observe(type, with: { generate($0, process) })
-    }
+    //    if once {
+    //        ref.observeSingleEvent(of: type, with: { process($0) })
+    //    } else {
+    ref.observe(.childAdded, with: { process($0) })
+    //    }
 }

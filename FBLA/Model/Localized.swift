@@ -24,6 +24,13 @@ extension Localized {
 }
 
 extension Localized {
+    static let IN_SELL = NSLocalizedString("In Sell", comment: "State of item, still in sell on the market")
+    static let FAVORITED = NSLocalizedString("Favorited", comment: "State of item, favorited")
+    static let BOUGHT = NSLocalizedString("Bought", comment: "State of item, bought by user him/her self")
+    static let SOLD = NSLocalizedString("SOLD", comment: "State of item, sold to another user already")
+}
+
+extension Localized {
     static let ANONYMOUS = NSLocalizedString("Anonymous", comment: "User name for user that did not login")
     static let EMAIL = NSLocalizedString("E-Mail", comment: "Indicate the content will be e-mail")
     static let PASSWORD = NSLocalizedString("PASSWORD", comment: "Indicate the content will be password")

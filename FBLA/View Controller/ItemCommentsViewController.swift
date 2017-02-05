@@ -102,7 +102,7 @@ class ItemCommentsViewController: JSQMessagesViewController {
         super.viewDidLoad()
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             guard self != nil else { return }
-            Comment.forEachRelatedToIID(self!.iid, once: false, type: .childAdded) { [weak self] in
+            Comment.forEachCommentRelatedToIID(self!.iid) { [weak self] in
                 if let comment = $0 {
                     User.from(uid: comment.uid) { [weak self] user in
                         if let url = user?.photoURL {

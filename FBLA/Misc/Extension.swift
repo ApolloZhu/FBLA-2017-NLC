@@ -13,7 +13,10 @@ import CoreLocation
 import Firebase
 import SwiftyJSON
 import Braintree
-import VTAcknowledgementsViewController
+
+func postNotificationNamed(_ name: Notification.Name) {
+    NotificationCenter.default.post(name: name, object: nil)
+}
 
 extension Array {
     func insertionPoint(for x: Element, alreadyOrderedBy areInIncreasingOrder: (Element, Element) -> Bool) -> Int {
@@ -147,18 +150,18 @@ extension UIButton {
 }
 
 extension Notification.Name {
-//    static let ShouldUpdate = Notification.Name("ShouldUpdate")
+    //    static let ShouldUpdate = Notification.Name("ShouldUpdate")
     static let NewComment = Notification.Name("NewComment")
     static let ShouldReloadAll = Notification.Name("ShouldReloadAll")
 }
 
 // Don't call this method at any stage during updating process
 func requestReloadAll(with object: AnyObject? = nil) {
-    NotificationCenter.default.post(name: .ShouldReloadAll, object: object)
+    postNotificationNamed(.ShouldReloadAll)
 }
 
 func newComment(with object: AnyObject? = nil) {
-    NotificationCenter.default.post(name: .NewComment, object: object)
+    postNotificationNamed(.NewComment)
 }
 
 extension UITableViewController {
@@ -218,12 +221,6 @@ extension UIViewController {
     }
     func animatedPop() {
         _ = navigationController?.popViewController(animated: true)
-    }
-}
-
-extension UIViewController {
-    func pushAcknowledgementsViewController(animated: Bool = true) {
-        navigationController?.pushViewController(VTAcknowledgementsViewController(fileNamed: "Pods-FBLA-acknowledgements")!, animated: animated)
     }
 }
 

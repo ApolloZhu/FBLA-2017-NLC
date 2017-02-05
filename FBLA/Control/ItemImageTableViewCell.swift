@@ -30,7 +30,7 @@ extension UITableViewController {
                 if let size = image?.size, custom._shouldSetImage {
                     custom._shouldSetImage = false
                     custom.itemImageView.frame.size = size
-                    NotificationCenter.default.post(name: .RequestUpdateImage, object: nil)
+                    postNotificationNamed(.RequestUpdateImage)
                 }
             }
         }

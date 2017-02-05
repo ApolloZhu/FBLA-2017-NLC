@@ -24,7 +24,7 @@ class ItemPurchaseTableViewCell: UITableViewCell {
     }
 
     @IBAction func pay() {
-        NotificationCenter.default.post(name: .ShouldCheckOutItem, object: nil)
+        postNotificationNamed(.ShouldCheckOutItem)
     }
 }
 

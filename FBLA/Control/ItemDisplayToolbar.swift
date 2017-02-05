@@ -73,7 +73,7 @@ fileprivate class _ItemDisplayToolbar: UIToolbar {
     // MARK: Purchase
     lazy var buyButton = UIBarButtonItem(title: Localized.BUY, style: .plain, target: self, action: #selector(pay))
     @objc private func pay() {
-        NotificationCenter.default.post(name: .ShouldCheckOutItem, object: nil)
+        postNotificationNamed(.ShouldCheckOutItem)
     }
 
     // MARK: Favorite

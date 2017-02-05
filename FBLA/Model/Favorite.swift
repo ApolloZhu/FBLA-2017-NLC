@@ -9,7 +9,7 @@
 import Firebase
 
 extension Account {
-
+    
     func favorited(iid: String, process: @escaping (Bool) -> ()) {
         if let uid = uid {
             database.child("favorite/\(uid)/\(iid)").observeSingleEvent(of: .value, with: {
@@ -23,7 +23,7 @@ extension Account {
             process(false)
         }
     }
-
+    
     func favorite(iid: String) {
         if let uid = uid {
             database.child("favorite/\(uid)/\(iid)").setValue(0)
@@ -41,7 +41,7 @@ extension Account {
             }
         }
     }
-
+    
     func unfavorite(iid: String) {
         if let uid = uid {
             database.child("favorite/\(uid)/\(iid)").removeValue()
@@ -54,6 +54,21 @@ extension Account {
                     return .success(withValue: currentData)
                 }
                 return .abort()
+            }
+        }
+    }
+    
+    static func forEachFavoritedItemByUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (Item?) -> ()) {
+        forEachFavoritedIIDByUID(uid, limits: limits, order: order) {
+            Item.inSellItemFromIID($0, process)
+        }
+    }
+    
+    
+    static func forEachFavoritedIIDByUID(_ uid: String?, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (String) -> ()) {
+        if let uid = uid {
+            forEachRelatedToPath("favorite/\(uid)", limits: limits, order: order) {
+                process($0.key)
             }
         }
     }

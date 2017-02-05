@@ -38,7 +38,7 @@ class ItemDisplayViewController: UITableViewController {
     
     var iid: String! {
         didSet {
-            Item.inSellItemFrom(iid: iid) { [weak self] in
+            Item.inSellItemFromIID(iid) { [weak self] in
                 self?.item = $0
             }
         }
@@ -50,7 +50,7 @@ class ItemDisplayViewController: UITableViewController {
     }
     
     @objc private func pay() {
-        Item.inSellItemFrom(iid: iid) { [weak self] item in
+        Item.inSellItemFromIID(iid) { [weak self] item in
             if let this = self, let item = item {
                 this.checkOut(item: item)
             } else {
@@ -62,7 +62,7 @@ class ItemDisplayViewController: UITableViewController {
     private var comments = [Comment]()
 
     func loadComments() {
-        Comment.forEachRelatedToIID(iid, limits: [.number(-3)], once: false, type: .childAdded)
+        Comment.forEachCommentRelatedToIID(iid, limits: [.number(-3)])
         { [weak self] in
             if let this = self, let comment = $0 {
                 let i = this.comments.insertionPoint(for: comment) {

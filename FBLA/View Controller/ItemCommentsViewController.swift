@@ -8,10 +8,11 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 import JSQMessagesViewController
 
 class ItemCommentsViewController: JSQMessagesViewController {
-    
+
     // MARK: Must call this method
     func setup(iid: String, sellerUID: String, commenterUID: String? = nil, commenterDisplayName: String? = nil) {
         self.iid = iid
@@ -19,7 +20,7 @@ class ItemCommentsViewController: JSQMessagesViewController {
         self.senderId = commenterUID
         self.senderDisplayName = commenterDisplayName
     }
-    
+
     private var iid: String!
     private var sellerUID: String!
     private var _uid: String?
@@ -40,17 +41,17 @@ class ItemCommentsViewController: JSQMessagesViewController {
             _senderDisplayName = newValue
         }
     }
-    
+
     var comments = [JSQMessage]()
-    
+
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
         return comments[indexPath.item]
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return comments.count
     }
-    
+
     lazy var inBackground: JSQMessageBubbleImageDataSource = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: .jsq_messageBubbleLightGray())
     lazy var outBackground: JSQMessageBubbleImageDataSource = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImage(with: .jsq_messageBubbleBlue())
     lazy var sellerBackground: JSQMessageBubbleImageDataSource = {
@@ -62,7 +63,7 @@ class ItemCommentsViewController: JSQMessagesViewController {
             return f.incomingMessagesBubbleImage(with: c)
         }
     }()
-    
+
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
         switch comments[indexPath.item].senderId {
         case sellerUID!:
@@ -73,7 +74,7 @@ class ItemCommentsViewController: JSQMessagesViewController {
             return inBackground
         }
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         let id = comments[indexPath.item].senderId
@@ -82,11 +83,7 @@ class ItemCommentsViewController: JSQMessagesViewController {
         }
         return cell
     }
-    
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
-        return CommentsAvaterImageDataSource.shared
-    }
-    
+
     private func addExistingComment(_ comment: Comment, displayName name: String) {
         if let comment = JSQMessage(senderId: comment.uid, senderDisplayName: name, date: comment.date, text: comment.message) {
             comments.insert(comment) {
@@ -95,7 +92,12 @@ class ItemCommentsViewController: JSQMessagesViewController {
             finishReceivingMessage()
         }
     }
-    
+
+    var avatars = [String:JSQMessageAvatarImageDataSource]()
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
+        return avatars[comments[indexPath.item].senderId] ?? JSQMessagesAvatarImage.placeholder
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
@@ -103,6 +105,12 @@ class ItemCommentsViewController: JSQMessagesViewController {
             Comment.forEachRelatedToIID(self!.iid, once: false, type: .childAdded) { [weak self] in
                 if let comment = $0 {
                     User.from(uid: comment.uid) { [weak self] user in
+                        if let url = user?.photoURL {
+                            ImageDownloader.default.downloadImage(with: url) { [weak self] image,_,_,_ in
+                                self?.avatars[comment.uid] = JSQMessagesAvatarImage.avatar(with: image)
+                                self?.finishReceivingMessage()
+                            }
+                        }
                         self?.addExistingComment(comment, displayName: user?.name ?? Localized.ANONYMOUS)
                     }
                 }
@@ -112,30 +120,26 @@ class ItemCommentsViewController: JSQMessagesViewController {
         inputToolbar.contentView.leftBarButtonItem.setImage(#imageLiteral(resourceName: "ic_clear"), for: .normal)
         title = Localized.COMMENTS
     }
-    
-    fileprivate var textView: UITextView {
-        return inputToolbar.contentView.textView
-    }
-    
+
     override func didPressAccessoryButton(_ sender: UIButton!) {
         hideCommentInput()
     }
-    
+
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         if let text = text?.content, !text.isBlank {
             Comment.saveNew(iid: iid, uid: senderId, message: text)
             { JSQSystemSoundPlayer.jsq_playMessageSentSound() }
             hideCommentInput()
-            textView.text = nil
+            inputToolbar.contentView.textView.text = nil
         }
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         ItemDisplayToolbar.shared.showForIID(iid)
         ItemDisplayToolbar.shared.delegate = self
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         ItemDisplayToolbar.shared.hide()
@@ -143,10 +147,15 @@ class ItemCommentsViewController: JSQMessagesViewController {
 }
 
 extension ItemCommentsViewController: ItemDisplayToolbarDelegate {
+    var controller: UIViewController { return self }
     func showCommentInput(iid: String?) {
-        textView.becomeFirstResponder()
+        inputToolbar.contentView.textView.becomeFirstResponder()
     }
     func hideCommentInput() {
-        textView.resignFirstResponder()
+        inputToolbar.contentView.textView.resignFirstResponder()
     }
+}
+
+extension JSQMessagesAvatarImage {
+    static let placeholder = JSQMessagesAvatarImage.avatar(with: #imageLiteral(resourceName: "ic_person_48pt"))
 }

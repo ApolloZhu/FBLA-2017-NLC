@@ -1,21 +1,72 @@
 {
   "comments" : {
     "byCID" : {
-      "-Kc9Ls9KyOusXXQJF051" : {
+      "-KcAOm5Dq8vWy4bQwjL_" : {
         "iid" : "2017-2233",
-        "message" : "Once per hour",
-        "timestamp" : 1486232453776,
+        "message" : "I really like it, but it is still kind of expensive",
+        "timestamp" : 1486249992574,
+        "uid" : "ktwE5vofAObq8TYizM0krbA3SJ13"
+      },
+      "-KcAOwAv4bWrPFfiJJeq" : {
+        "iid" : "2017-2233",
+        "message" : "I promise this is something you really want",
+        "timestamp" : 1486250033912,
+        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
+      },
+      "-KcAYU_Fcl44MRNKeUbu" : {
+        "iid" : "2017-2233",
+        "message" : "I guess I have my icon too",
+        "timestamp" : 1486252538189,
+        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
+      },
+      "-KcAbbtW09K1b2W6xLc3" : {
+        "iid" : "2017-2233",
+        "message" : "Why is it that expensive, can't you make it cheaper?",
+        "timestamp" : 1486253620819,
+        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
+      },
+      "-KcAbi5UjZuW0zgcft-0" : {
+        "iid" : "2017-2233",
+        "message" : "I'm going to buy it no matter what price it is",
+        "timestamp" : 1486253646238,
+        "uid" : "0"
+      },
+      "-KcAlcrlqZfUH6BwBHSO" : {
+        "iid" : "2017-2233",
+        "message" : "Hi",
+        "timestamp" : 1486256246254,
         "uid" : "0"
       }
     },
     "byIID" : {
       "2017-2233" : {
-        "-Kc9Ls9KyOusXXQJF051" : 0
+        "-KcAOm5Dq8vWy4bQwjL_" : 0,
+        "-KcAOwAv4bWrPFfiJJeq" : 0,
+        "-KcAYU_Fcl44MRNKeUbu" : 0,
+        "-KcAbbtW09K1b2W6xLc3" : 0,
+        "-KcAbi5UjZuW0zgcft-0" : 0,
+        "-KcAlcrlqZfUH6BwBHSO" : 0
       }
     },
-    "byUID" : [ {
-      "-Kc9Ls9KyOusXXQJF051" : 0
-    } ]
+    "byUID" : {
+      "0" : {
+        "-KcAbi5UjZuW0zgcft-0" : 0,
+        "-KcAlcrlqZfUH6BwBHSO" : 0
+      },
+      "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
+        "-KcAOwAv4bWrPFfiJJeq" : 0,
+        "-KcAYU_Fcl44MRNKeUbu" : 0,
+        "-KcAbbtW09K1b2W6xLc3" : 0
+      },
+      "ktwE5vofAObq8TYizM0krbA3SJ13" : {
+        "-KcAOm5Dq8vWy4bQwjL_" : 0
+      }
+    }
+  },
+  "favorite" : {
+    "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
+      "2017-2233" : 0
+    }
   },
   "items" : {
     "byIID" : {
@@ -30,7 +81,7 @@
       "2017-2233" : {
         "condition" : 3,
         "description" : "ACG作品名: 哔哩哔哩/bilibili\nACG角色名: 2233娘\n比例: 1/8\n热门系列: pvc\n系列品牌: 哔哩哔哩\n适用年龄: 14周岁以上",
-        "favorite" : 342,
+        "favorite" : 0,
         "name" : "【2017号款限时拍卖】预售 2233拜年祭限定版1/8手办 GSC出品",
         "price" : 1.43596208345E9,
         "uid" : "ktwE5vofAObq8TYizM0krbA3SJ13"
@@ -72,18 +123,19 @@
       }
     }
   },
-  "temp" : 1486232453844,
+  "temp" : 1486256246294,
   "userData" : {
     "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
+      "email" : "zhuzhiyu20010417@outlook.com",
+      "image" : "https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/7477_1687334451524614_8989460742730923472_n.jpg?oh=1ce56c3380ac4619f1e8262aad7e2eb5&oe=5917280B",
+      "name" : "Zhiyu Zhu",
       "placeID" : "ChIJ4X_hsYiAhYARfV8xKGc3oeU"
     },
     "someUID" : {
       "email" : "someEmail@some.com",
-      "favorite" : [ "2017-2233" ],
       "image" : "profilePhotoURL",
       "name" : "displayName",
-      "placeID" : "somePlaceID",
-      "sold" : [ "2017-2233" ]
+      "placeID" : "somePlaceID"
     }
   }
 }

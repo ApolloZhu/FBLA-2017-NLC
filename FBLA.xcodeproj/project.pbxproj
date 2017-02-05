@@ -15,6 +15,7 @@
 		522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C71E3665CE001D3DF9 /* LoginView.swift */; };
 		52461FFB1E398E30000AF183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52461FFA1E398E30000AF183 /* Assets.xcassets */; };
 		524EE6B41E365DA900AC7022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */; };
+		525004B61E468C4A00DDEAD9 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525004B51E468C4A00DDEAD9 /* Favorite.swift */; };
 		52537A091E43CA5C00D39403 /* CommentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52537A081E43CA5C00D39403 /* CommentInput.swift */; };
 		525708161E3E7909005E4C22 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525708151E3E7909005E4C22 /* Item.swift */; };
 		5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5274CDF71E31A83C0045E5EB /* Settings.bundle */; };
@@ -65,6 +66,7 @@
 		52461FFA1E398E30000AF183 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524EE2D11E36A6770002EB22 /* FBLA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FBLA.entitlements; path = ../FBLA.entitlements; sourceTree = "<group>"; };
 		524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		525004B51E468C4A00DDEAD9 /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		525379F81E43BCAD00D39403 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		525379F91E43BCAD00D39403 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		525379FA1E43BCAD00D39403 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				525708151E3E7909005E4C22 /* Item.swift */,
 				52F625F81E3E9FC500A0CD88 /* Condition.swift */,
+				529553271E44690300041B5C /* Comment */,
 			);
 			name = Item;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 		529553261E4468CD00041B5C /* Comment */ = {
 			isa = PBXGroup;
 			children = (
+				52537A081E43CA5C00D39403 /* CommentInput.swift */,
 				529553241E445E8300041B5C /* ItemCommentsViewController.swift */,
 			);
 			name = Comment;
@@ -266,6 +270,7 @@
 			children = (
 				5278FB2A1E31C98C005E3CC5 /* Account.swift */,
 				52DC71531E4422BB006A02BF /* User.swift */,
+				525004B51E468C4A00DDEAD9 /* Favorite.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -274,9 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */,
-				52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */,
-				52537A081E43CA5C00D39403 /* CommentInput.swift */,
-				52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */,
 			);
 			name = Control;
 			path = Controller;
@@ -285,6 +287,8 @@
 		52DE7CF81E41229B00204E0E /* Display */ = {
 			isa = PBXGroup;
 			children = (
+				52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */,
+				52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */,
 				52F45C981E29BB5400A7D81A /* ItemDisplayViewController.swift */,
 				529553301E447EC200041B5C /* Cell */,
 				529553261E4468CD00041B5C /* Comment */,
@@ -346,7 +350,6 @@
 				52F35D5D1E4537C9004332CC /* Data.swift */,
 				52DC71551E442487006A02BF /* User */,
 				523300CE1E406C7B00D85A6C /* Item */,
-				529553271E44690300041B5C /* Comment */,
 				521681371E31D40700544BA3 /* Localization */,
 			);
 			path = Model;
@@ -579,6 +582,7 @@
 				52D8675D1E39359100A5266B /* Localized.swift in Sources */,
 				52F35D5E1E4537C9004332CC /* Data.swift in Sources */,
 				5295532F1E447DCC00041B5C /* ItemImageTableViewCell.swift in Sources */,
+				525004B61E468C4A00DDEAD9 /* Favorite.swift in Sources */,
 				52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */,
 				52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */,
 				52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */,

@@ -114,7 +114,6 @@ PODS:
   - PKHUD (4.2.0)
   - SnapKit (3.1.2)
   - SwiftyJSON (3.1.4)
-  - SwiftyStarRatingView (1.0.1)
   - VTAcknowledgementsViewController (1.2.1)
 
 DEPENDENCIES:
@@ -139,22 +138,16 @@ DEPENDENCIES:
   - PKHUD
   - SnapKit
   - SwiftyJSON
-  - SwiftyStarRatingView (from `https://github.com/ApolloZhu/SwiftyStarRatingView.git`)
   - VTAcknowledgementsViewController
 
 EXTERNAL SOURCES:
   MaterialKit:
     :git: https://github.com/ApolloZhu/MaterialKit.git
-  SwiftyStarRatingView:
-    :git: https://github.com/ApolloZhu/SwiftyStarRatingView.git
 
 CHECKOUT OPTIONS:
   MaterialKit:
     :commit: 8dee874cb4de7f6e09cdc68e8cbd2c589a5b71c9
     :git: https://github.com/ApolloZhu/MaterialKit.git
-  SwiftyStarRatingView:
-    :commit: 3f0d6ab9f33f0a3abf33fbe651a26ea22cc1d068
-    :git: https://github.com/ApolloZhu/SwiftyStarRatingView.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -188,9 +181,8 @@ SPEC CHECKSUMS:
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  SwiftyStarRatingView: c1aa282ce9252f22107f0e15e031ae5d8a3d2e62
   VTAcknowledgementsViewController: e1de80f2c0ce31cc7e1c6f1c8aaeec2770371f09
 
-PODFILE CHECKSUM: 165a399e3a84d7c6857bd70786564179051e99e5
+PODFILE CHECKSUM: 5df49757e1cebf8705d2250ebe270255feacb767
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

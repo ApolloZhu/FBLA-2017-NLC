@@ -7,7 +7,6 @@ target 'FBLA' do
   pod 'SnapKit'
 
   # Control
-  pod 'SwiftyStarRatingView', :git => 'https://github.com/ApolloZhu/SwiftyStarRatingView.git'
   pod 'PKHUD'
   pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
   pod 'MJRefresh'

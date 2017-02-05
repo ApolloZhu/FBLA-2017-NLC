@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 protocol ItemDisplayToolbarDelegate: class {
+    var controller: UIViewController { get }
     func showCommentInput(iid: String?)
     func hideCommentInput()
 }
@@ -41,6 +42,17 @@ fileprivate class _ItemDisplayToolbar: UIToolbar {
 
     func showForIID(_ iid: String) {
         self.iid = iid
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            Account.shared.favorited(iid: iid) { [weak self] favorited in
+                DispatchQueue.main.async {
+                    if favorited {
+                        self?.likeButton.image = #imageLiteral(resourceName: "ic_favorite")
+                    } else {
+                        self?.likeButton.image = #imageLiteral(resourceName: "ic_favorite_border")
+                    }
+                }
+            }
+        }
         UIApplication.shared.keyWindow!.addSubview(self)
         setItems([space, likeButton, small, commentButton, space, buyButton, space], animated: true)
         snp.makeConstraints { make in
@@ -67,17 +79,23 @@ fileprivate class _ItemDisplayToolbar: UIToolbar {
     // MARK: Favorite
     lazy var likeButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_favorite_border"), style: .plain, target: self, action: #selector(toggleFavorite))
 
-    //TODO: Read like from database
-    private(set) public var isFavorite = false
-
     @objc private func toggleFavorite() {
-        isFavorite.toggle()
-        if isFavorite {
-            likeButton.image = #imageLiteral(resourceName: "ic_favorite")
+        guard let iid = iid else { return }
+        if Account.shared.isLogggedIn {
+            Account.shared.favorited(iid: iid) { [weak self] favorited in
+                if let this = self {
+                    if !favorited {
+                        this.likeButton.image = #imageLiteral(resourceName: "ic_favorite")
+                        Account.shared.favorite(iid: iid)
+                    } else {
+                        this.likeButton.image = #imageLiteral(resourceName: "ic_favorite_border")
+                        Account.shared.unfavorite(iid: iid)
+                    }
+                }
+            }
         } else {
-            likeButton.image = #imageLiteral(resourceName: "ic_favorite_border")
+            _delegate?.controller.presentLoginViewController()
         }
-        //TODO: Sync like to database
     }
 
     // MARK: Comment

@@ -8,6 +8,7 @@
 
 import Firebase
 import SwiftyJSON
+import GooglePlaces
 
 enum ItemState: CustomStringConvertible {
     case inSell, favorited, bought, sold
@@ -111,6 +112,20 @@ extension Item {
             database.child("soldItems/toUID/\(target)/\(self.iid)").setValue(0)
             DispatchQueue.global(qos: .userInitiated).async {
                 Comment.forEachCommentRelatedToIID(self.iid) { $0?.remove() }
+            }
+            switch self.transfer {
+            case .pickUp:
+                User.from(uid: self.uid) { user in
+                    GMSPlacesClient.shared().lookUpPlaceID(user!.placeID!) { place,_ in
+                        Event.when(customer: target, willPickUp: self, from: self.uid, at: place!)
+                    }
+                }
+            case .ship:
+                Account.shared.requestPlaceID {
+                    GMSPlacesClient.shared().lookUpPlaceID($0!) { place,_ in
+                        Event.when(donator: self.uid, willShip: self, to: target, at: place!)
+                    }
+                }
             }
         }
     }

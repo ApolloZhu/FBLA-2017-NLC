@@ -11,8 +11,13 @@ import SnapKit
 import GooglePlaces
 import GooglePlacePicker
 
+protocol ShippingAddressPickerDelegate: class {
+    func didUpdatePlace(to: GMSPlace)
+}
+
 class ShippingAddressPicker: UIControl {
     weak var controller: UIViewController?
+    weak var delegate: ShippingAddressPickerDelegate?
     
     lazy var addressLabel = UILabel.makeAutoAdjusting(fontSize: 20).centered()
     lazy var editAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_edit"))
@@ -141,6 +146,7 @@ class ShippingAddressPicker: UIControl {
         if !showError(error), let place = place {
             Account.shared.setPlaceID(place.placeID)
             setFormattedAddress(place.formattedAddress)
+            delegate?.didUpdatePlace(to: place)
         }
     }
     

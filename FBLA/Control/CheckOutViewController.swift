@@ -19,26 +19,39 @@ extension UIViewController {
         if !Account.shared.isLogggedIn {
             presentLoginViewController()
         } else {
-            let dropIn = BTDropInViewController(apiClient: .shared)
-            let checkOutRootViewController = CheckOutViewController(rootViewController: dropIn)
-            
-            checkOutRootViewController.item = item
-            checkOutRootViewController.uid = Account.shared.uid
-            
-            let paymentRequest = BTPaymentRequest()
-            paymentRequest.summaryTitle = item.name
-            paymentRequest.summaryDescription = item.description
-            paymentRequest.displayAmount = "$\(item.price)"
-            paymentRequest.callToActionText = NSLocalizedString("Pay", comment: "Click to pay")
-            paymentRequest.shouldHideCallToAction = false
-            
-            dropIn.delegate = checkOutRootViewController
-            dropIn.paymentRequest = paymentRequest
-            dropIn.title = NSLocalizedString("Check Out", comment: "To complete payment at this page")
-            
-            dropIn.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(hideCheckOutViewController))
-            present(checkOutRootViewController, animated: true, completion: nil)
+            if item.transfer == .ship {
+                Account.shared.requestPlaceID { [weak self] in
+                    if $0 != nil {
+                        self?.showCheckOutViewController(item: item)
+                    } else {
+                        self?.presentShippingAddressPickerViewController()
+                    }
+                }
+            } else {
+                showCheckOutViewController(item: item)
+            }
         }
+    }
+    private func showCheckOutViewController(item: Item) {
+        let dropIn = BTDropInViewController(apiClient: .shared)
+        let checkOutRootViewController = CheckOutViewController(rootViewController: dropIn)
+        
+        checkOutRootViewController.item = item
+        checkOutRootViewController.uid = Account.shared.uid
+        
+        let paymentRequest = BTPaymentRequest()
+        paymentRequest.summaryTitle = item.name
+        paymentRequest.summaryDescription = item.description
+        paymentRequest.displayAmount = "$\(item.price)"
+        paymentRequest.callToActionText = NSLocalizedString("Pay", comment: "Click to pay")
+        paymentRequest.shouldHideCallToAction = false
+        
+        dropIn.delegate = checkOutRootViewController
+        dropIn.paymentRequest = paymentRequest
+        dropIn.title = NSLocalizedString("Check Out", comment: "To complete payment at this page")
+        
+        dropIn.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(hideCheckOutViewController))
+        present(checkOutRootViewController, animated: true, completion: nil)
     }
     @objc private func hideCheckOutViewController() {
         animatedDismiss()

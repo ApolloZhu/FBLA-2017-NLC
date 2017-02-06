@@ -36,9 +36,25 @@
         "message" : "Hi",
         "timestamp" : 1486256246254,
         "uid" : "0"
+      },
+      "-KcGAwOybXdvFKv_qgVD" : {
+        "iid" : "-KcFuQ4xq7o9aAXs6OlB",
+        "message" : "I should show this to my Chinese teacher to talk about Chinese culture",
+        "timestamp" : 1486347028093,
+        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
+      },
+      "-KcGRpIr9d0p5adINaMh" : {
+        "iid" : "-KcFuQ4xq7o9aAXs6OlB",
+        "message" : "不会崩溃了",
+        "timestamp" : 1486351455460,
+        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
       }
     },
     "byIID" : {
+      "-KcFuQ4xq7o9aAXs6OlB" : {
+        "-KcGAwOybXdvFKv_qgVD" : 0,
+        "-KcGRpIr9d0p5adINaMh" : 0
+      },
       "2017-2233" : {
         "-KcAOm5Dq8vWy4bQwjL_" : 0,
         "-KcAOwAv4bWrPFfiJJeq" : 0,
@@ -56,7 +72,9 @@
       "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
         "-KcAOwAv4bWrPFfiJJeq" : 0,
         "-KcAYU_Fcl44MRNKeUbu" : 0,
-        "-KcAbbtW09K1b2W6xLc3" : 0
+        "-KcAbbtW09K1b2W6xLc3" : 0,
+        "-KcGAwOybXdvFKv_qgVD" : 0,
+        "-KcGRpIr9d0p5adINaMh" : 0
       },
       "ktwE5vofAObq8TYizM0krbA3SJ13" : {
         "-KcAOm5Dq8vWy4bQwjL_" : 0
@@ -65,6 +83,7 @@
   },
   "favorite" : {
     "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
+      "-KcFuQ4xq7o9aAXs6OlB" : 0,
       "2017-2233" : 0
     }
   },
@@ -76,7 +95,17 @@
         "favorite" : 0,
         "name" : "Asd",
         "price" : 552,
+        "transfer" : 0,
         "uid" : "3pAltPRLPXUdTPsUesdASpvJCG72"
+      },
+      "-KcFuQ4xq7o9aAXs6OlB" : {
+        "condition" : 0,
+        "description" : "Really cute, but no longer needed",
+        "favorite" : 3,
+        "name" : "Bilibili anime figure",
+        "price" : 0.1,
+        "transfer" : 1,
+        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
       },
       "2017-2233" : {
         "condition" : 3,
@@ -84,6 +113,7 @@
         "favorite" : 0,
         "name" : "【2017号款限时拍卖】预售 2233拜年祭限定版1/8手办 GSC出品",
         "price" : 1.43596208345E9,
+        "transfer" : 0,
         "uid" : "ktwE5vofAObq8TYizM0krbA3SJ13"
       },
       "商品标识符" : {
@@ -92,12 +122,16 @@
         "favorite" : 0,
         "name" : "商品名称",
         "price" : 9.9,
+        "transfer" : 1,
         "uid" : "卖家标识符"
       }
     },
     "fromUID" : {
       "3pAltPRLPXUdTPsUesdASpvJCG72" : {
         "-Kc13pyf0MgMLjAUms_H" : 0
+      },
+      "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
+        "-KcFuQ4xq7o9aAXs6OlB" : 0
       },
       "bilibili" : {
         "2017-2233" : 0
@@ -123,7 +157,7 @@
       }
     }
   },
-  "temp" : 1486256246294,
+  "temp" : 1486351455532,
   "userData" : {
     "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
       "email" : "zhuzhiyu20010417@outlook.com",

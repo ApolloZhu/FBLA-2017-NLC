@@ -128,28 +128,35 @@ class ItemSubmitViewController: FormViewController {
         if !Account.shared.isLogggedIn {
             presentLoginViewController()
         } else {
-            if let name = nameRow.value,
-                let uid = Account.shared.uid,
-                let description = descriptionRow.value,
-                let image = imageRow.value,
-                let price = priceRow.value,
-                let condition = conditionRow.value,
-                let transfer = shippingRow.value
-            {
-                HUD.show(.labeledProgress(title: Localized.PROCESSING, subtitle: nil))
-                view.isUserInteractionEnabled = false
-                Item.new { iid in
-                    // Store image to drive
-                    storage.child("itemIMG/\(iid)").put(UIImagePNGRepresentation(image)!, metadata: nil)
-                    { [weak self] meta in self?.clear() }
-                    // Store item to database
-                    return Item(iid: iid, uid: uid,
-                                name: name, description: description,
-                                price: price, condition: condition,
-                                favorite: 0, transfer: transfer
-                    )
+            HUD.show(.labeledProgress(title: Localized.PROCESSING, subtitle: nil))
+            self.view.isUserInteractionEnabled = false
+            Account.shared.requestPlaceID {
+                if $0 != nil {
+                    if let name = self.nameRow.value,
+                        let uid = Account.shared.uid,
+                        let description = self.descriptionRow.value,
+                        let image = self.imageRow.value,
+                        let price = self.priceRow.value,
+                        let condition = self.conditionRow.value,
+                        let transfer = self.shippingRow.value
+                    {
+                        Item.new { iid in
+                            // Store image to drive
+                            storage.child("itemIMG/\(iid)").put(UIImagePNGRepresentation(image)!, metadata: nil)
+                            { [weak self] meta in self?.clear() }
+                            // Store item to database
+                            return Item(iid: iid, uid: uid,
+                                        name: name, description: description,
+                                        price: price, condition: condition,
+                                        favorite: 0, transfer: transfer
+                            )
+                        }
+                    }
+                } else {
+                    self.view.isUserInteractionEnabled = true
+                    HUD.hide()
+                    self.presentShippingAddressPickerViewController()
                 }
-                //TODO: Add transfer information
             }
         }
     }

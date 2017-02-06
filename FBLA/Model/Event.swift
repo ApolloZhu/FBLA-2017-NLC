@@ -59,6 +59,37 @@ extension Event {
 }
 
 extension Event {
+    func localized(process: @escaping (String)->()) {
+        switch type {
+        case .buyPickUpFromSell:
+            User.from(uid: components[2]) {
+                if let user = $0 {
+                    let str = String(
+                        format: self.type.description,
+                        self.components[0], self.components[1], user.name ?? Localized.ANONYMOUS
+                    )
+                    process(str)
+                }
+            }
+        case .sellWaitBuyPickingUp, .buyWaitSellShip:
+            User.from(uid: components[0]) {
+                if let user = $0 {
+                    let info = [user.name ?? Localized.ANONYMOUS, self.components[1]]
+                    process(String.localizedStringWithFormat(self.type.description, info))
+                }
+            }
+        case .sellShipToBuy:
+            User.from(uid: components[1]) {
+                if let user = $0 {
+                    let info = [self.components[0], user.name ?? Localized.ANONYMOUS, self.components[2]]
+                    process(String.localizedStringWithFormat(self.type.description, info))
+                }
+            }
+        }
+    }
+}
+
+extension Event {
     static func fromEID(_ eid: String, process: @escaping (Event?) -> ()) {
         if let uid = Account.shared.uid {
             database.child("msg/\(uid)/repo/\(eid)").observeSingleEvent(of: .value, with: {

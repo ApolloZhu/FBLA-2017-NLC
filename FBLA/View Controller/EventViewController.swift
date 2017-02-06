@@ -37,11 +37,12 @@ class EventViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let uid = Account.shared.uid {
-            Event.forEachEventOfUID(uid) { [weak self] in
-                if let event = $0, let this = self {
-                    let message = String.localizedStringWithFormat(event.type.description, event.components)
-                    this.messages.append(.init(senderId: "system", displayName: "System", text: message))
-                    this.finishReceivingMessage()
+            Event.forEachEventOfUID(uid) {
+                if let event = $0 {
+                    event.localized { [weak self] in
+                        self?.messages.append(.init(senderId: "system", displayName: "System", text: $0))
+                        self?.finishReceivingMessage()
+                    }
                 }
             }
         }

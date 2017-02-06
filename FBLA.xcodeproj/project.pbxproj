@@ -236,7 +236,6 @@
 			children = (
 				52537A081E43CA5C00D39403 /* CommentInput.swift */,
 				529553241E445E8300041B5C /* ItemCommentsViewController.swift */,
-				52676F0F1E4881B400F17E22 /* EventViewController.swift */,
 			);
 			name = Comment;
 			sourceTree = "<group>";
@@ -367,13 +366,14 @@
 		52F69EA51E1E1A2A00602EC3 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				52F45C961E29BB5400A7D81A /* HomeViewController.swift */,
 				52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */,
+				52676F0F1E4881B400F17E22 /* EventViewController.swift */,
 				523C4F2E1E47D1F6004CC890 /* Collection */,
 				52C2E4F31E4713D600669390 /* List */,
 				5211D9351E46D36E0041EC74 /* Search */,
 				52F45CA41E29BBA400A7D81A /* Account */,
 				525708141E3E7722005E4C22 /* Item */,
-				52F45C961E29BB5400A7D81A /* HomeViewController.swift */,
 			);
 			name = "View Controller";
 			path = Controller;

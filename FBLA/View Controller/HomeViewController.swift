@@ -38,7 +38,8 @@ extension HomeViewController {
 
     @objc private func showMessagesViewController() {
         if Account.shared.isLogggedIn {
-
+            let vc = EventViewController()
+            navigationController?.pushViewController(vc, animated: true)
         } else {
             presentLoginViewController()
         }

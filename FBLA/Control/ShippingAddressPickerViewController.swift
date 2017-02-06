@@ -26,11 +26,15 @@ class ShippingAddressPickerViewController: UIViewController, ShippingAddressPick
     let picker = ShippingAddressPicker()
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.MKColor.Lime.P500
         view.addSubview(picker)
         picker.snp.makeConstraints {
             $0.centerX.centerY.width.height.equalToSuperview()
         }
         picker.delegate = self
+        picker.isEditing = true
+        picker.controller = self
+        picker.layout = .wide
     }
     
     func didUpdatePlace(to: GMSPlace) {

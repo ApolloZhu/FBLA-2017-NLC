@@ -34,7 +34,7 @@ public class Account: NSObject {
 
     public func requestPlaceID(_ process: @escaping (String?) -> ()) {
         if let uid = uid {
-            database.child("/userData/\(uid)/placeID").observe(.value, with: { snapshot in
+            database.child("/userData/\(uid)/placeID").observeSingleEvent(of: .value, with: { snapshot in
                 process(snapshot.value as? String)
             })
         } else {

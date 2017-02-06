@@ -15,11 +15,17 @@ protocol ShippingAddressPickerDelegate: class {
     func didUpdatePlace(to: GMSPlace)
 }
 
+enum ShippingAddressPickerLayout {
+    case narrow
+    case wide
+}
+
 class ShippingAddressPicker: UIControl {
     weak var controller: UIViewController?
     weak var delegate: ShippingAddressPickerDelegate?
     
-    lazy var addressLabel = UILabel.makeAutoAdjusting(fontSize: 20).centered()
+    lazy var layout: ShippingAddressPickerLayout = .narrow
+    lazy var addressLabel = UILabel.makeAutoAdjusting(fontSize: 20, lines: 0).centered()
     lazy var editAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_edit"))
     lazy var pickAddressButton = UIButton(image: #imageLiteral(resourceName: "ic_place"))
     
@@ -85,20 +91,37 @@ class ShippingAddressPicker: UIControl {
         pickAddressButton.addTarget(self, action: #selector(scheduleToPresentPlacePicker), for: .touchUpInside)
         addressLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)
-            make.horizontallyCenterInSuperview()
             addressButtonBottomConstraint.whileEditing = make.bottom.equalTo(editAddressButton.snp.top).offset(-8).constraint
             addressButtonBottomConstraint.normal = make.bottom.equalToSuperview().offset(-8).constraint
             addressButtonBottomConstraint.normal?.deactivate()
+            make.horizontallyCenterInSuperview()
+            if layout == .wide {
+                addressLabel.font = .systemFont(ofSize: addressLabel.font.pointSize + 10)
+                make.centerY.equalToSuperview().dividedBy(2)
+            }
         }
         editAddressButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview().dividedBy(2)
-            make.bottom.equalToSuperview().offset(-8)
-            make.width.equalToSuperview().dividedBy(2).offset(-16)
+            if layout == .narrow {
+                make.centerX.equalToSuperview().dividedBy(2)
+                make.width.equalToSuperview().dividedBy(2).offset(-16)
+                make.bottom.equalTo(pickAddressButton)
+            } else {
+                editAddressButton.setImage(#imageLiteral(resourceName: "ic_edit_48pt"), for: .normal)
+                make.horizontallyCenterInSuperview()
+                make.height.equalTo(addressLabel)
+            }
         }
         pickAddressButton.snp.makeConstraints { make in
-            make.top.equalTo(addressLabel.snp.bottom).offset(8)
-            make.centerX.equalToSuperview().multipliedBy(1.5)
-            make.width.equalToSuperview().dividedBy(2).offset(-16)
+            if layout == .narrow {
+                make.top.equalTo(addressLabel.snp.bottom).offset(8)
+                make.centerX.equalToSuperview().multipliedBy(1.5)
+                make.width.equalToSuperview().dividedBy(2).offset(-16)
+            } else {
+                pickAddressButton.setImage(#imageLiteral(resourceName: "ic_place_48pt"), for: .normal)
+                make.horizontallyCenterInSuperview()
+                make.height.equalTo(editAddressButton)
+            }
+            make.bottom.equalToSuperview().offset(-8)
         }
         updateInfo()
         isEditing.toggle()

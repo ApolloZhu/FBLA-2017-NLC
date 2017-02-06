@@ -4,9 +4,6 @@
 /* Class = "UILabel"; text = "Bought"; ObjectID = "0yD-5e-T9Y"; */
 "0yD-5e-T9Y.text" = "compró";
 
-/* Class = "UITableViewSection"; headerTitle = "Translators"; ObjectID = "1oA-HG-pmA"; */
-"1oA-HG-pmA.headerTitle" = "Traductores";
-
 /* Class = "UILabel"; text = "Favorites"; ObjectID = "5I6-jt-1bg"; */
 "5I6-jt-1bg.text" = "Favoritos";
 
@@ -52,6 +49,9 @@
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "U78-nb-vk1"; */
 "U78-nb-vk1.text" = "(〜￣△￣)〜";
 
+/* Class = "UILabel"; text = "(～￣△￣)～"; ObjectID = "YXa-T7-RNN"; */
+"YXa-T7-RNN.text" = "(〜￣△￣)〜";
+
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "YqW-hn-s88"; */
 "YqW-hn-s88.text" = "(〜￣△￣)〜";
 
@@ -63,9 +63,6 @@
 
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "fAw-5f-tvF"; */
 "fAw-5f-tvF.text" = "(〜￣△￣)〜";
-
-/* Class = "UITableViewSection"; headerTitle = "Languages"; ObjectID = "gPx-NJ-axf"; */
-"gPx-NJ-axf.headerTitle" = "Idiomas";
 
 /* Class = "UILabel"; text = "Clean Cache"; ObjectID = "gnX-LR-wK9"; */
 "gnX-LR-wK9.text" = "limpiar cache";
@@ -81,6 +78,9 @@
 
 /* Class = "UINavigationItem"; title = "Search"; ObjectID = "phH-B7-k14"; */
 "phH-B7-k14.title" = "buscar";
+
+/* Class = "UILabel"; text = "(～￣△￣)～"; ObjectID = "v5e-91-kcT"; */
+"v5e-91-kcT.text" = "(〜￣△￣)〜";
 
 /* Class = "UITabBarItem"; title = "Donate"; ObjectID = "vAW-63-7CF"; */
 "vAW-63-7CF.title" = "donar";

@@ -19,6 +19,9 @@
 /* General buy button */
 "Buy" = "acheter";
 
+/* Text on a button which allows user to buy an item. Indicates the price of item in USD */
+"Buy for %.2f USD" = "Acheter pour{}USD";
+
 /* Show in pop up telling user can't check out item exists */
 "Can't check out item" = "Ne peut pas extraire l'article";
 
@@ -27,6 +30,9 @@
 
 /* To complete payment at this page */
 "Check Out" = "check out";
+
+/* Clear all contents that is currently in the/a input */
+"Clear" = "clair";
 
 /* Condition of item is rather for collec†ion only */
 "Collectible" = "Collectable";
@@ -37,8 +43,14 @@
 /* Condition of item */
 "Condition" = "condition";
 
+/* Customer will pick up the item from the owner */
+"Customer will pick up item from donator" = "Le client récupérera l'article du donateur";
+
 /* Details of the item */
 "Details" = "détails";
+
+/* Owner will ship the item to the customer */
+"Donator will ship item to the customer" = "Donateur envoie l'article au client";
 
 /* General completed something */
 "Done" = "Terminé";
@@ -70,6 +82,9 @@
 /* Select photo of item */
 "Item Photo" = "Photo d'article";
 
+/* Title for list of languages available */
+"Languages" = "Langues";
+
 /* Prompt in input textfield to tell the user to input comment here */
 "Leave your comment here ~" = "Laisser votre commentaire ici";
 
@@ -94,6 +109,9 @@
 /* When can't get shipping address, display this instead, so the user knows there isn't any address avaliable. */
 "No shipping address avaliable" = "Aucune adresse d'expédition disponible";
 
+/* Cool to restart the app */
+"OK" = "D'accord";
+
 /* Indicate the content will be password */
 "PASSWORD" = "mot de passe";
 
@@ -112,6 +130,9 @@
 /* Condition of item is has been refurbished */
 "Refurbished" = "Remis à neuf";
 
+/* Restart the app */
+"Restart" = "redémarrer";
+
 /* User cilcks here to view more comments */
 "Show more comments" = "Afficher plus de commentaires";
 
@@ -121,8 +142,14 @@
 /* Tap on screen to cancel process */
 "Tap to Cancel" = "Touchez pour annuler";
 
+/* Appears in a pop up when user try to change language */
+"To change the language, you must reopen the app" = "Pour modifier la langue, vous devez rouvrir l'application";
+
 /* How item gets from one user to the other */
 "Transfer" = "transfert";
+
+/* Title for list of translators */
+"Translators" = "Traducteurs";
 
 /* Place holder for user name */
 "USERNAME" = "Nom d'utilisateur";

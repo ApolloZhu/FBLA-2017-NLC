@@ -19,6 +19,9 @@
 /* General buy button */
 "Buy" = "يشترى";
 
+/* Text on a button which allows user to buy an item. Indicates the price of item in USD */
+"Buy for %.2f USD" = "شراء ل{}USD";
+
 /* Show in pop up telling user can't check out item exists */
 "Can't check out item" = "لا يمكن أن تحقق من البند";
 
@@ -27,6 +30,9 @@
 
 /* To complete payment at this page */
 "Check Out" = "الدفع";
+
+/* Clear all contents that is currently in the/a input */
+"Clear" = "واضح";
 
 /* Condition of item is rather for collec†ion only */
 "Collectible" = "تحصيل";
@@ -37,8 +43,14 @@
 /* Condition of item */
 "Condition" = "شرط";
 
+/* Customer will pick up the item from the owner */
+"Customer will pick up item from donator" = "سوف العملاء التقاط عنصر من المتبرع";
+
 /* Details of the item */
 "Details" = "تفاصيل``";
+
+/* Owner will ship the item to the customer */
+"Donator will ship item to the customer" = "سوف المتبرع السفينة البند إلى العملاء";
 
 /* General completed something */
 "Done" = "فعله";
@@ -70,6 +82,9 @@
 /* Select photo of item */
 "Item Photo" = "صورة البند";
 
+/* Title for list of languages available */
+"Languages" = "اللغات";
+
 /* Prompt in input textfield to tell the user to input comment here */
 "Leave your comment here ~" = "ترك تعليقك هنا";
 
@@ -94,6 +109,9 @@
 /* When can't get shipping address, display this instead, so the user knows there isn't any address avaliable. */
 "No shipping address avaliable" = "أي عنوان الشحن متاح";
 
+/* Cool to restart the app */
+"OK" = "حسنا";
+
 /* Indicate the content will be password */
 "PASSWORD" = "كلمه السر";
 
@@ -112,6 +130,9 @@
 /* Condition of item is has been refurbished */
 "Refurbished" = "تجديد";
 
+/* Restart the app */
+"Restart" = "إعادة بدء";
+
 /* User cilcks here to view more comments */
 "Show more comments" = "إظهار المزيد من التعليقات";
 
@@ -121,8 +142,14 @@
 /* Tap on screen to cancel process */
 "Tap to Cancel" = "الاستفادة إلغاء";
 
+/* Appears in a pop up when user try to change language */
+"To change the language, you must reopen the app" = "لتغيير اللغة، يجب إعادة فتح التطبيق";
+
 /* How item gets from one user to the other */
 "Transfer" = "تحويل";
+
+/* Title for list of translators */
+"Translators" = "مترجمين";
 
 /* Place holder for user name */
 "USERNAME" = "اسم المستخدم";

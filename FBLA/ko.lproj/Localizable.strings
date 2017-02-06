@@ -19,6 +19,9 @@
 /* General buy button */
 "Buy" = "사기";
 
+/* Text on a button which allows user to buy an item. Indicates the price of item in USD */
+"Buy for %.2f USD" = "%.2f USD로 구매하기";
+
 /* Show in pop up telling user can't check out item exists */
 "Can't check out item" = "결제불가";
 
@@ -27,6 +30,9 @@
 
 /* To complete payment at this page */
 "Check Out" = "결제하기";
+
+/* Clear all contents that is currently in the/a input */
+"Clear" = "세부 검색 취소";
 
 /* Condition of item is rather for collec†ion only */
 "Collectible" = "수집용";
@@ -37,11 +43,14 @@
 /* Condition of item */
 "Condition" = "상태";
 
+/* Customer will pick up the item from the owner */
+"Customer will pick up item from donator" = "고객이 기부자한테서 상품을 직접 받을 것 입니다 ";
+
 /* Details of the item */
 "Details" = "세부정보";
 
-/* Owner will ship item to 'me', the customer */
-"Donator will ship it to you" = "기부자가 당신에게 배송할 것 입니다";
+/* Owner will ship the item to the customer */
+"Donator will ship item to the customer" = "기부자가 상품을 고객에게 배송할 것 입니다";
 
 /* General completed something */
 "Done" = "완료";
@@ -56,16 +65,10 @@
 "Favorited" = "관심목록에 담김";
 
 /* Noun, use this to filter search result */
-"Filter" = "세부검색";
+"Filter" = "세부 검색";
 
 /* Filter option, highest price */
 "Highest price in USD" = "최고가격";
-
-/* 'I', the onwer prefer customer to pick up */
-"I prefer pick up" = "직접 받으러 가겠습니다";
-
-/* 'I', the owner will ship item to customer */
-"I will ship to the customer" = "고객에게 직접 배송할 것 입니다";
 
 /* State of item, still in sell on the market */
 "In Sell" = "판매중";
@@ -78,6 +81,9 @@
 
 /* Select photo of item */
 "Item Photo" = "상품 사진";
+
+/* Title for list of languages available */
+"Languages" = "언어";
 
 /* Prompt in input textfield to tell the user to input comment here */
 "Leave your comment here ~" = "상품평을 여기 남겨주세요~";
@@ -103,6 +109,9 @@
 /* When can't get shipping address, display this instead, so the user knows there isn't any address avaliable. */
 "No shipping address avaliable" = "배송 주소 찾기 실패";
 
+/* Cool to restart the app */
+"OK" = "OK";
+
 /* Indicate the content will be password */
 "PASSWORD" = "암호";
 
@@ -121,6 +130,9 @@
 /* Condition of item is has been refurbished */
 "Refurbished" = "수리되어 아무 문제 없음";
 
+/* Restart the app */
+"Restart" = "다시 시작";
+
 /* User cilcks here to view more comments */
 "Show more comments" = "상품평 더 보기";
 
@@ -130,8 +142,14 @@
 /* Tap on screen to cancel process */
 "Tap to Cancel" = "취소하기";
 
+/* Appears in a pop up when user try to change language */
+"To change the language, you must reopen the app" = "언어를 바꾸려면 엡을 다시 시작해야 합니다";
+
 /* How item gets from one user to the other */
 "Transfer" = "옮기기";
+
+/* Title for list of translators */
+"Translators" = "번역";
 
 /* Place holder for user name */
 "USERNAME" = "아이디";
@@ -141,7 +159,4 @@
 
 /* You should ship {item} to {customer} at {location} */
 "You should ship %1$@ to %2$@ at %3$@" = "%3$@에 있는 %2$@에게 %1$@을(를) 보내세요";
-
-/* 'I', customer will pick up item from owner */
-"You will pick up from donator" = "당신은기부자에게서 직접가서 받으실 것 입니다";
 

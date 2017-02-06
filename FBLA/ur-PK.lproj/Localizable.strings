@@ -19,6 +19,9 @@
 /* General buy button */
 "Buy" = "خریدنے";
 
+/* Text on a button which allows user to buy an item. Indicates the price of item in USD */
+"Buy for %.2f USD" = "کے لئے خرید{}USD";
+
 /* Show in pop up telling user can't check out item exists */
 "Can't check out item" = "شے چیک نہیں کر سکتے ہیں";
 
@@ -27,6 +30,9 @@
 
 /* To complete payment at this page */
 "Check Out" = "اس کو دیکھو";
+
+/* Clear all contents that is currently in the/a input */
+"Clear" = "واضح";
 
 /* Condition of item is rather for collec†ion only */
 "Collectible" = "collectible کے";
@@ -37,11 +43,14 @@
 /* Condition of item */
 "Condition" = "شرط";
 
+/* Customer will pick up the item from the owner */
+"Customer will pick up item from donator" = "کسٹمر donator سے شے کو منتخب کریں گے";
+
 /* Details of the item */
 "Details" = "تفصیلات کے";
 
-/* Owner will ship item to 'me', the customer */
-"Donator will ship it to you" = "donator سے آپ کے لئے جہاز گا";
+/* Owner will ship the item to the customer */
+"Donator will ship item to the customer" = "Donator گاہک کو اشیاء جہاز گے";
 
 /* General completed something */
 "Done" = "کیا کیا";
@@ -61,12 +70,6 @@
 /* Filter option, highest price */
 "Highest price in USD" = "امریکی ڈالر میں سب سے زیادہ قیمت";
 
-/* 'I', the onwer prefer customer to pick up */
-"I prefer pick up" = "میں لینے کو ترجیح دیتے ہیں";
-
-/* 'I', the owner will ship item to customer */
-"I will ship to the customer" = "میں کسٹمر کے لئے جہاز گا";
-
 /* State of item, still in sell on the market */
 "In Sell" = "بل فروخت";
 
@@ -78,6 +81,9 @@
 
 /* Select photo of item */
 "Item Photo" = "شے کی تصویر";
+
+/* Title for list of languages available */
+"Languages" = "زبانوں";
 
 /* Prompt in input textfield to tell the user to input comment here */
 "Leave your comment here ~" = "یہ رہا آپ کا تبصرہ چھوڑ دو";
@@ -103,6 +109,9 @@
 /* When can't get shipping address, display this instead, so the user knows there isn't any address avaliable. */
 "No shipping address avaliable" = "کوئی شپنگ ایڈریس دستیاب";
 
+/* Cool to restart the app */
+"OK" = "ٹھیک ہے";
+
 /* Indicate the content will be password */
 "PASSWORD" = "پاس ورڈ";
 
@@ -121,6 +130,9 @@
 /* Condition of item is has been refurbished */
 "Refurbished" = "تجدید شدہ";
 
+/* Restart the app */
+"Restart" = "دوبارہ شروع کریں";
+
 /* User cilcks here to view more comments */
 "Show more comments" = "مزید تبصرے دکھائے";
 
@@ -130,8 +142,14 @@
 /* Tap on screen to cancel process */
 "Tap to Cancel" = "منسوخ کرنے کے لئے تھپتھپائیں";
 
+/* Appears in a pop up when user try to change language */
+"To change the language, you must reopen the app" = "زبان تبدیل کرنے کے لئے، آپ کو اے پی پی دوبارہ کھولنے ضروری ہے";
+
 /* How item gets from one user to the other */
 "Transfer" = "منتقلی";
+
+/* Title for list of translators */
+"Translators" = "مترجموں";
 
 /* Place holder for user name */
 "USERNAME" = "کا صارف کا نام";
@@ -141,7 +159,4 @@
 
 /* You should ship {item} to {customer} at {location} */
 "You should ship %1$@ to %2$@ at %3$@" = "آپ جہاز چاہئے{}کرنے{}پر";
-
-/* 'I', customer will pick up item from owner */
-"You will pick up from donator" = "آپ donator سے اٹھاؤنگی";
 

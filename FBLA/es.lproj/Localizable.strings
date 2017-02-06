@@ -19,6 +19,9 @@
 /* General buy button */
 "Buy" = "comprar";
 
+/* Text on a button which allows user to buy an item. Indicates the price of item in USD */
+"Buy for %.2f USD" = "Comprar para{}USD";
+
 /* Show in pop up telling user can't check out item exists */
 "Can't check out item" = "No se puede desproteger";
 
@@ -27,6 +30,9 @@
 
 /* To complete payment at this page */
 "Check Out" = "revisa";
+
+/* Clear all contents that is currently in the/a input */
+"Clear" = "claro";
 
 /* Condition of item is rather for collec†ion only */
 "Collectible" = "Coleccionable";
@@ -37,11 +43,14 @@
 /* Condition of item */
 "Condition" = "condición";
 
+/* Customer will pick up the item from the owner */
+"Customer will pick up item from donator" = "El cliente recogerá el artículo del donante";
+
 /* Details of the item */
 "Details" = "Detalles";
 
-/* Owner will ship item to 'me', the customer */
-"Donator will ship it to you" = "El donador lo enviará a usted";
+/* Owner will ship the item to the customer */
+"Donator will ship item to the customer" = "El donador enviará el artículo al cliente";
 
 /* General completed something */
 "Done" = "hecho";
@@ -61,12 +70,6 @@
 /* Filter option, highest price */
 "Highest price in USD" = "Precio más alto en USD";
 
-/* 'I', the onwer prefer customer to pick up */
-"I prefer pick up" = "Prefiero recoger";
-
-/* 'I', the owner will ship item to customer */
-"I will ship to the customer" = "Enviaré al cliente";
-
 /* State of item, still in sell on the market */
 "In Sell" = "En venta";
 
@@ -78,6 +81,9 @@
 
 /* Select photo of item */
 "Item Photo" = "Foto del artículo";
+
+/* Title for list of languages available */
+"Languages" = "Idiomas";
 
 /* Prompt in input textfield to tell the user to input comment here */
 "Leave your comment here ~" = "Deja tu comentario aquí";
@@ -103,6 +109,9 @@
 /* When can't get shipping address, display this instead, so the user knows there isn't any address avaliable. */
 "No shipping address avaliable" = "Ninguna dirección de envío disponible";
 
+/* Cool to restart the app */
+"OK" = "DE ACUERDO";
+
 /* Indicate the content will be password */
 "PASSWORD" = "contraseña";
 
@@ -121,6 +130,9 @@
 /* Condition of item is has been refurbished */
 "Refurbished" = "reformado";
 
+/* Restart the app */
+"Restart" = "reiniciar";
+
 /* User cilcks here to view more comments */
 "Show more comments" = "Mostrar más comentarios";
 
@@ -130,8 +142,14 @@
 /* Tap on screen to cancel process */
 "Tap to Cancel" = "Toque para cancelar";
 
+/* Appears in a pop up when user try to change language */
+"To change the language, you must reopen the app" = "Para cambiar el idioma, debe volver a abrir la aplicación";
+
 /* How item gets from one user to the other */
 "Transfer" = "transferir";
+
+/* Title for list of translators */
+"Translators" = "traductor";
 
 /* Place holder for user name */
 "USERNAME" = "Nombre de usuario";
@@ -141,7 +159,4 @@
 
 /* You should ship {item} to {customer} at {location} */
 "You should ship %1$@ to %2$@ at %3$@" = "Deberías enviar{}a{}a";
-
-/* 'I', customer will pick up item from owner */
-"You will pick up from donator" = "Usted recogerá de donante";
 

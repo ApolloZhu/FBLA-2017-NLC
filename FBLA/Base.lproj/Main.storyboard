@@ -534,22 +534,25 @@
             </objects>
             <point key="canvasLocation" x="2998" y="716"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Languages Table View Controller-->
         <scene sceneID="Nmo-kh-oOg">
             <objects>
-                <tableViewController id="8Zs-Hx-b4X" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="BaW-fS-wJX">
+                <tableViewController id="8Zs-Hx-b4X" customClass="LanguagesTableViewController" customModule="FBLA" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="BaW-fS-wJX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Languages" id="gPx-NJ-axf">
-                                <cells/>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Translators" id="1oA-HG-pmA">
-                                <cells/>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="ZPv-tj-k0G">
+                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZPv-tj-k0G" id="niw-UM-ahF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="8Zs-Hx-b4X" id="28x-O8-yO5"/>
                             <outlet property="delegate" destination="8Zs-Hx-b4X" id="hui-Wf-ZhA"/>

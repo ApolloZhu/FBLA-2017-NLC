@@ -326,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				524CDFB41E48701700E8FC8A /* Shipping Address */,
-				522EC8461E478F2500940F99 /* LanguagesTableViewController.swift */,
 			);
 			name = Control;
 			path = Controller;
@@ -366,6 +365,7 @@
 		52F69EA51E1E1A2A00602EC3 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				522EC8461E478F2500940F99 /* LanguagesTableViewController.swift */,
 				52F45C961E29BB5400A7D81A /* HomeViewController.swift */,
 				52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */,
 				52676F0F1E4881B400F17E22 /* EventViewController.swift */,

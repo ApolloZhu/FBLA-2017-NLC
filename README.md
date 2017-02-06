@@ -12,6 +12,7 @@ Due to the closed nature of Apple and iOS, you are not able to install the compi
 6. Another email from TestFlight will be sent to your address 
 7. StartTesting - install TestFlight - if asked, enter the redeem code given 
 8. Download and install our application "Charity Toaster"
+
 ---
 
 # Test Instruction
@@ -20,39 +21,36 @@ You may need an account to enable certain features. We will prompt you to create
 We have two sample accounts setup for debugging, you are weclomed to use them:
 text@example.com and test@example.com, both with password 123456
 
-## Registration and __
-
 ## Purchase
+To purchase an item, please use the visa card number below:
+
 VISA number: 4111 1111 1111 1111
+
 Expiration: 11/19
 
 ## How to share an item to your social media platform
 
-select an item  
-click on the icon on the top right corner
-select the social media platform you wish to use  
-post
-
-## How to donate an item
-
-
-## How to search
-
-### How to apply filter to limit search results
+1. select an item  
+- click on the icon on the top right corner
+- select the social media platform you wish to use  
+- post
 
 ## How to toggle settings and other features
 
 The setting menu is located on the top left of the screen. Below are the features implemented: 
 
--language settings
+- language settings
 
--messages/notifications
+- messages/notifications
 
--about us/acknowledgement page
+- about us/acknowledgement page
 
--personal settings
+- personal settings
 
 --- 
 
 # Developer's Note
-- Please open `FBLA.xcworkspace` instead of `FBLA.xcodeproj`
+
+**Please open `FBLA.xcworkspace` instead of `FBLA.xcodeproj`**
+
+Because all the database and transaction providers uniquely identifies each app to make sure everything is safe, you can not change the team, and the account used to codesign the entire project. Therefore, you have to have our account to compile. We rather consider it an unsafe behavior to share our private key around. In conclusion, you might be able to compile it, but you will not get the same result as what we get after compilation.

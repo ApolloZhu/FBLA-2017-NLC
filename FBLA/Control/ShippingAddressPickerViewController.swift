@@ -14,7 +14,6 @@ extension UIViewController {
         let vc = ShippingAddressPickerViewController()
         let nav = UINavigationController(rootViewController: vc)
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissShippingAddressPickerViewController))
-        vc.title = NSLocalizedString("Shipping Address", comment: "User will either enter or pick shipping address, both for pick up and receive.")
         present(nav, animated: true, completion: nil)
     }
     @objc fileprivate func dismissShippingAddressPickerViewController() {
@@ -27,14 +26,14 @@ class ShippingAddressPickerViewController: UIViewController, ShippingAddressPick
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.MKColor.Lime.P500
+        picker.delegate = self
+        picker.controller = self
+        picker.layout = .wide
         view.addSubview(picker)
         picker.snp.makeConstraints {
             $0.centerX.centerY.width.height.equalToSuperview()
         }
-        picker.delegate = self
         picker.isEditing = true
-        picker.controller = self
-        picker.layout = .wide
     }
     
     func didUpdatePlace(to: GMSPlace) {

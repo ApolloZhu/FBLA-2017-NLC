@@ -97,7 +97,6 @@ class ShippingAddressPicker: UIControl {
             make.horizontallyCenterInSuperview()
             if layout == .wide {
                 addressLabel.font = .systemFont(ofSize: addressLabel.font.pointSize + 10)
-                make.centerY.equalToSuperview().dividedBy(2)
             }
         }
         editAddressButton.snp.makeConstraints { make in
@@ -117,6 +116,7 @@ class ShippingAddressPicker: UIControl {
                 make.centerX.equalToSuperview().multipliedBy(1.5)
                 make.width.equalToSuperview().dividedBy(2).offset(-16)
             } else {
+                make.top.equalTo(editAddressButton.snp.bottom).offset(8)
                 pickAddressButton.setImage(#imageLiteral(resourceName: "ic_place_48pt"), for: .normal)
                 make.horizontallyCenterInSuperview()
                 make.height.equalTo(editAddressButton)

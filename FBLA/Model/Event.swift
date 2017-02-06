@@ -74,15 +74,13 @@ extension Event {
         case .sellWaitBuyPickingUp, .buyWaitSellShip:
             User.from(uid: components[0]) {
                 if let user = $0 {
-                    let info = [user.name ?? Localized.ANONYMOUS, self.components[1]]
-                    process(String.localizedStringWithFormat(self.type.description, info))
+                    process(String.localizedStringWithFormat(self.type.description, user.name ?? Localized.ANONYMOUS, self.components[1]))
                 }
             }
         case .sellShipToBuy:
             User.from(uid: components[1]) {
                 if let user = $0 {
-                    let info = [self.components[0], user.name ?? Localized.ANONYMOUS, self.components[2]]
-                    process(String.localizedStringWithFormat(self.type.description, info))
+                    process(String.localizedStringWithFormat(self.type.description, self.components[0], user.name ?? Localized.ANONYMOUS, self.components[2]))
                 }
             }
         }

@@ -19,6 +19,8 @@ We do have two sample accounts - text@example.com and test@example.com, both wit
 ## Registration and __
 
 ## Purchase
+VISA number: 4111 1111 1111 1111
+Expiration: 11/19
 
 --- 
 

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import PKHUD
 
 extension Localized {
     static let LOCAL_LANG = NSLocalizedString("English", comment: "Name of the language in its own. e.g. English for en, Español for spanish")
+    static let LANG = NSLocalizedString("Languages", comment: "Title for list of languages available")
 }
 
 class LanguagesTableViewController: UITableViewController {
@@ -18,11 +20,6 @@ class LanguagesTableViewController: UITableViewController {
         return Bundle.main.localizations.filter { $0 != "Base" }
     }()
     static let translators = ["Apollo Zhu", "Khan Mujtaba", "Seonuk Kim"]
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        _ = Locale.current.localizedString(forLanguageCode: localizations[0])
-    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -39,17 +36,53 @@ class LanguagesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         if indexPath.section == 0 {
-            cell.textLabel?.text = localizations[indexPath.row]
+            cell.textLabel?.text = Locale.current.localizedString(forLanguageCode: localizations[indexPath.row])
         } else {
             cell.textLabel?.text = LanguagesTableViewController.translators[indexPath.row]
         }
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return Localized.LANG
+        }
+        if section == 1{
+            return NSLocalizedString("Translators", comment: "Title for list of translators")
+        }
+        return nil
+    }
+
+    private var _lastSelected: Int?
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            UserDefaults.standard.set([localizations[indexPath.row]], forKey: "AppleLanguages")
-            UserDefaults.standard.synchronize()
+            _lastSelected = indexPath.row
         }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let lastSelected = _lastSelected {
+            let preferred = localizations[lastSelected]
+            if Bundle.main.preferredLocalizations.first != preferred {
+                let alertController = UIAlertController(
+                    title: NSLocalizedString("Restart", comment: "Restart the app"),
+                    message: NSLocalizedString("To change the language, you must reopen the app", comment: "Appears in a pop up when user try to change language"),
+                    preferredStyle: .alert
+                )
+                let restart = UIAlertAction(title: NSLocalizedString("OK", comment: "Cool to restart the app"), style: .destructive)
+                { _ in
+                    UserDefaults.standard.set([preferred], forKey: "AppleLanguages")
+                    UserDefaults.standard.synchronize()
+                    exit(0)
+                }
+                alertController.addAction(restart)
+                let cancel = UIAlertAction(title: Localized.CANCEL, style: .cancel, handler: nil)
+                alertController.addAction(cancel)
+                present(alertController, animated: true, completion: nil)
+
+            }
+        }
+        
     }
 }

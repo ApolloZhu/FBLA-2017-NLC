@@ -37,7 +37,7 @@ class ItemDisplayToolbar {
 
 fileprivate class _ItemDisplayToolbar: UIToolbar {
 
-    var iid: String?
+    private var iid: String?
     weak var _delegate: ItemDisplayToolbarDelegate?
 
     func showForIID(_ iid: String) {

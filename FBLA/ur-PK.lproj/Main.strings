@@ -1,33 +1,90 @@
-
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "0gx-EW-EaD"; */
-"0gx-EW-EaD.title" = "Settings";
+"0gx-EW-EaD.title" = "ترتیبات";
 
-/* Class = "UINavigationItem"; title = "Home"; ObjectID = "51f-oK-h0N"; */
-"51f-oK-h0N.title" = "Home";
+/* Class = "UILabel"; text = "Bought"; ObjectID = "0yD-5e-T9Y"; */
+"0yD-5e-T9Y.text" = "خریدا";
 
-/* Class = "UITabBarItem"; title = "Home"; ObjectID = "59f-zb-fU4"; */
-"59f-zb-fU4.title" = "Home";
+/* Class = "UITableViewSection"; headerTitle = "Translators"; ObjectID = "1oA-HG-pmA"; */
+"1oA-HG-pmA.headerTitle" = "مترجموں";
+
+/* Class = "UILabel"; text = "Favorites"; ObjectID = "5I6-jt-1bg"; */
+"5I6-jt-1bg.text" = "پسندیدہ";
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "6oK-Sz-s7X"; */
-"6oK-Sz-s7X.title" = "Item";
+"6oK-Sz-s7X.title" = "شے";
 
-/* Class = "UILabel"; text = "About Us"; ObjectID = "7nQ-Q1-03M"; */
-"7nQ-Q1-03M.text" = "About Us";
+/* Class = "UILabel"; text = "Languages"; ObjectID = "7nQ-Q1-03M"; */
+"7nQ-Q1-03M.text" = "زبانوں";
 
-/* Class = "UILabel"; text = "Acknowledgement"; ObjectID = "R9o-LH-HY1"; */
-"R9o-LH-HY1.text" = "Acknowledgement";
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "51f-oK-h0N"; */
+"51f-oK-h0N.title" = "ہوم";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "59f-zb-fU4"; */
+"59f-zb-fU4.title" = "ہوم";
+
+/* Class = "UILabel"; text = "Acknowledgements"; ObjectID = "AYv-Qf-kmZ"; */
+"AYv-Qf-kmZ.text" = "منظوریاں";
+
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "C8p-l3-gXV"; */
+"C8p-l3-gXV.text" = "(〜￣△￣)〜";
+
+/* Class = "UILabel"; text = "Messages"; ObjectID = "D4Z-NM-ORz"; */
+"D4Z-NM-ORz.text" = "پیغامات";
+
+/* Class = "UIButton"; normalTitle = "(〜￣△￣)〜"; ObjectID = "Dbc-l0-vaI"; */
+"Dbc-l0-vaI.normalTitle" = "(〜￣△￣)〜";
+
+/* Class = "UILabel"; text = "About Us"; ObjectID = "EL2-96-fRX"; */
+"EL2-96-fRX.text" = "ہمارے متعلق";
+
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "Hdt-qM-2E4"; */
+"Hdt-qM-2E4.text" = "(〜￣△￣)〜";
+
+/* Class = "UILabel"; text = "Donated"; ObjectID = "R9o-LH-HY1"; */
+"R9o-LH-HY1.text" = "عطیہ";
+
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "RQT-dN-x8M"; */
+"RQT-dN-x8M.text" = "(〜￣△￣)〜";
+
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "RVz-dX-4wH"; */
+"RVz-dX-4wH.text" = "(〜￣△￣)〜";
+
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "U78-nb-vk1"; */
+"U78-nb-vk1.text" = "(〜￣△￣)〜";
+
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "YqW-hn-s88"; */
+"YqW-hn-s88.text" = "(〜￣△￣)〜";
 
 /* Class = "UIViewController"; title = "About Us"; ObjectID = "bMo-0m-M7d"; */
-"bMo-0m-M7d.title" = "About Us";
+"bMo-0m-M7d.title" = "ہمارے متعلق";
 
-/* Class = "UILabel"; text = "Title"; ObjectID = "heF-bw-XDh"; */
-"heF-bw-XDh.text" = "Title";
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "f48-UC-3tk"; Note = "Indicate text after this is condition of item"; */
+"f48-UC-3tk.text" = "(〜￣△￣)〜";
 
-/* Class = "UINavigationItem"; title = "Search"; ObjectID = "rEZ-27-CB2"; */
-"rEZ-27-CB2.title" = "Search";
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "fAw-5f-tvF"; */
+"fAw-5f-tvF.text" = "(〜￣△￣)〜";
 
-/* Class = "UIButton"; normalTitle = "Sample Buy"; ObjectID = "tj7-3f-5Qq"; */
-"tj7-3f-5Qq.normalTitle" = "Sample Buy";
+/* Class = "UITableViewSection"; headerTitle = "Languages"; ObjectID = "gPx-NJ-axf"; */
+"gPx-NJ-axf.headerTitle" = "زبانوں";
+
+/* Class = "UILabel"; text = "Clean Cache"; ObjectID = "gnX-LR-wK9"; */
+"gnX-LR-wK9.text" = "واضح کیشے";
+
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "heF-bw-XDh"; */
+"heF-bw-XDh.text" = "(〜￣△￣)〜";
+
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "hxh-iF-3vY"; Note = "Click on this to show more comments from other users about the item for sell"; */
+"hxh-iF-3vY.text" = "(〜￣△￣)〜";
+
+/* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "jCN-Nt-EfY"; */
+"jCN-Nt-EfY.text" = "(〜￣△￣)〜";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "phH-B7-k14"; */
+"phH-B7-k14.title" = "کی تلاش";
 
 /* Class = "UITabBarItem"; title = "Donate"; ObjectID = "vAW-63-7CF"; */
-"vAW-63-7CF.title" = "Donate";
+"vAW-63-7CF.title" = "عطیہ";
+
+/* Class = "UITextField"; placeholder = "Type something to search here"; ObjectID = "wQQ-ha-IjV"; */
+"wQQ-ha-IjV.placeholder" = "یہاں تلاش کرنے کے لئے کچھ ٹائپ";
+

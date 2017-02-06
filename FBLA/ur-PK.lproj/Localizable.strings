@@ -1,30 +1,147 @@
+/* {customer} will come and pick up {item} */
+"%1$@ will come and pick up %2$@" = "{}آئیں اور مجھے لینے آئے گا{}";
+
+/* {donator} will ship {item} to you */
+"%1$@ will ship %2$@ to you" = "{}جہاز گے{}آپ پر";
+
+/* Condition of item is acceptable */
+"Acceptable" = "قابل قبول";
+
+/* User name for user that did not login */
+"Anonymous" = "گمنام";
+
+/* Basic information of item */
+"Basic Information" = "بنیادی معلومات";
+
+/* State of item, bought by user him/her self */
+"Bought" = "خریدا";
+
+/* General buy button */
+"Buy" = "خریدنے";
+
+/* Show in pop up telling user can't check out item exists */
+"Can't check out item" = "شے چیک نہیں کر سکتے ہیں";
+
 /* General Cancel */
-"Cancel" = "取消";
+"Cancel" = "منسوخ";
+
+/* To complete payment at this page */
+"Check Out" = "اس کو دیکھو";
+
+/* Condition of item is rather for collec†ion only */
+"Collectible" = "collectible کے";
+
+/* Title on page where displays comments for an item */
+"Comments" = "تبصروں";
+
+/* Condition of item */
+"Condition" = "شرط";
+
+/* Details of the item */
+"Details" = "تفصیلات کے";
+
+/* Owner will ship item to 'me', the customer */
+"Donator will ship it to you" = "donator سے آپ کے لئے جہاز گا";
+
+/* General completed something */
+"Done" = "کیا کیا";
 
 /* Indicate the content will be e-mail */
-"E-Mail" = "电子邮箱";
+"E-Mail" = "ای میل";
+
+/* Name of the language in its own. e.g. English for en, Español for spanish */
+"English" = "اردو";
+
+/* State of item, favorited */
+"Favorited" = "پسند کردہ";
+
+/* Noun, use this to filter search result */
+"Filter" = "فلٹر";
+
+/* Filter option, highest price */
+"Highest price in USD" = "امریکی ڈالر میں سب سے زیادہ قیمت";
+
+/* 'I', the onwer prefer customer to pick up */
+"I prefer pick up" = "میں لینے کو ترجیح دیتے ہیں";
+
+/* 'I', the owner will ship item to customer */
+"I will ship to the customer" = "میں کسٹمر کے لئے جہاز گا";
+
+/* State of item, still in sell on the market */
+"In Sell" = "بل فروخت";
+
+/* Input description of item */
+"Item Description" = "شے وضاحت";
+
+/* Input name of the item */
+"Item Name" = "شے کا نام";
+
+/* Select photo of item */
+"Item Photo" = "شے کی تصویر";
+
+/* Prompt in input textfield to tell the user to input comment here */
+"Leave your comment here ~" = "یہ رہا آپ کا تبصرہ چھوڑ دو";
+
+/* Condition of item is like new */
+"Like New" = "نئے کی طرح";
 
 /* Tap this button to log out */
-"Log Out" = "退出登录";
+"Log Out" = "لاگ آوٹ";
 
 /* Notify user login failed */
-"Login Failed. Please Try Again." = "登录失败，请重试";
+"Login failed. Please try again." = "لاگ ان ناکام رہے. دوبارہ کوشش کریں";
 
 /* Click this button to login/register */
-"Login/Register" = "登录／注册";
+"Login/Register" = "لاگ ان / رجسٹر";
+
+/* Filter option, lowest price */
+"Lowest price in USD" = "امریکی ڈالر میں سب سے کم قیمت";
+
+/* Displays when user trying to get list of comments of an item, but no comment exists. */
+"No comment yet" = "کوئی تبصرہ نہیں ابھی تک";
+
+/* When can't get shipping address, display this instead, so the user knows there isn't any address avaliable. */
+"No shipping address avaliable" = "کوئی شپنگ ایڈریس دستیاب";
 
 /* Indicate the content will be password */
-"PASSWORD" = "密码";
+"PASSWORD" = "پاس ورڈ";
+
+/* Click to pay */
+"Pay" = "ادائیگی کرتے ہیں";
+
+/* Pick up {item} at {location} from {donator} */
+"Pick up %1$@ at %2$@ from %3$@" = "لینے{}پر{}سے";
+
+/* Price of item in us dollar */
+"Price in USD" = "امریکی ڈالر میں قیمت";
 
 /* Generally doing something */
-"Processing" = "处理中";
+"Processing" = "پروسیسنگ";
 
-/* Place holder for user shipping address in account page */
-"SELECT SHIPPING ADDRESS" = "选择寄件地址";
+/* Condition of item is has been refurbished */
+"Refurbished" = "تجدید شدہ";
+
+/* User cilcks here to view more comments */
+"Show more comments" = "مزید تبصرے دکھائے";
+
+/* State of item, sold to another user already */
+"Sold" = "فروخت کیا";
 
 /* Tap on screen to cancel process */
-"Tap to Cancel" = "点按以取消";
+"Tap to Cancel" = "منسوخ کرنے کے لئے تھپتھپائیں";
+
+/* How item gets from one user to the other */
+"Transfer" = "منتقلی";
 
 /* Place holder for user name */
-"USERNAME" = "尊敬的用户";
+"USERNAME" = "کا صارف کا نام";
+
+/* Condition of item is very good */
+"Very Good" = "بہت اچھا";
+
+/* You should ship {item} to {customer} at {location} */
+"You should ship %1$@ to %2$@ at %3$@" = "آپ جہاز چاہئے{}کرنے{}پر";
+
+/* 'I', customer will pick up item from owner */
+"You will pick up from donator" = "آپ donator سے اٹھاؤنگی";
 

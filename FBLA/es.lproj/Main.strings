@@ -1,48 +1,47 @@
-
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "0gx-EW-EaD"; */
-"0gx-EW-EaD.title" = "Settings";
+"0gx-EW-EaD.title" = "Ajustes";
 
 /* Class = "UILabel"; text = "Bought"; ObjectID = "0yD-5e-T9Y"; */
-"0yD-5e-T9Y.text" = "Bought";
+"0yD-5e-T9Y.text" = "compró";
 
 /* Class = "UITableViewSection"; headerTitle = "Translators"; ObjectID = "1oA-HG-pmA"; */
-"1oA-HG-pmA.headerTitle" = "Translators";
-
-/* Class = "UINavigationItem"; title = "Home"; ObjectID = "51f-oK-h0N"; */
-"51f-oK-h0N.title" = "Home";
-
-/* Class = "UITabBarItem"; title = "Home"; ObjectID = "59f-zb-fU4"; */
-"59f-zb-fU4.title" = "Home";
+"1oA-HG-pmA.headerTitle" = "Traductores";
 
 /* Class = "UILabel"; text = "Favorites"; ObjectID = "5I6-jt-1bg"; */
-"5I6-jt-1bg.text" = "Favorites";
+"5I6-jt-1bg.text" = "Favoritos";
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "6oK-Sz-s7X"; */
-"6oK-Sz-s7X.title" = "Item";
+"6oK-Sz-s7X.title" = "ít";
 
 /* Class = "UILabel"; text = "Languages"; ObjectID = "7nQ-Q1-03M"; */
-"7nQ-Q1-03M.text" = "Languages";
+"7nQ-Q1-03M.text" = "Idiomas";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "51f-oK-h0N"; */
+"51f-oK-h0N.title" = "casa";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "59f-zb-fU4"; */
+"59f-zb-fU4.title" = "casa";
 
 /* Class = "UILabel"; text = "Acknowledgements"; ObjectID = "AYv-Qf-kmZ"; */
-"AYv-Qf-kmZ.text" = "Acknowledgements";
+"AYv-Qf-kmZ.text" = "expresiones de gratitud";
 
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "C8p-l3-gXV"; */
 "C8p-l3-gXV.text" = "(〜￣△￣)〜";
 
 /* Class = "UILabel"; text = "Messages"; ObjectID = "D4Z-NM-ORz"; */
-"D4Z-NM-ORz.text" = "Messages";
+"D4Z-NM-ORz.text" = "Mensajes";
 
 /* Class = "UIButton"; normalTitle = "(〜￣△￣)〜"; ObjectID = "Dbc-l0-vaI"; */
 "Dbc-l0-vaI.normalTitle" = "(〜￣△￣)〜";
 
 /* Class = "UILabel"; text = "About Us"; ObjectID = "EL2-96-fRX"; */
-"EL2-96-fRX.text" = "About Us";
+"EL2-96-fRX.text" = "sobre nosotros";
 
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "Hdt-qM-2E4"; */
 "Hdt-qM-2E4.text" = "(〜￣△￣)〜";
 
 /* Class = "UILabel"; text = "Donated"; ObjectID = "R9o-LH-HY1"; */
-"R9o-LH-HY1.text" = "Donated";
+"R9o-LH-HY1.text" = "Donado";
 
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "RQT-dN-x8M"; */
 "RQT-dN-x8M.text" = "(〜￣△￣)〜";
@@ -57,7 +56,7 @@
 "YqW-hn-s88.text" = "(〜￣△￣)〜";
 
 /* Class = "UIViewController"; title = "About Us"; ObjectID = "bMo-0m-M7d"; */
-"bMo-0m-M7d.title" = "About Us";
+"bMo-0m-M7d.title" = "sobre nosotros";
 
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "f48-UC-3tk"; Note = "Indicate text after this is condition of item"; */
 "f48-UC-3tk.text" = "(〜￣△￣)〜";
@@ -66,10 +65,10 @@
 "fAw-5f-tvF.text" = "(〜￣△￣)〜";
 
 /* Class = "UITableViewSection"; headerTitle = "Languages"; ObjectID = "gPx-NJ-axf"; */
-"gPx-NJ-axf.headerTitle" = "Languages";
+"gPx-NJ-axf.headerTitle" = "Idiomas";
 
 /* Class = "UILabel"; text = "Clean Cache"; ObjectID = "gnX-LR-wK9"; */
-"gnX-LR-wK9.text" = "Clean Cache";
+"gnX-LR-wK9.text" = "limpiar cache";
 
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "heF-bw-XDh"; */
 "heF-bw-XDh.text" = "(〜￣△￣)〜";
@@ -81,13 +80,11 @@
 "jCN-Nt-EfY.text" = "(〜￣△￣)〜";
 
 /* Class = "UINavigationItem"; title = "Search"; ObjectID = "phH-B7-k14"; */
-"phH-B7-k14.title" = "Search";
-
-/* Class = "UIButton"; normalTitle = "Sample Buy"; ObjectID = "tj7-3f-5Qq"; */
-"tj7-3f-5Qq.normalTitle" = "Sample Buy";
+"phH-B7-k14.title" = "buscar";
 
 /* Class = "UITabBarItem"; title = "Donate"; ObjectID = "vAW-63-7CF"; */
-"vAW-63-7CF.title" = "Donate";
+"vAW-63-7CF.title" = "donar";
 
 /* Class = "UITextField"; placeholder = "Type something to search here"; ObjectID = "wQQ-ha-IjV"; */
-"wQQ-ha-IjV.placeholder" = "Type something to search here";
+"wQQ-ha-IjV.placeholder" = "Escriba algo para buscar aquí";
+

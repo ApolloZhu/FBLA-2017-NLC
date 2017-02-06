@@ -10,9 +10,9 @@ import UIKit
 import Firebase
 
 class ItemCollectionViewController: UICollectionViewController {
-
+    
     var items = [Item]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Item.forEachInSellItem(limits: [.number(-20)]) { [weak self] in
@@ -22,23 +22,23 @@ class ItemCollectionViewController: UICollectionViewController {
             }
         }
     }
-
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count / 2
+        return items.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCollectionViewCell.identifier, for: indexPath) as? ItemCollectionViewCell {
-            cell.item = items[indexPath.item*2+indexPath.section]
+            cell.item = items[indexPath.item]
             return cell
         }
         return .init()
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCollectionViewCell.identifier, for: indexPath) as? ItemCollectionViewCell,

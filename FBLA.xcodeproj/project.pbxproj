@@ -25,6 +25,7 @@
 		525004B61E468C4A00DDEAD9 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525004B51E468C4A00DDEAD9 /* Favorite.swift */; };
 		52537A091E43CA5C00D39403 /* CommentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52537A081E43CA5C00D39403 /* CommentInput.swift */; };
 		525708161E3E7909005E4C22 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525708151E3E7909005E4C22 /* Item.swift */; };
+		52676F101E4881B400F17E22 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52676F0F1E4881B400F17E22 /* EventViewController.swift */; };
 		5274CDF81E31A83C0045E5EB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5274CDF71E31A83C0045E5EB /* Settings.bundle */; };
 		5278FB291E31C549005E3CC5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB281E31C549005E3CC5 /* SWRevealViewController.m */; };
 		5278FB2B1E31C98C005E3CC5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278FB2A1E31C98C005E3CC5 /* Account.swift */; };
@@ -98,6 +99,7 @@
 		52537A031E43BCE000D39403 /* ar-SA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-SA"; path = "ar-SA.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		52537A081E43CA5C00D39403 /* CommentInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentInput.swift; path = FBLA/Control/CommentInput.swift; sourceTree = SOURCE_ROOT; };
 		525708151E3E7909005E4C22 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		52676F0F1E4881B400F17E22 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = "FBLA/View Controller/EventViewController.swift"; sourceTree = SOURCE_ROOT; };
 		5274CDF71E31A83C0045E5EB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		5278FB271E31C549005E3CC5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		5278FB281E31C549005E3CC5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				52537A081E43CA5C00D39403 /* CommentInput.swift */,
 				529553241E445E8300041B5C /* ItemCommentsViewController.swift */,
+				52676F0F1E4881B400F17E22 /* EventViewController.swift */,
 			);
 			name = Comment;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */,
 				52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */,
 				529553321E447FB700041B5C /* ItemPurchaseTableViewCell.swift in Sources */,
+				52676F101E4881B400F17E22 /* EventViewController.swift in Sources */,
 				523C4F2D1E47D1F0004CC890 /* ItemCollectionViewController.swift in Sources */,
 				52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */,
 				52F45C9F1E29BB5400A7D81A /* HomeViewController.swift in Sources */,

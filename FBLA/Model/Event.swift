@@ -82,12 +82,12 @@ extension Event {
 }
 
 extension Event {
-    static func forEachEventOfUID(_ uid: String, limits: [Limit]?, order: Order?, process: @escaping (Event?) -> ()) {
+    static func forEachEventOfUID(_ uid: String, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (Event?) -> ()) {
         forEachEIDOfUID(uid, limits: limits, order: order) {
             fromEID($0, process: process)
         }
     }
-    static func forEachEIDOfUID(_ uid: String, limits: [Limit]?, order: Order?, process: @escaping (String) -> ()) {
+    static func forEachEIDOfUID(_ uid: String, limits: [Limit]? = nil, order: Order? = nil, process: @escaping (String) -> ()) {
         forEachRelatedToPath("msg/\(uid)/repo", limits: limits, order: order) {
             process($0.key)
         }

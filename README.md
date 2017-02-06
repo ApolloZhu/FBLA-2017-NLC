@@ -24,6 +24,12 @@ Expiration: 11/19
 
 ## How to share an item to your social media platform
 
+## How to donate an item
+
+## How to search
+
+### How to apply filter to limit search results
+
 --- 
 
 # Developer's Note

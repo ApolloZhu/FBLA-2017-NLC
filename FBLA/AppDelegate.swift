@@ -16,9 +16,9 @@ import Braintree
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     var window: UIWindow?
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSPlacesClient.provideAPIKey("AIzaSyCFuF3tiY2kGcgR4IwcJtvCAgsdUmywmaY")
         GMSServices.provideAPIKey("AIzaSyCFuF3tiY2kGcgR4IwcJtvCAgsdUmywmaY")
@@ -28,15 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BTAppSwitch.setReturnURLScheme("io.github.swiftyx.apollo.FBLA-2017-NLC.payments")
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-    
+
+    func handle(_ dynamicLink: FIRDynamicLink?) {
+        if let url = dynamicLink?.url {
+            print(url)
+        }
+    }
+
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         var out = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
-        if let dynamicLink = FIRDynamicLinks.dynamicLinks()?.dynamicLink(fromCustomSchemeURL: url) {
-            if let link = dynamicLink.url {
-                print(link)
-            }
-            //TODO: Handle link
-        }
+        handle(FIRDynamicLinks.dynamicLinks()?.dynamicLink(fromCustomSchemeURL: url))
         if #available(iOS 9.0, *) {
             out = out || GIDSignIn.sharedInstance().handle(url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
         }
@@ -45,27 +46,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return out
     }
-    
+
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        print(url)
-        if let dynamicLink = FIRDynamicLinks.dynamicLinks()?.dynamicLink(fromCustomSchemeURL: url) {
-            if let link = dynamicLink.url {
-                print(link)
-            }
-            //TODO: Handle link
-        }
+        handle(FIRDynamicLinks.dynamicLinks()?.dynamicLink(fromCustomSchemeURL: url))
         return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
             || FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
             || (url.scheme?.localizedCaseInsensitiveCompare("io.github.swiftyx.apollo.FBLA-2017-NLC.payments") == .orderedSame && BTAppSwitch.handleOpen(url, sourceApplication: sourceApplication))
     }
-    
+
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
         guard let dynamicLinks = FIRDynamicLinks.dynamicLinks() else { return false }
         let handled = dynamicLinks.handleUniversalLink(userActivity.webpageURL!) { dynamicLink, error in
-            //TODO: Handle universal link
-            if let link = dynamicLink?.url {
-                print(link)
-            }
+            self.handle(dynamicLink)
         }
         return handled
     }

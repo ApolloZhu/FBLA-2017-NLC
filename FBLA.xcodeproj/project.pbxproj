@@ -215,6 +215,7 @@
 		525708141E3E7722005E4C22 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */,
 				52DE7CF81E41229B00204E0E /* Display */,
 				52DE7CFD1E4122EB00204E0E /* Submit */,
 			);
@@ -334,9 +335,8 @@
 		52DE7CF81E41229B00204E0E /* Display */ = {
 			isa = PBXGroup;
 			children = (
-				52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */,
-				52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */,
 				52F45C981E29BB5400A7D81A /* ItemDisplayViewController.swift */,
+				52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */,
 				529553301E447EC200041B5C /* Cell */,
 				529553261E4468CD00041B5C /* Comment */,
 			);

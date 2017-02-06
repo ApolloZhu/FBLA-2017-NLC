@@ -883,7 +883,7 @@ Donate, explore, and share our app with your friends now! </string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1IX-kr-JaQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="6oK-Sz-s7X"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qr2-Vs-LbQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qr2-Vs-LbQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

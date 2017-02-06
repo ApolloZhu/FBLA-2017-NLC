@@ -17,21 +17,21 @@ import FBSDKLoginKit
 public class Account: NSObject {
     override private init() { }
     public static let shared = Account()
-    
+
     public var uid: String? { return user?.uid }
     public var user: FIRUser? { return FIRAuth.auth()?.currentUser }
     public var email: String? { return user?.email }
     public var name: String? { return user?.displayName }
     public var photoURL: URL? { return user?.photoURL }
-    
+
     public var isLogggedIn: Bool { return user != nil }
-    
+
     public func addLoginStateMonitor(_ monitor: @escaping () -> ()) {
         FIRAuth.auth()?.addStateDidChangeListener({ (_, _) in
             monitor()
         })
     }
-    
+
     public func requestPlaceID(_ process: @escaping (String?) -> ()) {
         if let uid = uid {
             database.child("/userData/\(uid)/placeID").observe(.value, with: { snapshot in
@@ -41,7 +41,7 @@ public class Account: NSObject {
             process(defaults.string(forKey: Identifier.PlaceIDKey))
         }
     }
-    
+
     public func setPlaceID(_ id: String) {
         if let uid = uid {
             database.child("/userData/\(uid)/placeID").setValue(id)
@@ -49,7 +49,7 @@ public class Account: NSObject {
             defaults.set(id, forKey: Identifier.PlaceIDKey)
         }
     }
-    
+
     public func login(withEmail email: String?, password: String?, completion: FIRAuthResultCallback?) {
         guard let email = email?.content, let password = password?.content else
         { return notifyInternal(handler: completion) }
@@ -59,18 +59,18 @@ public class Account: NSObject {
             }
         }
     }
-    
+
     public func login(with auth: GIDAuthentication?, completion: FIRAuthResultCallback?) {
         guard let auth = auth else { return notifyInternal(handler: completion) }
         login(with: FIRGoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken), completion: completion)
     }
-    
+
     @nonobjc
     public func login(with token: String?, completion: FIRAuthResultCallback?) {
         guard let token = token else { return notifyInternal(handler: completion) }
         login(with: FIRFacebookAuthProvider.credential(withAccessToken: token), completion: completion)
     }
-    
+
     @nonobjc
     public func login(with credential: FIRAuthCredential, completion: FIRAuthResultCallback?) {
         logOut()
@@ -78,11 +78,11 @@ public class Account: NSObject {
             self?.notifyLoginOf(user: $0, error: $1, handler: completion)
         }
     }
-    
+
     public func notifyInternal(handler: FIRAuthResultCallback? = nil) {
         notifyLoginOf(error: Localized.LOGIN_FAILED, handler: handler)
     }
-    
+
     // When a new user logged in
     public func notifyLoginOf(user: FIRUser? = nil, error: Error? = nil, handler: FIRAuthResultCallback? = nil) {
         if let handler = handler { handler(user, error) }
@@ -99,6 +99,9 @@ public class Account: NSObject {
                     if !json["image"].exists() {
                         json["image"].string = user.photoURL?.absoluteString
                     }
+                    if !json["lang"].exists() {
+                        json["lang"].string = "en"
+                    }
                     currentData.value = json.dictionaryObject
                     return .success(withValue: currentData)
                 }
@@ -106,7 +109,7 @@ public class Account: NSObject {
             }
         }
     }
-    
+
     public func logOut() {
         do {
             try FIRAuth.auth()?.signOut()

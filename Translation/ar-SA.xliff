@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="FBLA/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="ar-SA">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body/>
+  </file>
+  <file original="FBLA/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="ar-SA">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="0gx-EW-EaD.title">
+        <source>Settings</source>
+        <target>Settings</target>
+        <note>Class = "UINavigationItem"; title = "Settings"; ObjectID = "0gx-EW-EaD";</note>
+      </trans-unit>
+      <trans-unit id="0yD-5e-T9Y.text">
+        <source>Bought</source>
+        <note>Class = "UILabel"; text = "Bought"; ObjectID = "0yD-5e-T9Y";</note>
+      </trans-unit>
+      <trans-unit id="1oA-HG-pmA.headerTitle">
+        <source>Translators</source>
+        <note>Class = "UITableViewSection"; headerTitle = "Translators"; ObjectID = "1oA-HG-pmA";</note>
+      </trans-unit>
+      <trans-unit id="5I6-jt-1bg.text">
+        <source>Favorites</source>
+        <note>Class = "UILabel"; text = "Favorites"; ObjectID = "5I6-jt-1bg";</note>
+      </trans-unit>
+      <trans-unit id="6oK-Sz-s7X.title">
+        <source>Item</source>
+        <note>Class = "UITabBarItem"; title = "Item"; ObjectID = "6oK-Sz-s7X";</note>
+      </trans-unit>
+      <trans-unit id="7nQ-Q1-03M.text">
+        <source>Languages</source>
+        <note>Class = "UILabel"; text = "Languages"; ObjectID = "7nQ-Q1-03M";</note>
+      </trans-unit>
+      <trans-unit id="51f-oK-h0N.title">
+        <source>Home</source>
+        <note>Class = "UINavigationItem"; title = "Home"; ObjectID = "51f-oK-h0N";</note>
+      </trans-unit>
+      <trans-unit id="59f-zb-fU4.title">
+        <source>Home</source>
+        <note>Class = "UITabBarItem"; title = "Home"; ObjectID = "59f-zb-fU4";</note>
+      </trans-unit>
+      <trans-unit id="AYv-Qf-kmZ.text">
+        <source>Acknowledgements</source>
+        <note>Class = "UILabel"; text = "Acknowledgements"; ObjectID = "AYv-Qf-kmZ";</note>
+      </trans-unit>
+      <trans-unit id="C8p-l3-gXV.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "C8p-l3-gXV";</note>
+      </trans-unit>
+      <trans-unit id="D4Z-NM-ORz.text">
+        <source>Messages</source>
+        <note>Class = "UILabel"; text = "Messages"; ObjectID = "D4Z-NM-ORz";</note>
+      </trans-unit>
+      <trans-unit id="Dbc-l0-vaI.normalTitle">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UIButton"; normalTitle = "(〜￣△￣)〜"; ObjectID = "Dbc-l0-vaI";</note>
+      </trans-unit>
+      <trans-unit id="EL2-96-fRX.text">
+        <source>About Us</source>
+        <note>Class = "UILabel"; text = "About Us"; ObjectID = "EL2-96-fRX";</note>
+      </trans-unit>
+      <trans-unit id="Hdt-qM-2E4.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "Hdt-qM-2E4";</note>
+      </trans-unit>
+      <trans-unit id="R9o-LH-HY1.text">
+        <source>Donated</source>
+        <note>Class = "UILabel"; text = "Donated"; ObjectID = "R9o-LH-HY1";</note>
+      </trans-unit>
+      <trans-unit id="RQT-dN-x8M.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "RQT-dN-x8M";</note>
+      </trans-unit>
+      <trans-unit id="RVz-dX-4wH.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "RVz-dX-4wH";</note>
+      </trans-unit>
+      <trans-unit id="U78-nb-vk1.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "U78-nb-vk1";</note>
+      </trans-unit>
+      <trans-unit id="YqW-hn-s88.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "YqW-hn-s88";</note>
+      </trans-unit>
+      <trans-unit id="bMo-0m-M7d.title">
+        <source>About Us</source>
+        <note>Class = "UIViewController"; title = "About Us"; ObjectID = "bMo-0m-M7d";</note>
+      </trans-unit>
+      <trans-unit id="f48-UC-3tk.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "f48-UC-3tk"; Note = "Indicate text after this is condition of item";</note>
+      </trans-unit>
+      <trans-unit id="fAw-5f-tvF.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "fAw-5f-tvF";</note>
+      </trans-unit>
+      <trans-unit id="gPx-NJ-axf.headerTitle">
+        <source>Languages</source>
+        <note>Class = "UITableViewSection"; headerTitle = "Languages"; ObjectID = "gPx-NJ-axf";</note>
+      </trans-unit>
+      <trans-unit id="gnX-LR-wK9.text">
+        <source>Clean Cache</source>
+        <note>Class = "UILabel"; text = "Clean Cache"; ObjectID = "gnX-LR-wK9";</note>
+      </trans-unit>
+      <trans-unit id="heF-bw-XDh.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "heF-bw-XDh";</note>
+      </trans-unit>
+      <trans-unit id="hxh-iF-3vY.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "hxh-iF-3vY"; Note = "Click on this to show more comments from other users about the item for sell";</note>
+      </trans-unit>
+      <trans-unit id="jCN-Nt-EfY.text">
+        <source>(〜￣△￣)〜</source>
+        <note>Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "jCN-Nt-EfY";</note>
+      </trans-unit>
+      <trans-unit id="phH-B7-k14.title">
+        <source>Search</source>
+        <note>Class = "UINavigationItem"; title = "Search"; ObjectID = "phH-B7-k14";</note>
+      </trans-unit>
+      <trans-unit id="vAW-63-7CF.title">
+        <source>Donate</source>
+        <target>Donate</target>
+        <note>Class = "UITabBarItem"; title = "Donate"; ObjectID = "vAW-63-7CF";</note>
+      </trans-unit>
+      <trans-unit id="wQQ-ha-IjV.placeholder">
+        <source>Type something to search here</source>
+        <note>Class = "UITextField"; placeholder = "Type something to search here"; ObjectID = "wQQ-ha-IjV";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="FBLA/Info.plist" source-language="en" datatype="plaintext" target-language="ar-SA">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName">
+        <source>Charity Toaster</source>
+      </trans-unit>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>0.4</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="FBLA/Localizable.strings" source-language="en" datatype="plaintext" target-language="ar-SA">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.2.1" build-num="8C1002"/>
+    </header>
+    <body>
+      <trans-unit id="%1$@ will come and pick up %2$@">
+        <source>%1$@ will come and pick up %2$@</source>
+        <note>{customer} will come and pick up {item}</note>
+      </trans-unit>
+      <trans-unit id="%1$@ will ship %2$@ to you">
+        <source>%1$@ will ship %2$@ to you</source>
+        <note>{donator} will ship {item} to you</note>
+      </trans-unit>
+      <trans-unit id="Acceptable">
+        <source>Acceptable</source>
+        <note>Condition of item is acceptable</note>
+      </trans-unit>
+      <trans-unit id="Anonymous">
+        <source>Anonymous</source>
+        <note>User name for user that did not login</note>
+      </trans-unit>
+      <trans-unit id="Basic Information">
+        <source>Basic Information</source>
+        <note>Basic information of item</note>
+      </trans-unit>
+      <trans-unit id="Bought">
+        <source>Bought</source>
+        <note>State of item, bought by user him/her self</note>
+      </trans-unit>
+      <trans-unit id="Buy">
+        <source>Buy</source>
+        <note>General buy button</note>
+      </trans-unit>
+      <trans-unit id="Can't check out item">
+        <source>Can't check out item</source>
+        <note>Show in pop up telling user can't check out item exists</note>
+      </trans-unit>
+      <trans-unit id="Cancel">
+        <source>Cancel</source>
+        <note>General Cancel</note>
+      </trans-unit>
+      <trans-unit id="Check Out">
+        <source>Check Out</source>
+        <note>To complete payment at this page</note>
+      </trans-unit>
+      <trans-unit id="Collectible">
+        <source>Collectible</source>
+        <note>Condition of item is rather for collec†ion only</note>
+      </trans-unit>
+      <trans-unit id="Comments">
+        <source>Comments</source>
+        <note>Title on page where displays comments for an item</note>
+      </trans-unit>
+      <trans-unit id="Condition">
+        <source>Condition</source>
+        <note>Condition of item</note>
+      </trans-unit>
+      <trans-unit id="Details">
+        <source>Details</source>
+        <note>Details of the item</note>
+      </trans-unit>
+      <trans-unit id="Donator will ship it to you">
+        <source>Donator will ship it to you</source>
+        <note>Owner will ship item to 'me', the customer</note>
+      </trans-unit>
+      <trans-unit id="Done">
+        <source>Done</source>
+        <note>General completed something</note>
+      </trans-unit>
+      <trans-unit id="E-Mail">
+        <source>E-Mail</source>
+        <note>Indicate the content will be e-mail</note>
+      </trans-unit>
+      <trans-unit id="English">
+        <source>English</source>
+        <note>Name of the language in its own. e.g. English for en, Español for spanish</note>
+      </trans-unit>
+      <trans-unit id="Favorited">
+        <source>Favorited</source>
+        <note>State of item, favorited</note>
+      </trans-unit>
+      <trans-unit id="Filter">
+        <source>Filter</source>
+        <note>Noun, use this to filter search result</note>
+      </trans-unit>
+      <trans-unit id="Highest price in USD">
+        <source>Highest price in USD</source>
+        <note>Filter option, highest price</note>
+      </trans-unit>
+      <trans-unit id="I prefer pick up">
+        <source>I prefer pick up</source>
+        <note>'I', the onwer prefer customer to pick up</note>
+      </trans-unit>
+      <trans-unit id="I will ship to the customer">
+        <source>I will ship to the customer</source>
+        <note>'I', the owner will ship item to customer</note>
+      </trans-unit>
+      <trans-unit id="In Sell">
+        <source>In Sell</source>
+        <note>State of item, still in sell on the market</note>
+      </trans-unit>
+      <trans-unit id="Item Description">
+        <source>Item Description</source>
+        <note>Input description of item</note>
+      </trans-unit>
+      <trans-unit id="Item Name">
+        <source>Item Name</source>
+        <note>Input name of the item</note>
+      </trans-unit>
+      <trans-unit id="Item Photo">
+        <source>Item Photo</source>
+        <note>Select photo of item</note>
+      </trans-unit>
+      <trans-unit id="Leave your comment here ~">
+        <source>Leave your comment here ~</source>
+        <note>Prompt in input textfield to tell the user to input comment here</note>
+      </trans-unit>
+      <trans-unit id="Like New">
+        <source>Like New</source>
+        <note>Condition of item is like new</note>
+      </trans-unit>
+      <trans-unit id="Log Out">
+        <source>Log Out</source>
+        <note>Tap this button to log out</note>
+      </trans-unit>
+      <trans-unit id="Login failed. Please try again.">
+        <source>Login failed. Please try again.</source>
+        <note>Notify user login failed</note>
+      </trans-unit>
+      <trans-unit id="Login/Register">
+        <source>Login/Register</source>
+        <note>Click this button to login/register</note>
+      </trans-unit>
+      <trans-unit id="Lowest price in USD">
+        <source>Lowest price in USD</source>
+        <note>Filter option, lowest price</note>
+      </trans-unit>
+      <trans-unit id="No comment yet">
+        <source>No comment yet</source>
+        <note>Displays when user trying to get list of comments of an item, but no comment exists.</note>
+      </trans-unit>
+      <trans-unit id="No shipping address avaliable">
+        <source>No shipping address avaliable</source>
+        <note>When can't get shipping address, display this instead, so the user knows there isn't any address avaliable.</note>
+      </trans-unit>
+      <trans-unit id="PASSWORD">
+        <source>PASSWORD</source>
+        <note>Indicate the content will be password</note>
+      </trans-unit>
+      <trans-unit id="Pay">
+        <source>Pay</source>
+        <note>Click to pay</note>
+      </trans-unit>
+      <trans-unit id="Pick up %1$@ at %2$@ from %3$@">
+        <source>Pick up %1$@ at %2$@ from %3$@</source>
+        <note>Pick up {item} at {location} from {donator}</note>
+      </trans-unit>
+      <trans-unit id="Price in USD">
+        <source>Price in USD</source>
+        <note>Price of item in us dollar</note>
+      </trans-unit>
+      <trans-unit id="Processing">
+        <source>Processing</source>
+        <note>Generally doing something</note>
+      </trans-unit>
+      <trans-unit id="Refurbished">
+        <source>Refurbished</source>
+        <note>Condition of item is has been refurbished</note>
+      </trans-unit>
+      <trans-unit id="Show more comments">
+        <source>Show more comments</source>
+        <note>User cilcks here to view more comments</note>
+      </trans-unit>
+      <trans-unit id="Sold">
+        <source>Sold</source>
+        <note>State of item, sold to another user already</note>
+      </trans-unit>
+      <trans-unit id="Tap to Cancel">
+        <source>Tap to Cancel</source>
+        <note>Tap on screen to cancel process</note>
+      </trans-unit>
+      <trans-unit id="Transfer">
+        <source>Transfer</source>
+        <note>How item gets from one user to the other</note>
+      </trans-unit>
+      <trans-unit id="USERNAME">
+        <source>USERNAME</source>
+        <note>Place holder for user name</note>
+      </trans-unit>
+      <trans-unit id="Very Good">
+        <source>Very Good</source>
+        <note>Condition of item is very good</note>
+      </trans-unit>
+      <trans-unit id="You should ship %1$@ to %2$@ at %3$@">
+        <source>You should ship %1$@ to %2$@ at %3$@</source>
+        <note>You should ship {item} to {customer} at {location}</note>
+      </trans-unit>
+      <trans-unit id="You will pick up from donator">
+        <source>You will pick up from donator</source>
+        <note>'I', customer will pick up item from owner</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

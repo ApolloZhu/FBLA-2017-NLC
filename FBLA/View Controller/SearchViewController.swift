@@ -9,6 +9,13 @@
 import UIKit
 import SnapKit
 
+extension Localized {
+    static let FILTER = NSLocalizedString("Filter", comment: "Noun, use this to filter search result")
+    static let MIN_PRICE = NSLocalizedString("Lowest price in USD", comment: "Filter option, lowest price")
+    static let MAX_PRICE = NSLocalizedString("Highest price in USD", comment: "Filter option, highest price")
+    // ITEM_CONDITION
+}
+
 class SearchViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     weak var controller: SearchItemsResultTableViewController?

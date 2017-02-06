@@ -9,11 +9,12 @@
 import UIKit
 import SnapKit
 
+//TODO: Add estimated location, no text
+
 extension UIViewController {
-    func displayItemWithIID(_ iid: String) {
-        tabBarController?.hidesBottomBarWhenPushed = true
+    func displayItem(_ item: Item) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: Identifier.ItemDisplayViewController) as? ItemDisplayViewController else { return }
-        vc.iid = iid
+        vc.item = item
         if let nav = navigationController {
             nav.pushViewController(vc, animated: true)
         } else {
@@ -21,6 +22,14 @@ extension UIViewController {
             vc.navigationItem.hidesBackButton = false
             vc.navigationItem.backBarButtonItem?.action = #selector(animatedDismiss)
             present(nav, animated: true, completion: nil)
+        }
+    }
+    func displayInSellItemWithIID(_ iid: String) {
+        //        tabBarController?.hidesBottomBarWhenPushed = true
+        Item.inSellItemFromIID(iid) { [weak self] in
+            if let item = $0, let this = self {
+                this.displayItem(item)
+            }
         }
     }
 }
@@ -35,34 +44,21 @@ extension Identifier {
 }
 
 class ItemDisplayViewController: UITableViewController {
-    
-    var iid: String! {
-        didSet {
-            Item.inSellItemFromIID(iid) { [weak self] in
-                self?.item = $0
-            }
-        }
-    }
-    var item: Item? {
+
+    var item: Item! {
         didSet {
             reloadAll()
         }
     }
-    
+
     @objc private func pay() {
-        Item.inSellItemFromIID(iid) { [weak self] item in
-            if let this = self, let item = item {
-                this.checkOut(item: item)
-            } else {
-                showError(Localized.CHECKOUT_ERROR)
-            }
-        }
+        checkOut(item: item)
     }
-    
+
     private var comments = [Comment]()
 
     func loadComments() {
-        Comment.forEachCommentRelatedToIID(iid, limits: [.number(-3)])
+        Comment.forEachCommentRelatedToIID(item.iid, limits: [.number(-3)])
         { [weak self] in
             if let this = self, let comment = $0 {
                 let i = this.comments.insertionPoint(for: comment) {
@@ -81,10 +77,10 @@ class ItemDisplayViewController: UITableViewController {
             }
         }
     }
-    
+
     // MARK: Data Source
     override func numberOfSections(in tableView: UITableView) -> Int { return 3 }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: // Information
@@ -97,16 +93,16 @@ class ItemDisplayViewController: UITableViewController {
             return 0
         }
     }
-    
+
     private var _shouldSetImage = true
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch (indexPath.section, indexPath.row) {
         case (0, 2):
             return itemConditionTableViewCell(for: item)
-            
+
         case (0, 3):
             return itemImageTableViewCell(for: item)
-            
+
         case (0, let index):
             let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.ItemTextCell
                 )!
@@ -117,16 +113,16 @@ class ItemDisplayViewController: UITableViewController {
                 cell.textLabel?.text = item?.description
             }
             return cell
-            
+
         case (1, _):
             return itemPurchaseTableViewCell(for: item)
-            
+
         case (2, comments.count):
             if let cell = tableView.dequeueReusableCell(withIdentifier: "ShowMoreCommentCell") {
                 cell.textLabel?.text = Localized.MORE_COMMENT
                 return cell
             }
-            
+
         case (2, let index):
             if let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCommentCell") {
                 let comment = comments[index]
@@ -137,43 +133,43 @@ class ItemDisplayViewController: UITableViewController {
                 }
                 return cell
             }
-            
+
         default:
             break
         }
-        
+
         return .init()
     }
-    
+
     // MARK: To auto layout
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
     }
-    
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    
+
     // MARK: To show more comments
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 2 && indexPath.row == comments.count {
             performSegue(withIdentifier: Identifier.ShowMoreCommentsSegue, sender: self)
         }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if let item = item, segue.identifier == Identifier.ShowMoreCommentsSegue, let vc = segue.terminus as? ItemCommentsViewController {
-            vc.setup(iid: iid, sellerUID: item.uid)
+            vc.setup(iid: item.iid, sellerUID: item.uid)
         }
     }
-    
+
     func updateImage() {
         update { [weak self] in
             self?.tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .automatic)
         }
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         loadComments()
         super.viewDidAppear(animated)
@@ -181,11 +177,11 @@ class ItemDisplayViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadAll), name: .NewComment, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadAll), name: .ShouldReloadAll, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateImage), name: .RequestUpdateImage, object: nil)
-        ItemDisplayToolbar.shared.showForIID(iid)
+        ItemDisplayToolbar.shared.showForIID(item.iid)
         ItemDisplayToolbar.shared.delegate = self
         requestReloadAll()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
@@ -195,7 +191,7 @@ class ItemDisplayViewController: UITableViewController {
 
 extension ItemDisplayViewController: ItemDisplayToolbarDelegate {
     var controller: UIViewController { return self }
-    func showCommentInput(iid: String?) {
+    func showCommentInput(iid: String) {
         CommentInput.shared.show(for: iid)
     }
     func hideCommentInput() {

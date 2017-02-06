@@ -1,0 +1,45 @@
+# How to translate
+
+Thank you for helping us translate our app. Here are a few tips for you.
+
+## How do I open the file?
+
+- If you have an editor for editing `xliff` file, use it. 
+- If you want to find your own editor, google `xliff editor`
+- If you have a mac, and don't have an editor preference, try this app: [https://itunes.apple.com/lv/app/xlifftool/id1074282695?mt=12](https://itunes.apple.com/lv/app/xlifftool/id1074282695?mt=12)
+- Use online editor: [http://xliff.brightec.co.uk/](http://xliff.brightec.co.uk/) 
+
+
+## Basic
+
+Seeing weird note? Just ignore it.
+
+You don't translate 0.4, leave it blank.
+
+For `$(PRODUCT_NAME)`, use the same translation as `Charity Toaster`. That's the name for the app. If you have a better name for the it in you language, go ahead and use it. We are basically an app allowing donation of items and let others buy the donated items.
+
+
+## Why I am seeing (〜￣△￣)〜 ?
+
+Just copy and paste this as translation.
+
+(〜￣△￣)〜
+
+## What a **** is %f
+
+It will be a decimal number.
+
+## How about %1$@, %2$@...?
+
+It will be a word. I provided what it will be in the comment, like `{location}`. Sometimes in your language you need to change orders of them, that is why we labeled them differently.
+
+Let's look at an example usage:
+
+||Source|Comment|
+|:--:|:--:|:--:|
+|Original|Ship %1$@ to %2$@|Ship {item} to {user}|
+|Translation|%2$@ will get %1$@|-|
+
+## Any other problem?
+
+Ask me.

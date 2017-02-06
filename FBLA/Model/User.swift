@@ -12,7 +12,8 @@ struct User {
     var uid: String
     var name: String?
     var photoPath: String?
-    
+    var lang: String
+
     var photoURL: URL? {
         if let path = photoPath { return URL(string: path) }
         return nil
@@ -20,7 +21,7 @@ struct User {
 }
 
 extension User {
-    static let Anonymous = User(uid: "0", name: Localized.ANONYMOUS, photoPath: nil)
+    static let Anonymous = User(uid: "0", name: Localized.ANONYMOUS, photoPath: nil, lang: "en")
 }
 
 extension User {
@@ -37,7 +38,8 @@ extension User {
                         let user = User(
                             uid: uid,
                             name: json["name"].string,
-                            photoPath: json["image"].string
+                            photoPath: json["image"].string,
+                            lang: json["lang"].string ?? "en"
                         )
                         process(user)
                     } else {

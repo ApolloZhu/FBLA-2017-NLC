@@ -17,14 +17,33 @@ extension Localized {
     static let ITEM_NAME = NSLocalizedString("Item Name", comment: "Input name of the item")
     static let ITEM_DESCRIPTION = NSLocalizedString("Item Description", comment: "Input description of item")
     static let ITEM_PHOTO = NSLocalizedString("Item Photo", comment: "Select photo of item")
-    
+
     static let ITEM_DETAIL = NSLocalizedString("Details", comment: "Details of the item")
     static let ITEM_CONDITION = NSLocalizedString("Condition", comment: "Condition of item")
     static let PRICE_IN_USD = NSLocalizedString("Price in USD", comment: "Price of item in us dollar")
+    static let TRANSFER_METHOD = NSLocalizedString("Transfer", comment: "How item gets from one user to the other")
+}
+
+//TODO: Add transfer method specification
+enum Transfer: Int, CustomStringConvertible {
+    case ship = 0, pickUp = 1
+    var description: String {
+        switch self {
+        case .ship: return Localized.I_SHIP
+        case .pickUp: return Localized.CUSTOMER_PICK_UP
+        }
+    }
+}
+
+extension Localized {
+    static let I_SHIP = NSLocalizedString("I will ship to the customer", comment: "'I', the owner will ship item to customer")
+    static let DONATOR_SHIP = NSLocalizedString("Donator will ship it to you", comment: "Owner will ship item to 'me', the customer")
+    static let CUSTOMER_PICK_UP = NSLocalizedString("I prefer pick up", comment: "'I', the onwer prefer customer to pick up")
+    static let I_PICK_UP = NSLocalizedString("You will pick up from donator", comment: "'I', customer will pick up item from owner")
 }
 
 class ItemSubmitViewController: FormViewController {
-    
+
     var shouldAllowSubmit: Bool {
         var flag = true
         flag = flag && nameRow.value != nil
@@ -34,29 +53,35 @@ class ItemSubmitViewController: FormViewController {
         flag = flag && priceRow.value != nil
         return flag
     }
-    
+
     lazy var nameRow = TextRow("0") {
         $0.title = Localized.ITEM_NAME
     }
-    
+
     lazy var descriptionRow = TextAreaRow("1") {
         $0.placeholder = Localized.ITEM_DESCRIPTION
     }
-    
+
     lazy var imageRow = ImageRow("2") {
         $0.title = Localized.ITEM_PHOTO
         $0.clearAction = .no
     }
-    
+
     lazy var conditionRow = PickerInlineRow<Condition>("3") {
         $0.title = Localized.ITEM_CONDITION
         $0.options = Condition.all
     }
-    
+
     lazy var priceRow = DecimalRow("4") {
         $0.title = Localized.PRICE_IN_USD
     }
-    
+
+    lazy var shippingRow = PickerInlineRow<Transfer>("5") {
+        $0.title = Localized.TRANSFER_METHOD
+        $0.options = [.ship, .pickUp]
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         form +++ Section(Localized.BASIC_INFO)
@@ -64,11 +89,12 @@ class ItemSubmitViewController: FormViewController {
             +++ Section()
             <<< descriptionRow
             <<< imageRow
-            
+
             +++ Section(Localized.ITEM_DETAIL)
             <<< conditionRow
             <<< priceRow
-            
+            <<< shippingRow
+
             +++ Section()
             <<< ButtonRow {
                 $0.title = Localized.CANCEL
@@ -76,12 +102,12 @@ class ItemSubmitViewController: FormViewController {
                 }.onCellSelection { [weak self] _, _ in self?.clear() }
             <<< ButtonRow {
                 $0.title = Localized.DONE
-                $0.hidden = Eureka.Condition.function((0...4).map{"\($0)"}) { [weak self] _ in
+                $0.hidden = Eureka.Condition.function((0...5).map{"\($0)"}) { [weak self] _ in
                     return !(self?.shouldAllowSubmit ?? false)
                 }
                 }.onCellSelection{ [weak self] _, _ in self?.submit() }
     }
-    
+
     func clear() {
         HUD.show(.labeledProgress(title: Localized.PROCESSING, subtitle: nil))
         view.isUserInteractionEnabled = false
@@ -90,15 +116,17 @@ class ItemSubmitViewController: FormViewController {
         imageRow.value = nil
         conditionRow.value = nil
         priceRow.value = nil
+        shippingRow.value = nil
         nameRow.updateCell()
         descriptionRow.updateCell()
         imageRow.updateCell()
         conditionRow.updateCell()
         priceRow.updateCell()
+        shippingRow.updateCell()
         view.isUserInteractionEnabled = true
         HUD.hide()
     }
-    
+
     func submit() {
         if !Account.shared.isLogggedIn {
             presentLoginViewController()
@@ -108,7 +136,8 @@ class ItemSubmitViewController: FormViewController {
                 let description = descriptionRow.value,
                 let image = imageRow.value,
                 let price = priceRow.value,
-                let condition = conditionRow.value
+                let condition = conditionRow.value,
+                let transfer = shippingRow.value
             {
                 HUD.show(.labeledProgress(title: Localized.PROCESSING, subtitle: nil))
                 view.isUserInteractionEnabled = false
@@ -123,6 +152,7 @@ class ItemSubmitViewController: FormViewController {
                                 favorite: 0
                     )
                 }
+                //TODO: Add transfer information
             }
         }
     }

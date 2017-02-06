@@ -12,8 +12,12 @@
 		52127C8F1E43A52A00DC4D82 /* ItemDisplayToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */; };
 		5216812F1E31D3DA00544BA3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681311E31D3DA00544BA3 /* Localizable.strings */; };
 		521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681361E31D3DA00544BA3 /* InfoPlist.strings */; };
+		522EC8471E478F2500940F99 /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522EC8461E478F2500940F99 /* LanguagesTableViewController.swift */; };
+		522EC8491E47920D00940F99 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522EC8481E47920D00940F99 /* Message.swift */; };
 		522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */; };
 		522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C71E3665CE001D3DF9 /* LoginView.swift */; };
+		523C4F2B1E47D1C5004CC890 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C4F2A1E47D1C5004CC890 /* ItemCollectionViewCell.swift */; };
+		523C4F2D1E47D1F0004CC890 /* ItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C4F2C1E47D1F0004CC890 /* ItemCollectionViewController.swift */; };
 		52461FFB1E398E30000AF183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52461FFA1E398E30000AF183 /* Assets.xcassets */; };
 		524EE6B41E365DA900AC7022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */; };
 		525004B61E468C4A00DDEAD9 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525004B51E468C4A00DDEAD9 /* Favorite.swift */; };
@@ -43,8 +47,6 @@
 		52F35D5E1E4537C9004332CC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F35D5D1E4537C9004332CC /* Data.swift */; };
 		52F45C9B1E29BB5400A7D81A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C921E29BB5400A7D81A /* AccountView.swift */; };
 		52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C931E29BB5400A7D81A /* AccountViewController.swift */; };
-		52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C941E29BB5400A7D81A /* CartTableViewController.swift */; };
-		52F45C9E1E29BB5400A7D81A /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C951E29BB5400A7D81A /* CommentsTableViewController.swift */; };
 		52F45C9F1E29BB5400A7D81A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C961E29BB5400A7D81A /* HomeViewController.swift */; };
 		52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */; };
 		52F45CA11E29BB5400A7D81A /* ItemDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F45C981E29BB5400A7D81A /* ItemDisplayViewController.swift */; };
@@ -64,8 +66,16 @@
 		5216812C1E31D32000544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		521681301E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		521681351E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		522EC8461E478F2500940F99 /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguagesTableViewController.swift; path = "FBLA/View Controller/LanguagesTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		522EC8481E47920D00940F99 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		522EC84A1E47A03600940F99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		522EC84B1E47A03600940F99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		522EC84C1E47A03800940F99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		522EC84D1E47A03900940F99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "FBLA/View Controller/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		522FB0C71E3665CE001D3DF9 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = "FBLA/View Controller/LoginView.swift"; sourceTree = SOURCE_ROOT; };
+		523C4F2A1E47D1C5004CC890 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionViewCell.swift; path = FBLA/Control/ItemCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		523C4F2C1E47D1F0004CC890 /* ItemCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionViewController.swift; path = "FBLA/View Controller/ItemCollectionViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52461FFA1E398E30000AF183 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524EE2D11E36A6770002EB22 /* FBLA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FBLA.entitlements; path = ../FBLA.entitlements; sourceTree = "<group>"; };
 		524EE6B31E365DA900AC7022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -82,10 +92,6 @@
 		52537A011E43BCDF00D39403 /* ar-SA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-SA"; path = "ar-SA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		52537A021E43BCDF00D39403 /* ar-SA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-SA"; path = "ar-SA.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		52537A031E43BCE000D39403 /* ar-SA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-SA"; path = "ar-SA.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		52537A041E43BD0800D39403 /* pa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pa; path = pa.lproj/Main.strings; sourceTree = "<group>"; };
-		52537A051E43BD0800D39403 /* pa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pa; path = pa.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		52537A061E43BD0800D39403 /* pa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pa; path = pa.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		52537A071E43BD0800D39403 /* pa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pa; path = pa.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52537A081E43CA5C00D39403 /* CommentInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentInput.swift; path = FBLA/Control/CommentInput.swift; sourceTree = SOURCE_ROOT; };
 		525708151E3E7909005E4C22 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5274CDF71E31A83C0045E5EB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
@@ -123,8 +129,6 @@
 		52F35D5D1E4537C9004332CC /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		52F45C921E29BB5400A7D81A /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountView.swift; path = "FBLA/View Controller/AccountView.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C931E29BB5400A7D81A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = "FBLA/View Controller/AccountViewController.swift"; sourceTree = SOURCE_ROOT; };
-		52F45C941E29BB5400A7D81A /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartTableViewController.swift; path = "FBLA/View Controller/CartTableViewController.swift"; sourceTree = SOURCE_ROOT; };
-		52F45C951E29BB5400A7D81A /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentsTableViewController.swift; path = "FBLA/View Controller/CommentsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C961E29BB5400A7D81A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "FBLA/View Controller/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C971E29BB5400A7D81A /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsTableViewController.swift; path = "FBLA/View Controller/ItemsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		52F45C981E29BB5400A7D81A /* ItemDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDisplayViewController.swift; path = "FBLA/View Controller/ItemDisplayViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -185,6 +189,15 @@
 				529553271E44690300041B5C /* Comment */,
 			);
 			name = Item;
+			sourceTree = "<group>";
+		};
+		523C4F2E1E47D1F6004CC890 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				523C4F2A1E47D1C5004CC890 /* ItemCollectionViewCell.swift */,
+				523C4F2C1E47D1F0004CC890 /* ItemCollectionViewController.swift */,
+			);
+			name = Collection;
 			sourceTree = "<group>";
 		};
 		525708141E3E7722005E4C22 /* Item */ = {
@@ -301,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */,
+				522EC8461E478F2500940F99 /* LanguagesTableViewController.swift */,
 			);
 			name = Control;
 			path = Controller;
@@ -341,13 +355,12 @@
 			isa = PBXGroup;
 			children = (
 				52F45C9A1E29BB5400A7D81A /* SettingsTableViewController.swift */,
+				523C4F2E1E47D1F6004CC890 /* Collection */,
 				52C2E4F31E4713D600669390 /* List */,
 				5211D9351E46D36E0041EC74 /* Search */,
 				52F45CA41E29BBA400A7D81A /* Account */,
 				525708141E3E7722005E4C22 /* Item */,
 				52F45C961E29BB5400A7D81A /* HomeViewController.swift */,
-				52F45C941E29BB5400A7D81A /* CartTableViewController.swift */,
-				52F45C951E29BB5400A7D81A /* CommentsTableViewController.swift */,
 			);
 			name = "View Controller";
 			path = Controller;
@@ -373,6 +386,7 @@
 				52DC71551E442487006A02BF /* User */,
 				523300CE1E406C7B00D85A6C /* Item */,
 				521681371E31D40700544BA3 /* Localization */,
+				522EC8481E47920D00940F99 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -479,9 +493,9 @@
 				fr,
 				"ur-PK",
 				"ar-SA",
-				pa,
 				"te-IN",
 				ko,
+				es,
 			);
 			mainGroup = 52AFEDC41E1E16A500FA9ABA;
 			productRefGroup = 52AFEDCE1E1E16A500FA9ABA /* Products */;
@@ -601,19 +615,21 @@
 				52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */,
 				529553291E44694800041B5C /* CommentsAvaterImageDataSource.swift in Sources */,
 				52537A091E43CA5C00D39403 /* CommentInput.swift in Sources */,
+				522EC8491E47920D00940F99 /* Message.swift in Sources */,
 				522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */,
+				523C4F2B1E47D1C5004CC890 /* ItemCollectionViewCell.swift in Sources */,
 				52DC71541E4422BB006A02BF /* User.swift in Sources */,
 				525708161E3E7909005E4C22 /* Item.swift in Sources */,
 				52D8675D1E39359100A5266B /* Localized.swift in Sources */,
 				52F35D5E1E4537C9004332CC /* Data.swift in Sources */,
 				5295532F1E447DCC00041B5C /* ItemImageTableViewCell.swift in Sources */,
+				522EC8471E478F2500940F99 /* LanguagesTableViewController.swift in Sources */,
 				5211D9341E46D3660041EC74 /* SearchItemsResultTableViewController.swift in Sources */,
 				525004B61E468C4A00DDEAD9 /* Favorite.swift in Sources */,
 				52AFEDD11E1E16A500FA9ABA /* AppDelegate.swift in Sources */,
 				52F45CA01E29BB5400A7D81A /* ItemsTableViewController.swift in Sources */,
-				52F45C9D1E29BB5400A7D81A /* CartTableViewController.swift in Sources */,
-				52F45C9E1E29BB5400A7D81A /* CommentsTableViewController.swift in Sources */,
 				529553321E447FB700041B5C /* ItemPurchaseTableViewCell.swift in Sources */,
+				523C4F2D1E47D1F0004CC890 /* ItemCollectionViewController.swift in Sources */,
 				52F45C9C1E29BB5400A7D81A /* AccountViewController.swift in Sources */,
 				52F45C9F1E29BB5400A7D81A /* HomeViewController.swift in Sources */,
 				52F69EAA1E1E1A2A00602EC3 /* Extension.swift in Sources */,
@@ -642,9 +658,9 @@
 				525379FB1E43BCAD00D39403 /* fr */,
 				525379FF1E43BCCB00D39403 /* ur-PK */,
 				52537A031E43BCE000D39403 /* ar-SA */,
-				52537A071E43BD0800D39403 /* pa */,
 				52F35D581E44F626004332CC /* te-IN */,
 				52F35D5C1E44F9DF004332CC /* ko */,
+				522EC84D1E47A03900940F99 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -656,9 +672,9 @@
 				525379FA1E43BCAD00D39403 /* fr */,
 				525379FE1E43BCCB00D39403 /* ur-PK */,
 				52537A021E43BCDF00D39403 /* ar-SA */,
-				52537A061E43BD0800D39403 /* pa */,
 				52F35D571E44F626004332CC /* te-IN */,
 				52F35D5B1E44F9DF004332CC /* ko */,
+				522EC84C1E47A03800940F99 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -671,9 +687,9 @@
 				525379F81E43BCAD00D39403 /* fr */,
 				525379FC1E43BCCA00D39403 /* ur-PK */,
 				52537A001E43BCDF00D39403 /* ar-SA */,
-				52537A041E43BD0800D39403 /* pa */,
 				52F35D551E44F625004332CC /* te-IN */,
 				52F35D591E44F9DE004332CC /* ko */,
+				522EC84A1E47A03600940F99 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -686,9 +702,9 @@
 				525379F91E43BCAD00D39403 /* fr */,
 				525379FD1E43BCCA00D39403 /* ur-PK */,
 				52537A011E43BCDF00D39403 /* ar-SA */,
-				52537A051E43BD0800D39403 /* pa */,
 				52F35D561E44F625004332CC /* te-IN */,
 				52F35D5A1E44F9DE004332CC /* ko */,
+				522EC84B1E47A03600940F99 /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			path = ..;

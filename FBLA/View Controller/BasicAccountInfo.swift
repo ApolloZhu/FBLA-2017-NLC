@@ -29,7 +29,7 @@ open class BasicAccountInfo: UIControl {
     var isEditing = false {
         willSet {
             if isEditing != newValue {
-                // perform changes
+                //TODO: Edit user profile
             }
         }
     }

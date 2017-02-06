@@ -31,7 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func handle(_ dynamicLink: FIRDynamicLink?) {
         if let url = dynamicLink?.url {
-            print(url)
+            if let iid = url.absoluteString.components(separatedBy: "?iid=").last {
+                window?.rootViewController?.displayInSellItemWithIID(iid)
+            }
         }
     }
 

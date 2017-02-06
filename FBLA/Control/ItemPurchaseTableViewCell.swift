@@ -17,7 +17,7 @@ class ItemPurchaseTableViewCell: UITableViewCell {
 
     var price: Double? {
         willSet {
-            button.setTitle(String.localizedStringWithFormat("Buy for %.2f USD", newValue ?? 0), for: .normal)
+            button.setTitle(String.localizedStringWithFormat(NSLocalizedString("Buy for %.2f USD", comment: "Text on a button which allows user to buy an item. Indicates the price of item in USD"), newValue ?? 0), for: .normal)
         }
     }
 

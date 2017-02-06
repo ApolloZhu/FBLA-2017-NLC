@@ -19,6 +19,9 @@
 /* General buy button */
 "Buy" = "购买";
 
+/* Text on a button which allows user to buy an item. Indicates the price of item in USD */
+"Buy for %.2f USD" = "以 %.2f 美元的价格购买";
+
 /* Show in pop up telling user can't check out item exists */
 "Can't check out item" = "无法购买";
 
@@ -27,6 +30,9 @@
 
 /* To complete payment at this page */
 "Check Out" = "购买";
+
+/* Clear all contents that is currently in the/a input */
+"Clear" = "清除所有";
 
 /* Condition of item is rather for collec†ion only */
 "Collectible" = "有收藏价值的";
@@ -37,11 +43,14 @@
 /* Condition of item */
 "Condition" = "状态";
 
+/* Customer will pick up the item from the owner */
+"Customer will pick up item from donator" = "用户将上门提货";
+
 /* Details of the item */
 "Details" = "细节";
 
-/* Owner will ship item to 'me', the customer */
-"Donator will ship it to you" = "卖家将邮寄给您";
+/* Owner will ship the item to the customer */
+"Donator will ship item to the customer" = "卖家将寄给用户";
 
 /* General completed something */
 "Done" = "完成";
@@ -61,12 +70,6 @@
 /* Filter option, highest price */
 "Highest price in USD" = "最高价（美元）";
 
-/* 'I', the onwer prefer customer to pick up */
-"I prefer pick up" = "我希望买家上门提货";
-
-/* 'I', the owner will ship item to customer */
-"I will ship to the customer" = "我希望邮寄给买家";
-
 /* State of item, still in sell on the market */
 "In Sell" = "销售中";
 
@@ -78,6 +81,9 @@
 
 /* Select photo of item */
 "Item Photo" = "图片";
+
+/* Title for list of languages available */
+"Languages" = "语言设置";
 
 /* Prompt in input textfield to tell the user to input comment here */
 "Leave your comment here ~" = "留下你的评论吧~";
@@ -103,6 +109,9 @@
 /* When can't get shipping address, display this instead, so the user knows there isn't any address avaliable. */
 "No shipping address avaliable" = "未登记收货地址";
 
+/* Cool to restart the app */
+"OK" = "好";
+
 /* Indicate the content will be password */
 "PASSWORD" = "密码";
 
@@ -121,6 +130,9 @@
 /* Condition of item is has been refurbished */
 "Refurbished" = "翻新的";
 
+/* Restart the app */
+"Restart" = "重启";
+
 /* User cilcks here to view more comments */
 "Show more comments" = "显示更多评论";
 
@@ -130,8 +142,14 @@
 /* Tap on screen to cancel process */
 "Tap to Cancel" = "点按以取消";
 
+/* Appears in a pop up when user try to change language */
+"To change the language, you must reopen the app" = "您必须重启这个应用才能更换语言";
+
 /* How item gets from one user to the other */
 "Transfer" = "交货方式";
+
+/* Title for list of translators */
+"Translators" = "译者";
 
 /* Place holder for user name */
 "USERNAME" = "尊敬的用户";
@@ -141,7 +159,4 @@
 
 /* You should ship {item} to {customer} at {location} */
 "You should ship %1$@ to %2$@ at %3$@" = "请把 %1$@ 寄到 %3$@，收件人是 %2$@";
-
-/* 'I', customer will pick up item from owner */
-"You will pick up from donator" = "你需要上门提货";
 

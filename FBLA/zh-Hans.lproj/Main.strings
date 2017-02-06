@@ -4,9 +4,6 @@
 /* Class = "UILabel"; text = "Bought"; ObjectID = "0yD-5e-T9Y"; */
 "0yD-5e-T9Y.text" = "已购列表";
 
-/* Class = "UITableViewSection"; headerTitle = "Translators"; ObjectID = "1oA-HG-pmA"; */
-"1oA-HG-pmA.headerTitle" = "翻译";
-
 /* Class = "UILabel"; text = "Favorites"; ObjectID = "5I6-jt-1bg"; */
 "5I6-jt-1bg.text" = "我的收藏";
 
@@ -14,7 +11,7 @@
 "6oK-Sz-s7X.title" = "商品";
 
 /* Class = "UILabel"; text = "Languages"; ObjectID = "7nQ-Q1-03M"; */
-"7nQ-Q1-03M.text" = "关于我们";
+"7nQ-Q1-03M.text" = "语言选择";
 
 /* Class = "UINavigationItem"; title = "Home"; ObjectID = "51f-oK-h0N"; */
 "51f-oK-h0N.title" = "主页";
@@ -41,7 +38,7 @@
 "Hdt-qM-2E4.text" = "(～￣△￣)～";
 
 /* Class = "UILabel"; text = "Donated"; ObjectID = "R9o-LH-HY1"; */
-"R9o-LH-HY1.text" = "致谢";
+"R9o-LH-HY1.text" = "我的功德";
 
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "RQT-dN-x8M"; */
 "RQT-dN-x8M.text" = "(～￣△￣)～";
@@ -52,20 +49,20 @@
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "U78-nb-vk1"; */
 "U78-nb-vk1.text" = "(～￣△￣)～";
 
+/* Class = "UILabel"; text = "(～￣△￣)～"; ObjectID = "YXa-T7-RNN"; */
+"YXa-T7-RNN.text" = "(〜￣△￣)〜";
+
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "YqW-hn-s88"; */
 "YqW-hn-s88.text" = "(～￣△￣)～";
 
 /* Class = "UIViewController"; title = "About Us"; ObjectID = "bMo-0m-M7d"; */
-"bMo-0m-M7d.title" = "(～￣△￣)～";
+"bMo-0m-M7d.title" = "关于我们";
 
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "f48-UC-3tk"; Note = "Indicate text after this is condition of item"; */
 "f48-UC-3tk.text" = "(～￣△￣)～";
 
 /* Class = "UILabel"; text = "(〜￣△￣)〜"; ObjectID = "fAw-5f-tvF"; */
 "fAw-5f-tvF.text" = "(～￣△￣)～";
-
-/* Class = "UITableViewSection"; headerTitle = "Languages"; ObjectID = "gPx-NJ-axf"; */
-"gPx-NJ-axf.headerTitle" = "语言";
 
 /* Class = "UILabel"; text = "Clean Cache"; ObjectID = "gnX-LR-wK9"; */
 "gnX-LR-wK9.text" = "清除缓存";
@@ -82,9 +79,12 @@
 /* Class = "UINavigationItem"; title = "Search"; ObjectID = "phH-B7-k14"; */
 "phH-B7-k14.title" = "搜索";
 
+/* Class = "UILabel"; text = "(～￣△￣)～"; ObjectID = "v5e-91-kcT"; */
+"v5e-91-kcT.text" = "(〜￣△￣)〜";
+
 /* Class = "UITabBarItem"; title = "Donate"; ObjectID = "vAW-63-7CF"; */
 "vAW-63-7CF.title" = "募捐";
 
 /* Class = "UITextField"; placeholder = "Type something to search here"; ObjectID = "wQQ-ha-IjV"; */
-"wQQ-ha-IjV.placeholder" = "";
+"wQQ-ha-IjV.placeholder" = "在这里搜索你想要的宝贝";
 

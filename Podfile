@@ -9,7 +9,6 @@ target 'FBLA' do
   # Control
   pod 'PKHUD'
   pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
-  pod 'MJRefresh'
   pod 'Eureka', '~> 2.0.0-beta.1'
   pod 'ImageRow'
   pod 'VTAcknowledgementsViewController'
@@ -18,18 +17,20 @@ target 'FBLA' do
   # Util
   pod 'Kingfisher'
   pod 'SwiftyJSON'
-  pod 'Firebase/DynamicLinks'
 
   # Data
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
+
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-  pod 'Firebase/Messaging'
+  pod 'Firebase/DynamicLinks'
+
   pod 'GoogleSignIn'
+  
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
 

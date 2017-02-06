@@ -95,7 +95,7 @@ class ItemDisplayViewController: UITableViewController {
             return itemImageTableViewCell(for: item)
 
         case (0, let index):
-            let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.ItemTextCell)!
+            let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.ItemTextCell, for: indexPath)
             if index == 0 {
                 cell.textLabel?.font = .systemFont(ofSize: 25)
                 cell.textLabel?.text = item?.name

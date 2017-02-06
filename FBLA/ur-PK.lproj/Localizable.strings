@@ -20,7 +20,7 @@
 "Buy" = "خریدنے";
 
 /* Text on a button which allows user to buy an item. Indicates the price of item in USD */
-"Buy for %.2f USD" = "کے لئے خرید{}USD";
+"Buy for %.2f USD" = "کے لئے خرید %.2f USD";
 
 /* Show in pop up telling user can't check out item exists */
 "Can't check out item" = "شے چیک نہیں کر سکتے ہیں";

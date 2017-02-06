@@ -158,6 +158,7 @@
 		521150AD1E421B9D0059D86A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				52AE2BA11E1E1E3800A7D2E6 /* Config.swift */,
 				52F69EA71E1E1A2A00602EC3 /* Extension.swift */,
 			);
 			name = Extensions;
@@ -296,9 +297,8 @@
 			children = (
 				52461FFA1E398E30000AF183 /* Assets.xcassets */,
 				52AFEDD01E1E16A500FA9ABA /* AppDelegate.swift */,
-				52AE2BA11E1E1E3800A7D2E6 /* Config.swift */,
-				52F69EA61E1E1A2A00602EC3 /* Misc */,
 				521150AD1E421B9D0059D86A /* Extensions */,
+				52F69EA61E1E1A2A00602EC3 /* Misc */,
 				52F772771E2962290033C8AA /* Frameworks */,
 			);
 			name = "Supporting Files";

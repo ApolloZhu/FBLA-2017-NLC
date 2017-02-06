@@ -7,6 +7,7 @@
 //
 
 struct Identifier {
+    static let HomeItemsSegue = "HomeItemsSegue"
     static let ShowLanguagesSegue = "ShowLanguagesSegue"
     static let ShowItemSegue = "Show Item Segue"
     static let ShowAboutUsSegue = "ShowAboutUsViewControllerSegue"

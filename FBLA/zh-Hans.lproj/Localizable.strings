@@ -1,30 +1,147 @@
+/* {customer} will come and pick up {item} */
+"%1$@ will come and pick up %2$@" = "%1$@ 将自己上门提取 %2$@";
+
+/* {donator} will ship {item} to you */
+"%1$@ will ship %2$@ to you" = "%1$@ 将把 %2$@ 寄给您";
+
+/* Condition of item is acceptable */
+"Acceptable" = "可接受的";
+
+/* User name for user that did not login */
+"Anonymous" = "匿名用户";
+
+/* Basic information of item */
+"Basic Information" = "基本信息";
+
+/* State of item, bought by user him/her self */
+"Bought" = "已购";
+
+/* General buy button */
+"Buy" = "购买";
+
+/* Show in pop up telling user can't check out item exists */
+"Can't check out item" = "无法购买";
+
 /* General Cancel */
 "Cancel" = "取消";
 
+/* To complete payment at this page */
+"Check Out" = "购买";
+
+/* Condition of item is rather for collec†ion only */
+"Collectible" = "有收藏价值的";
+
+/* Title on page where displays comments for an item */
+"Comments" = "评论";
+
+/* Condition of item */
+"Condition" = "状态";
+
+/* Details of the item */
+"Details" = "细节";
+
+/* Owner will ship item to 'me', the customer */
+"Donator will ship it to you" = "卖家将邮寄给您";
+
+/* General completed something */
+"Done" = "完成";
+
 /* Indicate the content will be e-mail */
 "E-Mail" = "电子邮箱";
+
+/* Name of the language in its own. e.g. English for en, Español for spanish */
+"English" = "中文";
+
+/* State of item, favorited */
+"Favorited" = "已收藏";
+
+/* Noun, use this to filter search result */
+"Filter" = "搜索过滤";
+
+/* Filter option, highest price */
+"Highest price in USD" = "最高价（美元）";
+
+/* 'I', the onwer prefer customer to pick up */
+"I prefer pick up" = "我希望买家上门提货";
+
+/* 'I', the owner will ship item to customer */
+"I will ship to the customer" = "我希望邮寄给买家";
+
+/* State of item, still in sell on the market */
+"In Sell" = "销售中";
+
+/* Input description of item */
+"Item Description" = "描述";
+
+/* Input name of the item */
+"Item Name" = "名称";
+
+/* Select photo of item */
+"Item Photo" = "图片";
+
+/* Prompt in input textfield to tell the user to input comment here */
+"Leave your comment here ~" = "留下你的评论吧~";
+
+/* Condition of item is like new */
+"Like New" = "几乎全新的";
 
 /* Tap this button to log out */
 "Log Out" = "退出登录";
 
 /* Notify user login failed */
-"Login Failed. Please Try Again." = "登录失败，请重试";
+"Login failed. Please try again." = "登录失败，请重试";
 
 /* Click this button to login/register */
 "Login/Register" = "登录／注册";
 
+/* Filter option, lowest price */
+"Lowest price in USD" = "最低价（美元）";
+
+/* Displays when user trying to get list of comments of an item, but no comment exists. */
+"No comment yet" = "尚无评论";
+
+/* When can't get shipping address, display this instead, so the user knows there isn't any address avaliable. */
+"No shipping address avaliable" = "未登记收货地址";
+
 /* Indicate the content will be password */
 "PASSWORD" = "密码";
+
+/* Click to pay */
+"Pay" = "购买";
+
+/* Pick up {item} at {location} from {donator} */
+"Pick up %1$@ at %2$@ from %3$@" = "到 %2$@ 取 %3$@ 的 %1$@";
+
+/* Price of item in us dollar */
+"Price in USD" = "价格（美元）";
 
 /* Generally doing something */
 "Processing" = "处理中";
 
-/* Place holder for user shipping address in account page */
-"SELECT SHIPPING ADDRESS" = "选择寄件地址";
+/* Condition of item is has been refurbished */
+"Refurbished" = "翻新的";
+
+/* User cilcks here to view more comments */
+"Show more comments" = "显示更多评论";
+
+/* State of item, sold to another user already */
+"Sold" = "已售";
 
 /* Tap on screen to cancel process */
 "Tap to Cancel" = "点按以取消";
 
+/* How item gets from one user to the other */
+"Transfer" = "交货方式";
+
 /* Place holder for user name */
 "USERNAME" = "尊敬的用户";
+
+/* Condition of item is very good */
+"Very Good" = "好";
+
+/* You should ship {item} to {customer} at {location} */
+"You should ship %1$@ to %2$@ at %3$@" = "请把 %1$@ 寄到 %3$@，收件人是 %2$@";
+
+/* 'I', customer will pick up item from owner */
+"You will pick up from donator" = "你需要上门提货";
 

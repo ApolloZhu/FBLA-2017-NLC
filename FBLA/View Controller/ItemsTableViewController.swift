@@ -60,6 +60,6 @@ class ItemsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        displayItemWithIID(result[indexPath.row].0)
+        displayInSellItemWithIID(result[indexPath.row].0)
     }
 }

@@ -902,7 +902,7 @@ Donate, explore, and share our app with your friends now! </string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4eX-p4-gmc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="uYD-97-pwi"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Lhp-w9-8ly">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lhp-w9-8ly">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -919,7 +919,7 @@ Donate, explore, and share our app with your friends now! </string>
         <scene sceneID="XKV-lg-NmO">
             <objects>
                 <collectionViewController id="vik-lu-lCY" customClass="ItemCollectionViewController" customModule="FBLA" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="EUJ-4g-5X9">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EUJ-4g-5X9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

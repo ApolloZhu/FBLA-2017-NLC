@@ -1,30 +1,135 @@
+/* {customer} will come and pick up {item} */
+"%1$@ will come and pick up %2$@" = "{}Viendra chercher{}";
+
+/* {donator} will ship {item} to you */
+"%1$@ will ship %2$@ to you" = "{}expédiera{}à toi";
+
+/* Condition of item is acceptable */
+"Acceptable" = "acceptable";
+
+/* User name for user that did not login */
+"Anonymous" = "anonyme";
+
+/* Basic information of item */
+"Basic Information" = "Informations de base";
+
+/* State of item, bought by user him/her self */
+"Bought" = "acheté";
+
+/* General buy button */
+"Buy" = "acheter";
+
+/* Show in pop up telling user can't check out item exists */
+"Can't check out item" = "Ne peut pas extraire l'article";
+
 /* General Cancel */
-"Cancel" = "取消";
+"Cancel" = "Annuler";
+
+/* To complete payment at this page */
+"Check Out" = "check out";
+
+/* Condition of item is rather for collec†ion only */
+"Collectible" = "Collectable";
+
+/* Title on page where displays comments for an item */
+"Comments" = "commentaires";
+
+/* Condition of item */
+"Condition" = "condition";
+
+/* Details of the item */
+"Details" = "détails";
+
+/* General completed something */
+"Done" = "Terminé";
 
 /* Indicate the content will be e-mail */
-"E-Mail" = "电子邮箱";
+"E-Mail" = "E-Mail";
+
+/* Name of the language in its own. e.g. English for en, Español for spanish */
+"English" = "français";
+
+/* State of item, favorited */
+"Favorited" = "Définir comme favori";
+
+/* Noun, use this to filter search result */
+"Filter" = "filtre";
+
+/* Filter option, highest price */
+"Highest price in USD" = "Prix ​​le plus haut en USD";
+
+/* State of item, still in sell on the market */
+"In Sell" = "En vente";
+
+/* Input description of item */
+"Item Description" = "Description de l'article";
+
+/* Input name of the item */
+"Item Name" = "nom de l'article";
+
+/* Select photo of item */
+"Item Photo" = "Photo d'article";
+
+/* Prompt in input textfield to tell the user to input comment here */
+"Leave your comment here ~" = "Laisser votre commentaire ici";
+
+/* Condition of item is like new */
+"Like New" = "comme neuf";
 
 /* Tap this button to log out */
-"Log Out" = "退出登录";
+"Log Out" = "Connectez - Out";
 
 /* Notify user login failed */
-"Login Failed. Please Try Again." = "登录失败，请重试";
+"Login failed. Please try again." = "échec de la connexion. Veuillez réessayer";
 
 /* Click this button to login/register */
-"Login/Register" = "登录／注册";
+"Login/Register" = "Se connecter / s'inscrire";
+
+/* Filter option, lowest price */
+"Lowest price in USD" = "Prix ​​le moins cher en USD";
+
+/* Displays when user trying to get list of comments of an item, but no comment exists. */
+"No comment yet" = "Aucun commentaire pour l'instant";
+
+/* When can't get shipping address, display this instead, so the user knows there isn't any address avaliable. */
+"No shipping address avaliable" = "Aucune adresse d'expédition disponible";
 
 /* Indicate the content will be password */
-"PASSWORD" = "密码";
+"PASSWORD" = "mot de passe";
+
+/* Click to pay */
+"Pay" = "Payer";
+
+/* Pick up {item} at {location} from {donator} */
+"Pick up %1$@ at %2$@ from %3$@" = "ramasser{}à{]de";
+
+/* Price of item in us dollar */
+"Price in USD" = "Prix ​​en USD";
 
 /* Generally doing something */
-"Processing" = "处理中";
+"Processing" = "En traitement";
 
-/* Place holder for user shipping address in account page */
-"SELECT SHIPPING ADDRESS" = "选择寄件地址";
+/* Condition of item is has been refurbished */
+"Refurbished" = "Remis à neuf";
+
+/* User cilcks here to view more comments */
+"Show more comments" = "Afficher plus de commentaires";
+
+/* State of item, sold to another user already */
+"Sold" = "vendu";
 
 /* Tap on screen to cancel process */
-"Tap to Cancel" = "点按以取消";
+"Tap to Cancel" = "Touchez pour annuler";
+
+/* How item gets from one user to the other */
+"Transfer" = "transfert";
 
 /* Place holder for user name */
-"USERNAME" = "尊敬的用户";
+"USERNAME" = "Nom d'utilisateur";
+
+/* Condition of item is very good */
+"Very Good" = "très bon";
+
+/* You should ship {item} to {customer} at {location} */
+"You should ship %1$@ to %2$@ at %3$@" = "Vous devriez expédier{}à{}à";
 

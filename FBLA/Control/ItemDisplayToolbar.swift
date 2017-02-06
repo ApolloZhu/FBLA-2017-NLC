@@ -19,7 +19,7 @@ class ItemDisplayToolbar {
     public static let shared = ItemDisplayToolbar()
     private init(){}
     private lazy var toolbar: _ItemDisplayToolbar = .init()
-    weak var delegate: ItemDisplayToolbarDelegate? {
+    weak var delegate: (ItemDisplayToolbarDelegate & CheckOutPerforming)? {
         get {
             return toolbar._delegate
         }
@@ -37,8 +37,8 @@ class ItemDisplayToolbar {
 
 fileprivate class _ItemDisplayToolbar: UIToolbar {
     
-    private var iid: String?
-    weak var _delegate: ItemDisplayToolbarDelegate?
+    private var iid: String!
+    weak var _delegate: (ItemDisplayToolbarDelegate & CheckOutPerforming)?
     
     func showForIID(_ iid: String) {
         self.iid = iid
@@ -76,7 +76,7 @@ fileprivate class _ItemDisplayToolbar: UIToolbar {
     // MARK: Purchase
     var buyButton: UIBarButtonItem!
     @objc private func pay() {
-        postNotificationNamed(.ShouldCheckOutItem)
+        _delegate?.checkOutItem(identifiedBy: iid)
     }
     
     // MARK: Favorite

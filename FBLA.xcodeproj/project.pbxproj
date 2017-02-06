@@ -12,6 +12,7 @@
 		52127C8F1E43A52A00DC4D82 /* ItemDisplayToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52127C8E1E43A52A00DC4D82 /* ItemDisplayToolbar.swift */; };
 		5216812F1E31D3DA00544BA3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681311E31D3DA00544BA3 /* Localizable.strings */; };
 		521681341E31D3DA00544BA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521681361E31D3DA00544BA3 /* InfoPlist.strings */; };
+		52188DAB1E482DF1002968B6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52188DAA1E482DF1002968B6 /* FilterViewController.swift */; };
 		522EC8471E478F2500940F99 /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522EC8461E478F2500940F99 /* LanguagesTableViewController.swift */; };
 		522EC8491E47920D00940F99 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522EC8481E47920D00940F99 /* Message.swift */; };
 		522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FB0C51E3665AB001D3DF9 /* LoginViewController.swift */; };
@@ -66,6 +67,7 @@
 		5216812C1E31D32000544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		521681301E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		521681351E31D3DA00544BA3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		52188DAA1E482DF1002968B6 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterViewController.swift; path = "FBLA/View Controller/FilterViewController.swift"; sourceTree = SOURCE_ROOT; };
 		522EC8461E478F2500940F99 /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguagesTableViewController.swift; path = "FBLA/View Controller/LanguagesTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		522EC8481E47920D00940F99 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		522EC84A1E47A03600940F99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -118,10 +120,6 @@
 		52DC71531E4422BB006A02BF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		52DE7CF61E41182F00204E0E /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckOutViewController.swift; path = FBLA/Control/CheckOutViewController.swift; sourceTree = SOURCE_ROOT; };
 		52DE7CF91E4122C500204E0E /* ItemSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemSubmitViewController.swift; path = "FBLA/View Controller/ItemSubmitViewController.swift"; sourceTree = SOURCE_ROOT; };
-		52F35D551E44F625004332CC /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/Main.strings"; sourceTree = "<group>"; };
-		52F35D561E44F625004332CC /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		52F35D571E44F626004332CC /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		52F35D581E44F626004332CC /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		52F35D591E44F9DE004332CC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		52F35D5A1E44F9DE004332CC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		52F35D5B1E44F9DF004332CC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -166,6 +164,7 @@
 			children = (
 				52C2E4EF1E46DEC600669390 /* SearchViewController.swift */,
 				5211D9331E46D3660041EC74 /* SearchItemsResultTableViewController.swift */,
+				52188DAA1E482DF1002968B6 /* FilterViewController.swift */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -493,7 +492,6 @@
 				fr,
 				"ur-PK",
 				"ar-SA",
-				"te-IN",
 				ko,
 				es,
 			);
@@ -640,6 +638,7 @@
 				522FB0C81E3665CE001D3DF9 /* LoginView.swift in Sources */,
 				528A51461E3D80E700ECB468 /* ShippingAddressPicker.swift in Sources */,
 				52C2E4F01E46DEC600669390 /* SearchViewController.swift in Sources */,
+				52188DAB1E482DF1002968B6 /* FilterViewController.swift in Sources */,
 				52DE7CF71E41182F00204E0E /* CheckOutViewController.swift in Sources */,
 				529553251E445E8300041B5C /* ItemCommentsViewController.swift in Sources */,
 				52127C8F1E43A52A00DC4D82 /* ItemDisplayToolbar.swift in Sources */,
@@ -658,7 +657,6 @@
 				525379FB1E43BCAD00D39403 /* fr */,
 				525379FF1E43BCCB00D39403 /* ur-PK */,
 				52537A031E43BCE000D39403 /* ar-SA */,
-				52F35D581E44F626004332CC /* te-IN */,
 				52F35D5C1E44F9DF004332CC /* ko */,
 				522EC84D1E47A03900940F99 /* es */,
 			);
@@ -672,7 +670,6 @@
 				525379FA1E43BCAD00D39403 /* fr */,
 				525379FE1E43BCCB00D39403 /* ur-PK */,
 				52537A021E43BCDF00D39403 /* ar-SA */,
-				52F35D571E44F626004332CC /* te-IN */,
 				52F35D5B1E44F9DF004332CC /* ko */,
 				522EC84C1E47A03800940F99 /* es */,
 			);
@@ -687,7 +684,6 @@
 				525379F81E43BCAD00D39403 /* fr */,
 				525379FC1E43BCCA00D39403 /* ur-PK */,
 				52537A001E43BCDF00D39403 /* ar-SA */,
-				52F35D551E44F625004332CC /* te-IN */,
 				52F35D591E44F9DE004332CC /* ko */,
 				522EC84A1E47A03600940F99 /* es */,
 			);
@@ -702,7 +698,6 @@
 				525379F91E43BCAD00D39403 /* fr */,
 				525379FD1E43BCCA00D39403 /* ur-PK */,
 				52537A011E43BCDF00D39403 /* ar-SA */,
-				52F35D561E44F625004332CC /* te-IN */,
 				52F35D5A1E44F9DE004332CC /* ko */,
 				522EC84B1E47A03600940F99 /* es */,
 			);

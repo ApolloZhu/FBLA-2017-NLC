@@ -23,11 +23,23 @@ extension Item {
 }
 
 class SearchItemsResultTableViewController: ItemsTableViewController {
-    func search(key: String?) {
+    func search(key: String?, filters: [Filter]? = nil) {
         if let key = key?.content, !key.isBlank {
             removeAll()
             Item.forEachInSellItem { [weak self] in
                 if let item = $0, let add = self?.add {
+                    if let filters = filters {
+                        for filter in filters {
+                            switch filter {
+                            case .condition(let condition):
+                                if item.condition != condition { return }
+                            case .maxPrice(let amount):
+                                if item.price > amount { return }
+                            case .minPrice(let amount): if item.price < amount { return }
+                            case .transfer(let method): if item.transfer != method { return }
+                            }
+                        }
+                    }
                     if item.name.localizedCaseInsensitiveContains(key) {
                         return add(item.iid, .inSell)
                     }

@@ -14,23 +14,35 @@ extension Localized {
     static let MIN_PRICE = NSLocalizedString("Lowest price in USD", comment: "Filter option, lowest price")
     static let MAX_PRICE = NSLocalizedString("Highest price in USD", comment: "Filter option, highest price")
     // ITEM_CONDITION
+    // TRANSFER_METHOD
+}
+
+enum Filter {
+    case condition(Condition)
+    case minPrice(Double)
+    case maxPrice(Double)
+    case transfer(Transfer)
 }
 
 class SearchViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
-    weak var controller: SearchItemsResultTableViewController?
+    weak var resultController: SearchItemsResultTableViewController!
+    var filterController = FilterViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
         textField.returnKeyType = .search
     }
+    @IBAction func toggleFilter() {
+        navigationController?.pushViewController(filterController, animated: true)
+    }
     @IBAction func search() {
         textField.resignFirstResponder()
-        controller?.search(key: textField?.text)
+        resultController.search(key: textField?.text, filters: filterController.filters)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Identifier.SearchItemsResultTableViewControllerSegue, let vc = segue.terminus as? SearchItemsResultTableViewController {
-            controller = vc
+            resultController = vc
         }
     }
 }

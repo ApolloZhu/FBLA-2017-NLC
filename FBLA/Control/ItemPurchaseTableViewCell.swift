@@ -9,13 +9,11 @@
 import UIKit
 import MaterialKit
 
-extension Identifier {
-    static let ItemPurchaseCell = "ItemPurchaseCell"
-}
-
 class ItemPurchaseTableViewCell: UITableViewCell {
-
+    static let identifier = "ItemPurchaseCell"
     @IBOutlet weak var button: MKButton!
+    weak var delegate: CheckOutPerforming?
+    var iid: String!
 
     var price: Double? {
         willSet {
@@ -24,14 +22,16 @@ class ItemPurchaseTableViewCell: UITableViewCell {
     }
 
     @IBAction func pay() {
-        postNotificationNamed(.ShouldCheckOutItem)
+        delegate?.checkOutItem(identifiedBy: iid)
     }
 }
 
-extension UITableViewController {
-    func itemPurchaseTableViewCell(for item: Item?) -> ItemPurchaseTableViewCell {
-        let custom = tableView.dequeueReusableCell(withIdentifier: Identifier.ItemPurchaseCell) as! ItemPurchaseTableViewCell
-        custom.price = item?.price
+extension CheckOutPerforming where Self: UITableViewController {
+    func itemPurchaseTableViewCell(for item: Item) -> ItemPurchaseTableViewCell {
+        let custom = tableView.dequeueReusableCell(withIdentifier: ItemPurchaseTableViewCell.identifier) as! ItemPurchaseTableViewCell
+        custom.price = item.price
+        custom.iid = item.iid
+        custom.delegate = self
         return custom
     }
 }

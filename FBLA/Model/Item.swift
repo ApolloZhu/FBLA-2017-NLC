@@ -30,6 +30,7 @@ struct Item {
     var price: Double
     var condition: Condition
     var favorite: Int
+    var transfer: Transfer
     
     func fetchImageURL(then process: @escaping (URL?) -> ()) {
         storage.child("itemIMG/\(iid)").downloadURL { url, _ in
@@ -46,7 +47,8 @@ extension Item {
             "description": description,
             "price": price,
             "condition": condition.rawValue,
-            "favorite": favorite
+            "favorite": favorite,
+            "transfer": transfer.rawValue
         ]
     }
     func save(completionHandler handle: (() -> ())? = nil) {
@@ -68,12 +70,13 @@ extension Item {
                     let description = json["description"].string,
                     let price = json["price"].double,
                     let rawCondition = json["condition"].int,
-                    let favorite = json["favorite"].int
+                    let favorite = json["favorite"].int,
+                    let rawMethod = json["transfer"].int
                 {
                     let item = Item(
                         iid: iid, uid: uid, name: name, description: description, price: price,
                         condition: Condition(rawValue: rawCondition) ?? .acceptable,
-                        favorite: favorite
+                        favorite: favorite, transfer: Transfer(rawValue: rawMethod)!
                     )
                     process(item)
                 } else {
@@ -119,12 +122,13 @@ extension Item {
                     let name = json["name"].string,
                     let description = json["description"].string,
                     let price = json["price"].double,
-                    let rawCondition = json["condition"].int
+                    let rawCondition = json["condition"].int,
+                    let rawMethod = json["transfer"].int
                 {
                     let item = Item(
                         iid: iid, uid: uid, name: name, description: description, price: price,
                         condition: Condition(rawValue: rawCondition) ?? .acceptable,
-                        favorite: 0
+                        favorite: 0, transfer: Transfer(rawValue: rawMethod)!
                     )
                     process(item)
                 } else {

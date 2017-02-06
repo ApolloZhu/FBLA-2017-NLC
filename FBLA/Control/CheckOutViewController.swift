@@ -10,6 +10,10 @@ import UIKit
 import PKHUD
 import Braintree
 
+protocol CheckOutPerforming: class {
+    func checkOutItem(identifiedBy iid: String)
+}
+
 extension UIViewController {
     func checkOut(item: Item) {
         if !Account.shared.isLogggedIn {

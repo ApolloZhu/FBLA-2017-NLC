@@ -724,29 +724,41 @@ Donate, explore, and share our app with your friends now! </string>
                                 <rect key="frame" x="0.0" y="64" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsS-KX-Ud9">
-                                        <rect key="frame" x="320" y="12" width="48" height="36"/>
+                                        <rect key="frame" x="319" y="12" width="36" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="48" id="yw5-qc-3pO"/>
+                                            <constraint firstAttribute="width" constant="36" id="VFv-wW-Fju"/>
                                         </constraints>
                                         <state key="normal" image="ic_search"/>
                                         <connections>
                                             <action selector="search" destination="RcI-9p-WFh" eventType="touchUpInside" id="O68-CA-9HT"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Type something to search here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQQ-ha-IjV">
-                                        <rect key="frame" x="8" y="15" width="304" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Type something to search here" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="wQQ-ha-IjV">
+                                        <rect key="frame" x="64" y="15" width="247" height="30"/>
                                         <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTc-BG-yot">
+                                        <rect key="frame" x="20" y="12" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="cOB-oO-c9m"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_tune"/>
+                                        <connections>
+                                            <action selector="toggleFilter" destination="RcI-9p-WFh" eventType="touchUpInside" id="hy6-GG-rZs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
-                                    <constraint firstItem="wQQ-ha-IjV" firstAttribute="leading" secondItem="F59-6C-hBQ" secondAttribute="leadingMargin" id="4w7-8a-uv6"/>
-                                    <constraint firstItem="wQQ-ha-IjV" firstAttribute="centerY" secondItem="F59-6C-hBQ" secondAttribute="centerY" id="CEV-Pp-cfj"/>
-                                    <constraint firstAttribute="trailing" secondItem="DsS-KX-Ud9" secondAttribute="trailing" constant="7" id="Evj-Bg-h5r"/>
-                                    <constraint firstItem="DsS-KX-Ud9" firstAttribute="top" secondItem="F59-6C-hBQ" secondAttribute="top" constant="12" id="bRn-30-Ebd"/>
-                                    <constraint firstItem="wQQ-ha-IjV" firstAttribute="centerY" secondItem="DsS-KX-Ud9" secondAttribute="centerY" id="rNm-Cu-2C0"/>
-                                    <constraint firstItem="DsS-KX-Ud9" firstAttribute="leading" secondItem="wQQ-ha-IjV" secondAttribute="trailing" constant="8" symbolic="YES" id="sLs-1l-47s"/>
+                                    <constraint firstItem="cTc-BG-yot" firstAttribute="top" secondItem="F59-6C-hBQ" secondAttribute="top" constant="12" id="7AZ-nH-G9C"/>
+                                    <constraint firstAttribute="trailing" secondItem="DsS-KX-Ud9" secondAttribute="trailing" constant="20" symbolic="YES" id="Iyx-4G-q8V"/>
+                                    <constraint firstItem="wQQ-ha-IjV" firstAttribute="leading" secondItem="cTc-BG-yot" secondAttribute="trailing" constant="8" symbolic="YES" id="MYv-yT-kZL"/>
+                                    <constraint firstItem="DsS-KX-Ud9" firstAttribute="leading" secondItem="wQQ-ha-IjV" secondAttribute="trailing" constant="8" symbolic="YES" id="O44-cM-Gwy"/>
+                                    <constraint firstItem="cTc-BG-yot" firstAttribute="top" secondItem="DsS-KX-Ud9" secondAttribute="top" id="Uj6-U6-zps"/>
+                                    <constraint firstItem="cTc-BG-yot" firstAttribute="centerY" secondItem="F59-6C-hBQ" secondAttribute="centerY" id="aKU-lx-0Uo"/>
+                                    <constraint firstItem="cTc-BG-yot" firstAttribute="leading" secondItem="F59-6C-hBQ" secondAttribute="leading" constant="20" symbolic="YES" id="wCx-8n-do1"/>
+                                    <constraint firstItem="cTc-BG-yot" firstAttribute="centerY" secondItem="wQQ-ha-IjV" secondAttribute="centerY" id="yMZ-kn-r26"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oha-aK-HRc">
@@ -758,13 +770,13 @@ Donate, explore, and share our app with your friends now! </string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="F59-6C-hBQ" firstAttribute="leading" secondItem="oha-aK-HRc" secondAttribute="leading" id="Ixa-I4-K6z"/>
-                            <constraint firstItem="oha-aK-HRc" firstAttribute="top" secondItem="F59-6C-hBQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Lzc-wu-9yg"/>
-                            <constraint firstItem="oha-aK-HRc" firstAttribute="bottom" secondItem="734-rn-YEJ" secondAttribute="top" id="RBv-hx-v94"/>
-                            <constraint firstItem="F59-6C-hBQ" firstAttribute="trailing" secondItem="oha-aK-HRc" secondAttribute="trailing" id="Sqg-yx-X74"/>
-                            <constraint firstItem="F59-6C-hBQ" firstAttribute="top" secondItem="fIS-B5-RkT" secondAttribute="bottom" id="YF7-Qg-x5E"/>
-                            <constraint firstAttribute="trailing" secondItem="F59-6C-hBQ" secondAttribute="trailing" id="gYG-0i-6oD"/>
-                            <constraint firstItem="F59-6C-hBQ" firstAttribute="leading" secondItem="MCj-Kq-hOn" secondAttribute="leading" id="lBE-9o-CJ4"/>
+                            <constraint firstItem="oha-aK-HRc" firstAttribute="width" secondItem="MCj-Kq-hOn" secondAttribute="width" id="663-j4-QD7"/>
+                            <constraint firstItem="oha-aK-HRc" firstAttribute="centerX" secondItem="MCj-Kq-hOn" secondAttribute="centerX" id="8jc-ZL-XhA"/>
+                            <constraint firstItem="oha-aK-HRc" firstAttribute="bottom" secondItem="734-rn-YEJ" secondAttribute="top" id="BBr-hw-oAW"/>
+                            <constraint firstAttribute="trailing" secondItem="F59-6C-hBQ" secondAttribute="trailing" id="HSf-JL-4eC"/>
+                            <constraint firstItem="oha-aK-HRc" firstAttribute="top" secondItem="F59-6C-hBQ" secondAttribute="bottom" constant="8" id="fxd-1W-ZFH"/>
+                            <constraint firstItem="F59-6C-hBQ" firstAttribute="leading" secondItem="MCj-Kq-hOn" secondAttribute="leading" id="kbT-Vv-2y1"/>
+                            <constraint firstItem="F59-6C-hBQ" firstAttribute="top" secondItem="fIS-B5-RkT" secondAttribute="bottom" id="r5p-ok-bgX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="phH-B7-k14"/>
@@ -860,7 +872,7 @@ Donate, explore, and share our app with your friends now! </string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saT-Fo-4Me" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2392.8000000000002" y="-678.26086956521749"/>
+            <point key="canvasLocation" x="2326" y="-680"/>
         </scene>
         <!--Item-->
         <scene sceneID="1ca-Qx-SNc">
@@ -980,5 +992,6 @@ Donate, explore, and share our app with your friends now! </string>
         <image name="ic_menu_36pt" width="36" height="36"/>
         <image name="ic_person_48pt" width="48" height="48"/>
         <image name="ic_search" width="36" height="36"/>
+        <image name="ic_tune" width="36" height="36"/>
     </resources>
 </document>

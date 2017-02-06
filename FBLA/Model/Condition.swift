@@ -6,7 +6,7 @@
 //  Copyright © 2017 Swifty X. All rights reserved.
 //
 
-enum Condition: Int, RawRepresentable {
+enum Condition: Int {
     case collectible
     case acceptable
     case veryGood

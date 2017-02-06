@@ -30,6 +30,13 @@ Expiration: 11/19
 
 ### How to apply filter to limit search results
 
+## How to toggle settings and other features
+
+### How to change language
+
+### How to read messages/notifications
+
+
 --- 
 
 # Developer's Note

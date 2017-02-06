@@ -11,7 +11,7 @@ import SnapKit
 
 protocol ItemDisplayToolbarDelegate: class {
     var controller: UIViewController { get }
-    func showCommentInput(iid: String?)
+    func showCommentInput(iid: String)
     func hideCommentInput()
 }
 
@@ -36,10 +36,10 @@ class ItemDisplayToolbar {
 }
 
 fileprivate class _ItemDisplayToolbar: UIToolbar {
-
+    
     private var iid: String?
     weak var _delegate: ItemDisplayToolbarDelegate?
-
+    
     func showForIID(_ iid: String) {
         self.iid = iid
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
@@ -54,32 +54,35 @@ fileprivate class _ItemDisplayToolbar: UIToolbar {
             }
         }
         UIApplication.shared.keyWindow!.addSubview(self)
+        buyButton = UIBarButtonItem(title: Localized.BUY, style: .plain, target: self, action: #selector(self.pay))
+        likeButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_favorite_border"), style: .plain, target: self, action: #selector(self.toggleFavorite))
+        commentButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_message"), style: .plain, target: self, action: #selector(self.startComment))
         setItems([space, likeButton, small, commentButton, space, buyButton, space], animated: true)
         snp.makeConstraints { make in
             make.centerX.bottom.width.equalToSuperview()
             make.height.equalTo(49)
         }
     }
-
+    
     func hide() {
         removeFromSuperview()
         _delegate?.hideCommentInput()
     }
-
-
+    
+    
     lazy var small = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
     lazy var space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-
+    
     // MARK: Purchase
-    lazy var buyButton = UIBarButtonItem(title: Localized.BUY, style: .plain, target: self, action: #selector(pay))
+    var buyButton: UIBarButtonItem!
     @objc private func pay() {
         postNotificationNamed(.ShouldCheckOutItem)
     }
-
+    
     // MARK: Favorite
-    lazy var likeButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_favorite_border"), style: .plain, target: self, action: #selector(toggleFavorite))
-
+    var likeButton: UIBarButtonItem!
     @objc private func toggleFavorite() {
+        
         guard let iid = iid else { return }
         if Account.shared.isLogggedIn {
             Account.shared.favorited(iid: iid) { [weak self] favorited in
@@ -97,11 +100,10 @@ fileprivate class _ItemDisplayToolbar: UIToolbar {
             _delegate?.controller.presentLoginViewController()
         }
     }
-
+    
     // MARK: Comment
-    lazy var commentButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_message"), style: .plain, target: self, action: #selector(startComment))
-
+    var commentButton: UIBarButtonItem!
     @objc private func startComment() {
-        _delegate?.showCommentInput(iid: iid)
+        _delegate?.showCommentInput(iid: iid!)
     }
 }

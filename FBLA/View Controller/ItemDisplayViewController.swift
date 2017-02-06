@@ -25,7 +25,6 @@ extension UIViewController {
         }
     }
     func displayInSellItemWithIID(_ iid: String) {
-        //        tabBarController?.hidesBottomBarWhenPushed = true
         Item.inSellItemFromIID(iid) { [weak self] in
             if let item = $0, let this = self {
                 this.displayItem(item)

@@ -18,7 +18,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
             nameLabel.text = item?.name
             descriptionLabel.text = item?.description
             item?.fetchImageURL { [weak self] in
-                self?.imageView.kf.setImage(with: $0)
+                self?.imageView.kf.setImage(with: $0, placeholder: #imageLiteral(resourceName: "ic_card_giftcard_48pt"))
             }
         }
     }

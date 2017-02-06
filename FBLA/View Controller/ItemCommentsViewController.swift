@@ -148,7 +148,7 @@ class ItemCommentsViewController: JSQMessagesViewController {
 
 extension ItemCommentsViewController: ItemDisplayToolbarDelegate {
     var controller: UIViewController { return self }
-    func showCommentInput(iid: String?) {
+    func showCommentInput(iid: String) {
         inputToolbar.contentView.textView.becomeFirstResponder()
     }
     func hideCommentInput() {

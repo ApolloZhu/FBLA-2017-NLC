@@ -40,10 +40,6 @@ class ItemCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCollectionViewCell.identifier, for: indexPath) as? ItemCollectionViewCell,
-            let item = cell.item {
-            displayItem(item)
-        }
+        displayItem(items[indexPath.item])
     }
 }

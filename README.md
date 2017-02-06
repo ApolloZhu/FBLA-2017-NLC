@@ -9,13 +9,16 @@ Due to the closed nature of Apple and iOS, you are not able to install the compi
 3. You'll soon receive an email from TestFlight
 4. Follow the instructions in that email
 
-## Test Instruction
+---
+
+# Test Instruction
 You may need an account to perform some actions. But don't worry, we'll prompt you to create one when needed. 
 The process is pretty simple, as described below. 
 We do have two sample accounts - text@example.com and test@example.com, both with password 123456
 
-### How to create account
+## Registration and __
 
+## Purchase
 
 --- 
 

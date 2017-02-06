@@ -2,19 +2,23 @@
 Mobile Application Development
 
 ## Installation Guide
-Due to the closed nature of Apple and iOS, you are not able to install the compiled binary directly on your iOS devices. We strongly suggest to use the following method to download the app in to your iOS devices.
+Due to the closed nature of Apple and iOS, you are not able to install the compiled binary directly on your iOS devices. We strongly suggest you use the following method to download the app on to your iOS devices.
 
-1. Get your iTunes account
-2. Email the account to public-apollonian@outlook.com
-3. You'll soon receive an email from TestFlight
-4. Follow the instructions in that email
-
+## Note that the following processes have to be operated on an ios device.
+1. Setup a working iTunes account 
+2. Email the ITUNES ACCOUNT info to public-apollonian@outlook.com
+3. You will soon receive an email from iTunes Connect
+4. Provide the information needed to setup an iTunes Connect account.
+6. Another email from TestFlight will be sent to your address 
+7. StartTesting - install TestFlight - if asked, enter the redeem code given 
+8. Download and install our application "Charity Toaster"
 ---
 
 # Test Instruction
-You may need an account to perform some actions. But don't worry, we'll prompt you to create one when needed. 
-The process is pretty simple, as described below. 
-We do have two sample accounts - text@example.com and test@example.com, both with password 123456
+You may need an account to enable certain features. We will prompt you to create one when needed. 
+
+We have two sample accounts setup for debugging, you are weclomed to use them:
+text@example.com and test@example.com, both with password 123456
 
 ## Registration and __
 
@@ -24,7 +28,13 @@ Expiration: 11/19
 
 ## How to share an item to your social media platform
 
+select an item  
+click on the icon on the top right corner
+select the social media platform you wish to use  
+post
+
 ## How to donate an item
+
 
 ## How to search
 
@@ -32,10 +42,15 @@ Expiration: 11/19
 
 ## How to toggle settings and other features
 
-### How to change language
+The setting menu is located on the top left of the screen. Below are the features implemented: 
 
-### How to read messages/notifications
+-language settings
 
+-messages/notifications
+
+-about us/acknowledgement page
+
+-personal settings
 
 --- 
 

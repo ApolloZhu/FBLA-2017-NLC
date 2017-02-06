@@ -22,6 +22,8 @@ We do have two sample accounts - text@example.com and test@example.com, both wit
 VISA number: 4111 1111 1111 1111
 Expiration: 11/19
 
+## How to share an item to your social media platform
+
 --- 
 
 # Developer's Note

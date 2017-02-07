@@ -70,3 +70,11 @@ The setting menu is can be toggled using the button located on the top left of t
 **Please open `FBLA.xcworkspace` instead of `FBLA.xcodeproj`**, we are managing dependencies through CocoaPods
 
 Because all the database and transaction providers uniquely identifies each app to make sure everything is safe, you can not change the team, and the account used to codesign the entire project. Therefore, you have to have our account to compile. We rather consider it an unsafe behavior to share our private key around. In conclusion, you might be able to compile it, but you will not get the same result as what we get after compilation.
+
+## Team Members
+
+- @ApolloZhu
+- @Yanderella
+- @mmk4822
+
+Special thanks to Seonuk Kim for translating our app to Korean

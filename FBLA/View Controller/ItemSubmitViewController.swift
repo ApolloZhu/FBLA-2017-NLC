@@ -24,7 +24,6 @@ extension Localized {
     static let TRANSFER_METHOD = NSLocalizedString("Transfer", comment: "How item gets from one user to the other")
 }
 
-//TODO: Add transfer method specification
 enum Transfer: Int, CustomStringConvertible {
     case ship = 0, pickUp = 1
     var description: String {

@@ -33,7 +33,6 @@
 		528A51461E3D80E700ECB468 /* ShippingAddressPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */; };
 		528A51481E3D812700ECB468 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A51471E3D812700ECB468 /* LoginTextField.swift */; };
 		529553251E445E8300041B5C /* ItemCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529553241E445E8300041B5C /* ItemCommentsViewController.swift */; };
-		529553291E44694800041B5C /* CommentsAvaterImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529553281E44694800041B5C /* CommentsAvaterImageDataSource.swift */; };
 		5295532D1E447DAA00041B5C /* ItemConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295532C1E447DAA00041B5C /* ItemConditionTableViewCell.swift */; };
 		5295532F1E447DCC00041B5C /* ItemImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295532E1E447DCC00041B5C /* ItemImageTableViewCell.swift */; };
 		529553321E447FB700041B5C /* ItemPurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529553311E447FB700041B5C /* ItemPurchaseTableViewCell.swift */; };
@@ -108,7 +107,6 @@
 		528A51451E3D80E700ECB468 /* ShippingAddressPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShippingAddressPicker.swift; path = FBLA/Control/ShippingAddressPicker.swift; sourceTree = SOURCE_ROOT; };
 		528A51471E3D812700ECB468 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = FBLA/Control/LoginTextField.swift; sourceTree = SOURCE_ROOT; };
 		529553241E445E8300041B5C /* ItemCommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCommentsViewController.swift; path = "FBLA/View Controller/ItemCommentsViewController.swift"; sourceTree = SOURCE_ROOT; };
-		529553281E44694800041B5C /* CommentsAvaterImageDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsAvaterImageDataSource.swift; sourceTree = "<group>"; };
 		5295532C1E447DAA00041B5C /* ItemConditionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemConditionTableViewCell.swift; path = FBLA/Control/ItemConditionTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		5295532E1E447DCC00041B5C /* ItemImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemImageTableViewCell.swift; path = FBLA/Control/ItemImageTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		529553311E447FB700041B5C /* ItemPurchaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemPurchaseTableViewCell.swift; path = FBLA/Control/ItemPurchaseTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -246,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				52F625F61E3E8FE100A0CD88 /* Comment.swift */,
-				529553281E44694800041B5C /* CommentsAvaterImageDataSource.swift */,
 			);
 			name = Comment;
 			sourceTree = "<group>";
@@ -625,7 +622,6 @@
 				52F45CA11E29BB5400A7D81A /* ItemDisplayViewController.swift in Sources */,
 				52C2E4F21E4713D100669390 /* ItemsTableViewCell.swift in Sources */,
 				52F45CA31E29BB5400A7D81A /* SettingsTableViewController.swift in Sources */,
-				529553291E44694800041B5C /* CommentsAvaterImageDataSource.swift in Sources */,
 				52537A091E43CA5C00D39403 /* CommentInput.swift in Sources */,
 				522EC8491E47920D00940F99 /* Event.swift in Sources */,
 				522FB0C61E3665AB001D3DF9 /* LoginViewController.swift in Sources */,

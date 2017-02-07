@@ -9,8 +9,6 @@
 import UIKit
 import SnapKit
 
-//TODO: Add estimated location, no text
-
 extension UIViewController {
     func displayItem(_ item: Item) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: Identifier.ItemDisplayViewController) as? ItemDisplayViewController else { return }
@@ -84,15 +82,27 @@ class ItemDisplayViewController: UITableViewController {
             return 0
         }
     }
-
-    private var _shouldSetImage = true
+    static let imageIndexPath = IndexPath(row: 3, section: 0)
+    private var imageHeight: CGFloat?
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch (indexPath.section, indexPath.row) {
         case (0, 2):
             return itemConditionTableViewCell(for: item)
 
         case (0, 3):
-            return itemImageTableViewCell(for: item)
+            let custom = tableView.dequeueReusableCell(withIdentifier: ItemImageTableViewCell.identifier, for: indexPath) as! ItemImageTableViewCell
+            if let height = imageHeight {
+                custom.frame.size.height = height
+            } else {
+                item?.fetchImageURL {
+                    custom.itemImageView.kf.setImage(with: $0, placeholder: #imageLiteral(resourceName: "ic_card_giftcard_48pt")) { [weak self] image,_,_,_ in
+                        if let this = self, let size = image?.size {
+                            this.imageHeight = this.tableView.frame.width / size.width * size.height
+                        }
+                    }
+                }
+            }
+            return custom
 
         case (0, let index):
             let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.ItemTextCell, for: indexPath)
@@ -144,10 +154,16 @@ class ItemDisplayViewController: UITableViewController {
 
     // MARK: To auto layout
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath == ItemDisplayViewController.imageIndexPath {
+            return 400
+        }
         return 44
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath == ItemDisplayViewController.imageIndexPath {
+            return imageHeight ?? 400
+        }
         return UITableViewAutomaticDimension
     }
 
@@ -165,15 +181,15 @@ class ItemDisplayViewController: UITableViewController {
         }
     }
 
-    func updateImage() {
-        update { [weak self] in
-            self?.tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .automatic)
-        }
-    }
-
     func share() {
-        let url = URL(string: "https://hd89x.app.goo.gl/?link=https://apollozhu.github.io/FBLA-2017-NLC/?iid=\(item.iid)&ibi=io.github.swiftyx.apollo.FBLA-2017-NLC")!
-        let share = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        var items = [Any]()
+        if let url = URL(string: "https://hd89x.app.goo.gl/?link=https://apollozhu.github.io/FBLA-2017-NLC/?iid=\(item.iid)&ibi=io.github.swiftyx.apollo.FBLA-2017-NLC") {
+            items.append(url)
+        }
+        if let image = (tableView.dequeueReusableCell(withIdentifier: ItemImageTableViewCell.identifier, for: ItemDisplayViewController.imageIndexPath) as? ItemImageTableViewCell)?.imageView?.image {
+            items.append(image)
+        }
+        let share = UIActivityViewController(activityItems: items, applicationActivities: nil)
         share.popoverPresentationController?.sourceView = view
         present(share, animated: true, completion: nil)
     }
@@ -188,7 +204,6 @@ class ItemDisplayViewController: UITableViewController {
         super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadAll), name: .NewComment, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadAll), name: .ShouldReloadAll, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateImage), name: .RequestUpdateImage, object: nil)
         ItemDisplayToolbar.shared.showForIID(item.iid)
         ItemDisplayToolbar.shared.delegate = self
         requestReloadAll()

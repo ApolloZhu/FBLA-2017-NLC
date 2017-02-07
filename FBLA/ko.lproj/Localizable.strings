@@ -44,13 +44,13 @@
 "Condition" = "상태";
 
 /* Customer will pick up the item from the owner */
-"Customer will pick up item from donator" = "고객이 기부자한테서 상품을 직접 받을 것 입니다 ";
+"Customer will pick up item from donator" = "직접 Pick-up";
 
 /* Details of the item */
 "Details" = "세부정보";
 
 /* Owner will ship the item to the customer */
-"Donator will ship item to the customer" = "기부자가 상품을 고객에게 배송할 것 입니다";
+"Donator will ship item to the customer" = "기부자 -> 고객 배송";
 
 /* General completed something */
 "Done" = "완료";
@@ -146,10 +146,10 @@
 "To change the language, you must reopen the app" = "언어를 바꾸려면 엡을 다시 시작해야 합니다";
 
 /* How item gets from one user to the other */
-"Transfer" = "옮기기";
+"Transfer" = "Shipping";
 
 /* Title for list of translators */
-"Translators" = "번역";
+"Translators" = "번역가";
 
 /* Place holder for user name */
 "USERNAME" = "아이디";

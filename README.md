@@ -8,14 +8,14 @@ Due to the closed nature of Apple and iOS, you are not able to install the compi
 > This process actually requires human process behind the scene at some point, so it might take longer than you expect.
 
 1. Make sure you have your Apple ID, the e-mail account you used for iCloud, downloading apps from App Store, or in iTunes.
-- Email the Apple ID to [public-apollonian@outlook.com](mailto:public-apollonian@outlook.com)
-- You will soon receive an email from **iTunes Connect**
-- Provide the information needed to setup an iTunes Connect account
-- Another email from **Test Flight** will be sent to your Apple ID email. We strongly suggest you to open it on your iOS device(s)
-- Click Start Testing in the email
-- If you are on an iOS device, the webpage will redirect you to app store to install TestFlight
-- Open TestFlight. Tap redeem, and enter the redeem code given.
-- Download/Install/Update *Charity Toaster*
+2. Email the Apple ID to [public-apollonian@outlook.com](mailto:public-apollonian@outlook.com)
+3. You will soon receive an email from **iTunes Connect**
+4. Provide the information needed to setup an iTunes Connect account
+5. Another email from **Test Flight** will be sent to your Apple ID email. We strongly suggest you to open it on your iOS device(s)
+6. Click Start Testing in the email
+7. If you are on an iOS device, the webpage will redirect you to app store to install TestFlight
+8. Open TestFlight. Tap redeem, and enter the redeem code given.
+9. Download/Install/Update *Charity Toaster*
 
 ---
 
@@ -47,9 +47,9 @@ To purchase using visa card, please use the sample card provided blow
 ## How to share an item to your social media platform?
 
 1. select an item  
-- click on the icon on the top right corner
-- select the social media platform you wish to use  
-- post
+2. click on the icon on the top right corner
+3. select the social media platform you wish to use  
+4. post
 
 ## How to toggle settings and other features?
 

@@ -17,6 +17,9 @@ FBLA 2017
 ---
 
 # Installation Guide
+
+Check out how to install this app online: [https://hd89x.app.goo.gl/rniX](https://hd89x.app.goo.gl/rniX) . We'll also redirect you to the app, if you already have it installed on your iOS device.
+
 Due to the closed nature of Apple and iOS, you are not able to install the compiled binary directly on your iOS devices. We strongly suggest you use the following method to download the app on to your iOS devices.
 
 > This process actually requires human process behind the scene at some point, so it might take longer than you expect.

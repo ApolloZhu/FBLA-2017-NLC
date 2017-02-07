@@ -16,10 +16,16 @@ Due to the closed nature of Apple and iOS, you are not able to install the compi
 ---
 
 # Test Instruction
-You may need an account to enable certain features. We will prompt you to create one when needed. 
 
-We have two sample accounts setup for debugging, you are weclomed to use them:
-*text@example.com* and *test@example.com*, both with password *123456*
+## Login
+To use certain features, you need to register or login your account. We'll prompt you to do so when needed.
+
+You are welcomed to create new accounts, but we have some sample accounts available
+
+|     e-mail     |password|
+|:--------------:|:------:|
+|text@example.com| 123456 |
+|test@example.com| 123456 |
 
 ## Purchase
 To purchase an item, please use the visa card number below:

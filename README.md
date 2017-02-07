@@ -78,6 +78,19 @@ The following features can be found here --
 - About us information
 - Acknowledgements page
 
+
+## How to donate an item?
+- Go to the Donate page
+- Fill out the item name, condition, photo, price, and other details
+- Once you fill out all the requirements, the **done** button should appear at the bottom
+- The item you want to donate should now displayed on the home page ready for purchase
+
+## How to use the Search/Filter feature
+- Type in the name of the item you are looking for
+- Apply filter by tapping the filter icon located on the left of the search box
+- Click on the search button
+- All items that fit your requirements should be displayed if they are available
+
 --- 
 
 # Developer's Note

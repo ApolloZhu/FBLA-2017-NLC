@@ -1,8 +1,13 @@
 ![Charity Toaster Icon](https://raw.githubusercontent.com/ApolloZhu/FBLA-2017-NLC/master/Images/Icon.png?token=AKVyPI2mLv7cUUk1X6NTe1n5Yjzek7Ifks5YowFJwA%3D%3D)
-# FBLA 2017 NLC
+
+# Charity Toaster
 Mobile Application Development
 
-## Charity Toaster Installation Guide
+Oakton High School
+
+FBLA 2017
+
+## Installation Guide
 Due to the closed nature of Apple and iOS, you are not able to install the compiled binary directly on your iOS devices. We strongly suggest you use the following method to download the app on to your iOS devices.
 
 > This process actually requires human process behind the scene at some point, so it might take longer than you expect.

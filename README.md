@@ -43,16 +43,16 @@ To use certain features, you need to register or login your account. We'll promp
 
 You are welcomed to create new accounts, but we have some sample accounts available
 
-|     e-mail     |password|
+|     email      |password|
 |:--------------:|:------:|
 |text@example.com| 123456 |
 |test@example.com| 123456 |
 
 ## How to purchase an item?
-Becuase we don't have certificates and other legal documents, we are not able to enable real transaction. But you can try out sandbox purchases. 
+Because we don't have certificates and other legal documents, we are not able to enable real transaction. But you can try out sandbox purchases. 
 
 ### Paypal
-You don't need to use your paypal account, you'll be automatically using the sample account. 
+You don't need to use your Paypal account, you'll be automatically using the sample account. 
 
 ### Visa
 To purchase using visa card, please use the sample card provided blow
@@ -100,7 +100,7 @@ The following features can be found here --
 
 **Please open `FBLA.xcworkspace` instead of `FBLA.xcodeproj`**, we are managing dependencies through CocoaPods
 
-Because all the database and transaction providers uniquely identifies each app to make sure everything is safe, you can not change the team, and the account used to codesign the entire project. Therefore, you have to have our account to compile. We rather consider it an unsafe behavior to share our private key around. In conclusion, you might be able to compile it, but you will not get the same result as what we get after compilation.
+Because all the database and transaction providers uniquely identifies each app to make sure everything is safe, you can't change the team, and the account used to `codesign` the entire project. Therefore, you have to have our account to compile. We rather consider it an unsafe behavior to share our private key around. In conclusion, you might be able to compile it, but you will not get the same result as what we get after compilation.
 
 ## Team Members
 

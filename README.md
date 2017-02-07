@@ -1,3 +1,4 @@
+![icon](https://raw.githubusercontent.com/ApolloZhu/FBLA-2017-NLC/master/Images/Icon.png?token=AKVyPI2mLv7cUUk1X6NTe1n5Yjzek7Ifks5YowFJwA%3D%3D)
 # FBLA 2017 NLC
 Mobile Application Development
 
@@ -27,33 +28,42 @@ You are welcomed to create new accounts, but we have some sample accounts availa
 |text@example.com| 123456 |
 |test@example.com| 123456 |
 
-## Purchase
-To purchase an item, please use the visa card number below:
+## How to purchase an item?
+Becuase we don't have certificates and other legal documents, we are not able to enable real transaction. But you can try out sandbox purchases. 
 
-VISA number: *4111 1111 1111 1111*
+### Paypal
+You don't need to use your paypal account, you'll be automatically using the sample account. 
 
-Expiration: *11/19*
+### Visa
+To purchase using visa card, please use the sample card provided blow
 
-## How to share an item to your social media platform
+|Visa Number|Expiration Date|
+|:--:|:--:|
+|4111 1111 1111 1111|11/19|
+
+## How to share an item to your social media platform?
 
 1. select an item  
 - click on the icon on the top right corner
 - select the social media platform you wish to use  
 - post
 
-## How to toggle settings and other features
+## How to toggle settings and other features?
 
-The setting menu is located on the top left of the screen. Below are the features implemented: 
+The setting menu is can be toggled using the button located on the top left of the home page. You can find the followings here
 
-- language settings
+- account settings
 - messages/notifications
-- about us/acknowledgement page
-- personal settings
+- other account related information
+- language settings
+- cache cleaning button
+- about us
+- acknowledgement page
 
 --- 
 
 # Developer's Note
 
-**Please open `FBLA.xcworkspace` instead of `FBLA.xcodeproj`**
+**Please open `FBLA.xcworkspace` instead of `FBLA.xcodeproj`**, we are managing dependencies through CocoaPods
 
 Because all the database and transaction providers uniquely identifies each app to make sure everything is safe, you can not change the team, and the account used to codesign the entire project. Therefore, you have to have our account to compile. We rather consider it an unsafe behavior to share our private key around. In conclusion, you might be able to compile it, but you will not get the same result as what we get after compilation.

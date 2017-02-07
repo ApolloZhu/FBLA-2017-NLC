@@ -1,18 +1,21 @@
-![icon](https://raw.githubusercontent.com/ApolloZhu/FBLA-2017-NLC/master/Images/Icon.png?token=AKVyPI2mLv7cUUk1X6NTe1n5Yjzek7Ifks5YowFJwA%3D%3D)
+![Charity Toaster Icon](https://raw.githubusercontent.com/ApolloZhu/FBLA-2017-NLC/master/Images/Icon.png?token=AKVyPI2mLv7cUUk1X6NTe1n5Yjzek7Ifks5YowFJwA%3D%3D)
 # FBLA 2017 NLC
 Mobile Application Development
 
-## Installation Guide
+## Charity Toaster Installation Guide
 Due to the closed nature of Apple and iOS, you are not able to install the compiled binary directly on your iOS devices. We strongly suggest you use the following method to download the app on to your iOS devices.
 
-## Note that the following processes have to be operated on an ios device.
+> This process actually requires human process behind the scene at some point, so it might take longer than you expect.
+
 1. Make sure you have your Apple ID, the e-mail account you used for iCloud, downloading apps from App Store, or in iTunes.
-2. Email the Apple ID to [public-apollonian@outlook.com](mailto:public-apollonian@outlook.com)
-3. You will soon receive an email from iTunes Connect
-4. Provide the information needed to setup an iTunes Connect account.
-6. Another email from TestFlight will be sent to your address 
-7. StartTesting - install TestFlight - if asked, enter the redeem code given 
-8. Download and install our application "Charity Toaster"
+- Email the Apple ID to [public-apollonian@outlook.com](mailto:public-apollonian@outlook.com)
+- You will soon receive an email from **iTunes Connect**
+- Provide the information needed to setup an iTunes Connect account
+- Another email from **Test Flight** will be sent to your Apple ID email. We strongly suggest you to open it on your iOS device(s)
+- Click Start Testing in the email
+- If you are on an iOS device, the webpage will redirect you to app store to install TestFlight
+- Open TestFlight. Tap redeem, and enter the redeem code given.
+- Download/Install/Update *Charity Toaster*
 
 ---
 

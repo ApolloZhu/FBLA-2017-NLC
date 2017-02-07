@@ -7,7 +7,16 @@ Oakton High School
 
 FBLA 2017
 
-## Installation Guide
+## System Requirements
+
+||Requirements|
+|:--:|:--:|
+|Minimum System Version|iOS 8|
+|Network Access|Yes|
+
+---
+
+# Installation Guide
 Due to the closed nature of Apple and iOS, you are not able to install the compiled binary directly on your iOS devices. We strongly suggest you use the following method to download the app on to your iOS devices.
 
 > This process actually requires human process behind the scene at some point, so it might take longer than you expect.
@@ -51,22 +60,23 @@ To purchase using visa card, please use the sample card provided blow
 
 ## How to share an item to your social media platform?
 
-1. select an item  
-2. click on the icon on the top right corner
-3. select the social media platform you wish to use  
-4. post
+1. Make sure you are on a page for any item
+2. Click on the share icon on the top right corner, or left corner if you are in an right to left language
+3. Select the social media platform you wish to use  
+4. Comment, and post!
 
 ## How to toggle settings and other features?
 
-The setting menu is can be toggled using the button located on the top left of the home page. You can find the followings here
+The setting menu can be toggled, using the hamburger-like button, which is located on the top left of the home page. 
+The following features can be found here --
 
-- account settings
-- messages/notifications
-- other account related information
-- language settings
-- cache cleaning button
-- about us
-- acknowledgement page
+- Account settings
+- Messages/notifications
+- Other account related information
+- Language settings
+- Cache cleaning button
+- About us information
+- Acknowledgements page
 
 --- 
 

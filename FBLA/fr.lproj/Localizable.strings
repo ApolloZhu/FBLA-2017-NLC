@@ -1,8 +1,8 @@
 /* {customer} will come and pick up {item} */
-"%1$@ will come and pick up %2$@" = "{}Viendra chercher{}";
+"%1$@ will come and pick up %2$@" = "%1$@ viendra chercher %2$@";
 
 /* {donator} will ship {item} to you */
-"%1$@ will ship %2$@ to you" = "{}expédiera{}à toi";
+"%1$@ will ship %2$@ to you" = "%1$@ expédiera %2$@ à toi";
 
 /* Condition of item is acceptable */
 "Acceptable" = "acceptable";
@@ -20,7 +20,7 @@
 "Buy" = "acheter";
 
 /* Text on a button which allows user to buy an item. Indicates the price of item in USD */
-"Buy for %.2f USD" = "Acheter pour{}USD";
+"Buy for %.2f USD" = "Acheter pour %.2f USD";
 
 /* Show in pop up telling user can't check out item exists */
 "Can't check out item" = "Ne peut pas extraire l'article";
@@ -119,7 +119,7 @@
 "Pay" = "Payer";
 
 /* Pick up {item} at {location} from {donator} */
-"Pick up %1$@ at %2$@ from %3$@" = "ramasser{}à{]de";
+"Pick up %1$@ at %2$@ from %3$@" = "ramasser %1$@ à %2$@ de %3$@";
 
 /* Price of item in us dollar */
 "Price in USD" = "Prix ​​en USD";
@@ -158,5 +158,5 @@
 "Very Good" = "très bon";
 
 /* You should ship {item} to {customer} at {location} */
-"You should ship %1$@ to %2$@ at %3$@" = "Vous devriez expédier{}à{}à";
+"You should ship %1$@ to %2$@ at %3$@" = "Vous devriez expédier %1$@ à %2$@ à %3$@";
 

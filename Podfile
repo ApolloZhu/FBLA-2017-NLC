@@ -9,7 +9,7 @@ target 'FBLA' do
   # Control
   pod 'PKHUD'
   pod 'MaterialKit', :git => 'https://github.com/ApolloZhu/MaterialKit.git'
-  pod 'Eureka', '~> 2.0.0-beta.1'
+  pod 'Eureka'
   pod 'ImageRow'
   pod 'VTAcknowledgementsViewController'
   pod 'JSQMessagesViewController'

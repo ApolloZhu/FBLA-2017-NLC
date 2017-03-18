@@ -13,12 +13,6 @@
         "timestamp" : 1486250033912,
         "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
       },
-      "-KcAYU_Fcl44MRNKeUbu" : {
-        "iid" : "2017-2233",
-        "message" : "I guess I have my icon too",
-        "timestamp" : 1486252538189,
-        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
-      },
       "-KcAbbtW09K1b2W6xLc3" : {
         "iid" : "2017-2233",
         "message" : "Why is it that expensive, can't you make it cheaper?",
@@ -31,50 +25,54 @@
         "timestamp" : 1486253646238,
         "uid" : "0"
       },
-      "-KcAlcrlqZfUH6BwBHSO" : {
-        "iid" : "2017-2233",
-        "message" : "Hi",
-        "timestamp" : 1486256246254,
-        "uid" : "0"
+      "-KcM-hzyKEKftzOkKD2c" : {
+        "iid" : "-KcK1b4dXYa8n71Qhewv",
+        "message" : "Pretty sure it's gonna leak...",
+        "timestamp" : 1486444748758,
+        "uid" : "eMimSoxSJqQNfIlK374gnjQCrjm1"
       },
-      "-KcGAwOybXdvFKv_qgVD" : {
-        "iid" : "-KcFuQ4xq7o9aAXs6OlB",
-        "message" : "I should show this to my Chinese teacher to talk about Chinese culture",
-        "timestamp" : 1486347028093,
-        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
+      "-KcOq8HTDoFQuZ5wOnsT" : {
+        "iid" : "-KcK1b4dXYa8n71Qhewv",
+        "message" : "Do not worry it is gold plated",
+        "timestamp" : 1486492308587,
+        "uid" : "Qr9Z6QF47uPyTeuhH0twJuoDq0X2"
       },
-      "-KcGRpIr9d0p5adINaMh" : {
-        "iid" : "-KcFuQ4xq7o9aAXs6OlB",
-        "message" : "不会崩溃了",
-        "timestamp" : 1486351455460,
-        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
+      "-Kej9SUXjRh0OfaKmqjN" : {
+        "iid" : "-Ke9cq3hf0hZN9FZgx8D",
+        "message" : "It looks really nice",
+        "timestamp" : 1488997439450,
+        "uid" : "Qr9Z6QF47uPyTeuhH0twJuoDq0X2"
       }
     },
     "byIID" : {
-      "-KcFuQ4xq7o9aAXs6OlB" : {
-        "-KcGAwOybXdvFKv_qgVD" : 0,
-        "-KcGRpIr9d0p5adINaMh" : 0
+      "-KcK1b4dXYa8n71Qhewv" : {
+        "-KcM-hzyKEKftzOkKD2c" : 0,
+        "-KcOq8HTDoFQuZ5wOnsT" : 0
+      },
+      "-Ke9cq3hf0hZN9FZgx8D" : {
+        "-Kej9SUXjRh0OfaKmqjN" : 0
       },
       "2017-2233" : {
         "-KcAOm5Dq8vWy4bQwjL_" : 0,
         "-KcAOwAv4bWrPFfiJJeq" : 0,
-        "-KcAYU_Fcl44MRNKeUbu" : 0,
         "-KcAbbtW09K1b2W6xLc3" : 0,
-        "-KcAbi5UjZuW0zgcft-0" : 0,
-        "-KcAlcrlqZfUH6BwBHSO" : 0
+        "-KcAbi5UjZuW0zgcft-0" : 0
       }
     },
     "byUID" : {
       "0" : {
-        "-KcAbi5UjZuW0zgcft-0" : 0,
-        "-KcAlcrlqZfUH6BwBHSO" : 0
+        "-KcAbi5UjZuW0zgcft-0" : 0
       },
       "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
         "-KcAOwAv4bWrPFfiJJeq" : 0,
-        "-KcAYU_Fcl44MRNKeUbu" : 0,
-        "-KcAbbtW09K1b2W6xLc3" : 0,
-        "-KcGAwOybXdvFKv_qgVD" : 0,
-        "-KcGRpIr9d0p5adINaMh" : 0
+        "-KcAbbtW09K1b2W6xLc3" : 0
+      },
+      "Qr9Z6QF47uPyTeuhH0twJuoDq0X2" : {
+        "-KcOq8HTDoFQuZ5wOnsT" : 0,
+        "-Kej9SUXjRh0OfaKmqjN" : 0
+      },
+      "eMimSoxSJqQNfIlK374gnjQCrjm1" : {
+        "-KcM-hzyKEKftzOkKD2c" : 0
       },
       "ktwE5vofAObq8TYizM0krbA3SJ13" : {
         "-KcAOm5Dq8vWy4bQwjL_" : 0
@@ -82,88 +80,188 @@
     }
   },
   "favorite" : {
+    "5OSpyBKYTcWp3Eb5hJUTxGGhDHW2" : {
+      "2017-2233" : 0
+    },
     "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
       "-KcFuQ4xq7o9aAXs6OlB" : 0,
       "2017-2233" : 0
+    },
+    "Qr9Z6QF47uPyTeuhH0twJuoDq0X2" : {
+      "-KcJxXAOTwA5EeKkx0NA" : 0,
+      "-Ke9cq3hf0hZN9FZgx8D" : 0
+    },
+    "hIiXFMoWrnVMREdr73xZCBu00R12" : {
+      "-KcZoDfPoueHfwLgDilY" : 0,
+      "-Ke9cq3hf0hZN9FZgx8D" : 0
+    },
+    "ktwE5vofAObq8TYizM0krbA3SJ13" : {
+      "-KcK1b4dXYa8n71Qhewv" : 0
     }
   },
   "items" : {
     "byIID" : {
-      "-Kc13pyf0MgMLjAUms_H" : {
-        "condition" : 2,
-        "description" : "Asdf",
-        "favorite" : 0,
-        "name" : "Asd",
-        "price" : 552,
-        "transfer" : 0,
-        "uid" : "3pAltPRLPXUdTPsUesdASpvJCG72"
-      },
-      "-KcFuQ4xq7o9aAXs6OlB" : {
-        "condition" : 0,
-        "description" : "Really cute, but no longer needed",
-        "favorite" : 3,
-        "name" : "Bilibili anime figure",
-        "price" : 0.1,
+      "-KcJxXAOTwA5EeKkx0NA" : {
+        "condition" : 4,
+        "description" : "Hardrive contains 50 games preinstalled",
+        "favorite" : 1,
+        "name" : "Xbox 36p",
+        "price" : 120,
         "transfer" : 1,
-        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
+        "uid" : "Qr9Z6QF47uPyTeuhH0twJuoDq0X2"
+      },
+      "-KcJxmtaDtli_XACKSYd" : {
+        "condition" : 4,
+        "description" : "Condition is good. Has 50 games preinstalled in its hard drive.",
+        "favorite" : 0,
+        "name" : "Xbox 360",
+        "price" : 120,
+        "transfer" : 1,
+        "uid" : "Qr9Z6QF47uPyTeuhH0twJuoDq0X2"
+      },
+      "-KcK1b4dXYa8n71Qhewv" : {
+        "condition" : 1,
+        "description" : "Perfect condition ",
+        "favorite" : 1,
+        "name" : "McDonald's cup",
+        "price" : 2,
+        "transfer" : 1,
+        "uid" : "Qr9Z6QF47uPyTeuhH0twJuoDq0X2"
+      },
+      "-KcZoDfPoueHfwLgDilY" : {
+        "condition" : 3,
+        "description" : "iPhone 7 dramatically improves the most important aspects of the iPhone experience. It introduces advanced new camera systems. The best performance and battery life ever in an iPhone. Immersive stereo speakers. The brightest, most colorful iPhone display. Splash and water resistance.1 And it looks every bit as powerful as it is. This is iPhone 7.",
+        "favorite" : 1,
+        "name" : "iPhone 7",
+        "price" : 700,
+        "transfer" : 0,
+        "uid" : "Qr9Z6QF47uPyTeuhH0twJuoDq0X2"
+      },
+      "-KckLOLJ2IEzfF2Wag0Y" : {
+        "condition" : 3,
+        "description" : "This is a bit old, but it works as it is new. And I have many books on it, so you don't need to purchase them again.",
+        "favorite" : 0,
+        "name" : "Kindle",
+        "price" : 50,
+        "transfer" : 0,
+        "uid" : "ktwE5vofAObq8TYizM0krbA3SJ13"
+      },
+      "-Ke9cq3hf0hZN9FZgx8D" : {
+        "condition" : 2,
+        "description" : "This would be a great guitar for a beginner- it is steel string is great for many different styles of music. Includes a case.",
+        "favorite" : 2,
+        "name" : "Guitar",
+        "price" : 91,
+        "transfer" : 1,
+        "uid" : "hIiXFMoWrnVMREdr73xZCBu00R12"
       },
       "2017-2233" : {
         "condition" : 3,
         "description" : "ACG作品名: 哔哩哔哩/bilibili\nACG角色名: 2233娘\n比例: 1/8\n热门系列: pvc\n系列品牌: 哔哩哔哩\n适用年龄: 14周岁以上",
-        "favorite" : 0,
+        "favorite" : 1,
         "name" : "【2017号款限时拍卖】预售 2233拜年祭限定版1/8手办 GSC出品",
         "price" : 1.43596208345E9,
         "transfer" : 0,
         "uid" : "ktwE5vofAObq8TYizM0krbA3SJ13"
-      },
-      "商品标识符" : {
-        "condition" : 0,
-        "description" : "商品描述",
-        "favorite" : 0,
-        "name" : "商品名称",
-        "price" : 9.9,
-        "transfer" : 1,
-        "uid" : "卖家标识符"
       }
     },
     "fromUID" : {
       "3pAltPRLPXUdTPsUesdASpvJCG72" : {
         "-Kc13pyf0MgMLjAUms_H" : 0
       },
-      "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
-        "-KcFuQ4xq7o9aAXs6OlB" : 0
+      "Qr9Z6QF47uPyTeuhH0twJuoDq0X2" : {
+        "-KcZoDfPoueHfwLgDilY" : 0
       },
-      "bilibili" : {
+      "hIiXFMoWrnVMREdr73xZCBu00R12" : {
+        "-Ke9cq3hf0hZN9FZgx8D" : 0
+      },
+      "ktwE5vofAObq8TYizM0krbA3SJ13" : {
+        "-KckLOLJ2IEzfF2Wag0Y" : 0,
         "2017-2233" : 0
-      },
-      "卖家标识符" : {
-        "商品标识符" : 0
+      }
+    }
+  },
+  "msg" : {
+    "5OSpyBKYTcWp3Eb5hJUTxGGhDHW2" : {
+      "repo" : {
+        "-KcHhQjZfgQAeVv8fBOM" : {
+          "components" : [ "Bilibili anime figure", "39 Stockton St, San Francisco, CA 94108, USA", "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" ],
+          "type" : 0
+        }
+      }
+    },
+    "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
+      "repo" : {
+        "-KcHhQj_H-e_sqqtHNnT" : {
+          "components" : [ "5OSpyBKYTcWp3Eb5hJUTxGGhDHW2", "Bilibili anime figure" ],
+          "type" : 1
+        }
+      }
+    },
+    "Qr9Z6QF47uPyTeuhH0twJuoDq0X2" : {
+      "repo" : {
+        "-KcOqafydN38uo5hVbV2" : {
+          "components" : [ "ktwE5vofAObq8TYizM0krbA3SJ13", "A big guy took my ball" ],
+          "type" : 1
+        }
+      }
+    },
+    "ktwE5vofAObq8TYizM0krbA3SJ13" : {
+      "repo" : {
+        "-KcOqafxRAHJ0QLMLxMP" : {
+          "components" : [ "A big guy took my ball", "10133 Palmer Dr, Oakton, VA 22124, USA", "Qr9Z6QF47uPyTeuhH0twJuoDq0X2" ],
+          "type" : 0
+        }
       }
     }
   },
   "soldItems" : {
     "byIID" : {
-      "test" : {
+      "-KcFuQ4xq7o9aAXs6OlB" : {
         "condition" : 0,
-        "description" : "A item for test",
-        "name" : "Lorem Ipsum",
-        "price" : 10,
-        "uid" : "someUID"
+        "description" : "Really cute, but no longer needed",
+        "name" : "Bilibili anime figure",
+        "price" : 0.1,
+        "transfer" : 1,
+        "uid" : "Kqt7niUnBaQv4lUI3ld8AGSSjRu1"
+      },
+      "-KcJyqbyy3lQdsmCYYM-" : {
+        "condition" : 2,
+        "description" : "Book for ages 3 and above. Good condition",
+        "name" : "A big guy took my ball",
+        "price" : 35,
+        "transfer" : 1,
+        "uid" : "Qr9Z6QF47uPyTeuhH0twJuoDq0X2"
       }
     },
     "toUID" : {
-      "uid" : {
-        "iid" : 0
+      "5OSpyBKYTcWp3Eb5hJUTxGGhDHW2" : {
+        "-KcFuQ4xq7o9aAXs6OlB" : 0
+      },
+      "ktwE5vofAObq8TYizM0krbA3SJ13" : {
+        "-KcJyqbyy3lQdsmCYYM-" : 0
       }
     }
   },
-  "temp" : 1486351455532,
+  "temp" : 1488997439488,
   "userData" : {
     "Kqt7niUnBaQv4lUI3ld8AGSSjRu1" : {
       "email" : "zhuzhiyu20010417@outlook.com",
       "image" : "https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/7477_1687334451524614_8989460742730923472_n.jpg?oh=1ce56c3380ac4619f1e8262aad7e2eb5&oe=5917280B",
       "name" : "Zhiyu Zhu",
       "placeID" : "ChIJ4X_hsYiAhYARfV8xKGc3oeU"
+    },
+    "Qr9Z6QF47uPyTeuhH0twJuoDq0X2" : {
+      "placeID" : "ChIJWTIhtVFJtokROg0tJv6CyTY"
+    },
+    "eMimSoxSJqQNfIlK374gnjQCrjm1" : {
+      "placeID" : "ChIJ04noIfxLtokRMPBvF7F6v60"
+    },
+    "hIiXFMoWrnVMREdr73xZCBu00R12" : {
+      "placeID" : "6JJHXRW4+GJ87"
+    },
+    "ktwE5vofAObq8TYizM0krbA3SJ13" : {
+      "placeID" : "ChIJ13ScPtlFtokRX-7NHWn3Seo"
     },
     "someUID" : {
       "email" : "someEmail@some.com",

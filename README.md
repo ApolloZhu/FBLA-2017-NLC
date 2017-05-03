@@ -1,4 +1,4 @@
-![Charity Toaster Icon](https://raw.githubusercontent.com/ApolloZhu/FBLA-2017-NLC/master/Images/Icon.png?token=AKVyPI2mLv7cUUk1X6NTe1n5Yjzek7Ifks5YowFJwA%3D%3D)
+![Charity Toaster Icon](/Images/Icon.png)
 
 # Charity Toaster
 Mobile Application Development
@@ -104,8 +104,8 @@ Because all the database and transaction providers uniquely identifies each app 
 
 ## Team Members
 
-- @ApolloZhu
-- @Yanderella
-- @mmk4822
+- [@ApolloZhu](https://github.com/ApolloZhu)
+- [@Yanderella](https://github.com/Yanderella)
+- [@mmk4822](https://github.com/mmk4822)
 
-Special thanks to Seonuk Kim for translating our app to Korean
+Special thanks to [@snookdogg53](https://github.com/snookdogg53) for translating our app to Korean
